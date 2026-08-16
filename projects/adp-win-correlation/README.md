@@ -5,11 +5,13 @@ and is that something the Vegas win-total market has already priced in?
 
 ## Data sources
 
-- **FantasyData** 2QB/superflex ADP, top 100 players (free-tier cap), per season
-  → `https://fantasydata.com/nfl/2qb-adp?season={year}&team=`
-- **Covers.com** Sports Odds History, NFL regular-season win totals per season
-  (market line, over/under odds, actual wins, result)
-  → `https://www.covers.com/sportsoddshistory/nfl-win/?y={year}&sa=nfl&t=win`
+Both are shared, reusable pipelines under [`nfl/sources/`](../../nfl/sources/)
+rather than duplicated in this project:
+
+- [`nfl/sources/adp`](../../nfl/sources/adp/) — FantasyData 2QB/superflex ADP,
+  top 100 players (free-tier cap), 2015–2025
+- [`nfl/sources/win_totals`](../../nfl/sources/win_totals/) — Covers.com
+  Sports Odds History, NFL win totals, 2015–2025
 
 Seasons covered: **2015–2025** (11 completed seasons × 32 teams = 352 team-seasons).
 
@@ -19,34 +21,22 @@ Run from the repo root with the shared `venv` active:
 
 ```bash
 source venv/bin/activate
-python3 projects/adp-win-correlation/scripts/fetch_data.py   # cache raw HTML -> data/raw/
-python3 projects/adp-win-correlation/scripts/parse_data.py   # -> data/adp.csv, data/win_totals.csv
-python3 projects/adp-win-correlation/scripts/analyze.py      # -> data/merged.csv + printed stats
+python3 nfl/sources/adp/pipeline.py           # -> nfl/sources/adp/data/adp.csv
+python3 nfl/sources/win_totals/pipeline.py    # -> nfl/sources/win_totals/data/win_totals.csv
+python3 projects/adp-win-correlation/scripts/analyze.py   # -> data/merged.csv + printed stats
 ```
 
-`fetch_data.py` skips any year already cached in `data/raw/`, so re-running the
-pipeline after a code change doesn't re-hit either site.
+Both source pipelines skip any year already cached in their `data/raw/`.
 
 ## Files
 
 ```
 scripts/
-  fetch_data.py   fetch + cache raw HTML per season (idempotent)
-  parse_data.py   HTML -> data/adp.csv, data/win_totals.csv
-  analyze.py      merges both, computes correlations, writes data/merged.csv
+  analyze.py      merges the two shared datasets, computes correlations,
+                   writes data/merged.csv
 data/
-  raw/            cached HTML, one file per (source, year)
-  adp.csv         year, rank, name, team, pos, pos_rank, adp
-  win_totals.csv  year, team, win_total_line, over_odds, under_odds, actual_wins, result
-  merged.csv      one row per team-season with all ADP metrics + win outcomes
+  merged.csv       one row per team-season with all ADP metrics + win outcomes
 ```
-
-## Team identity normalization
-
-FantasyData always labels a franchise by its *current* city/name; Covers.com uses
-the name as it was *that season*. `parse_data.py` maps both to one abbreviation:
-Oakland/Las Vegas Raiders → `LV`, San Diego/LA Chargers → `LAC`, St. Louis/LA Rams
-→ `LAR`, Washington Redskins/Football Team/Commanders → `WAS`.
 
 ## Metrics tested
 

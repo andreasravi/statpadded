@@ -21,16 +21,19 @@ from collections import defaultdict
 from scipy import stats
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(__file__))
+REPO_ROOT = os.path.dirname(os.path.dirname(PROJECT_DIR))
 DATA_DIR = os.path.join(PROJECT_DIR, "data")
+ADP_CSV = os.path.join(REPO_ROOT, "nfl", "sources", "adp", "data", "adp.csv")
+WIN_TOTALS_CSV = os.path.join(REPO_ROOT, "nfl", "sources", "win_totals", "data", "win_totals.csv")
 
 
 def load_adp():
-    with open(os.path.join(DATA_DIR, "adp.csv")) as f:
+    with open(ADP_CSV) as f:
         return list(csv.DictReader(f))
 
 
 def load_win_totals():
-    with open(os.path.join(DATA_DIR, "win_totals.csv")) as f:
+    with open(WIN_TOTALS_CSV) as f:
         return list(csv.DictReader(f))
 
 
