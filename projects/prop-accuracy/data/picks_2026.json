@@ -37,41 +37,6 @@
     "score": 7
    },
    {
-    "player": "Bucky Irving",
-    "team": "TB",
-    "line": 804.0,
-    "fd_line": null,
-    "proj_line": 804.0,
-    "line_gap": null,
-    "prior": {
-     "team": "TB",
-     "g": 10,
-     "yds": 588,
-     "td": 1
-    },
-    "qb_tier": 2,
-    "win_total": 8.0,
-    "rank": 20,
-    "signals": [
-     [
-      "OVER",
-      "bounce-back: <14 g in 2025",
-      3
-     ],
-     [
-      "OVER",
-      "bullish re-rate: line +216 vs 2025",
-      2
-     ],
-     [
-      "OVER",
-      "mid-round back (rank ~20), catchable line",
-      2
-     ]
-    ],
-    "score": 7
-   },
-   {
     "player": "Cam Skattebo",
     "team": "NYG",
     "line": 781.0,
@@ -101,6 +66,41 @@
      [
       "OVER",
       "mid-round back (rank ~23), catchable line",
+      2
+     ]
+    ],
+    "score": 7
+   },
+   {
+    "player": "Bucky Irving",
+    "team": "TB",
+    "line": 804.0,
+    "fd_line": null,
+    "proj_line": 804.0,
+    "line_gap": null,
+    "prior": {
+     "team": "TB",
+     "g": 10,
+     "yds": 588,
+     "td": 1
+    },
+    "qb_tier": 2,
+    "win_total": 8.0,
+    "rank": 20,
+    "signals": [
+     [
+      "OVER",
+      "bounce-back: <14 g in 2025",
+      3
+     ],
+     [
+      "OVER",
+      "bullish re-rate: line +216 vs 2025",
+      2
+     ],
+     [
+      "OVER",
+      "mid-round back (rank ~20), catchable line",
       2
      ]
     ],
@@ -167,31 +167,6 @@
     "score": 4
    },
    {
-    "player": "David Montgomery",
-    "team": "HOU",
-    "line": 800.5,
-    "fd_line": 800.5,
-    "proj_line": 814.0,
-    "line_gap": -14,
-    "prior": {
-     "team": "DET",
-     "g": 17,
-     "yds": 716,
-     "td": 8
-    },
-    "qb_tier": 3,
-    "win_total": 10.3,
-    "rank": 19,
-    "signals": [
-     [
-      "OVER",
-      "mid-round back (rank ~19), catchable line",
-      2
-     ]
-    ],
-    "score": 2
-   },
-   {
     "player": "TreVeyon Henderson",
     "team": "NE",
     "line": 700.0,
@@ -211,6 +186,76 @@
      [
       "OVER",
       "mid-round back (rank ~30), catchable line",
+      2
+     ]
+    ],
+    "score": 2
+   },
+   {
+    "player": "D'Andre Swift",
+    "team": "CHI",
+    "line": 799.0,
+    "fd_line": null,
+    "proj_line": 799.0,
+    "line_gap": null,
+    "prior": {
+     "team": "CHI",
+     "g": 16,
+     "yds": 1087,
+     "td": 9
+    },
+    "qb_tier": 2,
+    "win_total": 9.4,
+    "rank": 21,
+    "signals": [
+     [
+      "OVER",
+      "mid-round back (rank ~21), catchable line",
+      2
+     ]
+    ],
+    "score": 2
+   },
+   {
+    "player": "Tony Pollard",
+    "team": "TEN",
+    "line": 775.5,
+    "fd_line": 775.5,
+    "proj_line": 784.0,
+    "line_gap": -8,
+    "prior": {
+     "team": "TEN",
+     "g": 17,
+     "yds": 1082,
+     "td": 5
+    },
+    "qb_tier": 3,
+    "win_total": 6.2,
+    "rank": 22,
+    "signals": [
+     [
+      "OVER",
+      "mid-round back (rank ~22), catchable line",
+      2
+     ]
+    ],
+    "score": 2
+   },
+   {
+    "player": "Jadarian Price",
+    "team": "SEA",
+    "line": 736.0,
+    "fd_line": null,
+    "proj_line": 736.0,
+    "line_gap": null,
+    "prior": null,
+    "qb_tier": 2,
+    "win_total": 10.7,
+    "rank": 26,
+    "signals": [
+     [
+      "OVER",
+      "mid-round back (rank ~26), catchable line",
       2
      ]
     ],
@@ -262,70 +307,25 @@
     "score": 2
    },
    {
-    "player": "Jadarian Price",
-    "team": "SEA",
-    "line": 736.0,
-    "fd_line": null,
-    "proj_line": 736.0,
-    "line_gap": null,
-    "prior": null,
-    "qb_tier": 2,
-    "win_total": 10.7,
-    "rank": 26,
-    "signals": [
-     [
-      "OVER",
-      "mid-round back (rank ~26), catchable line",
-      2
-     ]
-    ],
-    "score": 2
-   },
-   {
-    "player": "Tony Pollard",
-    "team": "TEN",
-    "line": 775.5,
-    "fd_line": 775.5,
-    "proj_line": 784.0,
-    "line_gap": -8,
+    "player": "David Montgomery",
+    "team": "HOU",
+    "line": 800.5,
+    "fd_line": 800.5,
+    "proj_line": 814.0,
+    "line_gap": -14,
     "prior": {
-     "team": "TEN",
+     "team": "DET",
      "g": 17,
-     "yds": 1082,
-     "td": 5
+     "yds": 716,
+     "td": 8
     },
     "qb_tier": 3,
-    "win_total": 6.2,
-    "rank": 22,
+    "win_total": 10.3,
+    "rank": 19,
     "signals": [
      [
       "OVER",
-      "mid-round back (rank ~22), catchable line",
-      2
-     ]
-    ],
-    "score": 2
-   },
-   {
-    "player": "D'Andre Swift",
-    "team": "CHI",
-    "line": 799.0,
-    "fd_line": null,
-    "proj_line": 799.0,
-    "line_gap": null,
-    "prior": {
-     "team": "CHI",
-     "g": 16,
-     "yds": 1087,
-     "td": 9
-    },
-    "qb_tier": 2,
-    "win_total": 9.4,
-    "rank": 21,
-    "signals": [
-     [
-      "OVER",
-      "mid-round back (rank ~21), catchable line",
+      "mid-round back (rank ~19), catchable line",
       2
      ]
     ],
@@ -333,6 +333,206 @@
    }
   ],
   "low": [
+   {
+    "player": "Jaylen Warren",
+    "team": "PIT",
+    "line": 625.5,
+    "fd_line": 625.5,
+    "proj_line": 609.0,
+    "line_gap": 16,
+    "prior": {
+     "team": "PIT",
+     "g": 16,
+     "yds": 958,
+     "td": 6
+    },
+    "qb_tier": 3,
+    "win_total": 8.4,
+    "rank": 36,
+    "signals": [
+     [
+      "UNDER",
+      "deep back (proj rank ~36) with a real line",
+      3
+     ]
+    ],
+    "score": -3
+   },
+   {
+    "player": "Blake Corum",
+    "team": "LAR",
+    "line": 666.0,
+    "fd_line": null,
+    "proj_line": 666.0,
+    "line_gap": null,
+    "prior": {
+     "team": "LAR",
+     "g": 17,
+     "yds": 746,
+     "td": 6
+    },
+    "qb_tier": 1,
+    "win_total": 11.7,
+    "rank": 33,
+    "signals": [
+     [
+      "UNDER",
+      "deep back (proj rank ~33) with a real line",
+      3
+     ]
+    ],
+    "score": -3
+   },
+   {
+    "player": "Aaron Jones",
+    "team": "MIN",
+    "line": 483.0,
+    "fd_line": null,
+    "proj_line": 483.0,
+    "line_gap": null,
+    "prior": {
+     "team": "MIN",
+     "g": 12,
+     "yds": 548,
+     "td": 2
+    },
+    "qb_tier": 3,
+    "win_total": 8.8,
+    "rank": 41,
+    "signals": [
+     [
+      "UNDER",
+      "deep back (proj rank ~41) with a real line",
+      3
+     ]
+    ],
+    "score": -3
+   },
+   {
+    "player": "Jonathon Brooks",
+    "team": "CAR",
+    "line": 575.0,
+    "fd_line": null,
+    "proj_line": 575.0,
+    "line_gap": null,
+    "prior": null,
+    "qb_tier": 3,
+    "win_total": 7.2,
+    "rank": 38,
+    "signals": [
+     [
+      "UNDER",
+      "deep back (proj rank ~38) with a real line",
+      3
+     ]
+    ],
+    "score": -3
+   },
+   {
+    "player": "Jordan Mason",
+    "team": "MIN",
+    "line": 649.0,
+    "fd_line": null,
+    "proj_line": 649.0,
+    "line_gap": null,
+    "prior": {
+     "team": "MIN",
+     "g": 16,
+     "yds": 758,
+     "td": 6
+    },
+    "qb_tier": 3,
+    "win_total": 8.8,
+    "rank": 34,
+    "signals": [
+     [
+      "UNDER",
+      "deep back (proj rank ~34) with a real line",
+      3
+     ]
+    ],
+    "score": -3
+   },
+   {
+    "player": "Tyler Allgeier",
+    "team": "ARI",
+    "line": 460.0,
+    "fd_line": null,
+    "proj_line": 460.0,
+    "line_gap": null,
+    "prior": {
+     "team": "ATL",
+     "g": 17,
+     "yds": 514,
+     "td": 8
+    },
+    "qb_tier": 4,
+    "win_total": 4.0,
+    "rank": 43,
+    "signals": [
+     [
+      "UNDER",
+      "deep back (proj rank ~43) with a real line",
+      3
+     ]
+    ],
+    "score": -3
+   },
+   {
+    "player": "Rhamondre Stevenson",
+    "team": "NE",
+    "line": 618.0,
+    "fd_line": null,
+    "proj_line": 618.0,
+    "line_gap": null,
+    "prior": {
+     "team": "NE",
+     "g": 14,
+     "yds": 603,
+     "td": 7
+    },
+    "qb_tier": 2,
+    "win_total": 10.0,
+    "rank": 35,
+    "signals": [
+     [
+      "UNDER",
+      "deep back (proj rank ~35) with a real line",
+      3
+     ]
+    ],
+    "score": -3
+   },
+   {
+    "player": "James Cook",
+    "team": "BUF",
+    "line": 1175.5,
+    "fd_line": 1175.5,
+    "proj_line": 1209.0,
+    "line_gap": -34,
+    "prior": {
+     "team": "BUF",
+     "g": 17,
+     "yds": 1621,
+     "td": 12
+    },
+    "qb_tier": 1,
+    "win_total": 10.8,
+    "rank": 3,
+    "signals": [
+     [
+      "UNDER",
+      "1,000-1,200 dead zone",
+      2
+     ],
+     [
+      "UNDER",
+      "line cut hard (446) off 2025",
+      1
+     ]
+    ],
+    "score": -3
+   },
    {
     "player": "Rachaad White",
     "team": "WAS",
@@ -384,101 +584,6 @@
     "score": -3
    },
    {
-    "player": "Aaron Jones",
-    "team": "MIN",
-    "line": 483.0,
-    "fd_line": null,
-    "proj_line": 483.0,
-    "line_gap": null,
-    "prior": {
-     "team": "MIN",
-     "g": 12,
-     "yds": 548,
-     "td": 2
-    },
-    "qb_tier": 4,
-    "win_total": 8.8,
-    "rank": 41,
-    "signals": [
-     [
-      "UNDER",
-      "deep back (proj rank ~41) with a real line",
-      3
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "Jaylen Warren",
-    "team": "PIT",
-    "line": 625.5,
-    "fd_line": 625.5,
-    "proj_line": 609.0,
-    "line_gap": 16,
-    "prior": {
-     "team": "PIT",
-     "g": 16,
-     "yds": 958,
-     "td": 6
-    },
-    "qb_tier": 3,
-    "win_total": 8.4,
-    "rank": 36,
-    "signals": [
-     [
-      "UNDER",
-      "deep back (proj rank ~36) with a real line",
-      3
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "Jonathon Brooks",
-    "team": "CAR",
-    "line": 575.0,
-    "fd_line": null,
-    "proj_line": 575.0,
-    "line_gap": null,
-    "prior": null,
-    "qb_tier": 3,
-    "win_total": 7.2,
-    "rank": 38,
-    "signals": [
-     [
-      "UNDER",
-      "deep back (proj rank ~38) with a real line",
-      3
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "Rhamondre Stevenson",
-    "team": "NE",
-    "line": 618.0,
-    "fd_line": null,
-    "proj_line": 618.0,
-    "line_gap": null,
-    "prior": {
-     "team": "NE",
-     "g": 14,
-     "yds": 603,
-     "td": 7
-    },
-    "qb_tier": 2,
-    "win_total": 10.0,
-    "rank": 35,
-    "signals": [
-     [
-      "UNDER",
-      "deep back (proj rank ~35) with a real line",
-      3
-     ]
-    ],
-    "score": -3
-   },
-   {
     "player": "RJ Harvey",
     "team": "DEN",
     "line": 515.0,
@@ -504,25 +609,20 @@
     "score": -3
    },
    {
-    "player": "Jordan Mason",
-    "team": "MIN",
-    "line": 649.0,
+    "player": "M. Washington Jr.",
+    "team": "LV",
+    "line": 458.0,
     "fd_line": null,
-    "proj_line": 649.0,
+    "proj_line": 458.0,
     "line_gap": null,
-    "prior": {
-     "team": "MIN",
-     "g": 16,
-     "yds": 758,
-     "td": 6
-    },
-    "qb_tier": 4,
-    "win_total": 8.8,
-    "rank": 34,
+    "prior": null,
+    "qb_tier": null,
+    "win_total": 6.1,
+    "rank": 44,
     "signals": [
      [
       "UNDER",
-      "deep back (proj rank ~34) with a real line",
+      "deep back (proj rank ~44) with a real line",
       3
      ]
     ],
@@ -552,131 +652,6 @@
      ]
     ],
     "score": -3
-   },
-   {
-    "player": "Blake Corum",
-    "team": "LAR",
-    "line": 666.0,
-    "fd_line": null,
-    "proj_line": 666.0,
-    "line_gap": null,
-    "prior": {
-     "team": "LAR",
-     "g": 17,
-     "yds": 746,
-     "td": 6
-    },
-    "qb_tier": 1,
-    "win_total": 11.7,
-    "rank": 33,
-    "signals": [
-     [
-      "UNDER",
-      "deep back (proj rank ~33) with a real line",
-      3
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "Tyler Allgeier",
-    "team": "ARI",
-    "line": 460.0,
-    "fd_line": null,
-    "proj_line": 460.0,
-    "line_gap": null,
-    "prior": {
-     "team": "ATL",
-     "g": 17,
-     "yds": 514,
-     "td": 8
-    },
-    "qb_tier": 4,
-    "win_total": 4.0,
-    "rank": 43,
-    "signals": [
-     [
-      "UNDER",
-      "deep back (proj rank ~43) with a real line",
-      3
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "M. Washington Jr.",
-    "team": "LV",
-    "line": 458.0,
-    "fd_line": null,
-    "proj_line": 458.0,
-    "line_gap": null,
-    "prior": null,
-    "qb_tier": 3,
-    "win_total": 6.1,
-    "rank": 44,
-    "signals": [
-     [
-      "UNDER",
-      "deep back (proj rank ~44) with a real line",
-      3
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "James Cook",
-    "team": "BUF",
-    "line": 1175.5,
-    "fd_line": 1175.5,
-    "proj_line": 1209.0,
-    "line_gap": -34,
-    "prior": {
-     "team": "BUF",
-     "g": 17,
-     "yds": 1621,
-     "td": 12
-    },
-    "qb_tier": 1,
-    "win_total": 10.8,
-    "rank": 3,
-    "signals": [
-     [
-      "UNDER",
-      "1,000-1,200 dead zone",
-      2
-     ],
-     [
-      "UNDER",
-      "line cut hard (446) off 2025",
-      1
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "Ashton Jeanty",
-    "team": "LV",
-    "line": 1048.0,
-    "fd_line": null,
-    "proj_line": 1048.0,
-    "line_gap": null,
-    "prior": {
-     "team": "LV",
-     "g": 17,
-     "yds": 975,
-     "td": 5
-    },
-    "qb_tier": 3,
-    "win_total": 6.1,
-    "rank": 7,
-    "signals": [
-     [
-      "UNDER",
-      "1,000-1,200 dead zone",
-      2
-     ]
-    ],
-    "score": -2
    },
    {
     "player": "Saquon Barkley",
@@ -727,77 +702,6 @@
      ]
     ],
     "score": -2
-   }
-  ],
-  "all": [
-   {
-    "player": "Rachaad White",
-    "team": "WAS",
-    "line": 468.0,
-    "fd_line": null,
-    "proj_line": 468.0,
-    "line_gap": null,
-    "prior": {
-     "team": "TB",
-     "g": 17,
-     "yds": 572,
-     "td": 4
-    },
-    "qb_tier": 2,
-    "win_total": 7.2,
-    "rank": 42,
-    "signals": [
-     [
-      "UNDER",
-      "deep back (proj rank ~42) with a real line",
-      3
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "Chase Brown",
-    "team": "CIN",
-    "line": 850.5,
-    "fd_line": 850.5,
-    "proj_line": 844.0,
-    "line_gap": 6,
-    "prior": {
-     "team": "CIN",
-     "g": 17,
-     "yds": 1019,
-     "td": 6
-    },
-    "qb_tier": 1,
-    "win_total": 10.2,
-    "rank": 17,
-    "signals": [],
-    "score": 0
-   },
-   {
-    "player": "Tyrone Tracy",
-    "team": "NYG",
-    "line": 528.0,
-    "fd_line": null,
-    "proj_line": 528.0,
-    "line_gap": null,
-    "prior": {
-     "team": "NYG",
-     "g": 15,
-     "yds": 740,
-     "td": 2
-    },
-    "qb_tier": 3,
-    "win_total": 7.5,
-    "rank": 39,
-    "signals": [
-     [
-      "UNDER",
-      "deep back (proj rank ~39) with a real line",
-      3
-     ]
-    ],
-    "score": -3
    },
    {
     "player": "Ashton Jeanty",
@@ -812,7 +716,7 @@
      "yds": 975,
      "td": 5
     },
-    "qb_tier": 3,
+    "qb_tier": null,
     "win_total": 6.1,
     "rank": 7,
     "signals": [
@@ -823,6 +727,33 @@
      ]
     ],
     "score": -2
+   }
+  ],
+  "all": [
+   {
+    "player": "Jaylen Warren",
+    "team": "PIT",
+    "line": 625.5,
+    "fd_line": 625.5,
+    "proj_line": 609.0,
+    "line_gap": 16,
+    "prior": {
+     "team": "PIT",
+     "g": 16,
+     "yds": 958,
+     "td": 6
+    },
+    "qb_tier": 3,
+    "win_total": 8.4,
+    "rank": 36,
+    "signals": [
+     [
+      "UNDER",
+      "deep back (proj rank ~36) with a real line",
+      3
+     ]
+    ],
+    "score": -3
    },
    {
     "player": "Kenneth Gainwell",
@@ -839,84 +770,29 @@
     "score": 0
    },
    {
-    "player": "Bhayshul Tuten",
-    "team": "JAX",
-    "line": 734.0,
+    "player": "Blake Corum",
+    "team": "LAR",
+    "line": 666.0,
     "fd_line": null,
-    "proj_line": 734.0,
+    "proj_line": 666.0,
     "line_gap": null,
     "prior": {
-     "team": "JAX",
-     "g": 15,
-     "yds": 307,
-     "td": 5
-    },
-    "qb_tier": 2,
-    "win_total": 9.2,
-    "rank": 27,
-    "signals": [
-     [
-      "OVER",
-      "bullish re-rate: line +427 vs 2025",
-      2
-     ],
-     [
-      "OVER",
-      "mid-round back (rank ~27), catchable line",
-      2
-     ]
-    ],
-    "score": 4
-   },
-   {
-    "player": "Jonathan Taylor",
-    "team": "IND",
-    "line": 1225.5,
-    "fd_line": 1225.5,
-    "proj_line": 1234.0,
-    "line_gap": -8,
-    "prior": {
-     "team": "IND",
+     "team": "LAR",
      "g": 17,
-     "yds": 1585,
-     "td": 18
+     "yds": 746,
+     "td": 6
     },
-    "qb_tier": 3,
-    "win_total": 8.0,
-    "rank": 1,
+    "qb_tier": 1,
+    "win_total": 11.7,
+    "rank": 33,
     "signals": [
      [
       "UNDER",
-      "line cut hard (360) off 2025",
-      1
+      "deep back (proj rank ~33) with a real line",
+      3
      ]
     ],
-    "score": -1
-   },
-   {
-    "player": "David Montgomery",
-    "team": "HOU",
-    "line": 800.5,
-    "fd_line": 800.5,
-    "proj_line": 814.0,
-    "line_gap": -14,
-    "prior": {
-     "team": "DET",
-     "g": 17,
-     "yds": 716,
-     "td": 8
-    },
-    "qb_tier": 3,
-    "win_total": 10.3,
-    "rank": 19,
-    "signals": [
-     [
-      "OVER",
-      "mid-round back (rank ~19), catchable line",
-      2
-     ]
-    ],
-    "score": 2
+    "score": -3
    },
    {
     "player": "TreVeyon Henderson",
@@ -944,203 +820,63 @@
     "score": 2
    },
    {
-    "player": "Aaron Jones",
-    "team": "MIN",
-    "line": 483.0,
-    "fd_line": null,
-    "proj_line": 483.0,
-    "line_gap": null,
+    "player": "Kyren Williams",
+    "team": "LAR",
+    "line": 925.5,
+    "fd_line": 925.5,
+    "proj_line": 944.0,
+    "line_gap": -18,
     "prior": {
-     "team": "MIN",
-     "g": 12,
-     "yds": 548,
-     "td": 2
-    },
-    "qb_tier": 4,
-    "win_total": 8.8,
-    "rank": 41,
-    "signals": [
-     [
-      "UNDER",
-      "deep back (proj rank ~41) with a real line",
-      3
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "Jaylen Warren",
-    "team": "PIT",
-    "line": 625.5,
-    "fd_line": 625.5,
-    "proj_line": 609.0,
-    "line_gap": 16,
-    "prior": {
-     "team": "PIT",
-     "g": 16,
-     "yds": 958,
-     "td": 6
-    },
-    "qb_tier": 3,
-    "win_total": 8.4,
-    "rank": 36,
-    "signals": [
-     [
-      "UNDER",
-      "deep back (proj rank ~36) with a real line",
-      3
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "Jonathon Brooks",
-    "team": "CAR",
-    "line": 575.0,
-    "fd_line": null,
-    "proj_line": 575.0,
-    "line_gap": null,
-    "prior": null,
-    "qb_tier": 3,
-    "win_total": 7.2,
-    "rank": 38,
-    "signals": [
-     [
-      "UNDER",
-      "deep back (proj rank ~38) with a real line",
-      3
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "Rhamondre Stevenson",
-    "team": "NE",
-    "line": 618.0,
-    "fd_line": null,
-    "proj_line": 618.0,
-    "line_gap": null,
-    "prior": {
-     "team": "NE",
-     "g": 14,
-     "yds": 603,
-     "td": 7
-    },
-    "qb_tier": 2,
-    "win_total": 10.0,
-    "rank": 35,
-    "signals": [
-     [
-      "UNDER",
-      "deep back (proj rank ~35) with a real line",
-      3
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "RJ Harvey",
-    "team": "DEN",
-    "line": 515.0,
-    "fd_line": null,
-    "proj_line": 515.0,
-    "line_gap": null,
-    "prior": {
-     "team": "DEN",
+     "team": "LAR",
      "g": 17,
-     "yds": 540,
-     "td": 7
+     "yds": 1252,
+     "td": 10
     },
-    "qb_tier": 3,
-    "win_total": 9.9,
-    "rank": 40,
-    "signals": [
-     [
-      "UNDER",
-      "deep back (proj rank ~40) with a real line",
-      3
-     ]
-    ],
-    "score": -3
+    "qb_tier": 1,
+    "win_total": 11.7,
+    "rank": 9,
+    "signals": [],
+    "score": 0
    },
    {
-    "player": "Quinshon Judkins",
+    "player": "Dylan Sampson",
     "team": "CLE",
-    "line": 850.5,
-    "fd_line": 850.5,
-    "proj_line": 862.0,
-    "line_gap": -12,
+    "line": 321.0,
+    "fd_line": null,
+    "proj_line": 321.0,
+    "line_gap": null,
     "prior": {
      "team": "CLE",
-     "g": 14,
-     "yds": 827,
-     "td": 7
+     "g": 15,
+     "yds": 175,
+     "td": 0
     },
     "qb_tier": 4,
     "win_total": 5.6,
-    "rank": 16,
+    "rank": 49,
     "signals": [],
     "score": 0
    },
    {
-    "player": "Keaton Mitchell",
-    "team": "LAC",
-    "line": 435.0,
+    "player": "D'Andre Swift",
+    "team": "CHI",
+    "line": 799.0,
     "fd_line": null,
-    "proj_line": 435.0,
+    "proj_line": 799.0,
     "line_gap": null,
     "prior": {
-     "team": "BAL",
-     "g": 13,
-     "yds": 341,
-     "td": 1
+     "team": "CHI",
+     "g": 16,
+     "yds": 1087,
+     "td": 9
     },
     "qb_tier": 2,
-    "win_total": 10.0,
-    "rank": 45,
-    "signals": [],
-    "score": 0
-   },
-   {
-    "player": "Jordan Mason",
-    "team": "MIN",
-    "line": 649.0,
-    "fd_line": null,
-    "proj_line": 649.0,
-    "line_gap": null,
-    "prior": {
-     "team": "MIN",
-     "g": 16,
-     "yds": 758,
-     "td": 6
-    },
-    "qb_tier": 4,
-    "win_total": 8.8,
-    "rank": 34,
-    "signals": [
-     [
-      "UNDER",
-      "deep back (proj rank ~34) with a real line",
-      3
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "Jeremiyah Love",
-    "team": "ARI",
-    "line": 775.5,
-    "fd_line": 775.5,
-    "proj_line": 768.0,
-    "line_gap": 8,
-    "prior": null,
-    "qb_tier": 4,
-    "win_total": 4.0,
-    "rank": 24,
+    "win_total": 9.4,
+    "rank": 21,
     "signals": [
      [
       "OVER",
-      "mid-round back (rank ~24), catchable line",
+      "mid-round back (rank ~21), catchable line",
       2
      ]
     ],
@@ -1177,6 +913,311 @@
     "score": 1
    },
    {
+    "player": "Aaron Jones",
+    "team": "MIN",
+    "line": 483.0,
+    "fd_line": null,
+    "proj_line": 483.0,
+    "line_gap": null,
+    "prior": {
+     "team": "MIN",
+     "g": 12,
+     "yds": 548,
+     "td": 2
+    },
+    "qb_tier": 3,
+    "win_total": 8.8,
+    "rank": 41,
+    "signals": [
+     [
+      "UNDER",
+      "deep back (proj rank ~41) with a real line",
+      3
+     ]
+    ],
+    "score": -3
+   },
+   {
+    "player": "Tony Pollard",
+    "team": "TEN",
+    "line": 775.5,
+    "fd_line": 775.5,
+    "proj_line": 784.0,
+    "line_gap": -8,
+    "prior": {
+     "team": "TEN",
+     "g": 17,
+     "yds": 1082,
+     "td": 5
+    },
+    "qb_tier": 3,
+    "win_total": 6.2,
+    "rank": 22,
+    "signals": [
+     [
+      "OVER",
+      "mid-round back (rank ~22), catchable line",
+      2
+     ]
+    ],
+    "score": 2
+   },
+   {
+    "player": "Jahmyr Gibbs",
+    "team": "DET",
+    "line": 1200.5,
+    "fd_line": 1200.5,
+    "proj_line": 1199.0,
+    "line_gap": 2,
+    "prior": {
+     "team": "DET",
+     "g": 17,
+     "yds": 1223,
+     "td": 13
+    },
+    "qb_tier": 2,
+    "win_total": 10.8,
+    "rank": 4,
+    "signals": [],
+    "score": 0
+   },
+   {
+    "player": "Josh Jacobs",
+    "team": "GB",
+    "line": 918.0,
+    "fd_line": null,
+    "proj_line": 918.0,
+    "line_gap": null,
+    "prior": {
+     "team": "GB",
+     "g": 15,
+     "yds": 929,
+     "td": 13
+    },
+    "qb_tier": 2,
+    "win_total": 10.0,
+    "rank": 14,
+    "signals": [],
+    "score": 0
+   },
+   {
+    "player": "Jonathan Taylor",
+    "team": "IND",
+    "line": 1225.5,
+    "fd_line": 1225.5,
+    "proj_line": 1234.0,
+    "line_gap": -8,
+    "prior": {
+     "team": "IND",
+     "g": 17,
+     "yds": 1585,
+     "td": 18
+    },
+    "qb_tier": 3,
+    "win_total": 8.0,
+    "rank": 1,
+    "signals": [
+     [
+      "UNDER",
+      "line cut hard (360) off 2025",
+      1
+     ]
+    ],
+    "score": -1
+   },
+   {
+    "player": "Kenneth Walker",
+    "team": "KC",
+    "line": 950.5,
+    "fd_line": 950.5,
+    "proj_line": 939.0,
+    "line_gap": 12,
+    "prior": {
+     "team": "SEA",
+     "g": 17,
+     "yds": 1027,
+     "td": 5
+    },
+    "qb_tier": 1,
+    "win_total": 9.9,
+    "rank": 10,
+    "signals": [],
+    "score": 0
+   },
+   {
+    "player": "Breece Hall",
+    "team": "NYJ",
+    "line": 900.5,
+    "fd_line": 900.5,
+    "proj_line": 900.0,
+    "line_gap": 0,
+    "prior": {
+     "team": "NYJ",
+     "g": 16,
+     "yds": 1065,
+     "td": 4
+    },
+    "qb_tier": 4,
+    "win_total": 5.6,
+    "rank": 15,
+    "signals": [],
+    "score": 0
+   },
+   {
+    "player": "Jadarian Price",
+    "team": "SEA",
+    "line": 736.0,
+    "fd_line": null,
+    "proj_line": 736.0,
+    "line_gap": null,
+    "prior": null,
+    "qb_tier": 2,
+    "win_total": 10.7,
+    "rank": 26,
+    "signals": [
+     [
+      "OVER",
+      "mid-round back (rank ~26), catchable line",
+      2
+     ]
+    ],
+    "score": 2
+   },
+   {
+    "player": "Bhayshul Tuten",
+    "team": "JAX",
+    "line": 734.0,
+    "fd_line": null,
+    "proj_line": 734.0,
+    "line_gap": null,
+    "prior": {
+     "team": "JAX",
+     "g": 15,
+     "yds": 307,
+     "td": 5
+    },
+    "qb_tier": 2,
+    "win_total": 9.2,
+    "rank": 27,
+    "signals": [
+     [
+      "OVER",
+      "bullish re-rate: line +427 vs 2025",
+      2
+     ],
+     [
+      "OVER",
+      "mid-round back (rank ~27), catchable line",
+      2
+     ]
+    ],
+    "score": 4
+   },
+   {
+    "player": "Jeremiyah Love",
+    "team": "ARI",
+    "line": 775.5,
+    "fd_line": 775.5,
+    "proj_line": 768.0,
+    "line_gap": 8,
+    "prior": null,
+    "qb_tier": 4,
+    "win_total": 4.0,
+    "rank": 24,
+    "signals": [
+     [
+      "OVER",
+      "mid-round back (rank ~24), catchable line",
+      2
+     ]
+    ],
+    "score": 2
+   },
+   {
+    "player": "Kyle Monangai",
+    "team": "CHI",
+    "line": 751.0,
+    "fd_line": null,
+    "proj_line": 751.0,
+    "line_gap": null,
+    "prior": {
+     "team": "CHI",
+     "g": 17,
+     "yds": 783,
+     "td": 5
+    },
+    "qb_tier": 2,
+    "win_total": 9.4,
+    "rank": 25,
+    "signals": [
+     [
+      "OVER",
+      "mid-round back (rank ~25), catchable line",
+      2
+     ]
+    ],
+    "score": 2
+   },
+   {
+    "player": "Jonathon Brooks",
+    "team": "CAR",
+    "line": 575.0,
+    "fd_line": null,
+    "proj_line": 575.0,
+    "line_gap": null,
+    "prior": null,
+    "qb_tier": 3,
+    "win_total": 7.2,
+    "rank": 38,
+    "signals": [
+     [
+      "UNDER",
+      "deep back (proj rank ~38) with a real line",
+      3
+     ]
+    ],
+    "score": -3
+   },
+   {
+    "player": "C. McCaffrey",
+    "team": "SF",
+    "line": 924.0,
+    "fd_line": null,
+    "proj_line": 924.0,
+    "line_gap": null,
+    "prior": null,
+    "qb_tier": 2,
+    "win_total": 9.9,
+    "rank": 13,
+    "signals": [],
+    "score": 0
+   },
+   {
+    "player": "David Montgomery",
+    "team": "HOU",
+    "line": 800.5,
+    "fd_line": 800.5,
+    "proj_line": 814.0,
+    "line_gap": -14,
+    "prior": {
+     "team": "DET",
+     "g": 17,
+     "yds": 716,
+     "td": 8
+    },
+    "qb_tier": 3,
+    "win_total": 10.3,
+    "rank": 19,
+    "signals": [
+     [
+      "OVER",
+      "mid-round back (rank ~19), catchable line",
+      2
+     ]
+    ],
+    "score": 2
+   },
+   {
     "player": "Saquon Barkley",
     "team": "PHI",
     "line": 1050.5,
@@ -1202,25 +1243,94 @@
     "score": -2
    },
    {
-    "player": "Jacory Croskey-Merritt",
-    "team": "WAS",
-    "line": 587.0,
+    "player": "Jordan Mason",
+    "team": "MIN",
+    "line": 649.0,
     "fd_line": null,
-    "proj_line": 587.0,
+    "proj_line": 649.0,
     "line_gap": null,
     "prior": {
-     "team": "WAS",
-     "g": 17,
-     "yds": 805,
-     "td": 8
+     "team": "MIN",
+     "g": 16,
+     "yds": 758,
+     "td": 6
     },
-    "qb_tier": 2,
-    "win_total": 7.2,
-    "rank": 37,
+    "qb_tier": 3,
+    "win_total": 8.8,
+    "rank": 34,
     "signals": [
      [
       "UNDER",
-      "deep back (proj rank ~37) with a real line",
+      "deep back (proj rank ~34) with a real line",
+      3
+     ]
+    ],
+    "score": -3
+   },
+   {
+    "player": "Chase Brown",
+    "team": "CIN",
+    "line": 850.5,
+    "fd_line": 850.5,
+    "proj_line": 844.0,
+    "line_gap": 6,
+    "prior": {
+     "team": "CIN",
+     "g": 17,
+     "yds": 1019,
+     "td": 6
+    },
+    "qb_tier": 1,
+    "win_total": 10.2,
+    "rank": 17,
+    "signals": [],
+    "score": 0
+   },
+   {
+    "player": "Tyler Allgeier",
+    "team": "ARI",
+    "line": 460.0,
+    "fd_line": null,
+    "proj_line": 460.0,
+    "line_gap": null,
+    "prior": {
+     "team": "ATL",
+     "g": 17,
+     "yds": 514,
+     "td": 8
+    },
+    "qb_tier": 4,
+    "win_total": 4.0,
+    "rank": 43,
+    "signals": [
+     [
+      "UNDER",
+      "deep back (proj rank ~43) with a real line",
+      3
+     ]
+    ],
+    "score": -3
+   },
+   {
+    "player": "Rhamondre Stevenson",
+    "team": "NE",
+    "line": 618.0,
+    "fd_line": null,
+    "proj_line": 618.0,
+    "line_gap": null,
+    "prior": {
+     "team": "NE",
+     "g": 14,
+     "yds": 603,
+     "td": 7
+    },
+    "qb_tier": 2,
+    "win_total": 10.0,
+    "rank": 35,
+    "signals": [
+     [
+      "UNDER",
+      "deep back (proj rank ~35) with a real line",
       3
      ]
     ],
@@ -1262,46 +1372,260 @@
     "score": 7
    },
    {
-    "player": "Kyle Monangai",
-    "team": "CHI",
-    "line": 751.0,
-    "fd_line": null,
-    "proj_line": 751.0,
-    "line_gap": null,
+    "player": "James Cook",
+    "team": "BUF",
+    "line": 1175.5,
+    "fd_line": 1175.5,
+    "proj_line": 1209.0,
+    "line_gap": -34,
     "prior": {
-     "team": "CHI",
+     "team": "BUF",
      "g": 17,
-     "yds": 783,
-     "td": 5
+     "yds": 1621,
+     "td": 12
     },
-    "qb_tier": 2,
-    "win_total": 9.4,
-    "rank": 25,
+    "qb_tier": 1,
+    "win_total": 10.8,
+    "rank": 3,
     "signals": [
      [
-      "OVER",
-      "mid-round back (rank ~25), catchable line",
+      "UNDER",
+      "1,000-1,200 dead zone",
+      2
+     ],
+     [
+      "UNDER",
+      "line cut hard (446) off 2025",
+      1
+     ]
+    ],
+    "score": -3
+   },
+   {
+    "player": "Bijan Robinson",
+    "team": "ATL",
+    "line": 1150.5,
+    "fd_line": 1150.5,
+    "proj_line": 1154.0,
+    "line_gap": -4,
+    "prior": {
+     "team": "ATL",
+     "g": 17,
+     "yds": 1478,
+     "td": 7
+    },
+    "qb_tier": 4,
+    "win_total": 6.9,
+    "rank": 5,
+    "signals": [
+     [
+      "UNDER",
+      "1,000-1,200 dead zone",
       2
      ]
     ],
-    "score": 2
+    "score": -2
    },
    {
-    "player": "Josh Jacobs",
-    "team": "GB",
-    "line": 918.0,
+    "player": "Cam Skattebo",
+    "team": "NYG",
+    "line": 781.0,
     "fd_line": null,
-    "proj_line": 918.0,
+    "proj_line": 781.0,
     "line_gap": null,
     "prior": {
-     "team": "GB",
-     "g": 15,
-     "yds": 929,
-     "td": 13
+     "team": "NYG",
+     "g": 8,
+     "yds": 410,
+     "td": 5
+    },
+    "qb_tier": 3,
+    "win_total": 7.5,
+    "rank": 23,
+    "signals": [
+     [
+      "OVER",
+      "bounce-back: <14 g in 2025",
+      3
+     ],
+     [
+      "OVER",
+      "bullish re-rate: line +371 vs 2025",
+      2
+     ],
+     [
+      "OVER",
+      "mid-round back (rank ~23), catchable line",
+      2
+     ]
+    ],
+    "score": 7
+   },
+   {
+    "player": "Woody Marks",
+    "team": "HOU",
+    "line": 351.0,
+    "fd_line": null,
+    "proj_line": 351.0,
+    "line_gap": null,
+    "prior": {
+     "team": "HOU",
+     "g": 16,
+     "yds": 703,
+     "td": 2
+    },
+    "qb_tier": 3,
+    "win_total": 10.3,
+    "rank": 48,
+    "signals": [
+     [
+      "UNDER",
+      "line cut hard (352) off 2025",
+      1
+     ]
+    ],
+    "score": -1
+   },
+   {
+    "player": "De'Von Achane",
+    "team": "MIA",
+    "line": 975.5,
+    "fd_line": 975.5,
+    "proj_line": 979.0,
+    "line_gap": -4,
+    "prior": {
+     "team": "MIA",
+     "g": 16,
+     "yds": 1350,
+     "td": 8
+    },
+    "qb_tier": 4,
+    "win_total": 3.8,
+    "rank": 8,
+    "signals": [
+     [
+      "UNDER",
+      "line cut hard (374) off 2025",
+      1
+     ]
+    ],
+    "score": -1
+   },
+   {
+    "player": "Derrick Henry",
+    "team": "BAL",
+    "line": 1225.5,
+    "fd_line": 1225.5,
+    "proj_line": 1229.0,
+    "line_gap": -4,
+    "prior": {
+     "team": "BAL",
+     "g": 17,
+     "yds": 1595,
+     "td": 16
     },
     "qb_tier": 2,
-    "win_total": 10.0,
-    "rank": 14,
+    "win_total": 10.7,
+    "rank": 2,
+    "signals": [
+     [
+      "UNDER",
+      "line cut hard (370) off 2025",
+      1
+     ]
+    ],
+    "score": -1
+   },
+   {
+    "player": "Rachaad White",
+    "team": "WAS",
+    "line": 468.0,
+    "fd_line": null,
+    "proj_line": 468.0,
+    "line_gap": null,
+    "prior": {
+     "team": "TB",
+     "g": 17,
+     "yds": 572,
+     "td": 4
+    },
+    "qb_tier": 2,
+    "win_total": 7.2,
+    "rank": 42,
+    "signals": [
+     [
+      "UNDER",
+      "deep back (proj rank ~42) with a real line",
+      3
+     ]
+    ],
+    "score": -3
+   },
+   {
+    "player": "Tyjae Spears",
+    "team": "TEN",
+    "line": 388.0,
+    "fd_line": null,
+    "proj_line": 388.0,
+    "line_gap": null,
+    "prior": {
+     "team": "TEN",
+     "g": 13,
+     "yds": 283,
+     "td": 2
+    },
+    "qb_tier": 3,
+    "win_total": 6.2,
+    "rank": 47,
+    "signals": [],
+    "score": 0
+   },
+   {
+    "player": "Chuba Hubbard",
+    "team": "CAR",
+    "line": 700.0,
+    "fd_line": null,
+    "proj_line": 700.0,
+    "line_gap": null,
+    "prior": {
+     "team": "CAR",
+     "g": 15,
+     "yds": 511,
+     "td": 1
+    },
+    "qb_tier": 3,
+    "win_total": 7.2,
+    "rank": 31,
+    "signals": [
+     [
+      "OVER",
+      "bullish re-rate: line +189 vs 2025",
+      2
+     ],
+     [
+      "UNDER",
+      "deep back (proj rank ~31) with a real line",
+      3
+     ]
+    ],
+    "score": -1
+   },
+   {
+    "player": "Travis Etienne",
+    "team": "NO",
+    "line": 875.5,
+    "fd_line": 875.5,
+    "proj_line": 839.0,
+    "line_gap": 36,
+    "prior": {
+     "team": "JAX",
+     "g": 17,
+     "yds": 1107,
+     "td": 7
+    },
+    "qb_tier": 3,
+    "win_total": 7.8,
+    "rank": 18,
     "signals": [],
     "score": 0
    },
@@ -1341,220 +1665,109 @@
     "score": 7
    },
    {
-    "player": "Blake Corum",
-    "team": "LAR",
-    "line": 666.0,
-    "fd_line": null,
-    "proj_line": 666.0,
-    "line_gap": null,
+    "player": "J.K. Dobbins",
+    "team": "DEN",
+    "line": 700.5,
+    "fd_line": 700.5,
+    "proj_line": 681.0,
+    "line_gap": 20,
     "prior": {
-     "team": "LAR",
-     "g": 17,
-     "yds": 746,
-     "td": 6
-    },
-    "qb_tier": 1,
-    "win_total": 11.7,
-    "rank": 33,
-    "signals": [
-     [
-      "UNDER",
-      "deep back (proj rank ~33) with a real line",
-      3
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "Tyler Allgeier",
-    "team": "ARI",
-    "line": 460.0,
-    "fd_line": null,
-    "proj_line": 460.0,
-    "line_gap": null,
-    "prior": {
-     "team": "ATL",
-     "g": 17,
-     "yds": 514,
-     "td": 8
-    },
-    "qb_tier": 4,
-    "win_total": 4.0,
-    "rank": 43,
-    "signals": [
-     [
-      "UNDER",
-      "deep back (proj rank ~43) with a real line",
-      3
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "C. McCaffrey",
-    "team": "SF",
-    "line": 924.0,
-    "fd_line": null,
-    "proj_line": 924.0,
-    "line_gap": null,
-    "prior": null,
-    "qb_tier": 2,
-    "win_total": 9.9,
-    "rank": 13,
-    "signals": [],
-    "score": 0
-   },
-   {
-    "player": "Jadarian Price",
-    "team": "SEA",
-    "line": 736.0,
-    "fd_line": null,
-    "proj_line": 736.0,
-    "line_gap": null,
-    "prior": null,
-    "qb_tier": 2,
-    "win_total": 10.7,
-    "rank": 26,
-    "signals": [
-     [
-      "OVER",
-      "mid-round back (rank ~26), catchable line",
-      2
-     ]
-    ],
-    "score": 2
-   },
-   {
-    "player": "Jahmyr Gibbs",
-    "team": "DET",
-    "line": 1200.5,
-    "fd_line": 1200.5,
-    "proj_line": 1199.0,
-    "line_gap": 2,
-    "prior": {
-     "team": "DET",
-     "g": 17,
-     "yds": 1223,
-     "td": 13
-    },
-    "qb_tier": 2,
-    "win_total": 10.8,
-    "rank": 4,
-    "signals": [],
-    "score": 0
-   },
-   {
-    "player": "Kenneth Walker",
-    "team": "KC",
-    "line": 950.5,
-    "fd_line": 950.5,
-    "proj_line": 939.0,
-    "line_gap": 12,
-    "prior": {
-     "team": "SEA",
-     "g": 17,
-     "yds": 1027,
-     "td": 5
-    },
-    "qb_tier": 1,
-    "win_total": 9.9,
-    "rank": 10,
-    "signals": [],
-    "score": 0
-   },
-   {
-    "player": "Breece Hall",
-    "team": "NYJ",
-    "line": 900.5,
-    "fd_line": 900.5,
-    "proj_line": 900.0,
-    "line_gap": 0,
-    "prior": {
-     "team": "NYJ",
-     "g": 16,
-     "yds": 1065,
+     "team": "DEN",
+     "g": 10,
+     "yds": 772,
      "td": 4
     },
-    "qb_tier": 4,
-    "win_total": 5.6,
-    "rank": 15,
-    "signals": [],
+    "qb_tier": 3,
+    "win_total": 9.9,
+    "rank": 32,
+    "signals": [
+     [
+      "OVER",
+      "bounce-back: <14 g in 2025",
+      3
+     ],
+     [
+      "UNDER",
+      "deep back (proj rank ~32) with a real line",
+      3
+     ]
+    ],
     "score": 0
    },
    {
-    "player": "Tony Pollard",
-    "team": "TEN",
-    "line": 775.5,
-    "fd_line": 775.5,
-    "proj_line": 784.0,
-    "line_gap": -8,
+    "player": "Tyrone Tracy",
+    "team": "NYG",
+    "line": 528.0,
+    "fd_line": null,
+    "proj_line": 528.0,
+    "line_gap": null,
     "prior": {
-     "team": "TEN",
-     "g": 17,
-     "yds": 1082,
-     "td": 5
+     "team": "NYG",
+     "g": 15,
+     "yds": 740,
+     "td": 2
     },
     "qb_tier": 3,
-    "win_total": 6.2,
-    "rank": 22,
-    "signals": [
-     [
-      "OVER",
-      "mid-round back (rank ~22), catchable line",
-      2
-     ]
-    ],
-    "score": 2
-   },
-   {
-    "player": "De'Von Achane",
-    "team": "MIA",
-    "line": 975.5,
-    "fd_line": 975.5,
-    "proj_line": 979.0,
-    "line_gap": -4,
-    "prior": {
-     "team": "MIA",
-     "g": 16,
-     "yds": 1350,
-     "td": 8
-    },
-    "qb_tier": 4,
-    "win_total": 3.8,
-    "rank": 8,
+    "win_total": 7.5,
+    "rank": 39,
     "signals": [
      [
       "UNDER",
-      "line cut hard (374) off 2025",
-      1
+      "deep back (proj rank ~39) with a real line",
+      3
      ]
     ],
-    "score": -1
+    "score": -3
    },
    {
-    "player": "D'Andre Swift",
-    "team": "CHI",
-    "line": 799.0,
+    "player": "RJ Harvey",
+    "team": "DEN",
+    "line": 515.0,
     "fd_line": null,
-    "proj_line": 799.0,
+    "proj_line": 515.0,
     "line_gap": null,
     "prior": {
-     "team": "CHI",
-     "g": 16,
-     "yds": 1087,
-     "td": 9
+     "team": "DEN",
+     "g": 17,
+     "yds": 540,
+     "td": 7
     },
-    "qb_tier": 2,
-    "win_total": 9.4,
-    "rank": 21,
+    "qb_tier": 3,
+    "win_total": 9.9,
+    "rank": 40,
     "signals": [
      [
-      "OVER",
-      "mid-round back (rank ~21), catchable line",
+      "UNDER",
+      "deep back (proj rank ~40) with a real line",
+      3
+     ]
+    ],
+    "score": -3
+   },
+   {
+    "player": "Ashton Jeanty",
+    "team": "LV",
+    "line": 1048.0,
+    "fd_line": null,
+    "proj_line": 1048.0,
+    "line_gap": null,
+    "prior": {
+     "team": "LV",
+     "g": 17,
+     "yds": 975,
+     "td": 5
+    },
+    "qb_tier": null,
+    "win_total": 6.1,
+    "rank": 7,
+    "signals": [
+     [
+      "UNDER",
+      "1,000-1,200 dead zone",
       2
      ]
     ],
-    "score": 2
+    "score": -2
    },
    {
     "player": "Omarion Hampton",
@@ -1587,141 +1800,43 @@
     "score": 5
    },
    {
-    "player": "J.K. Dobbins",
-    "team": "DEN",
-    "line": 700.5,
-    "fd_line": 700.5,
-    "proj_line": 681.0,
-    "line_gap": 20,
-    "prior": {
-     "team": "DEN",
-     "g": 10,
-     "yds": 772,
-     "td": 4
-    },
-    "qb_tier": 3,
-    "win_total": 9.9,
-    "rank": 32,
-    "signals": [
-     [
-      "OVER",
-      "bounce-back: <14 g in 2025",
-      3
-     ],
-     [
-      "UNDER",
-      "deep back (proj rank ~32) with a real line",
-      3
-     ]
-    ],
-    "score": 0
-   },
-   {
-    "player": "Tyjae Spears",
-    "team": "TEN",
-    "line": 388.0,
+    "player": "Keaton Mitchell",
+    "team": "LAC",
+    "line": 435.0,
     "fd_line": null,
-    "proj_line": 388.0,
+    "proj_line": 435.0,
     "line_gap": null,
-    "prior": {
-     "team": "TEN",
-     "g": 13,
-     "yds": 283,
-     "td": 2
-    },
-    "qb_tier": 3,
-    "win_total": 6.2,
-    "rank": 47,
-    "signals": [],
-    "score": 0
-   },
-   {
-    "player": "Woody Marks",
-    "team": "HOU",
-    "line": 351.0,
-    "fd_line": null,
-    "proj_line": 351.0,
-    "line_gap": null,
-    "prior": {
-     "team": "HOU",
-     "g": 16,
-     "yds": 703,
-     "td": 2
-    },
-    "qb_tier": 3,
-    "win_total": 10.3,
-    "rank": 48,
-    "signals": [
-     [
-      "UNDER",
-      "line cut hard (352) off 2025",
-      1
-     ]
-    ],
-    "score": -1
-   },
-   {
-    "player": "Travis Etienne",
-    "team": "NO",
-    "line": 875.5,
-    "fd_line": 875.5,
-    "proj_line": 839.0,
-    "line_gap": 36,
-    "prior": {
-     "team": "JAX",
-     "g": 17,
-     "yds": 1107,
-     "td": 7
-    },
-    "qb_tier": 3,
-    "win_total": 7.8,
-    "rank": 18,
-    "signals": [],
-    "score": 0
-   },
-   {
-    "player": "Dylan Sampson",
-    "team": "CLE",
-    "line": 321.0,
-    "fd_line": null,
-    "proj_line": 321.0,
-    "line_gap": null,
-    "prior": {
-     "team": "CLE",
-     "g": 15,
-     "yds": 175,
-     "td": 0
-    },
-    "qb_tier": 4,
-    "win_total": 5.6,
-    "rank": 49,
-    "signals": [],
-    "score": 0
-   },
-   {
-    "player": "Derrick Henry",
-    "team": "BAL",
-    "line": 1225.5,
-    "fd_line": 1225.5,
-    "proj_line": 1229.0,
-    "line_gap": -4,
     "prior": {
      "team": "BAL",
-     "g": 17,
-     "yds": 1595,
-     "td": 16
+     "g": 13,
+     "yds": 341,
+     "td": 1
     },
     "qb_tier": 2,
-    "win_total": 10.7,
-    "rank": 2,
+    "win_total": 10.0,
+    "rank": 45,
+    "signals": [],
+    "score": 0
+   },
+   {
+    "player": "M. Washington Jr.",
+    "team": "LV",
+    "line": 458.0,
+    "fd_line": null,
+    "proj_line": 458.0,
+    "line_gap": null,
+    "prior": null,
+    "qb_tier": null,
+    "win_total": 6.1,
+    "rank": 44,
     "signals": [
      [
       "UNDER",
-      "line cut hard (370) off 2025",
-      1
+      "deep back (proj rank ~44) with a real line",
+      3
      ]
     ],
-    "score": -1
+    "score": -3
    },
    {
     "player": "Javonte Williams",
@@ -1743,160 +1858,45 @@
     "score": 0
    },
    {
-    "player": "M. Washington Jr.",
-    "team": "LV",
-    "line": 458.0,
-    "fd_line": null,
-    "proj_line": 458.0,
-    "line_gap": null,
-    "prior": null,
-    "qb_tier": 3,
-    "win_total": 6.1,
-    "rank": 44,
-    "signals": [
-     [
-      "UNDER",
-      "deep back (proj rank ~44) with a real line",
-      3
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "Bijan Robinson",
-    "team": "ATL",
-    "line": 1150.5,
-    "fd_line": 1150.5,
-    "proj_line": 1154.0,
-    "line_gap": -4,
+    "player": "Quinshon Judkins",
+    "team": "CLE",
+    "line": 850.5,
+    "fd_line": 850.5,
+    "proj_line": 862.0,
+    "line_gap": -12,
     "prior": {
-     "team": "ATL",
-     "g": 17,
-     "yds": 1478,
+     "team": "CLE",
+     "g": 14,
+     "yds": 827,
      "td": 7
     },
     "qb_tier": 4,
-    "win_total": 6.9,
-    "rank": 5,
-    "signals": [
-     [
-      "UNDER",
-      "1,000-1,200 dead zone",
-      2
-     ]
-    ],
-    "score": -2
-   },
-   {
-    "player": "Chuba Hubbard",
-    "team": "CAR",
-    "line": 700.0,
-    "fd_line": null,
-    "proj_line": 700.0,
-    "line_gap": null,
-    "prior": {
-     "team": "CAR",
-     "g": 15,
-     "yds": 511,
-     "td": 1
-    },
-    "qb_tier": 3,
-    "win_total": 7.2,
-    "rank": 31,
-    "signals": [
-     [
-      "OVER",
-      "bullish re-rate: line +189 vs 2025",
-      2
-     ],
-     [
-      "UNDER",
-      "deep back (proj rank ~31) with a real line",
-      3
-     ]
-    ],
-    "score": -1
-   },
-   {
-    "player": "Kyren Williams",
-    "team": "LAR",
-    "line": 925.5,
-    "fd_line": 925.5,
-    "proj_line": 944.0,
-    "line_gap": -18,
-    "prior": {
-     "team": "LAR",
-     "g": 17,
-     "yds": 1252,
-     "td": 10
-    },
-    "qb_tier": 1,
-    "win_total": 11.7,
-    "rank": 9,
+    "win_total": 5.6,
+    "rank": 16,
     "signals": [],
     "score": 0
    },
    {
-    "player": "Cam Skattebo",
-    "team": "NYG",
-    "line": 781.0,
+    "player": "Jacory Croskey-Merritt",
+    "team": "WAS",
+    "line": 587.0,
     "fd_line": null,
-    "proj_line": 781.0,
+    "proj_line": 587.0,
     "line_gap": null,
     "prior": {
-     "team": "NYG",
-     "g": 8,
-     "yds": 410,
-     "td": 5
-    },
-    "qb_tier": 3,
-    "win_total": 7.5,
-    "rank": 23,
-    "signals": [
-     [
-      "OVER",
-      "bounce-back: <14 g in 2025",
-      3
-     ],
-     [
-      "OVER",
-      "bullish re-rate: line +371 vs 2025",
-      2
-     ],
-     [
-      "OVER",
-      "mid-round back (rank ~23), catchable line",
-      2
-     ]
-    ],
-    "score": 7
-   },
-   {
-    "player": "James Cook",
-    "team": "BUF",
-    "line": 1175.5,
-    "fd_line": 1175.5,
-    "proj_line": 1209.0,
-    "line_gap": -34,
-    "prior": {
-     "team": "BUF",
+     "team": "WAS",
      "g": 17,
-     "yds": 1621,
-     "td": 12
+     "yds": 805,
+     "td": 8
     },
-    "qb_tier": 1,
-    "win_total": 10.8,
-    "rank": 3,
+    "qb_tier": 2,
+    "win_total": 7.2,
+    "rank": 37,
     "signals": [
      [
       "UNDER",
-      "1,000-1,200 dead zone",
-      2
-     ],
-     [
-      "UNDER",
-      "line cut hard (446) off 2025",
-      1
+      "deep back (proj rank ~37) with a real line",
+      3
      ]
     ],
     "score": -3
@@ -1936,21 +1936,16 @@
     "score": 5
    },
    {
-    "player": "Jaylen Waddle",
-    "team": "MIA",
-    "line": 900.5,
-    "fd_line": 900.5,
-    "grid_line": 920.5,
-    "line_gap": -20,
-    "td_line": 5.5,
-    "prior": {
-     "team": "MIA",
-     "g": 16,
-     "yds": 910,
-     "td": 6
-    },
+    "player": "KC Concepcion",
+    "team": "CLE",
+    "line": 600.5,
+    "fd_line": 600.5,
+    "grid_line": null,
+    "line_gap": null,
+    "td_line": null,
+    "prior": null,
     "qb_tier": 4,
-    "win_total": 3.8,
+    "win_total": 5.6,
     "signals": [
      [
       "OVER",
@@ -1986,21 +1981,16 @@
     "score": 3
    },
    {
-    "player": "Jordan Addison",
-    "team": "MIN",
-    "line": 674.5,
-    "fd_line": null,
-    "grid_line": 674.5,
+    "player": "Omar Cooper Jr.",
+    "team": "NYJ",
+    "line": 425.5,
+    "fd_line": 425.5,
+    "grid_line": null,
     "line_gap": null,
-    "td_line": 4.5,
-    "prior": {
-     "team": "MIN",
-     "g": 14,
-     "yds": 610,
-     "td": 3
-    },
+    "td_line": null,
+    "prior": null,
     "qb_tier": 4,
-    "win_total": 8.8,
+    "win_total": 5.6,
     "signals": [
      [
       "OVER",
@@ -2009,31 +1999,6 @@
      ]
     ],
     "score": 3
-   },
-   {
-    "player": "Wan'Dale Robinson",
-    "team": "NYG",
-    "line": 699.5,
-    "fd_line": null,
-    "grid_line": 699.5,
-    "line_gap": null,
-    "td_line": 3.5,
-    "prior": {
-     "team": "NYG",
-     "g": 16,
-     "yds": 1014,
-     "td": 4
-    },
-    "qb_tier": 3,
-    "win_total": 7.5,
-    "signals": [
-     [
-      "OVER",
-      "line cut 314 below a full 2025",
-      2
-     ]
-    ],
-    "score": 2
    },
    {
     "player": "Courtland Sutton",
@@ -2055,6 +2020,81 @@
      [
       "OVER",
       "line cut 292 below a full 2025",
+      2
+     ]
+    ],
+    "score": 2
+   },
+   {
+    "player": "Wan'Dale Robinson",
+    "team": "TEN",
+    "line": 699.5,
+    "fd_line": null,
+    "grid_line": 699.5,
+    "line_gap": null,
+    "td_line": 3.5,
+    "prior": {
+     "team": "NYG",
+     "g": 16,
+     "yds": 1014,
+     "td": 4
+    },
+    "qb_tier": 3,
+    "win_total": 6.2,
+    "signals": [
+     [
+      "OVER",
+      "line cut 314 below a full 2025",
+      2
+     ]
+    ],
+    "score": 2
+   },
+   {
+    "player": "Rashid Shaheed",
+    "team": "SEA",
+    "line": 500.5,
+    "fd_line": 500.5,
+    "grid_line": null,
+    "line_gap": null,
+    "td_line": null,
+    "prior": {
+     "team": "NO",
+     "g": 18,
+     "yds": 687,
+     "td": 2
+    },
+    "qb_tier": 2,
+    "win_total": 10.7,
+    "signals": [
+     [
+      "OVER",
+      "line cut 186 below a full 2025",
+      2
+     ]
+    ],
+    "score": 2
+   },
+   {
+    "player": "Zay Flowers",
+    "team": "BAL",
+    "line": 975.5,
+    "fd_line": 975.5,
+    "grid_line": 999.5,
+    "line_gap": -24,
+    "td_line": 5.5,
+    "prior": {
+     "team": "BAL",
+     "g": 17,
+     "yds": 1211,
+     "td": 5
+    },
+    "qb_tier": 2,
+    "win_total": 10.7,
+    "signals": [
+     [
+      "OVER",
+      "line cut 236 below a full 2025",
       2
      ]
     ],
@@ -2111,63 +2151,8 @@
     "score": 2
    },
    {
-    "player": "Justin Jefferson",
-    "team": "MIN",
-    "line": 1150.5,
-    "fd_line": 1150.5,
-    "grid_line": 1149.5,
-    "line_gap": 1,
-    "td_line": 7.5,
-    "prior": {
-     "team": "MIN",
-     "g": 17,
-     "yds": 1048,
-     "td": 2
-    },
-    "qb_tier": 4,
-    "win_total": 8.8,
-    "signals": [
-     [
-      "OVER",
-      "weak/unproven QB (tier 4)",
-      3
-     ],
-     [
-      "UNDER",
-      "1,000-1,200 dead zone",
-      1
-     ]
-    ],
-    "score": 2
-   },
-   {
-    "player": "Zay Flowers",
-    "team": "BAL",
-    "line": 975.5,
-    "fd_line": 975.5,
-    "grid_line": 999.5,
-    "line_gap": -24,
-    "td_line": 5.5,
-    "prior": {
-     "team": "BAL",
-     "g": 17,
-     "yds": 1211,
-     "td": 5
-    },
-    "qb_tier": 2,
-    "win_total": 10.7,
-    "signals": [
-     [
-      "OVER",
-      "line cut 236 below a full 2025",
-      2
-     ]
-    ],
-    "score": 2
-   },
-   {
     "player": "Jakobi Meyers",
-    "team": "LV",
+    "team": "JAX",
     "line": 649.5,
     "fd_line": null,
     "grid_line": 649.5,
@@ -2179,33 +2164,8 @@
      "yds": 835,
      "td": 3
     },
-    "qb_tier": 3,
-    "win_total": 6.1,
-    "signals": [
-     [
-      "OVER",
-      "line cut 186 below a full 2025",
-      2
-     ]
-    ],
-    "score": 2
-   },
-   {
-    "player": "Rashid Shaheed",
-    "team": "NO",
-    "line": 500.5,
-    "fd_line": 500.5,
-    "grid_line": null,
-    "line_gap": null,
-    "td_line": null,
-    "prior": {
-     "team": "NO",
-     "g": 18,
-     "yds": 687,
-     "td": 2
-    },
-    "qb_tier": 3,
-    "win_total": 7.8,
+    "qb_tier": 2,
+    "win_total": 9.2,
     "signals": [
      [
       "OVER",
@@ -2258,66 +2218,6 @@
     "score": -8
    },
    {
-    "player": "Malik Nabers",
-    "team": "NYG",
-    "line": 975.5,
-    "fd_line": 975.5,
-    "grid_line": null,
-    "line_gap": null,
-    "td_line": null,
-    "prior": {
-     "team": "NYG",
-     "g": 4,
-     "yds": 271,
-     "td": 2
-    },
-    "qb_tier": 3,
-    "win_total": 7.5,
-    "signals": [
-     [
-      "UNDER",
-      "coming off 4 g in 2025",
-      3
-     ],
-     [
-      "UNDER",
-      "bullish re-rate: line +704 vs 2025",
-      2
-     ]
-    ],
-    "score": -5
-   },
-   {
-    "player": "Mike Evans",
-    "team": "TB",
-    "line": 800.5,
-    "fd_line": 800.5,
-    "grid_line": 824.5,
-    "line_gap": -24,
-    "td_line": 6.5,
-    "prior": {
-     "team": "TB",
-     "g": 8,
-     "yds": 368,
-     "td": 3
-    },
-    "qb_tier": 2,
-    "win_total": 8.0,
-    "signals": [
-     [
-      "UNDER",
-      "coming off 8 g in 2025",
-      3
-     ],
-     [
-      "UNDER",
-      "bullish re-rate: line +432 vs 2025",
-      2
-     ]
-    ],
-    "score": -5
-   },
-   {
     "player": "Chris Godwin Jr",
     "team": "TB",
     "line": 699.5,
@@ -2348,6 +2248,36 @@
     "score": -5
    },
    {
+    "player": "Malik Nabers",
+    "team": "NYG",
+    "line": 975.5,
+    "fd_line": 975.5,
+    "grid_line": null,
+    "line_gap": null,
+    "td_line": null,
+    "prior": {
+     "team": "NYG",
+     "g": 4,
+     "yds": 271,
+     "td": 2
+    },
+    "qb_tier": 3,
+    "win_total": 7.5,
+    "signals": [
+     [
+      "UNDER",
+      "coming off 4 g in 2025",
+      3
+     ],
+     [
+      "UNDER",
+      "bullish re-rate: line +704 vs 2025",
+      2
+     ]
+    ],
+    "score": -5
+   },
+   {
     "player": "CeeDee Lamb",
     "team": "DAL",
     "line": 1200.5,
@@ -2372,36 +2302,6 @@
      [
       "UNDER",
       "elite QB + 9.8-win team + 1,000+ line",
-      2
-     ]
-    ],
-    "score": -5
-   },
-   {
-    "player": "Calvin Ridley",
-    "team": "TEN",
-    "line": 550.5,
-    "fd_line": null,
-    "grid_line": 550.5,
-    "line_gap": null,
-    "td_line": 3.5,
-    "prior": {
-     "team": "TEN",
-     "g": 7,
-     "yds": 303,
-     "td": 0
-    },
-    "qb_tier": 3,
-    "win_total": 6.2,
-    "signals": [
-     [
-      "UNDER",
-      "coming off 7 g in 2025",
-      3
-     ],
-     [
-      "UNDER",
-      "bullish re-rate: line +248 vs 2025",
       2
      ]
     ],
@@ -2468,35 +2368,85 @@
     "score": -5
    },
    {
-    "player": "Drake London",
-    "team": "ATL",
-    "line": 1100.5,
-    "fd_line": 1100.5,
-    "grid_line": 1099.5,
-    "line_gap": 1,
-    "td_line": 7.5,
+    "player": "Mike Evans",
+    "team": "SF",
+    "line": 800.5,
+    "fd_line": 800.5,
+    "grid_line": 824.5,
+    "line_gap": -24,
+    "td_line": 6.5,
     "prior": {
-     "team": "ATL",
-     "g": 12,
-     "yds": 919,
-     "td": 7
+     "team": "TB",
+     "g": 8,
+     "yds": 368,
+     "td": 3
     },
-    "qb_tier": 4,
-    "win_total": 6.9,
+    "qb_tier": 2,
+    "win_total": 9.9,
     "signals": [
      [
-      "OVER",
-      "weak/unproven QB (tier 4)",
+      "UNDER",
+      "coming off 8 g in 2025",
       3
      ],
      [
       "UNDER",
-      "coming off 12 g in 2025",
+      "bullish re-rate: line +432 vs 2025",
+      2
+     ]
+    ],
+    "score": -5
+   },
+   {
+    "player": "Calvin Ridley",
+    "team": "TEN",
+    "line": 550.5,
+    "fd_line": null,
+    "grid_line": 550.5,
+    "line_gap": null,
+    "td_line": 3.5,
+    "prior": {
+     "team": "TEN",
+     "g": 7,
+     "yds": 303,
+     "td": 0
+    },
+    "qb_tier": 3,
+    "win_total": 6.2,
+    "signals": [
+     [
+      "UNDER",
+      "coming off 7 g in 2025",
       3
      ],
      [
       "UNDER",
-      "bullish re-rate: line +182 vs 2025",
+      "bullish re-rate: line +248 vs 2025",
+      2
+     ]
+    ],
+    "score": -5
+   },
+   {
+    "player": "DeVonta Smith",
+    "team": "PHI",
+    "line": 1049.5,
+    "fd_line": null,
+    "grid_line": 1049.5,
+    "line_gap": null,
+    "td_line": 5.5,
+    "prior": {
+     "team": "PHI",
+     "g": 17,
+     "yds": 1008,
+     "td": 4
+    },
+    "qb_tier": 2,
+    "win_total": 10.2,
+    "signals": [
+     [
+      "UNDER",
+      "elite QB + 10.2-win team + 1,000+ line",
       2
      ],
      [
@@ -2558,8 +2508,48 @@
     "score": -3
    },
    {
+    "player": "Drake London",
+    "team": "ATL",
+    "line": 1100.5,
+    "fd_line": 1100.5,
+    "grid_line": 1099.5,
+    "line_gap": 1,
+    "td_line": 7.5,
+    "prior": {
+     "team": "ATL",
+     "g": 12,
+     "yds": 919,
+     "td": 7
+    },
+    "qb_tier": 4,
+    "win_total": 6.9,
+    "signals": [
+     [
+      "OVER",
+      "weak/unproven QB (tier 4)",
+      3
+     ],
+     [
+      "UNDER",
+      "coming off 12 g in 2025",
+      3
+     ],
+     [
+      "UNDER",
+      "bullish re-rate: line +182 vs 2025",
+      2
+     ],
+     [
+      "UNDER",
+      "1,000-1,200 dead zone",
+      1
+     ]
+    ],
+    "score": -3
+   },
+   {
     "player": "A.J. Brown",
-    "team": "PHI",
+    "team": "NE",
     "line": 1100.5,
     "fd_line": 1100.5,
     "grid_line": 1124.5,
@@ -2572,41 +2562,11 @@
      "td": 7
     },
     "qb_tier": 2,
-    "win_total": 10.2,
+    "win_total": 10.0,
     "signals": [
      [
       "UNDER",
-      "elite QB + 10.2-win team + 1,000+ line",
-      2
-     ],
-     [
-      "UNDER",
-      "1,000-1,200 dead zone",
-      1
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "DeVonta Smith",
-    "team": "PHI",
-    "line": 1049.5,
-    "fd_line": null,
-    "grid_line": 1049.5,
-    "line_gap": null,
-    "td_line": 5.5,
-    "prior": {
-     "team": "PHI",
-     "g": 17,
-     "yds": 1008,
-     "td": 4
-    },
-    "qb_tier": 2,
-    "win_total": 10.2,
-    "signals": [
-     [
-      "UNDER",
-      "elite QB + 10.2-win team + 1,000+ line",
+      "elite QB + 10.0-win team + 1,000+ line",
       2
      ],
      [
@@ -2648,6 +2608,31 @@
     "score": -3
    },
    {
+    "player": "Josh Downs",
+    "team": "IND",
+    "line": 824.5,
+    "fd_line": null,
+    "grid_line": 824.5,
+    "line_gap": null,
+    "td_line": 4.0,
+    "prior": {
+     "team": "IND",
+     "g": 16,
+     "yds": 566,
+     "td": 4
+    },
+    "qb_tier": 3,
+    "win_total": 8.0,
+    "signals": [
+     [
+      "UNDER",
+      "bullish re-rate: line +258 vs 2025",
+      2
+     ]
+    ],
+    "score": -2
+   },
+   {
     "player": "Marvin Harrison Jr.",
     "team": "ARI",
     "line": 800.5,
@@ -2677,31 +2662,6 @@
      [
       "UNDER",
       "bullish re-rate: line +192 vs 2025",
-      2
-     ]
-    ],
-    "score": -2
-   },
-   {
-    "player": "Luther Burden III",
-    "team": "CHI",
-    "line": 850.5,
-    "fd_line": 850.5,
-    "grid_line": 849.5,
-    "line_gap": 1,
-    "td_line": 4.5,
-    "prior": {
-     "team": "CHI",
-     "g": 15,
-     "yds": 652,
-     "td": 2
-    },
-    "qb_tier": 2,
-    "win_total": 9.4,
-    "signals": [
-     [
-      "UNDER",
-      "bullish re-rate: line +198 vs 2025",
       2
      ]
     ],
@@ -2743,25 +2703,25 @@
     "score": -2
    },
    {
-    "player": "Josh Downs",
-    "team": "IND",
-    "line": 824.5,
-    "fd_line": null,
-    "grid_line": 824.5,
-    "line_gap": null,
-    "td_line": 4.0,
+    "player": "Luther Burden III",
+    "team": "CHI",
+    "line": 850.5,
+    "fd_line": 850.5,
+    "grid_line": 849.5,
+    "line_gap": 1,
+    "td_line": 4.5,
     "prior": {
-     "team": "IND",
-     "g": 16,
-     "yds": 566,
-     "td": 4
+     "team": "CHI",
+     "g": 15,
+     "yds": 652,
+     "td": 2
     },
-    "qb_tier": 3,
-    "win_total": 8.0,
+    "qb_tier": 2,
+    "win_total": 9.4,
     "signals": [
      [
       "UNDER",
-      "bullish re-rate: line +258 vs 2025",
+      "bullish re-rate: line +198 vs 2025",
       2
      ]
     ],
@@ -2770,22 +2730,102 @@
   ],
   "all": [
    {
-    "player": "Jordyn Tyson",
-    "team": null,
-    "line": 749.5,
+    "player": "Courtland Sutton",
+    "team": "DEN",
+    "line": 725.5,
+    "fd_line": 725.5,
+    "grid_line": 699.5,
+    "line_gap": 26,
+    "td_line": 6.5,
+    "prior": {
+     "team": "DEN",
+     "g": 17,
+     "yds": 1017,
+     "td": 7
+    },
+    "qb_tier": 3,
+    "win_total": 9.9,
+    "signals": [
+     [
+      "OVER",
+      "line cut 292 below a full 2025",
+      2
+     ]
+    ],
+    "score": 2
+   },
+   {
+    "player": "DeVonta Smith",
+    "team": "PHI",
+    "line": 1049.5,
     "fd_line": null,
-    "grid_line": 749.5,
+    "grid_line": 1049.5,
     "line_gap": null,
-    "td_line": 4.5,
+    "td_line": 5.5,
+    "prior": {
+     "team": "PHI",
+     "g": 17,
+     "yds": 1008,
+     "td": 4
+    },
+    "qb_tier": 2,
+    "win_total": 10.2,
+    "signals": [
+     [
+      "UNDER",
+      "elite QB + 10.2-win team + 1,000+ line",
+      2
+     ],
+     [
+      "UNDER",
+      "1,000-1,200 dead zone",
+      1
+     ]
+    ],
+    "score": -3
+   },
+   {
+    "player": "KC Concepcion",
+    "team": "CLE",
+    "line": 600.5,
+    "fd_line": 600.5,
+    "grid_line": null,
+    "line_gap": null,
+    "td_line": null,
     "prior": null,
-    "qb_tier": null,
-    "win_total": null,
+    "qb_tier": 4,
+    "win_total": 5.6,
+    "signals": [
+     [
+      "OVER",
+      "weak/unproven QB (tier 4)",
+      3
+     ]
+    ],
+    "score": 3
+   },
+   {
+    "player": "Jayden Higgins",
+    "team": "HOU",
+    "line": 574.5,
+    "fd_line": null,
+    "grid_line": 574.5,
+    "line_gap": null,
+    "td_line": 3.5,
+    "prior": {
+     "team": "HOU",
+     "g": 17,
+     "yds": 525,
+     "td": 6
+    },
+    "qb_tier": 3,
+    "win_total": 10.3,
     "signals": [],
     "score": 0
    },
    {
     "player": "Wan'Dale Robinson",
-    "team": "NYG",
+    "team": "TEN",
     "line": 699.5,
     "fd_line": null,
     "grid_line": 699.5,
@@ -2798,7 +2838,7 @@
      "td": 4
     },
     "qb_tier": 3,
-    "win_total": 7.5,
+    "win_total": 6.2,
     "signals": [
      [
       "OVER",
@@ -2809,18 +2849,43 @@
     "score": 2
    },
    {
-    "player": "DK Metcalf",
-    "team": "PIT",
-    "line": 824.5,
-    "fd_line": null,
-    "grid_line": 824.5,
+    "player": "Rashid Shaheed",
+    "team": "SEA",
+    "line": 500.5,
+    "fd_line": 500.5,
+    "grid_line": null,
     "line_gap": null,
-    "td_line": 5.5,
+    "td_line": null,
     "prior": {
-     "team": "PIT",
-     "g": 15,
-     "yds": 850,
-     "td": 6
+     "team": "NO",
+     "g": 18,
+     "yds": 687,
+     "td": 2
+    },
+    "qb_tier": 2,
+    "win_total": 10.7,
+    "signals": [
+     [
+      "OVER",
+      "line cut 186 below a full 2025",
+      2
+     ]
+    ],
+    "score": 2
+   },
+   {
+    "player": "Michael Pittman Jr.",
+    "team": "PIT",
+    "line": 750.5,
+    "fd_line": 750.5,
+    "grid_line": 749.5,
+    "line_gap": 1,
+    "td_line": 4.5,
+    "prior": {
+     "team": "IND",
+     "g": 17,
+     "yds": 784,
+     "td": 7
     },
     "qb_tier": 3,
     "win_total": 8.4,
@@ -2828,39 +2893,59 @@
     "score": 0
    },
    {
-    "player": "Marvin Harrison Jr.",
-    "team": "ARI",
-    "line": 800.5,
-    "fd_line": 800.5,
-    "grid_line": 824.5,
+    "player": "Zay Flowers",
+    "team": "BAL",
+    "line": 975.5,
+    "fd_line": 975.5,
+    "grid_line": 999.5,
     "line_gap": -24,
     "td_line": 5.5,
     "prior": {
-     "team": "ARI",
-     "g": 12,
-     "yds": 608,
-     "td": 4
+     "team": "BAL",
+     "g": 17,
+     "yds": 1211,
+     "td": 5
     },
-    "qb_tier": 4,
-    "win_total": 4.0,
+    "qb_tier": 2,
+    "win_total": 10.7,
     "signals": [
      [
       "OVER",
-      "weak/unproven QB (tier 4)",
-      3
-     ],
-     [
-      "UNDER",
-      "coming off 12 g in 2025",
-      3
-     ],
-     [
-      "UNDER",
-      "bullish re-rate: line +192 vs 2025",
+      "line cut 236 below a full 2025",
       2
      ]
     ],
-    "score": -2
+    "score": 2
+   },
+   {
+    "player": "Chris Godwin Jr",
+    "team": "TB",
+    "line": 699.5,
+    "fd_line": null,
+    "grid_line": 699.5,
+    "line_gap": null,
+    "td_line": 4.5,
+    "prior": {
+     "team": "TB",
+     "g": 9,
+     "yds": 360,
+     "td": 2
+    },
+    "qb_tier": 2,
+    "win_total": 8.0,
+    "signals": [
+     [
+      "UNDER",
+      "coming off 9 g in 2025",
+      3
+     ],
+     [
+      "UNDER",
+      "bullish re-rate: line +340 vs 2025",
+      2
+     ]
+    ],
+    "score": -5
    },
    {
     "player": "Malik Nabers",
@@ -2893,65 +2978,115 @@
     "score": -5
    },
    {
-    "player": "Courtland Sutton",
-    "team": "DEN",
-    "line": 725.5,
-    "fd_line": 725.5,
-    "grid_line": 699.5,
-    "line_gap": 26,
-    "td_line": 6.5,
+    "player": "Tee Higgins",
+    "team": "CIN",
+    "line": 900.5,
+    "fd_line": 900.5,
+    "grid_line": 875.5,
+    "line_gap": 25,
+    "td_line": 8.5,
     "prior": {
-     "team": "DEN",
-     "g": 17,
-     "yds": 1017,
-     "td": 7
+     "team": "CIN",
+     "g": 15,
+     "yds": 846,
+     "td": 11
     },
-    "qb_tier": 3,
-    "win_total": 9.9,
+    "qb_tier": 1,
+    "win_total": 10.2,
     "signals": [
      [
-      "OVER",
-      "line cut 292 below a full 2025",
-      2
+      "UNDER",
+      "8.5 TD line (fade the TD number)",
+      1
      ]
     ],
-    "score": 2
+    "score": -1
    },
    {
-    "player": "DJ Moore",
-    "team": "CHI",
-    "line": 800.5,
-    "fd_line": null,
-    "grid_line": 800.5,
-    "line_gap": null,
-    "td_line": 6.5,
-    "prior": {
-     "team": "CHI",
-     "g": 17,
-     "yds": 682,
-     "td": 6
-    },
-    "qb_tier": 2,
-    "win_total": 9.4,
+    "player": "Carnell Tate",
+    "team": "TEN",
+    "line": 775.5,
+    "fd_line": 775.5,
+    "grid_line": 799.5,
+    "line_gap": -24,
+    "td_line": 4.5,
+    "prior": null,
+    "qb_tier": 3,
+    "win_total": 6.2,
     "signals": [],
     "score": 0
    },
    {
-    "player": "Tre Tucker",
-    "team": "LV",
-    "line": 574.5,
-    "fd_line": null,
-    "grid_line": 574.5,
-    "line_gap": null,
-    "td_line": 3.0,
+    "player": "Rome Odunze",
+    "team": "CHI",
+    "line": 800.5,
+    "fd_line": 800.5,
+    "grid_line": 824.5,
+    "line_gap": -24,
+    "td_line": 6.5,
     "prior": {
-     "team": "LV",
-     "g": 17,
-     "yds": 696,
-     "td": 5
+     "team": "CHI",
+     "g": 12,
+     "yds": 661,
+     "td": 6
     },
+    "qb_tier": 2,
+    "win_total": 9.4,
+    "signals": [
+     [
+      "UNDER",
+      "coming off 12 g in 2025",
+      3
+     ]
+    ],
+    "score": -3
+   },
+   {
+    "player": "George Pickens",
+    "team": "DAL",
+    "line": 1050.5,
+    "fd_line": 1050.5,
+    "grid_line": 999.5,
+    "line_gap": 51,
+    "td_line": 6.5,
+    "prior": {
+     "team": "DAL",
+     "g": 17,
+     "yds": 1429,
+     "td": 9
+    },
+    "qb_tier": 2,
+    "win_total": 9.8,
+    "signals": [
+     [
+      "OVER",
+      "line cut 378 below a full 2025",
+      2
+     ],
+     [
+      "UNDER",
+      "elite QB + 9.8-win team + 1,000+ line",
+      2
+     ],
+     [
+      "UNDER",
+      "1,000-1,200 dead zone",
+      1
+     ]
+    ],
+    "score": -1
+   },
+   {
+    "player": "Jordyn Tyson",
+    "team": "NO",
+    "line": 749.5,
+    "fd_line": null,
+    "grid_line": 749.5,
+    "line_gap": null,
+    "td_line": 4.5,
+    "prior": null,
     "qb_tier": 3,
-    "win_total": 6.1,
+    "win_total": 7.8,
     "signals": [],
     "score": 0
    },
@@ -2975,8 +3110,137 @@
     "score": 0
    },
    {
+    "player": "DK Metcalf",
+    "team": "PIT",
+    "line": 824.5,
+    "fd_line": null,
+    "grid_line": 824.5,
+    "line_gap": null,
+    "td_line": 5.5,
+    "prior": {
+     "team": "PIT",
+     "g": 15,
+     "yds": 850,
+     "td": 6
+    },
+    "qb_tier": 3,
+    "win_total": 8.4,
+    "signals": [],
+    "score": 0
+   },
+   {
+    "player": "Josh Downs",
+    "team": "IND",
+    "line": 824.5,
+    "fd_line": null,
+    "grid_line": 824.5,
+    "line_gap": null,
+    "td_line": 4.0,
+    "prior": {
+     "team": "IND",
+     "g": 16,
+     "yds": 566,
+     "td": 4
+    },
+    "qb_tier": 3,
+    "win_total": 8.0,
+    "signals": [
+     [
+      "UNDER",
+      "bullish re-rate: line +258 vs 2025",
+      2
+     ]
+    ],
+    "score": -2
+   },
+   {
+    "player": "Jaxon Smith-Njigba",
+    "team": "SEA",
+    "line": 1325.5,
+    "fd_line": 1325.5,
+    "grid_line": 1324.5,
+    "line_gap": 1,
+    "td_line": 8.5,
+    "prior": {
+     "team": "SEA",
+     "g": 17,
+     "yds": 1793,
+     "td": 10
+    },
+    "qb_tier": 2,
+    "win_total": 10.7,
+    "signals": [
+     [
+      "OVER",
+      "line cut 468 below a full 2025",
+      2
+     ],
+     [
+      "UNDER",
+      "elite QB + 10.7-win team + 1,000+ line",
+      2
+     ],
+     [
+      "UNDER",
+      "8.5 TD line (fade the TD number)",
+      1
+     ]
+    ],
+    "score": -1
+   },
+   {
+    "player": "Quentin Johnston",
+    "team": "LAC",
+    "line": 649.5,
+    "fd_line": null,
+    "grid_line": 649.5,
+    "line_gap": null,
+    "td_line": 5.5,
+    "prior": {
+     "team": "LAC",
+     "g": 13,
+     "yds": 735,
+     "td": 8
+    },
+    "qb_tier": 2,
+    "win_total": 10.0,
+    "signals": [
+     [
+      "UNDER",
+      "coming off 13 g in 2025",
+      3
+     ]
+    ],
+    "score": -3
+   },
+   {
+    "player": "Chris Olave",
+    "team": "NO",
+    "line": 1025.5,
+    "fd_line": 1025.5,
+    "grid_line": 1024.5,
+    "line_gap": 1,
+    "td_line": 5.5,
+    "prior": {
+     "team": "NO",
+     "g": 16,
+     "yds": 1163,
+     "td": 9
+    },
+    "qb_tier": 3,
+    "win_total": 7.8,
+    "signals": [
+     [
+      "UNDER",
+      "1,000-1,200 dead zone",
+      1
+     ]
+    ],
+    "score": -1
+   },
+   {
     "player": "Romeo Doubs",
-    "team": "GB",
+    "team": "NE",
     "line": 649.5,
     "fd_line": null,
     "grid_line": 649.5,
@@ -2994,21 +3258,56 @@
     "score": 0
    },
    {
-    "player": "Deebo Samuel",
-    "team": "WAS",
-    "line": 724.5,
+    "player": "Puka Nacua",
+    "team": "LAR",
+    "line": 1375.5,
+    "fd_line": 1375.5,
+    "grid_line": 1350.5,
+    "line_gap": 25,
+    "td_line": 8.5,
+    "prior": {
+     "team": "LAR",
+     "g": 16,
+     "yds": 1715,
+     "td": 10
+    },
+    "qb_tier": 1,
+    "win_total": 11.7,
+    "signals": [
+     [
+      "OVER",
+      "line cut 340 below a full 2025",
+      2
+     ],
+     [
+      "UNDER",
+      "elite QB + 11.7-win team + 1,000+ line",
+      2
+     ],
+     [
+      "UNDER",
+      "8.5 TD line (fade the TD number)",
+      1
+     ]
+    ],
+    "score": -1
+   },
+   {
+    "player": "Parker Washington",
+    "team": "JAX",
+    "line": 824.5,
     "fd_line": null,
-    "grid_line": 724.5,
+    "grid_line": 824.5,
     "line_gap": null,
     "td_line": 4.5,
     "prior": {
-     "team": "WAS",
+     "team": "JAX",
      "g": 16,
-     "yds": 727,
+     "yds": 847,
      "td": 5
     },
     "qb_tier": 2,
-    "win_total": 7.2,
+    "win_total": 9.2,
     "signals": [],
     "score": 0
    },
@@ -3053,76 +3352,277 @@
     "score": -3
    },
    {
-    "player": "Mike Evans",
-    "team": "TB",
+    "player": "Marvin Harrison Jr.",
+    "team": "ARI",
     "line": 800.5,
     "fd_line": 800.5,
     "grid_line": 824.5,
     "line_gap": -24,
-    "td_line": 6.5,
+    "td_line": 5.5,
     "prior": {
-     "team": "TB",
-     "g": 8,
-     "yds": 368,
-     "td": 3
+     "team": "ARI",
+     "g": 12,
+     "yds": 608,
+     "td": 4
     },
-    "qb_tier": 2,
-    "win_total": 8.0,
+    "qb_tier": 4,
+    "win_total": 4.0,
     "signals": [
      [
-      "UNDER",
-      "coming off 8 g in 2025",
+      "OVER",
+      "weak/unproven QB (tier 4)",
       3
      ],
      [
       "UNDER",
-      "bullish re-rate: line +432 vs 2025",
-      2
-     ]
-    ],
-    "score": -5
-   },
-   {
-    "player": "Luther Burden III",
-    "team": "CHI",
-    "line": 850.5,
-    "fd_line": 850.5,
-    "grid_line": 849.5,
-    "line_gap": 1,
-    "td_line": 4.5,
-    "prior": {
-     "team": "CHI",
-     "g": 15,
-     "yds": 652,
-     "td": 2
-    },
-    "qb_tier": 2,
-    "win_total": 9.4,
-    "signals": [
+      "coming off 12 g in 2025",
+      3
+     ],
      [
       "UNDER",
-      "bullish re-rate: line +198 vs 2025",
+      "bullish re-rate: line +192 vs 2025",
       2
      ]
     ],
     "score": -2
    },
    {
-    "player": "Nico Collins",
-    "team": "HOU",
-    "line": 1150.5,
-    "fd_line": 1150.5,
-    "grid_line": 1074.5,
-    "line_gap": 76,
-    "td_line": 6.5,
+    "player": "Garrett Wilson",
+    "team": "NYJ",
+    "line": 975.5,
+    "fd_line": 975.5,
+    "grid_line": 999.5,
+    "line_gap": -24,
+    "td_line": 4.5,
     "prior": {
-     "team": "HOU",
+     "team": "NYJ",
+     "g": 7,
+     "yds": 395,
+     "td": 4
+    },
+    "qb_tier": 4,
+    "win_total": 5.6,
+    "signals": [
+     [
+      "OVER",
+      "weak/unproven QB (tier 4)",
+      3
+     ],
+     [
+      "UNDER",
+      "coming off 7 g in 2025",
+      3
+     ],
+     [
+      "UNDER",
+      "bullish re-rate: line +580 vs 2025",
+      2
+     ]
+    ],
+    "score": -2
+   },
+   {
+    "player": "A.J. Brown",
+    "team": "NE",
+    "line": 1100.5,
+    "fd_line": 1100.5,
+    "grid_line": 1124.5,
+    "line_gap": -24,
+    "td_line": 7.5,
+    "prior": {
+     "team": "PHI",
      "g": 15,
-     "yds": 1117,
+     "yds": 1003,
+     "td": 7
+    },
+    "qb_tier": 2,
+    "win_total": 10.0,
+    "signals": [
+     [
+      "UNDER",
+      "elite QB + 10.0-win team + 1,000+ line",
+      2
+     ],
+     [
+      "UNDER",
+      "1,000-1,200 dead zone",
+      1
+     ]
+    ],
+    "score": -3
+   },
+   {
+    "player": "CeeDee Lamb",
+    "team": "DAL",
+    "line": 1200.5,
+    "fd_line": 1200.5,
+    "grid_line": 1175.5,
+    "line_gap": 25,
+    "td_line": 7.5,
+    "prior": {
+     "team": "DAL",
+     "g": 13,
+     "yds": 1077,
+     "td": 3
+    },
+    "qb_tier": 2,
+    "win_total": 9.8,
+    "signals": [
+     [
+      "UNDER",
+      "coming off 13 g in 2025",
+      3
+     ],
+     [
+      "UNDER",
+      "elite QB + 9.8-win team + 1,000+ line",
+      2
+     ]
+    ],
+    "score": -5
+   },
+   {
+    "player": "Makai Lemon",
+    "team": "PHI",
+    "line": 575.5,
+    "fd_line": 575.5,
+    "grid_line": null,
+    "line_gap": null,
+    "td_line": null,
+    "prior": null,
+    "qb_tier": 2,
+    "win_total": 10.2,
+    "signals": [],
+    "score": 0
+   },
+   {
+    "player": "Jahmyr Gibbs",
+    "team": "DET",
+    "line": 475.5,
+    "fd_line": 475.5,
+    "grid_line": null,
+    "line_gap": null,
+    "td_line": null,
+    "prior": {
+     "team": "DET",
+     "g": 17,
+     "yds": 616,
+     "td": 5
+    },
+    "qb_tier": 2,
+    "win_total": 10.8,
+    "signals": [],
+    "score": 0
+   },
+   {
+    "player": "Jaylen Waddle",
+    "team": "DEN",
+    "line": 900.5,
+    "fd_line": 900.5,
+    "grid_line": 920.5,
+    "line_gap": -20,
+    "td_line": 5.5,
+    "prior": {
+     "team": "MIA",
+     "g": 16,
+     "yds": 910,
      "td": 6
     },
     "qb_tier": 3,
-    "win_total": 10.3,
+    "win_total": 9.9,
+    "signals": [],
+    "score": 0
+   },
+   {
+    "player": "Christian Watson",
+    "team": "GB",
+    "line": 775.5,
+    "fd_line": 775.5,
+    "grid_line": 774.5,
+    "line_gap": 1,
+    "td_line": 6.5,
+    "prior": {
+     "team": "GB",
+     "g": 10,
+     "yds": 611,
+     "td": 6
+    },
+    "qb_tier": 2,
+    "win_total": 10.0,
+    "signals": [
+     [
+      "UNDER",
+      "coming off 10 g in 2025",
+      3
+     ],
+     [
+      "UNDER",
+      "bullish re-rate: line +164 vs 2025",
+      2
+     ]
+    ],
+    "score": -5
+   },
+   {
+    "player": "Davante Adams",
+    "team": "LAR",
+    "line": 775.5,
+    "fd_line": 775.5,
+    "grid_line": 774.5,
+    "line_gap": 1,
+    "td_line": 9.5,
+    "prior": {
+     "team": "LAR",
+     "g": 14,
+     "yds": 789,
+     "td": 14
+    },
+    "qb_tier": 1,
+    "win_total": 11.7,
+    "signals": [
+     [
+      "UNDER",
+      "9.5 TD line (fade the TD number)",
+      1
+     ]
+    ],
+    "score": -1
+   },
+   {
+    "player": "Deebo Samuel",
+    "team": "SF",
+    "line": 724.5,
+    "fd_line": null,
+    "grid_line": 724.5,
+    "line_gap": null,
+    "td_line": 4.5,
+    "prior": {
+     "team": "WAS",
+     "g": 16,
+     "yds": 727,
+     "td": 5
+    },
+    "qb_tier": 2,
+    "win_total": 9.9,
+    "signals": [],
+    "score": 0
+   },
+   {
+    "player": "Justin Jefferson",
+    "team": "MIN",
+    "line": 1150.5,
+    "fd_line": 1150.5,
+    "grid_line": 1149.5,
+    "line_gap": 1,
+    "td_line": 7.5,
+    "prior": {
+     "team": "MIN",
+     "g": 17,
+     "yds": 1048,
+     "td": 2
+    },
+    "qb_tier": 3,
+    "win_total": 8.8,
     "signals": [
      [
       "UNDER",
@@ -3131,6 +3631,36 @@
      ]
     ],
     "score": -1
+   },
+   {
+    "player": "Terry McLaurin",
+    "team": "WAS",
+    "line": 900.5,
+    "fd_line": 900.5,
+    "grid_line": 924.5,
+    "line_gap": -24,
+    "td_line": 5.5,
+    "prior": {
+     "team": "WAS",
+     "g": 10,
+     "yds": 582,
+     "td": 3
+    },
+    "qb_tier": 2,
+    "win_total": 7.2,
+    "signals": [
+     [
+      "UNDER",
+      "coming off 10 g in 2025",
+      3
+     ],
+     [
+      "UNDER",
+      "bullish re-rate: line +318 vs 2025",
+      2
+     ]
+    ],
+    "score": -5
    },
    {
     "player": "Rashee Rice",
@@ -3173,330 +3703,34 @@
     "score": -8
    },
    {
-    "player": "George Pickens",
-    "team": "DAL",
-    "line": 1050.5,
-    "fd_line": 1050.5,
-    "grid_line": 999.5,
-    "line_gap": 51,
-    "td_line": 6.5,
-    "prior": {
-     "team": "DAL",
-     "g": 17,
-     "yds": 1429,
-     "td": 9
-    },
-    "qb_tier": 2,
-    "win_total": 9.8,
-    "signals": [
-     [
-      "OVER",
-      "line cut 378 below a full 2025",
-      2
-     ],
-     [
-      "UNDER",
-      "elite QB + 9.8-win team + 1,000+ line",
-      2
-     ],
-     [
-      "UNDER",
-      "1,000-1,200 dead zone",
-      1
-     ]
-    ],
-    "score": -1
-   },
-   {
-    "player": "Puka Nacua",
-    "team": "LAR",
-    "line": 1375.5,
-    "fd_line": 1375.5,
-    "grid_line": 1350.5,
-    "line_gap": 25,
-    "td_line": 8.5,
-    "prior": {
-     "team": "LAR",
-     "g": 16,
-     "yds": 1715,
-     "td": 10
-    },
-    "qb_tier": 1,
-    "win_total": 11.7,
-    "signals": [
-     [
-      "OVER",
-      "line cut 340 below a full 2025",
-      2
-     ],
-     [
-      "UNDER",
-      "elite QB + 11.7-win team + 1,000+ line",
-      2
-     ],
-     [
-      "UNDER",
-      "8.5 TD line (fade the TD number)",
-      1
-     ]
-    ],
-    "score": -1
-   },
-   {
-    "player": "KC Concepcion",
-    "team": null,
-    "line": 600.5,
-    "fd_line": 600.5,
-    "grid_line": null,
+    "player": "Michael Wilson",
+    "team": "ARI",
+    "line": 724.5,
+    "fd_line": null,
+    "grid_line": 724.5,
     "line_gap": null,
-    "td_line": null,
-    "prior": null,
-    "qb_tier": null,
-    "win_total": null,
-    "signals": [],
-    "score": 0
-   },
-   {
-    "player": "Christian McCaffrey",
-    "team": "SF",
-    "line": 550.5,
-    "fd_line": 550.5,
-    "grid_line": null,
-    "line_gap": null,
-    "td_line": null,
+    "td_line": 3.5,
     "prior": {
-     "team": "SF",
+     "team": "ARI",
      "g": 17,
-     "yds": 924,
+     "yds": 1006,
      "td": 7
     },
-    "qb_tier": 2,
-    "win_total": 9.9,
-    "signals": [
-     [
-      "OVER",
-      "line cut 374 below a full 2025",
-      2
-     ]
-    ],
-    "score": 2
-   },
-   {
-    "player": "Jahmyr Gibbs",
-    "team": "DET",
-    "line": 475.5,
-    "fd_line": 475.5,
-    "grid_line": null,
-    "line_gap": null,
-    "td_line": null,
-    "prior": {
-     "team": "DET",
-     "g": 17,
-     "yds": 616,
-     "td": 5
-    },
-    "qb_tier": 2,
-    "win_total": 10.8,
-    "signals": [],
-    "score": 0
-   },
-   {
-    "player": "Chris Godwin Jr",
-    "team": "TB",
-    "line": 699.5,
-    "fd_line": null,
-    "grid_line": 699.5,
-    "line_gap": null,
-    "td_line": 4.5,
-    "prior": {
-     "team": "TB",
-     "g": 9,
-     "yds": 360,
-     "td": 2
-    },
-    "qb_tier": 2,
-    "win_total": 8.0,
-    "signals": [
-     [
-      "UNDER",
-      "coming off 9 g in 2025",
-      3
-     ],
-     [
-      "UNDER",
-      "bullish re-rate: line +340 vs 2025",
-      2
-     ]
-    ],
-    "score": -5
-   },
-   {
-    "player": "Parker Washington",
-    "team": "JAX",
-    "line": 824.5,
-    "fd_line": null,
-    "grid_line": 824.5,
-    "line_gap": null,
-    "td_line": 4.5,
-    "prior": {
-     "team": "JAX",
-     "g": 16,
-     "yds": 847,
-     "td": 5
-    },
-    "qb_tier": 2,
-    "win_total": 9.2,
-    "signals": [],
-    "score": 0
-   },
-   {
-    "player": "Jaylen Waddle",
-    "team": "MIA",
-    "line": 900.5,
-    "fd_line": 900.5,
-    "grid_line": 920.5,
-    "line_gap": -20,
-    "td_line": 5.5,
-    "prior": {
-     "team": "MIA",
-     "g": 16,
-     "yds": 910,
-     "td": 6
-    },
     "qb_tier": 4,
-    "win_total": 3.8,
+    "win_total": 4.0,
     "signals": [
      [
       "OVER",
       "weak/unproven QB (tier 4)",
       3
-     ]
-    ],
-    "score": 3
-   },
-   {
-    "player": "Rome Odunze",
-    "team": "CHI",
-    "line": 800.5,
-    "fd_line": 800.5,
-    "grid_line": 824.5,
-    "line_gap": -24,
-    "td_line": 6.5,
-    "prior": {
-     "team": "CHI",
-     "g": 12,
-     "yds": 661,
-     "td": 6
-    },
-    "qb_tier": 2,
-    "win_total": 9.4,
-    "signals": [
-     [
-      "UNDER",
-      "coming off 12 g in 2025",
-      3
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "Jameson Williams",
-    "team": "DET",
-    "line": 900.5,
-    "fd_line": 900.5,
-    "grid_line": 899.5,
-    "line_gap": 1,
-    "td_line": 5.5,
-    "prior": {
-     "team": "DET",
-     "g": 17,
-     "yds": 1117,
-     "td": 7
-    },
-    "qb_tier": 2,
-    "win_total": 10.8,
-    "signals": [
-     [
-      "OVER",
-      "line cut 216 below a full 2025",
-      2
-     ]
-    ],
-    "score": 2
-   },
-   {
-    "player": "Michael Pittman Jr.",
-    "team": "IND",
-    "line": 750.5,
-    "fd_line": 750.5,
-    "grid_line": 749.5,
-    "line_gap": 1,
-    "td_line": 4.5,
-    "prior": {
-     "team": "IND",
-     "g": 17,
-     "yds": 784,
-     "td": 7
-    },
-    "qb_tier": 3,
-    "win_total": 8.0,
-    "signals": [],
-    "score": 0
-   },
-   {
-    "player": "Quentin Johnston",
-    "team": "LAC",
-    "line": 649.5,
-    "fd_line": null,
-    "grid_line": 649.5,
-    "line_gap": null,
-    "td_line": 5.5,
-    "prior": {
-     "team": "LAC",
-     "g": 13,
-     "yds": 735,
-     "td": 8
-    },
-    "qb_tier": 2,
-    "win_total": 10.0,
-    "signals": [
-     [
-      "UNDER",
-      "coming off 13 g in 2025",
-      3
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "CeeDee Lamb",
-    "team": "DAL",
-    "line": 1200.5,
-    "fd_line": 1200.5,
-    "grid_line": 1175.5,
-    "line_gap": 25,
-    "td_line": 7.5,
-    "prior": {
-     "team": "DAL",
-     "g": 13,
-     "yds": 1077,
-     "td": 3
-    },
-    "qb_tier": 2,
-    "win_total": 9.8,
-    "signals": [
-     [
-      "UNDER",
-      "coming off 13 g in 2025",
-      3
      ],
      [
-      "UNDER",
-      "elite QB + 9.8-win team + 1,000+ line",
+      "OVER",
+      "line cut 282 below a full 2025",
       2
      ]
     ],
-    "score": -5
+    "score": 5
    },
    {
     "player": "Amon-Ra St. Brown",
@@ -3534,6 +3768,44 @@
     "score": -1
    },
    {
+    "player": "DJ Moore",
+    "team": "BUF",
+    "line": 800.5,
+    "fd_line": null,
+    "grid_line": 800.5,
+    "line_gap": null,
+    "td_line": 6.5,
+    "prior": {
+     "team": "CHI",
+     "g": 17,
+     "yds": 682,
+     "td": 6
+    },
+    "qb_tier": 1,
+    "win_total": 10.8,
+    "signals": [],
+    "score": 0
+   },
+   {
+    "player": "Jordan Addison",
+    "team": "MIN",
+    "line": 674.5,
+    "fd_line": null,
+    "grid_line": 674.5,
+    "line_gap": null,
+    "td_line": 4.5,
+    "prior": {
+     "team": "MIN",
+     "g": 14,
+     "yds": 610,
+     "td": 3
+    },
+    "qb_tier": 3,
+    "win_total": 8.8,
+    "signals": [],
+    "score": 0
+   },
+   {
     "player": "Tetairoa McMillan",
     "team": "CAR",
     "line": 950.5,
@@ -3553,575 +3825,59 @@
     "score": 0
    },
    {
-    "player": "Jaxon Smith-Njigba",
-    "team": "SEA",
-    "line": 1325.5,
-    "fd_line": 1325.5,
-    "grid_line": 1324.5,
+    "player": "Luther Burden III",
+    "team": "CHI",
+    "line": 850.5,
+    "fd_line": 850.5,
+    "grid_line": 849.5,
     "line_gap": 1,
-    "td_line": 8.5,
-    "prior": {
-     "team": "SEA",
-     "g": 17,
-     "yds": 1793,
-     "td": 10
-    },
-    "qb_tier": 2,
-    "win_total": 10.7,
-    "signals": [
-     [
-      "OVER",
-      "line cut 468 below a full 2025",
-      2
-     ],
-     [
-      "UNDER",
-      "elite QB + 10.7-win team + 1,000+ line",
-      2
-     ],
-     [
-      "UNDER",
-      "8.5 TD line (fade the TD number)",
-      1
-     ]
-    ],
-    "score": -1
-   },
-   {
-    "player": "Jerry Jeudy",
-    "team": "CLE",
-    "line": 549.5,
-    "fd_line": null,
-    "grid_line": 549.5,
-    "line_gap": null,
-    "td_line": 3.5,
-    "prior": {
-     "team": "CLE",
-     "g": 17,
-     "yds": 602,
-     "td": 2
-    },
-    "qb_tier": 4,
-    "win_total": 5.6,
-    "signals": [
-     [
-      "OVER",
-      "weak/unproven QB (tier 4)",
-      3
-     ]
-    ],
-    "score": 3
-   },
-   {
-    "player": "Carnell Tate",
-    "team": null,
-    "line": 775.5,
-    "fd_line": 775.5,
-    "grid_line": 799.5,
-    "line_gap": -24,
-    "td_line": 4.5,
-    "prior": null,
-    "qb_tier": null,
-    "win_total": null,
-    "signals": [],
-    "score": 0
-   },
-   {
-    "player": "Brian Thomas Jr",
-    "team": "JAX",
-    "line": 724.5,
-    "fd_line": null,
-    "grid_line": 724.5,
-    "line_gap": null,
     "td_line": 4.5,
     "prior": {
-     "team": "JAX",
-     "g": 14,
-     "yds": 707,
+     "team": "CHI",
+     "g": 15,
+     "yds": 652,
      "td": 2
     },
     "qb_tier": 2,
-    "win_total": 9.2,
-    "signals": [],
-    "score": 0
-   },
-   {
-    "player": "Justin Jefferson",
-    "team": "MIN",
-    "line": 1150.5,
-    "fd_line": 1150.5,
-    "grid_line": 1149.5,
-    "line_gap": 1,
-    "td_line": 7.5,
-    "prior": {
-     "team": "MIN",
-     "g": 17,
-     "yds": 1048,
-     "td": 2
-    },
-    "qb_tier": 4,
-    "win_total": 8.8,
+    "win_total": 9.4,
     "signals": [
      [
-      "OVER",
-      "weak/unproven QB (tier 4)",
-      3
-     ],
-     [
       "UNDER",
-      "1,000-1,200 dead zone",
-      1
-     ]
-    ],
-    "score": 2
-   },
-   {
-    "player": "Garrett Wilson",
-    "team": "NYJ",
-    "line": 975.5,
-    "fd_line": 975.5,
-    "grid_line": 999.5,
-    "line_gap": -24,
-    "td_line": 4.5,
-    "prior": {
-     "team": "NYJ",
-     "g": 7,
-     "yds": 395,
-     "td": 4
-    },
-    "qb_tier": 4,
-    "win_total": 5.6,
-    "signals": [
-     [
-      "OVER",
-      "weak/unproven QB (tier 4)",
-      3
-     ],
-     [
-      "UNDER",
-      "coming off 7 g in 2025",
-      3
-     ],
-     [
-      "UNDER",
-      "bullish re-rate: line +580 vs 2025",
+      "bullish re-rate: line +198 vs 2025",
       2
      ]
     ],
     "score": -2
    },
    {
-    "player": "Jordan Addison",
-    "team": "MIN",
-    "line": 674.5,
-    "fd_line": null,
-    "grid_line": 674.5,
-    "line_gap": null,
-    "td_line": 4.5,
-    "prior": {
-     "team": "MIN",
-     "g": 14,
-     "yds": 610,
-     "td": 3
-    },
-    "qb_tier": 4,
-    "win_total": 8.8,
-    "signals": [
-     [
-      "OVER",
-      "weak/unproven QB (tier 4)",
-      3
-     ]
-    ],
-    "score": 3
-   },
-   {
-    "player": "Zay Flowers",
-    "team": "BAL",
-    "line": 975.5,
-    "fd_line": 975.5,
-    "grid_line": 999.5,
+    "player": "Mike Evans",
+    "team": "SF",
+    "line": 800.5,
+    "fd_line": 800.5,
+    "grid_line": 824.5,
     "line_gap": -24,
-    "td_line": 5.5,
-    "prior": {
-     "team": "BAL",
-     "g": 17,
-     "yds": 1211,
-     "td": 5
-    },
-    "qb_tier": 2,
-    "win_total": 10.7,
-    "signals": [
-     [
-      "OVER",
-      "line cut 236 below a full 2025",
-      2
-     ]
-    ],
-    "score": 2
-   },
-   {
-    "player": "Michael Wilson",
-    "team": "ARI",
-    "line": 724.5,
-    "fd_line": null,
-    "grid_line": 724.5,
-    "line_gap": null,
-    "td_line": 3.5,
-    "prior": {
-     "team": "ARI",
-     "g": 17,
-     "yds": 1006,
-     "td": 7
-    },
-    "qb_tier": 4,
-    "win_total": 4.0,
-    "signals": [
-     [
-      "OVER",
-      "weak/unproven QB (tier 4)",
-      3
-     ],
-     [
-      "OVER",
-      "line cut 282 below a full 2025",
-      2
-     ]
-    ],
-    "score": 5
-   },
-   {
-    "player": "Chris Olave",
-    "team": "NO",
-    "line": 1025.5,
-    "fd_line": 1025.5,
-    "grid_line": 1024.5,
-    "line_gap": 1,
-    "td_line": 5.5,
-    "prior": {
-     "team": "NO",
-     "g": 16,
-     "yds": 1163,
-     "td": 9
-    },
-    "qb_tier": 3,
-    "win_total": 7.8,
-    "signals": [
-     [
-      "UNDER",
-      "1,000-1,200 dead zone",
-      1
-     ]
-    ],
-    "score": -1
-   },
-   {
-    "player": "Tee Higgins",
-    "team": "CIN",
-    "line": 900.5,
-    "fd_line": 900.5,
-    "grid_line": 875.5,
-    "line_gap": 25,
-    "td_line": 8.5,
-    "prior": {
-     "team": "CIN",
-     "g": 15,
-     "yds": 846,
-     "td": 11
-    },
-    "qb_tier": 1,
-    "win_total": 10.2,
-    "signals": [
-     [
-      "UNDER",
-      "8.5 TD line (fade the TD number)",
-      1
-     ]
-    ],
-    "score": -1
-   },
-   {
-    "player": "Calvin Ridley",
-    "team": "TEN",
-    "line": 550.5,
-    "fd_line": null,
-    "grid_line": 550.5,
-    "line_gap": null,
-    "td_line": 3.5,
-    "prior": {
-     "team": "TEN",
-     "g": 7,
-     "yds": 303,
-     "td": 0
-    },
-    "qb_tier": 3,
-    "win_total": 6.2,
-    "signals": [
-     [
-      "UNDER",
-      "coming off 7 g in 2025",
-      3
-     ],
-     [
-      "UNDER",
-      "bullish re-rate: line +248 vs 2025",
-      2
-     ]
-    ],
-    "score": -5
-   },
-   {
-    "player": "Christian Watson",
-    "team": "GB",
-    "line": 775.5,
-    "fd_line": 775.5,
-    "grid_line": 774.5,
-    "line_gap": 1,
     "td_line": 6.5,
     "prior": {
-     "team": "GB",
-     "g": 10,
-     "yds": 611,
-     "td": 6
+     "team": "TB",
+     "g": 8,
+     "yds": 368,
+     "td": 3
     },
     "qb_tier": 2,
-    "win_total": 10.0,
+    "win_total": 9.9,
     "signals": [
      [
       "UNDER",
-      "coming off 10 g in 2025",
+      "coming off 8 g in 2025",
       3
      ],
      [
       "UNDER",
-      "bullish re-rate: line +164 vs 2025",
+      "bullish re-rate: line +432 vs 2025",
       2
      ]
     ],
     "score": -5
-   },
-   {
-    "player": "A.J. Brown",
-    "team": "PHI",
-    "line": 1100.5,
-    "fd_line": 1100.5,
-    "grid_line": 1124.5,
-    "line_gap": -24,
-    "td_line": 7.5,
-    "prior": {
-     "team": "PHI",
-     "g": 15,
-     "yds": 1003,
-     "td": 7
-    },
-    "qb_tier": 2,
-    "win_total": 10.2,
-    "signals": [
-     [
-      "UNDER",
-      "elite QB + 10.2-win team + 1,000+ line",
-      2
-     ],
-     [
-      "UNDER",
-      "1,000-1,200 dead zone",
-      1
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "Jayden Higgins",
-    "team": "HOU",
-    "line": 574.5,
-    "fd_line": null,
-    "grid_line": 574.5,
-    "line_gap": null,
-    "td_line": 3.5,
-    "prior": {
-     "team": "HOU",
-     "g": 17,
-     "yds": 525,
-     "td": 6
-    },
-    "qb_tier": 3,
-    "win_total": 10.3,
-    "signals": [],
-    "score": 0
-   },
-   {
-    "player": "Davante Adams",
-    "team": "LAR",
-    "line": 775.5,
-    "fd_line": 775.5,
-    "grid_line": 774.5,
-    "line_gap": 1,
-    "td_line": 9.5,
-    "prior": {
-     "team": "LAR",
-     "g": 14,
-     "yds": 789,
-     "td": 14
-    },
-    "qb_tier": 1,
-    "win_total": 11.7,
-    "signals": [
-     [
-      "UNDER",
-      "9.5 TD line (fade the TD number)",
-      1
-     ]
-    ],
-    "score": -1
-   },
-   {
-    "player": "Jakobi Meyers",
-    "team": "LV",
-    "line": 649.5,
-    "fd_line": null,
-    "grid_line": 649.5,
-    "line_gap": null,
-    "td_line": 5.5,
-    "prior": {
-     "team": "LV",
-     "g": 16,
-     "yds": 835,
-     "td": 3
-    },
-    "qb_tier": 3,
-    "win_total": 6.1,
-    "signals": [
-     [
-      "OVER",
-      "line cut 186 below a full 2025",
-      2
-     ]
-    ],
-    "score": 2
-   },
-   {
-    "player": "Terry McLaurin",
-    "team": "WAS",
-    "line": 900.5,
-    "fd_line": 900.5,
-    "grid_line": 924.5,
-    "line_gap": -24,
-    "td_line": 5.5,
-    "prior": {
-     "team": "WAS",
-     "g": 10,
-     "yds": 582,
-     "td": 3
-    },
-    "qb_tier": 2,
-    "win_total": 7.2,
-    "signals": [
-     [
-      "UNDER",
-      "coming off 10 g in 2025",
-      3
-     ],
-     [
-      "UNDER",
-      "bullish re-rate: line +318 vs 2025",
-      2
-     ]
-    ],
-    "score": -5
-   },
-   {
-    "player": "Makai Lemon",
-    "team": null,
-    "line": 575.5,
-    "fd_line": 575.5,
-    "grid_line": null,
-    "line_gap": null,
-    "td_line": null,
-    "prior": null,
-    "qb_tier": null,
-    "win_total": null,
-    "signals": [],
-    "score": 0
-   },
-   {
-    "player": "DeVonta Smith",
-    "team": "PHI",
-    "line": 1049.5,
-    "fd_line": null,
-    "grid_line": 1049.5,
-    "line_gap": null,
-    "td_line": 5.5,
-    "prior": {
-     "team": "PHI",
-     "g": 17,
-     "yds": 1008,
-     "td": 4
-    },
-    "qb_tier": 2,
-    "win_total": 10.2,
-    "signals": [
-     [
-      "UNDER",
-      "elite QB + 10.2-win team + 1,000+ line",
-      2
-     ],
-     [
-      "UNDER",
-      "1,000-1,200 dead zone",
-      1
-     ]
-    ],
-    "score": -3
-   },
-   {
-    "player": "Josh Downs",
-    "team": "IND",
-    "line": 824.5,
-    "fd_line": null,
-    "grid_line": 824.5,
-    "line_gap": null,
-    "td_line": 4.0,
-    "prior": {
-     "team": "IND",
-     "g": 16,
-     "yds": 566,
-     "td": 4
-    },
-    "qb_tier": 3,
-    "win_total": 8.0,
-    "signals": [
-     [
-      "UNDER",
-      "bullish re-rate: line +258 vs 2025",
-      2
-     ]
-    ],
-    "score": -2
-   },
-   {
-    "player": "Rashid Shaheed",
-    "team": "NO",
-    "line": 500.5,
-    "fd_line": 500.5,
-    "grid_line": null,
-    "line_gap": null,
-    "td_line": null,
-    "prior": {
-     "team": "NO",
-     "g": 18,
-     "yds": 687,
-     "td": 2
-    },
-    "qb_tier": 3,
-    "win_total": 7.8,
-    "signals": [
-     [
-      "OVER",
-      "line cut 186 below a full 2025",
-      2
-     ]
-    ],
-    "score": 2
    },
    {
     "player": "Ja'Marr Chase",
@@ -4154,6 +3910,105 @@
     "score": -3
    },
    {
+    "player": "Tre Tucker",
+    "team": "LV",
+    "line": 574.5,
+    "fd_line": null,
+    "grid_line": 574.5,
+    "line_gap": null,
+    "td_line": 3.0,
+    "prior": {
+     "team": "LV",
+     "g": 17,
+     "yds": 696,
+     "td": 5
+    },
+    "qb_tier": null,
+    "win_total": 6.1,
+    "signals": [],
+    "score": 0
+   },
+   {
+    "player": "Christian McCaffrey",
+    "team": "SF",
+    "line": 550.5,
+    "fd_line": 550.5,
+    "grid_line": null,
+    "line_gap": null,
+    "td_line": null,
+    "prior": {
+     "team": "SF",
+     "g": 17,
+     "yds": 924,
+     "td": 7
+    },
+    "qb_tier": 2,
+    "win_total": 9.9,
+    "signals": [
+     [
+      "OVER",
+      "line cut 374 below a full 2025",
+      2
+     ]
+    ],
+    "score": 2
+   },
+   {
+    "player": "Calvin Ridley",
+    "team": "TEN",
+    "line": 550.5,
+    "fd_line": null,
+    "grid_line": 550.5,
+    "line_gap": null,
+    "td_line": 3.5,
+    "prior": {
+     "team": "TEN",
+     "g": 7,
+     "yds": 303,
+     "td": 0
+    },
+    "qb_tier": 3,
+    "win_total": 6.2,
+    "signals": [
+     [
+      "UNDER",
+      "coming off 7 g in 2025",
+      3
+     ],
+     [
+      "UNDER",
+      "bullish re-rate: line +248 vs 2025",
+      2
+     ]
+    ],
+    "score": -5
+   },
+   {
+    "player": "Jameson Williams",
+    "team": "DET",
+    "line": 900.5,
+    "fd_line": 900.5,
+    "grid_line": 899.5,
+    "line_gap": 1,
+    "td_line": 5.5,
+    "prior": {
+     "team": "DET",
+     "g": 17,
+     "yds": 1117,
+     "td": 7
+    },
+    "qb_tier": 2,
+    "win_total": 10.8,
+    "signals": [
+     [
+      "OVER",
+      "line cut 216 below a full 2025",
+      2
+     ]
+    ],
+    "score": 2
+   },
+   {
     "player": "Khalil Shakir",
     "team": "BUF",
     "line": 624.5,
@@ -4173,18 +4028,29 @@
     "score": 0
    },
    {
-    "player": "Omar Cooper Jr.",
-    "team": null,
-    "line": 425.5,
-    "fd_line": 425.5,
-    "grid_line": null,
+    "player": "Jerry Jeudy",
+    "team": "CLE",
+    "line": 549.5,
+    "fd_line": null,
+    "grid_line": 549.5,
     "line_gap": null,
-    "td_line": null,
-    "prior": null,
-    "qb_tier": null,
-    "win_total": null,
-    "signals": [],
-    "score": 0
+    "td_line": 3.5,
+    "prior": {
+     "team": "CLE",
+     "g": 17,
+     "yds": 602,
+     "td": 2
+    },
+    "qb_tier": 4,
+    "win_total": 5.6,
+    "signals": [
+     [
+      "OVER",
+      "weak/unproven QB (tier 4)",
+      3
+     ]
+    ],
+    "score": 3
    },
    {
     "player": "Emeka Egbuka",
@@ -4202,6 +4068,95 @@
     },
     "qb_tier": 2,
     "win_total": 8.0,
+    "signals": [],
+    "score": 0
+   },
+   {
+    "player": "Jakobi Meyers",
+    "team": "JAX",
+    "line": 649.5,
+    "fd_line": null,
+    "grid_line": 649.5,
+    "line_gap": null,
+    "td_line": 5.5,
+    "prior": {
+     "team": "LV",
+     "g": 16,
+     "yds": 835,
+     "td": 3
+    },
+    "qb_tier": 2,
+    "win_total": 9.2,
+    "signals": [
+     [
+      "OVER",
+      "line cut 186 below a full 2025",
+      2
+     ]
+    ],
+    "score": 2
+   },
+   {
+    "player": "Omar Cooper Jr.",
+    "team": "NYJ",
+    "line": 425.5,
+    "fd_line": 425.5,
+    "grid_line": null,
+    "line_gap": null,
+    "td_line": null,
+    "prior": null,
+    "qb_tier": 4,
+    "win_total": 5.6,
+    "signals": [
+     [
+      "OVER",
+      "weak/unproven QB (tier 4)",
+      3
+     ]
+    ],
+    "score": 3
+   },
+   {
+    "player": "Nico Collins",
+    "team": "HOU",
+    "line": 1150.5,
+    "fd_line": 1150.5,
+    "grid_line": 1074.5,
+    "line_gap": 76,
+    "td_line": 6.5,
+    "prior": {
+     "team": "HOU",
+     "g": 15,
+     "yds": 1117,
+     "td": 6
+    },
+    "qb_tier": 3,
+    "win_total": 10.3,
+    "signals": [
+     [
+      "UNDER",
+      "1,000-1,200 dead zone",
+      1
+     ]
+    ],
+    "score": -1
+   },
+   {
+    "player": "Brian Thomas Jr",
+    "team": "JAX",
+    "line": 724.5,
+    "fd_line": null,
+    "grid_line": 724.5,
+    "line_gap": null,
+    "td_line": 4.5,
+    "prior": {
+     "team": "JAX",
+     "g": 14,
+     "yds": 707,
+     "td": 2
+    },
+    "qb_tier": 2,
+    "win_total": 9.2,
     "signals": [],
     "score": 0
    }

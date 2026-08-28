@@ -210,133 +210,129 @@
   }
  ],
  "qb26": {
-  "PIT": [
-   "3",
-   "Aaron Rodgers"
-  ],
-  "TB": [
-   "2",
-   "Baker Mayfield"
-  ],
-  "DEN": [
-   "3",
-   "Bo Nix"
-  ],
-  "SF": [
-   "2",
-   "Brock Purdy"
-  ],
-  "CAR": [
-   "3",
-   "Bryce Young"
-  ],
-  "HOU": [
-   "3",
-   "C.J. Stroud"
-  ],
-  "CHI": [
-   "2",
-   "Caleb Williams"
-  ],
-  "TEN": [
-   "3",
-   "Cam Ward"
-  ],
-  "DAL": [
-   "2",
-   "Dak Prescott"
-  ],
-  "IND": [
-   "3",
-   "Daniel Jones"
-  ],
-  "CLE": [
-   "4",
-   "Deshaun Watson"
-  ],
-  "NE": [
-   "2",
-   "Drake Maye"
-  ],
-  "NYJ": [
-   "4",
-   "Geno Smith"
-  ],
-  "MIN": [
-   "4",
-   "J.J. McCarthy"
-  ],
-  "ARI": [
-   "4",
-   "Jacoby Brissett"
-  ],
-  "PHI": [
-   "2",
-   "Jalen Hurts"
-  ],
-  "DET": [
-   "2",
-   "Jared Goff"
-  ],
-  "NYG": [
-   "3",
-   "Jaxson Dart"
-  ],
-  "WAS": [
-   "2",
-   "Jayden Daniels"
+  "BUF": [
+   "1",
+   "Josh Allen"
   ],
   "CIN": [
    "1",
    "Joe Burrow"
   ],
-  "GB": [
+  "NE": [
    "2",
-   "Jordan Love"
-  ],
-  "BUF": [
-   "1",
-   "Josh Allen"
-  ],
-  "LAC": [
-   "2",
-   "Justin Herbert"
-  ],
-  "LV": [
-   "3",
-   "Kirk Cousins"
-  ],
-  "BAL": [
-   "2",
-   "Lamar Jackson"
-  ],
-  "MIA": [
-   "4",
-   "Malik Willis"
-  ],
-  "LAR": [
-   "1",
-   "Matthew Stafford"
-  ],
-  "ATL": [
-   "4",
-   "Michael Penix Jr."
-  ],
-  "KC": [
-   "1",
-   "Patrick Mahomes"
-  ],
-  "SEA": [
-   "2",
-   "Sam Darnold"
+   "Drake Maye"
   ],
   "JAX": [
    "2",
    "Trevor Lawrence"
   ],
+  "PHI": [
+   "2",
+   "Jalen Hurts"
+  ],
+  "BAL": [
+   "2",
+   "Lamar Jackson"
+  ],
+  "CHI": [
+   "2",
+   "Caleb Williams"
+  ],
+  "WAS": [
+   "2",
+   "Jayden Daniels"
+  ],
+  "SF": [
+   "2",
+   "Brock Purdy"
+  ],
+  "LAC": [
+   "2",
+   "Justin Herbert"
+  ],
+  "DET": [
+   "2",
+   "Jared Goff"
+  ],
+  "DAL": [
+   "2",
+   "Dak Prescott"
+  ],
+  "DEN": [
+   "3",
+   "Bo Nix"
+  ],
+  "NYG": [
+   "3",
+   "Jaxson Dart"
+  ],
+  "TB": [
+   "2",
+   "Baker Mayfield"
+  ],
+  "LAR": [
+   "1",
+   "Matthew Stafford"
+  ],
+  "GB": [
+   "2",
+   "Jordan Love"
+  ],
+  "KC": [
+   "1",
+   "Patrick Mahomes"
+  ],
   "NO": [
    "3",
    "Tyler Shough"
+  ],
+  "SEA": [
+   "2",
+   "Sam Darnold"
+  ],
+  "HOU": [
+   "3",
+   "C.J. Stroud"
+  ],
+  "MIA": [
+   "4",
+   "Malik Willis"
+  ],
+  "MIN": [
+   "3",
+   "Kyler Murray"
+  ],
+  "CAR": [
+   "3",
+   "Bryce Young"
+  ],
+  "IND": [
+   "3",
+   "Daniel Jones"
+  ],
+  "NYJ": [
+   "4",
+   "Geno Smith"
+  ],
+  "TEN": [
+   "3",
+   "Cam Ward"
+  ],
+  "PIT": [
+   "3",
+   "Aaron Rodgers"
+  ],
+  "ARI": [
+   "4",
+   "Jacoby Brissett"
+  ],
+  "ATL": [
+   "4",
+   "Michael Penix Jr."
+  ],
+  "CLE": [
+   "4",
+   "Deshaun Watson"
   ]
  },
  "wt26": {
@@ -372,5 +368,176 @@
   "TB": 8.0,
   "TEN": 6.2,
   "WAS": 7.2
+ },
+ "team26": {
+  "josh allen": "BUF",
+  "joe burrow": "CIN",
+  "drake maye": "NE",
+  "trevor lawrence": "JAX",
+  "jalen hurts": "PHI",
+  "lamar jackson": "BAL",
+  "caleb williams": "CHI",
+  "jayden daniels": "WAS",
+  "brock purdy": "SF",
+  "justin herbert": "LAC",
+  "jared goff": "DET",
+  "dak prescott": "DAL",
+  "bo nix": "DEN",
+  "jaxson dart": "NYG",
+  "baker mayfield": "TB",
+  "matthew stafford": "LAR",
+  "jordan love": "GB",
+  "patrick mahomes": "KC",
+  "tyler shough": "NO",
+  "sam darnold": "SEA",
+  "cj stroud": "HOU",
+  "malik willis": "MIA",
+  "kyler murray": "MIN",
+  "bryce young": "CAR",
+  "daniel jones": "IND",
+  "geno smith": "NYJ",
+  "cam ward": "TEN",
+  "aaron rodgers": "PIT",
+  "jacoby brissett": "ARI",
+  "fernando mendoza": "LV",
+  "michael penix": "ATL",
+  "deshaun watson": "CLE",
+  "shedeur sanders": "CLE",
+  "tua tagovailoa": "ATL",
+  "jahmyr gibbs": "DET",
+  "bijan robinson": "ATL",
+  "c mccaffrey": "SF",
+  "jonathan taylor": "IND",
+  "james cook": "BUF",
+  "derrick henry": "BAL",
+  "saquon barkley": "PHI",
+  "ashton jeanty": "LV",
+  "omarion hampton": "LAC",
+  "devon achane": "MIA",
+  "chase brown": "CIN",
+  "kyren williams": "LAR",
+  "javonte williams": "DAL",
+  "kenneth walker": "KC",
+  "josh jacobs": "GB",
+  "jeremiyah love": "ARI",
+  "breece hall": "NYJ",
+  "travis etienne": "NO",
+  "dandre swift": "CHI",
+  "david montgomery": "HOU",
+  "quinshon judkins": "CLE",
+  "cam skattebo": "NYG",
+  "bucky irving": "TB",
+  "rico dowdle": "PIT",
+  "treveyon henderson": "NE",
+  "bhayshul tuten": "JAX",
+  "tony pollard": "TEN",
+  "kyle monangai": "CHI",
+  "jadarian price": "SEA",
+  "jaylen warren": "PIT",
+  "rhamondre stevenson": "NE",
+  "jk dobbins": "DEN",
+  "chuba hubbard": "CAR",
+  "kenneth gainwell": "TB",
+  "jonathon brooks": "CAR",
+  "rj harvey": "DEN",
+  "chris rodriguez": "JAX",
+  "jordan mason": "MIN",
+  "blake corum": "LAR",
+  "jacory croskey merritt": "WAS",
+  "aaron jones": "MIN",
+  "rachaad white": "WAS",
+  "tyrone tracy": "NYG",
+  "tyjae spears": "TEN",
+  "m washington": "LV",
+  "keaton mitchell": "LAC",
+  "dylan sampson": "CLE",
+  "woody marks": "HOU",
+  "tyler allgeier": "ARI",
+  "jamarr chase": "CIN",
+  "puka nacua": "LAR",
+  "jaxon smith njigba": "SEA",
+  "amon ra st brown": "DET",
+  "ceedee lamb": "DAL",
+  "justin jefferson": "MIN",
+  "drake london": "ATL",
+  "aj brown": "NE",
+  "nico collins": "HOU",
+  "george pickens": "DAL",
+  "emeka egbuka": "TB",
+  "chris olave": "NO",
+  "malik nabers": "NYG",
+  "rashee rice": "KC",
+  "devonta smith": "PHI",
+  "zay flowers": "BAL",
+  "garrett wilson": "NYJ",
+  "tetairoa mcmillan": "CAR",
+  "tee higgins": "CIN",
+  "terry mclaurin": "WAS",
+  "davante adams": "LAR",
+  "jaylen waddle": "DEN",
+  "ladd mcconkey": "LAC",
+  "jameson williams": "DET",
+  "luther burden": "CHI",
+  "mike evans": "SF",
+  "alec pierce": "IND",
+  "dj moore": "BUF",
+  "rome odunze": "CHI",
+  "parker washington": "JAX",
+  "marvin harrison": "ARI",
+  "dk metcalf": "PIT",
+  "jayden reed": "GB",
+  "courtland sutton": "DEN",
+  "christian watson": "GB",
+  "josh downs": "IND",
+  "michael pittman": "PIT",
+  "carnell tate": "TEN",
+  "stefon diggs": "WAS",
+  "deebo samuel": "SF",
+  "michael wilson": "ARI",
+  "brian thomas": "JAX",
+  "xavier worthy": "KC",
+  "wandale robinson": "TEN",
+  "chris godwin": "TB",
+  "quentin johnston": "LAC",
+  "matthew golden": "GB",
+  "jordan addison": "MIN",
+  "jakobi meyers": "JAX",
+  "khalil shakir": "BUF",
+  "jalen coker": "CAR",
+  "romeo doubs": "NE",
+  "kc concepcion": "CLE",
+  "makai lemon": "PHI",
+  "dezhaun stribling": "SF",
+  "jalen nailor": "LV",
+  "malik washington": "MIA",
+  "jalen mcmillan": "TB",
+  "tre tucker": "LV",
+  "jordyn tyson": "NO",
+  "rashid shaheed": "SEA",
+  "ryan flournoy": "DAL",
+  "jerry jeudy": "CLE",
+  "denzel boston": "CLE",
+  "kayshon boutte": "HOU",
+  "tre harris": "LAC",
+  "devaughn vele": "NO",
+  "jakobi lane": "BAL",
+  "jauan jennings": "MIN",
+  "malachi fields": "NYG",
+  "omar cooper": "NYJ",
+  "rashod bateman": "BAL",
+  "dontayvion wicks": "PHI",
+  "adonai mitchell": "NYJ",
+  "ted hurst": "TB",
+  "travis hunter": "JAX",
+  "caleb douglas": "MIA",
+  "tory horton": "SEA",
+  "andrei iosivas": "CIN",
+  "germie bernard": "PIT",
+  "isaac teslaa": "DET",
+  "calvin ridley": "TEN",
+  "keon coleman": "BUF",
+  "cooper kupp": "SEA",
+  "jaylin noel": "HOU",
+  "demario douglas": "NE"
  }
 }

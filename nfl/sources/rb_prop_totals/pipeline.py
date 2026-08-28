@@ -168,19 +168,20 @@ def parse_sportsbetting_ag():
 
 # --------------------------------------------------------------------------
 # First Down Studio -- 2026 season. Vegas-prop-driven *projection*, not a
-# single posted O/U. Captured from the client-rendered table at
-# firstdown.studio/season-rankings/rb, committed as JSON under data/raw/.
-# Only rush_yds is ingested: FDS's rushing-yards number tracks posted
-# DraftKings season O/U within ~25 yds, but its rushing-TD number is a raw
-# expected-TD projection that runs well above where books set the TD line
-# (books shade TD unders), so it is NOT comparable to the historical
+# single posted O/U. The RB board now lives in the shared
+# nfl/sources/firstdown_studio_2026 source (QB + RB + WR); this reads its
+# committed raw capture. Only rush_yds is ingested: FDS's rushing-yards
+# number tracks posted DraftKings season O/U within ~25 yds, but its
+# rushing-TD number is a raw expected-TD projection that runs well above
+# where books set the TD line, so it is NOT comparable to the historical
 # rush_td rows and is left out.
 # --------------------------------------------------------------------------
-FDS_FILE = "firstdown_studio_2026.json"
+FDS_FILE = os.path.join(REPO_ROOT, "nfl", "sources", "firstdown_studio_2026",
+                        "data", "raw", "rb_board.json")
 
 
 def parse_firstdown_studio():
-    path = os.path.join(RAW_DIR, FDS_FILE)
+    path = FDS_FILE
     if not os.path.exists(path):
         return []
     blob = json.load(open(path, encoding="utf-8"))

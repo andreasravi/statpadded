@@ -24,7 +24,7 @@ analogue of [`wr_prop_totals`](../wr_prop_totals/).
 |---|---|---|---|
 | `fantasypoints` | 2023–25 | range across books (`line_low`=lowest total on the board / best for over; `line_high`=highest / best for under) + FP projection + prices | rushing yards every year; rushing **TDs 2024–25 only** (no 2023 TD grid); 2025 TD grid = **top ~17 RBs only** |
 | `sportsbetting.ag` | 2022 | one offshore book, one number, no price | `book = "SportsBetting.ag"`; via gambling911.com's Aug-2022 reprint; ~30 RBs, pure rushing line for ~22 of them, rush+rec only for the pass-catching backs |
-| `firstdown.studio` | 2026 | one number, no price | **rushing yards only.** Not a posted O/U — First Down Studio's season projection "powered by Vegas props" (implied team totals + player props). Spot-checks land within ~25 yds of DraftKings' posted season rushing-yards O/U (Gibbs 1199 vs 1199.5, Dobbins 681 vs 674.5, Swift 799 vs 824.5). Its rushing-**TD** projection runs well above where books set the line, so it is not ingested. Top 49 RBs. Client-rendered table, captured to `data/raw/firstdown_studio_2026.json`. |
+| `firstdown.studio` | 2026 | one number, no price | **rushing yards only.** Not a posted O/U — First Down Studio's season projection "powered by Vegas props" (implied team totals + player props). Spot-checks land within ~25 yds of DraftKings' posted season rushing-yards O/U (Gibbs 1199 vs 1199.5, Dobbins 681 vs 674.5, Swift 799 vs 824.5). Its rushing-**TD** projection runs well above where books set the line, so it is not ingested. Top 49 RBs. The capture lives in the shared [`firstdown_studio_2026`](../firstdown_studio_2026/) source (`data/raw/rb_board.json`); this pipeline reads it from there. |
 
 ### fantasypoints
 

@@ -45,20 +45,7 @@ RUSH = os.path.join(ROOT, "nfl/sources/rushing_stats/data/rushing_stats.csv")
 RECV = os.path.join(ROOT, "nfl/sources/receiving_stats/data/receiving_stats.csv")
 QB_TIERS = os.path.join(ROOT, "nfl/sources/qb_tiers/data/qb_tiers.csv")
 KALSHI = os.path.join(ROOT, "nfl/sources/kalshi_win_totals/data/kalshi_win_totals.csv")
-
-NICK = {"49ers": "SF", "Bears": "CHI", "Bengals": "CIN", "Bills": "BUF", "Broncos": "DEN",
-        "Browns": "CLE", "Buccaneers": "TB", "Cardinals": "ARI", "Chargers": "LAC",
-        "Chiefs": "KC", "Colts": "IND", "Commanders": "WAS", "Cowboys": "DAL",
-        "Dolphins": "MIA", "Eagles": "PHI", "Falcons": "ATL", "Giants": "NYG",
-        "Jaguars": "JAX", "Jets": "NYJ", "Lions": "DET", "Packers": "GB", "Panthers": "CAR",
-        "Patriots": "NE", "Raiders": "LV", "Rams": "LAR", "Ravens": "BAL", "Saints": "NO",
-        "Seahawks": "SEA", "Steelers": "PIT", "Texans": "HOU", "Titans": "TEN", "Vikings": "MIN"}
-STARTER_2026 = {"ATL": "Michael Penix Jr.", "CLE": "Deshaun Watson", "MIN": "J.J. McCarthy"}
-# 2026 team per player where it isn't obvious / where a player changed teams
-TEAM = {"Kenneth Walker": "KC", "Javonte Williams": "DAL", "David Montgomery": "HOU",
-        "Travis Etienne": "NO", "Rico Dowdle": "PIT", "Ashton Jeanty": "LV",
-        "Omarion Hampton": "LAC", "Jeremiyah Love": "ARI", "Chuba Hubbard": "CAR",
-        "James Cook": "BUF"}
+FDS_2026 = os.path.join(ROOT, "nfl/sources/firstdown_studio_2026/data/firstdown_2026.csv")
 
 
 def norm(s):
@@ -90,15 +77,29 @@ def load_fd():
     return out
 
 
-def qb26():
+def load_fds_2026():
+    """team-2026 per player + projected Week-1 starter per team, from the
+    First Down Studio 2026 boards (post-trade, authoritative)."""
+    team = {}
+    starter = {}  # team -> qb name (highest-ranked QB on the board)
+    for r in csv.DictReader(open(FDS_2026)):
+        team[norm(r["player"])] = r["team"]
+        if r["pos"] == "QB":
+            starter.setdefault(r["team"], r["player"])
+    return team, starter
+
+
+def qb26(starter):
+    """team -> (tier, qb_name) for 2026: the FDS-projected starter, tier
+    looked up in qb_tiers by NAME (qb_tiers' own team column is unreliable
+    for players who moved)."""
+    tier_by_name = {norm(r["qb_name"]): int(r["tier"])
+                    for r in csv.DictReader(open(QB_TIERS)) if r["season"] == "2026"}
     qb = {}
-    for r in csv.DictReader(open(QB_TIERS)):
-        if r["season"] != "2026":
-            continue
-        ab = NICK.get(r["team"])
-        if not ab or (ab in STARTER_2026 and r["qb_name"] != STARTER_2026[ab]):
-            continue
-        qb.setdefault(ab, (int(r["tier"]), r["qb_name"]))
+    for tm, name in starter.items():
+        t = tier_by_name.get(norm(name))
+        if t:
+            qb[tm] = (t, name)
     return qb
 
 
@@ -106,7 +107,8 @@ def main():
     fd = load_fd()
     rush25 = load_actuals(RUSH, "rushing_yards", "rushing_tds")
     recv25 = load_actuals(RECV, "receiving_yards", "receiving_tds")
-    QB = qb26()
+    TEAM26, STARTER26 = load_fds_2026()
+    QB = qb26(STARTER26)
     WT = {r["team"]: round(float(r["implied_line"]), 1) for r in csv.DictReader(open(KALSHI))}
 
     # ---- RB ----
@@ -126,7 +128,7 @@ def main():
         name = (f or {}).get("player") or (p[1] if p else k)
         line = f["line"] if f else (p[0] if p else None)
         proj = p[0] if p else None
-        team = TEAM.get(name.split(" (")[0]) or (p[2] if p else None) or (rush25.get(k, {}).get("team"))
+        team = TEAM26.get(k) or (p[2] if p else None) or (rush25.get(k, {}).get("team"))
         a = rush25.get(k)
         q = QB.get(team)
         rank = rb_rank.get(k)
@@ -159,8 +161,6 @@ def main():
                                  key=lambda x: -float(x["yards_line"])), 1):
         fa[norm(r["player"])] = {"yl": float(r["yards_line"]), "tl": float(r["td_line"] or 0),
                                  "adp_rank": int(r["adp_rank"] or 0), "player": r["player"]}
-    # team lookup for WR from 2025 receiving actuals + a few 2026 moves
-    WR_TEAM = {"Davante Adams": "LAR", "Rashee Rice": "KC", "Deebo Samuel": "WAS"}
     # FanDuel's "receiving yards" markets include tight ends; the historical
     # model is WR-only, so tag TEs and keep them out of the ranked lists
     TE = {norm(x) for x in ["Brock Bowers", "Travis Kelce", "Trey McBride", "Mark Andrews",
@@ -177,7 +177,7 @@ def main():
         line = f["line"] if f else (g["yl"] if g else None)
         gridl = g["yl"] if g else None
         a = recv25.get(k)
-        team = WR_TEAM.get(name) or (a["team"] if a else None)
+        team = TEAM26.get(k) or (a["team"] if a else None)
         q = QB.get(team)
         td_line = g["tl"] if g else None
         sig = []

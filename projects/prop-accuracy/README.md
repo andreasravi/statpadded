@@ -29,30 +29,37 @@ up in the grades, and read off who to be high / low on. Line is
 **FanDuel's live posted O/U** ([`fanduel_season_props`](../../nfl/sources/fanduel_season_props/))
 where it exists, else the First Down Studio projection (RB) or the Fantasy
 Alarm grid (WR); the gap between the two is flagged (`Δ`) — a big gap
-means our earlier scrape was off. Mechanical read, not advice.
+means our earlier scrape was off. Team, QB, and win total for 2026 come
+from [`firstdown_studio_2026`](../../nfl/sources/firstdown_studio_2026/)
+(the 2026 offseason moved a lot of names — Waddle → DEN, A.J. Brown → NE,
+Kyler Murray → MIN, Malik Willis → MIA). Mechanical read, not advice.
 
 **Running backs — HIGH (lean over):** the bounce-back workhorses the
-market re-rated up — **Bucky Irving** (804), **Cam Skattebo** (781),
-**Chris Rodriguez** (728), **Omarion Hampton** (926), **Bhayshul Tuten**
-(734). All missed time in 2025 *and* got a line set well over last year —
-historically 64–85% overs.
+market re-rated up — **Bucky Irving** (TB 804), **Cam Skattebo** (NYG
+781), **Chris Rodriguez** (JAX 728), **Omarion Hampton** (LAC 926),
+**Bhayshul Tuten** (JAX 734). All missed time in 2025 *and* got a line
+set well over last year — historically 64–85% overs. Then the mid-round
+tier with a catchable line (TreVeyon Henderson 700, D'Andre Swift 799,
+Tony Pollard 776).
 **Running backs — LOW (lean under):** the RB31+ committee tier with a
-catchable-looking number — Jaylen Warren, Croskey-Merritt, Rhamondre
-Stevenson, Rachaad White, Blake Corum, Jordan Mason (1-for-11 history),
-plus the 1,000–1,200 dead-zone backs (**Bijan** 1,150, **James Cook**
-1,176, **Saquon** 1,050).
+catchable-looking number — Jaylen Warren, Blake Corum, Jordan Mason,
+Rhamondre Stevenson, Rachaad White, Croskey-Merritt (1-for-11 history) —
+plus the 1,000–1,200 dead-zone backs (**Bijan** ATL 1,150, **James Cook**
+BUF 1,176, **Saquon** PHI 1,050).
 
 **Wide receivers — HIGH (lean over):** weak/unproven-QB receivers —
-**Michael Wilson** & **Marvin Harrison** (Kyler Murray, tier 4),
-**Jordan Addison** (McCarthy), **Jaylen Waddle** (Tua), **Jerry Jeudy**
-(Watson) — plus receivers whose line got cut hard off a full 2025 (Zay
-Flowers 976, Jameson Williams 900).
+**Michael Wilson** (ARI, Jacoby Brissett), **Jerry Jeudy** &
+**KC Concepcion** (CLE, Deshaun Watson), **Wan'Dale Robinson** (TEN, Cam
+Ward) — plus receivers whose line got cut hard off a full 2025
+(**Zay Flowers** BAL 976, **Courtland Sutton** DEN 726, **Jameson
+Williams** DET 900).
 **Wide receivers — LOW (lean under):** receivers coming off an injury
 2025 whose line the market bounced right back up — **Rashee Rice**
-(1,050, off 8 g), **Mike Evans**, **Terry McLaurin**, **Malik Nabers**,
-**Calvin Ridley**, **Chris Godwin**, **Christian Watson** (all ~36% over
-historically) — plus elite-QB WR1s on contenders in the dead zone
-(**CeeDee Lamb** 1,200, **DeVonta Smith** 1,050, **A.J. Brown** 1,100).
+(KC 1,050, off 8 g), **Mike Evans** (SF), **Terry McLaurin** (WAS),
+**Malik Nabers** (NYG), **Calvin Ridley** (TEN), **Chris Godwin** (TB),
+**Christian Watson** (GB) — all ~36% over historically — plus elite-QB
+WR1s on contenders in the dead zone (**CeeDee Lamb** DAL 1,200,
+**DeVonta Smith** PHI 1,050, **A.J. Brown** NE 1,100).
 
 The strongest single signals, in order: **RB — availability** (a healthy
 back is a ~64% over; every meaningful under is an injury), then the
@@ -81,8 +88,10 @@ python3 projects/prop-accuracy/scripts/coverage_rb.py   # -> data/rb_adp_coverag
 python3 projects/prop-accuracy/scripts/watch_rb.py      # -> data/rb_watch_2026.json  (2026 patterns)
 
 # 2026 picks (uses live FanDuel lines + the strongest historical signals):
+python3 nfl/sources/firstdown_studio_2026/pipeline.py   # post-trade 2026 teams + starters
 python3 nfl/sources/fanduel_season_props/pipeline.py    # live FD O/U lines + odds
 python3 projects/prop-accuracy/scripts/picks_2026.py    # -> data/picks_2026.json  (high on / low on)
+#   (picks_2026 / watch_rb / context_wr share scripts/_ctx26.py for 2026 team + QB context)
 
 # then, for the visual report:
 python3 projects/prop-accuracy/scripts/bundle.py        # -> data/report_bundle.json (embedded in settle-sheet.html)

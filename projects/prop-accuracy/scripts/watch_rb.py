@@ -16,26 +16,18 @@ import csv
 import json
 import os
 import re
+import sys
 
 HERE = os.path.dirname(__file__)
+sys.path.insert(0, HERE)
+import _ctx26  # noqa: E402
+
 PROJECT = os.path.dirname(HERE)
 REPO_ROOT = os.path.dirname(os.path.dirname(PROJECT))
 DATA = os.path.join(PROJECT, "data")
 
 PROPS = os.path.join(REPO_ROOT, "nfl/sources/rb_prop_totals/data/rb_prop_totals.csv")
 RUSH = os.path.join(REPO_ROOT, "nfl/sources/rushing_stats/data/rushing_stats.csv")
-QB_TIERS = os.path.join(REPO_ROOT, "nfl/sources/qb_tiers/data/qb_tiers.csv")
-KALSHI = os.path.join(REPO_ROOT, "nfl/sources/kalshi_win_totals/data/kalshi_win_totals.csv")
-
-NICK = {"49ers": "SF", "Bears": "CHI", "Bengals": "CIN", "Bills": "BUF",
-        "Broncos": "DEN", "Browns": "CLE", "Buccaneers": "TB", "Cardinals": "ARI",
-        "Chargers": "LAC", "Chiefs": "KC", "Colts": "IND", "Commanders": "WAS",
-        "Cowboys": "DAL", "Dolphins": "MIA", "Eagles": "PHI", "Falcons": "ATL",
-        "Giants": "NYG", "Jaguars": "JAX", "Jets": "NYJ", "Lions": "DET",
-        "Packers": "GB", "Panthers": "CAR", "Patriots": "NE", "Raiders": "LV",
-        "Rams": "LAR", "Ravens": "BAL", "Saints": "NO", "Seahawks": "SEA",
-        "Steelers": "PIT", "Texans": "HOU", "Titans": "TEN", "Vikings": "MIN"}
-STARTER_2026 = {"ATL": "Michael Penix Jr.", "CLE": "Deshaun Watson", "MIN": "J.J. McCarthy"}
 
 # FDS abbreviated names -> the spelling nflverse rushing_stats uses (2025)
 NAME_FIX = {
@@ -64,23 +56,9 @@ def load_prior():
     return idx
 
 
-def load_qb26():
-    qb = {}
-    for r in csv.DictReader(open(QB_TIERS)):
-        if r["season"] != "2026":
-            continue
-        ab = NICK.get(r["team"])
-        if not ab or (ab in STARTER_2026 and r["qb_name"] != STARTER_2026[ab]):
-            continue
-        qb.setdefault(ab, (int(r["tier"]), r["qb_name"]))
-    return qb
-
-
 def main():
     prior = load_prior()
-    qb26 = load_qb26()
-    wt26 = {r["team"]: round(float(r["implied_line"]), 1)
-            for r in csv.DictReader(open(KALSHI))}
+    team26, qb26, wt26 = _ctx26.load()
 
     backs = []
     for r in csv.DictReader(open(PROPS)):
@@ -89,7 +67,7 @@ def main():
         line = float(r["line"])
         nm = NAME_FIX.get(r["player"], r["player"])
         p = prior.get(_norm(nm))
-        tm = r["team"]
+        tm = team26.get(_norm(r["player"])) or r["team"]
         q = qb26.get(tm)
         py = p["rushing_yards"] if p else None
         pg = p["games"] if p else None

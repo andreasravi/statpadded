@@ -21,8 +21,11 @@ Run: python3 projects/prop-accuracy/scripts/context_wr.py
 import csv
 import os
 import statistics as st
+import sys
 
 HERE = os.path.dirname(__file__)
+sys.path.insert(0, HERE)
+import _ctx26  # noqa: E402
 PROJECT = os.path.dirname(HERE)
 REPO_ROOT = os.path.dirname(os.path.dirname(PROJECT))
 DATA = os.path.join(PROJECT, "data")
@@ -187,43 +190,11 @@ def main():
     except ImportError:
         print("\n(statsmodels not available -- skipping OLS)")
 
-    # ---- 2026 overlay: each grid WR's team win total + preseason QB tier ----
+    # ---- 2026 overlay: projected QB tier + Kalshi win total per team ----
     import json
-    kal = {r["team"]: float(r["implied_line"])
-           for r in csv.DictReader(open(os.path.join(
-               REPO_ROOT, "nfl/sources/kalshi_win_totals/data/kalshi_win_totals.csv")))}
-    NICK = {"49ers": "SF", "Bears": "CHI", "Bengals": "CIN", "Bills": "BUF",
-            "Broncos": "DEN", "Browns": "CLE", "Buccaneers": "TB", "Cardinals": "ARI",
-            "Chargers": "LAC", "Chiefs": "KC", "Colts": "IND", "Commanders": "WAS",
-            "Cowboys": "DAL", "Dolphins": "MIA", "Eagles": "PHI", "Falcons": "ATL",
-            "Giants": "NYG", "Jaguars": "JAX", "Jets": "NYJ", "Lions": "DET",
-            "Packers": "GB", "Panthers": "CAR", "Patriots": "NE", "Raiders": "LV",
-            "Rams": "LAR", "Ravens": "BAL", "Saints": "NO", "Seahawks": "SEA",
-            "Steelers": "PIT", "Texans": "HOU", "Titans": "TEN", "Vikings": "MIN"}
-    # projected Week-1 starter tier per team (2026), from The Athletic's 2026 survey;
-    # where the source lists a starter + backup, keep the projected starter.
-    STARTER_2026 = {
-        "ATL": "Michael Penix Jr.", "CLE": "Deshaun Watson", "MIN": "J.J. McCarthy",
-    }
-    qb26 = {}
-    qb_tiers_csv = os.path.join(REPO_ROOT, "nfl/sources/qb_tiers/data/qb_tiers.csv")
-    for r in csv.DictReader(open(qb_tiers_csv)):
-        if r["season"] != "2026":
-            continue
-        ab = NICK.get(r["team"])
-        if not ab:
-            continue
-        if ab in STARTER_2026 and r["qb_name"] != STARTER_2026[ab]:
-            continue
-        qb26.setdefault(ab, (r["tier"], r["qb_name"]))
-
-    grid26 = []
-    for r in csv.DictReader(open(os.path.join(
-            REPO_ROOT, "nfl/sources/wr_prop_totals/data/wr_prop_totals.csv"))):
-        if r["year"] != "2026":
-            continue
-        grid26.append({"player": r["player"], "yards_line": r["yards_line"],
-                       "rec_line": r["rec_line"], "td_line": r["td_line"]})
+    team26, qb26_raw, wt26 = _ctx26.load()
+    # keep the (tier, qb_name) shape the artifact expects, tier as string
+    qb26 = {tm: (str(t), nm) for tm, (t, nm) in qb26_raw.items()}
 
     summary = {
         "n_qb_tier": tiered, "n_win_total": n,
@@ -231,7 +202,8 @@ def main():
         "yards_by_win_total": _bucketed(rows, "yards", _wt_label, WT_LABELS),
         "rec_by_qb_tier": _bucketed(rows, "rec", _tier_label, TIER_LABELS),
         "rec_by_win_total": _bucketed(rows, "rec", _wt_label, WT_LABELS),
-        "qb26": qb26, "wt26": {k: round(v, 1) for k, v in kal.items()},
+        "qb26": qb26, "wt26": wt26,
+        "team26": {k: v for k, v in team26.items()},
     }
     with open(os.path.join(DATA, "context_summary.json"), "w") as f:
         json.dump(summary, f, indent=1)
