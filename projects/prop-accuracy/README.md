@@ -24,6 +24,7 @@ Two positions, same method, same directory:
 # wide receivers
 python3 projects/prop-accuracy/scripts/grade_wr.py      # -> data/wr_prop_grades.csv
 python3 projects/prop-accuracy/scripts/analyze_wr.py    # -> hit_rate_* / year_over_year_* CSVs
+python3 projects/prop-accuracy/scripts/explore_wr.py    # -> wr_miss_distribution / wr_beat_magnitude_by_line / wr_line_vs_prior_year CSVs
 python3 projects/prop-accuracy/scripts/context_wr.py    # -> context_* CSVs + context_summary.json
 python3 projects/prop-accuracy/scripts/coverage_wr.py   # -> adp_coverage_gaps.csv
 
@@ -49,6 +50,13 @@ and the team's Vegas win-total line
 ([`nfl/sources/win_totals`](../../nfl/sources/win_totals/)) -- neither of
 which is a within-season outcome, so year-X prop result vs year-X preseason
 context is not lookahead.
+
+`explore_wr.py` is the deeper exploratory pass — the distribution of the
+miss, the beat/short-fall magnitude inside each line tier, and the line vs
+the player's *previous* season (prior-year actuals come from
+`receiving_stats`, which goes back to 2021). Writes
+`wr_miss_distribution.csv`, `wr_beat_magnitude_by_line.csv`,
+`wr_line_vs_prior_year.csv`.
 
 `coverage_wr.py` checks the grid against an independent WR ADP ranking
 (`underdog_adp` for 2023-25, FantasyData `adp` for 2022) and writes
@@ -87,7 +95,60 @@ of that tier misses 14+ games and *none* of those beat the over. It's not a
 standing edge though — the tier ran +100 yds vs the line in '22, −118 in
 '25.
 
-### 3. Team context: the QB tier is the real lever, and the market overreacts to it
+**When they beat, how much do they beat by?** (`explore_wr.py`, section B —
+median over-shoot vs median short-fall inside each yards tier)
+
+| Line | under % (healthy) | beat by, median (when over) | miss by, median (when under) |
+|---|---|---|---|
+| 700–850 | **33%** | +294 | −224 |
+| 850–1000 | 36% | +196 | **−294** |
+| 1000–1200 | 52% | +231 | −161 |
+| 1200+ | 33% | +287 | −197 |
+
+The **850–1000** band is the worst risk/reward on the board: a healthy WR
+there is under only ~36% of the time, but the misses (−294 median) are
+nearly twice the size of the beats (+196). The **700–850** band is the
+inverse and the best pure over — low under rate *and* the beats out-size
+the misses. Receptions: a **≤55 line is a 93% under (91% healthy)** — the
+single most automatic fade in the data; the **56–65** possession band is a
+30% under (12% healthy). TDs: an **8+ line is a 72% under (64% healthy),
+median −3.5** — nothing else is close.
+
+### 3. The shape of the miss: the line is almost never "about right"
+
+Across 158 receiver-seasons the receiving-yards result lands **within ±50
+of the line only 14% of the time** (median miss −37, SD 318). It's a
+near-symmetric distribution in the middle (skew ≈ 0) with two fat tails:
+**30% blow the under by 200+ yards, 25% blow the over by 200+**. A season-
+long receiving prop is a coin flip on a number that will usually be wrong
+by a couple hundred yards — the edge, if there is one, is in *which* tail.
+Every one of the 12 worst under misses is an injury season (≤ 10 games);
+every one of the 12 biggest overs is a 16–17-game season. Receptions
+(within ±3 just 8% of the time) and TDs (within ±1, 32%) are the same
+shape.
+
+### 4. The line is last year's box score, lightly discounted
+
+`corr(line, the player's prior-season receiving yards) = +0.78` — the book
+anchors the number hard to last year, then shades it down a mean **71
+yards** for regression/age/injury risk. But the prior-season *total* itself
+tells you nothing about the result (`corr(prior yards, this year's Δ) =
++0.03`). What matters is the **direction of the re-rate** (`explore_wr.py`,
+section C):
+
+| Line vs last year's actual | n | over % | over % (healthy) |
+|---|---|---|---|
+| set **≥ 150 above** (bullish / breakout buy-in) | 19 | **37%** | 46% |
+| within ±150 | 78 | 42% | 58% |
+| cut **≥ 150 below** (bearish / written off) | 49 | **51%** | **69%** |
+
+When the book prices in a leap, it's been wrong more often than not; the
+receivers it gave up on have been the better overs. Same story for health:
+a WR **coming off a prior-year injury** (< 14 g) goes **36% over (47%
+healthy), median −90** — the post-injury line still isn't discounted
+enough for the re-injury / slow-ramp risk.
+
+### 5. Team context: the QB tier is the real lever, and the market overreacts to it
 
 Joining each yards line to the **preseason** QB tier of the team the
 receiver *started* the season with (n=137):
@@ -120,7 +181,7 @@ For **receptions**, context barely matters (R² ≈ 0.03) except that
 **contender WRs clear 68%** — high-volume passing offenses throw a lot of
 catchable balls even when the yardage doesn't follow.
 
-### 4. Year over year: no carryover
+### 6. Year over year: no carryover
 
 `corr(this year's Δ vs line, next year's Δ vs line) = +0.02` across 81
 same-player pairs. How a receiver did against his number tells you nothing
@@ -156,11 +217,22 @@ a genuine top-16 WR by ADP, held out in camp, then a Week-7 ACL tear.
 
 The market is efficient enough that beating these lines is hard and getting
 harder, there's no player-level momentum to ride, and the repeatable angles
-are structural: fade 8+ TD lines and the 1,000–1,200 yard band; lean overs
-on healthy sub-1,000-yard receivers, on players bouncing back from a
-moderate down year, and — the strongest single signal, though small-sample
-— on receivers whose line got shaded down for a weak or unproven QB.
-Elite-QB WR1s on contenders are where the overs run thinnest.
+are structural:
+
+- **Fade:** 8+ TD lines (72% under), ≤55 reception lines (93% under), the
+  850–1,000 yard band (misses ~2× the beats), a line set ≥150 above last
+  year, and a WR coming off an injury year.
+- **Lean over:** healthy sub-1,000-yard receivers (esp. the 700–850 band),
+  a line the book *cut* ≥150 below last year, players bouncing back from a
+  moderate (−150 to −300) down year, and — the strongest single signal,
+  though small-sample — receivers whose line got shaded down for a weak or
+  unproven QB.
+- Elite-QB WR1s on contenders are where the overs run thinnest.
+
+The through-line across the new cuts: the book prices the season off last
+year's box score and the preseason narrative (breakout buzz, QB downgrade,
+"coming back from injury"), and it leans on those priors a little too hard
+in every direction.
 
 ---
 

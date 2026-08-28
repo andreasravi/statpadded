@@ -421,6 +421,25 @@
     <div class="kick" id="ctxKick"></div>
   </div>
 
+  <div class="tiers" id="prioryr">
+    <div class="hh">
+      <div>
+        <h3>Is the line just last year's stat line?</h3>
+        <p class="sub" id="pySub"></p>
+      </div>
+    </div>
+    <div class="scroll">
+      <table class="tier">
+        <thead><tr>
+          <th>Where the book set the yards line</th><th>n</th>
+          <th>Over % — all</th><th>Over % — healthy</th><th>Median Δ</th>
+        </tr></thead>
+        <tbody id="pyBody"></tbody>
+      </table>
+    </div>
+    <div class="kick" id="pyKick"></div>
+  </div>
+
   <div class="tiers" id="watch26">
     <h3>2026 — what stands out</h3>
     <p class="sub">The patterns above, run against this year's Fantasy Alarm grid (Aug 2026). Nothing here is
@@ -492,9 +511,9 @@ document.getElementById('split').innerHTML=
 
 /* ---------- histogram: distribution of (actual − line) ---------- */
 const METRICS={
-  yds:{key:'yds_diff',noun:'receiving yards',unit:'yds',step:100,lo:-900,hi:900},
-  rec:{key:'rec_diff',noun:'receptions',unit:'rec',step:10,lo:-80,hi:50},
-  td:{key:'td_diff',noun:'touchdowns',unit:'TD',step:2,lo:-8,hi:10},
+  yds:{key:'yds_diff',noun:'receiving yards',unit:'yds',step:100,lo:-900,hi:900,near:50,wide:200},
+  rec:{key:'rec_diff',noun:'receptions',unit:'rec',step:10,lo:-80,hi:50,near:3,wide:5},
+  td:{key:'td_diff',noun:'touchdowns',unit:'TD',step:2,lo:-8,hi:10,near:1,wide:1.5},
 };
 const plot=document.getElementById('histoPlot');
 const sub=document.getElementById('histoSub');
@@ -578,9 +597,13 @@ function drawHisto(m){
   const mean=vals.reduce((a,b)=>a+b,0)/vals.length;
   sub.textContent=`Each bar counts receiver-seasons whose final ${cfg.noun} total landed that far from the preseason prop line. `
     +`${vals.length} seasons`+(m==='yds'?', 2022–25.':' with a published '+cfg.noun+' line, 2023–25.');
+  const near=Math.round(vals.filter(v=>Math.abs(v)<=cfg.near).length/vals.length*100);
+  const blowU=Math.round(vals.filter(v=>v<=-cfg.wide).length/vals.length*100);
+  const blowO=Math.round(vals.filter(v=>v>=cfg.wide).length/vals.length*100);
   foot.innerHTML=`<span><b>${under}</b> <span class="uc">under</span> &nbsp;·&nbsp; <b>${over}</b> <span class="oc">over</span></span>`
     +`<span>median <b>${sgn(+median(vals).toFixed(1))}</b> ${cfg.unit}</span>`
-    +`<span>mean <b>${sgn(+mean.toFixed(1))}</b> ${cfg.unit}</span>`
+    +`<span>within ±${cfg.near} of the number <b>${near}%</b></span>`
+    +`<span>blew it by ${cfg.wide}+ &nbsp;<span class="uc"><b>${blowU}%</b></span> / <span class="oc"><b>${blowO}%</b></span></span>`
     +`<span>worst miss <b>${sgn(Math.min(...vals))}</b> &nbsp;·&nbsp; best beat <b>${sgn(Math.max(...vals))}</b></span>`;
 }
 const seg=document.getElementById('metricSeg');
@@ -1112,6 +1135,47 @@ cSeg.addEventListener('click',e=>{
   drawCtx(b.dataset.m);
 });
 drawCtx('yards');
+
+/* ---------- the line vs the player's previous season ---------- */
+/* from projects/prop-accuracy/data/wr_explore_summary.json (explore_wr.py) */
+const EXPLORE={
+  n:146, corr_line_prior:0.78, corr_prior_diff:0.03, mean_line_minus_prior:-71,
+  rerate:[
+   {bucket:"set ≥ 150 above last year", note:"breakout buy-in", n:19, over_pct:37, healthy_over_pct:46, median_diff:-130.5},
+   {bucket:"within ±150 of last year", note:"", n:78, over_pct:42, healthy_over_pct:58, median_diff:-65.5},
+   {bucket:"cut ≥ 150 below last year", note:"written off", n:49, over_pct:51, healthy_over_pct:69, median_diff:12.5}],
+  prior_injury:{n:28, over_pct:36, healthy_over_pct:47, median_diff:-89.5}
+};
+(function drawPrioryr(){
+  document.getElementById('pySub').innerHTML=
+    `Each yards line joined to the same receiver's <b>previous-season</b> receiving total (from `
+   +`<span class="mono">receiving_stats</span>, back to 2021). The line tracks last year at `
+   +`<span class="mono">r = +${EXPLORE.corr_line_prior}</span> — but the prior total itself predicts the miss at only `
+   +`<span class="mono">r = +${EXPLORE.corr_prior_diff}</span>. What matters is the direction of the re-rate. `
+   +`${EXPLORE.n} receiver-seasons with a prior year in the data.`;
+  const md=v=>`<span class="md ${v>0?'pos':'neg'}">${v>0?'+':''}${Math.round(v)}</span>`;
+  document.getElementById('pyBody').innerHTML=EXPLORE.rerate.map(b=>{
+    const cls=b.healthy_over_pct>=50?'hi':'lo';
+    return `<tr>
+      <td class="tl">${b.bucket}${b.note?`<small>${b.note}</small>`:''}</td>
+      <td>${b.n}</td>
+      <td>${b.over_pct}%</td>
+      <td><div class="ratebar"><span>${b.healthy_over_pct}%</span><span class="track"><i class="${cls}" style="width:${b.healthy_over_pct}%"></i></span></div></td>
+      <td>${md(b.median_diff)} yds</td>
+    </tr>`;
+  }).join('');
+  const up=EXPLORE.rerate[0], down=EXPLORE.rerate[2], inj=EXPLORE.prior_injury;
+  document.getElementById('pyKick').innerHTML=
+    `<b>The book anchors to last year, then leans on the narrative too hard.</b> When it prices in a leap — line set `
+   +`<span class="mono">150+</span> over last year's total — the receiver cleared it just `
+   +`<span class="mono">${up.over_pct}%</span> of the time (<span class="mono">${up.healthy_over_pct}%</span> healthy), `
+   +`median <span class="mono">${Math.round(up.median_diff)}</span>. The receivers it <i>gave up on</i> — line cut `
+   +`<span class="mono">150+</span> below last year — went <span class="mono">${down.over_pct}%</span> over `
+   +`(<span class="mono">${down.healthy_over_pct}%</span> healthy). Same blind spot on health: a WR coming off a `
+   +`prior-year injury (&lt; 14 g) went <span class="mono">${inj.over_pct}%</span> over `
+   +`(<span class="mono">${inj.healthy_over_pct}%</span> healthy, median <span class="mono">${Math.round(inj.median_diff)}</span>) — `
+   +`the post-injury line still isn't discounted enough for re-injury and slow ramps.`;
+})();
 
 /* ---------- 2026 watch list ---------- */
 // p=player, yl/rl/tl = 2026 lines, adp, then 2025 actuals (g,y,r,t) and 2025 article yards line (y25l or null)

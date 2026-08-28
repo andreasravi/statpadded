@@ -1,0 +1,292 @@
+{
+ "n_graded": 158,
+ "years": [
+  2022,
+  2025
+ ],
+ "miss_shape": {
+  "yards": {
+   "n": 158,
+   "near": 50,
+   "wide": 200,
+   "pct_under": 56,
+   "pct_near": 14,
+   "blowup_under_pct": 30,
+   "blowup_over_pct": 25,
+   "mean": -23.7,
+   "median": -36.5,
+   "skew": 0.09
+  },
+  "rec": {
+   "n": 123,
+   "near": 3,
+   "wide": 5,
+   "pct_under": 56,
+   "pct_near": 8,
+   "blowup_under_pct": 48,
+   "blowup_over_pct": 36,
+   "mean": -4.3,
+   "median": -3.5,
+   "skew": -0.2
+  },
+  "td": {
+   "n": 123,
+   "near": 1,
+   "wide": 1.5,
+   "pct_under": 60,
+   "pct_near": 32,
+   "blowup_under_pct": 40,
+   "blowup_over_pct": 28,
+   "mean": -0.4,
+   "median": -0.5,
+   "skew": 0.26
+  }
+ },
+ "beat_magnitude_by_line": [
+  {
+   "metric": "yards",
+   "tier": "<700",
+   "n": 13,
+   "under_pct": 69,
+   "healthy_n": 9,
+   "healthy_under_pct": 67,
+   "median_beat_when_over": 217.5,
+   "n_over": 4,
+   "median_miss_when_under": -276.5,
+   "n_under": 9,
+   "beat_miss_ratio": 0.79
+  },
+  {
+   "metric": "yards",
+   "tier": "700-850",
+   "n": 39,
+   "under_pct": 49,
+   "healthy_n": 30,
+   "healthy_under_pct": 33,
+   "median_beat_when_over": 294.0,
+   "n_over": 20,
+   "median_miss_when_under": -223.5,
+   "n_under": 19,
+   "beat_miss_ratio": 1.32
+  },
+  {
+   "metric": "yards",
+   "tier": "850-1000",
+   "n": 52,
+   "under_pct": 56,
+   "healthy_n": 33,
+   "healthy_under_pct": 36,
+   "median_beat_when_over": 195.5,
+   "n_over": 23,
+   "median_miss_when_under": -293.5,
+   "n_under": 29,
+   "beat_miss_ratio": 0.67
+  },
+  {
+   "metric": "yards",
+   "tier": "1000-1200",
+   "n": 33,
+   "under_pct": 64,
+   "healthy_n": 25,
+   "healthy_under_pct": 52,
+   "median_beat_when_over": 230.5,
+   "n_over": 12,
+   "median_miss_when_under": -160.5,
+   "n_under": 21,
+   "beat_miss_ratio": 1.44
+  },
+  {
+   "metric": "yards",
+   "tier": "1200+",
+   "n": 21,
+   "under_pct": 52,
+   "healthy_n": 15,
+   "healthy_under_pct": 33,
+   "median_beat_when_over": 286.5,
+   "n_over": 10,
+   "median_miss_when_under": -196.5,
+   "n_under": 11,
+   "beat_miss_ratio": 1.46
+  },
+  {
+   "metric": "rec",
+   "tier": "<=55",
+   "n": 15,
+   "under_pct": 93,
+   "healthy_n": 11,
+   "healthy_under_pct": 91,
+   "median_beat_when_over": 6.5,
+   "n_over": 1,
+   "median_miss_when_under": -17.5,
+   "n_under": 14,
+   "beat_miss_ratio": 0.37
+  },
+  {
+   "metric": "rec",
+   "tier": "56-65",
+   "n": 20,
+   "under_pct": 30,
+   "healthy_n": 16,
+   "healthy_under_pct": 12,
+   "median_beat_when_over": 21.5,
+   "n_over": 14,
+   "median_miss_when_under": -27.5,
+   "n_under": 6,
+   "beat_miss_ratio": 0.78
+  },
+  {
+   "metric": "rec",
+   "tier": "66-75",
+   "n": 39,
+   "under_pct": 56,
+   "healthy_n": 27,
+   "healthy_under_pct": 41,
+   "median_beat_when_over": 9.5,
+   "n_over": 17,
+   "median_miss_when_under": -18.0,
+   "n_under": 22,
+   "beat_miss_ratio": 0.53
+  },
+  {
+   "metric": "rec",
+   "tier": "76-85",
+   "n": 21,
+   "under_pct": 71,
+   "healthy_n": 15,
+   "healthy_under_pct": 60,
+   "median_beat_when_over": 7.0,
+   "n_over": 6,
+   "median_miss_when_under": -17.5,
+   "n_under": 15,
+   "beat_miss_ratio": 0.4
+  },
+  {
+   "metric": "rec",
+   "tier": "86+",
+   "n": 28,
+   "under_pct": 43,
+   "healthy_n": 20,
+   "healthy_under_pct": 25,
+   "median_beat_when_over": 18.5,
+   "n_over": 16,
+   "median_miss_when_under": -18.0,
+   "n_under": 12,
+   "beat_miss_ratio": 1.03
+  },
+  {
+   "metric": "td",
+   "tier": "<=4.5",
+   "n": 47,
+   "under_pct": 57,
+   "healthy_n": 36,
+   "healthy_under_pct": 50,
+   "median_beat_when_over": 2.0,
+   "n_over": 20,
+   "median_miss_when_under": -1.5,
+   "n_under": 27,
+   "beat_miss_ratio": 1.33
+  },
+  {
+   "metric": "td",
+   "tier": "5-5.5",
+   "n": 15,
+   "under_pct": 60,
+   "healthy_n": 8,
+   "healthy_under_pct": 62,
+   "median_beat_when_over": 3.0,
+   "n_over": 6,
+   "median_miss_when_under": -2.5,
+   "n_under": 9,
+   "beat_miss_ratio": 1.2
+  },
+  {
+   "metric": "td",
+   "tier": "6-6.5",
+   "n": 27,
+   "under_pct": 56,
+   "healthy_n": 19,
+   "healthy_under_pct": 47,
+   "median_beat_when_over": 1.5,
+   "n_over": 12,
+   "median_miss_when_under": -1.5,
+   "n_under": 15,
+   "beat_miss_ratio": 1.0
+  },
+  {
+   "metric": "td",
+   "tier": "7-7.5",
+   "n": 16,
+   "under_pct": 62,
+   "healthy_n": 12,
+   "healthy_under_pct": 50,
+   "median_beat_when_over": 3.0,
+   "n_over": 6,
+   "median_miss_when_under": -2.8,
+   "n_under": 10,
+   "beat_miss_ratio": 1.07
+  },
+  {
+   "metric": "td",
+   "tier": "8+",
+   "n": 18,
+   "under_pct": 72,
+   "healthy_n": 14,
+   "healthy_under_pct": 64,
+   "median_beat_when_over": 3.5,
+   "n_over": 5,
+   "median_miss_when_under": -3.5,
+   "n_under": 13,
+   "beat_miss_ratio": 1.0
+  }
+ ],
+ "line_vs_prior_year": {
+  "n": 146,
+  "corr_line_prior": 0.78,
+  "corr_prior_diff": 0.03,
+  "mean_line_minus_prior": -71,
+  "rerate": [
+   {
+    "bucket": "set >= 150 above last yr",
+    "n": 19,
+    "over_pct": 37,
+    "median_diff": -130.5,
+    "healthy_n": 13,
+    "healthy_over_pct": 46
+   },
+   {
+    "bucket": "within +-150 of last yr",
+    "n": 78,
+    "over_pct": 42,
+    "median_diff": -65.5,
+    "healthy_n": 53,
+    "healthy_over_pct": 58
+   },
+   {
+    "bucket": "cut >= 150 below last yr",
+    "n": 49,
+    "over_pct": 51,
+    "median_diff": 12.5,
+    "healthy_n": 36,
+    "healthy_over_pct": 69
+   }
+  ],
+  "prior_injury": [
+   {
+    "bucket": "prior injury (<14 g)",
+    "n": 28,
+    "over_pct": 36,
+    "healthy_n": 17,
+    "healthy_over_pct": 47,
+    "median_diff": -89.5
+   },
+   {
+    "bucket": "prior full season",
+    "n": 118,
+    "over_pct": 47,
+    "healthy_n": 85,
+    "healthy_over_pct": 64,
+    "median_diff": -23.5
+   }
+  ]
+ }
+}
