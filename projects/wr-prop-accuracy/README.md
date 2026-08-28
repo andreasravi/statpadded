@@ -31,6 +31,10 @@ and the team's Vegas win-total line
 which is a within-season outcome, so year-X prop result vs year-X preseason
 context is not lookahead.
 
+`coverage.py` checks the grid against an independent WR ADP ranking
+(`underdog_adp` for 2023-25, FantasyData `adp` for 2022) and writes
+`data/adp_coverage_gaps.csv` -- see the coverage note below.
+
 `grade.py` matches each published prop row to a nflverse player-season on a
 normalized name key (strip punctuation / Jr-Sr-III, then first-initial +
 last-name fallback; ties broken by targets, which handles mid-season
@@ -108,6 +112,26 @@ regress to a small *under* the next season. The one real buy-low: a
 year, median +98**, after the book over-corrects the line down. The worst
 spot is a **dead-on** result (−50 to +50) → 25% over next year: meet your
 number and you get priced exactly at your level, with only downside.
+
+### Coverage: who the grid skips
+
+The grid is an editor's pick, not a mechanical top-N, and it misses a
+handful of top-25-by-ADP WRs each year (`coverage.py`):
+
+| Year | Missing from grid (WR rank by ADP) |
+|---|---|
+| 2022 | Michael Thomas (20), Chris Godwin (22) |
+| 2023 | Jerry Jeudy (20), Terry McLaurin (23), DeAndre Hopkins (24) |
+| 2024 | **Brandon Aiyuk (16)**, Malik Nabers (20), Tank Dell (25) |
+| 2025 | Terry McLaurin (20) |
+
+The omissions cluster on injury-cloud veterans (Thomas, Godwin, Aiyuk,
+McLaurin '25), late-signing / new-team vets (Hopkins '23), and a rookie
+the author skipped (Nabers '24). Several are exactly the profiles most
+likely to bust, so the raw hit rates here are probably a touch *optimistic*
+versus a true top-25-by-ADP census. McLaurin is a persistent blind spot
+(missing 2 of 3 years he'd have qualified). Aiyuk '24 is the biggest gap —
+a genuine top-16 WR by ADP, held out in camp, then a Week-7 ACL tear.
 
 ## Bottom line
 
