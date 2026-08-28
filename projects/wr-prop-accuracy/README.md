@@ -66,27 +66,33 @@ standing edge though — the tier ran +100 yds vs the line in '22, −118 in
 
 ### 3. Team context: the QB tier is the real lever, and the market overreacts to it
 
-Joining each yards line to the team's **preseason** QB tier (n=138):
+Joining each yards line to the **preseason** QB tier of the team the
+receiver *started* the season with (n=137):
 
 | QB tier | n | over % (all) | mean Δ vs line |
 |---|---|---|---|
-| 1 (elite) | 28 | 39% | −43 |
-| 2 | 47 | 38% | −63 |
+| 1 (elite) | 27 | 41% | −30 |
+| 2 | 45 | 38% | −57 |
 | 3 | 40 | 40% | −13 |
-| **4–5 (weak)** | 23 | **65%** | **+85** |
+| **4–5 (weak)** | 25 | **64%** | **+64** |
 
-`diff ~ yards_line + qb_tier + win_total` OLS: **qb_tier ≈ +93 yds per step
-down the tiers, p ≈ 0.01**; `yards_line` itself is insignificant once tier
+`diff ~ yards_line + qb_tier + win_total` OLS: **qb_tier ≈ +88 yds per step
+down the tiers, p ≈ 0.014**; `yards_line` itself is insignificant once tier
 and win total are in. The book shades a WR's line down hard for a weak-QB
 label, and the label is noisy enough (Purdy/Baker/Darnold were all
 tier-4-ish and fine) that the shade has been too aggressive. Elite-QB WRs,
-especially on contenders (mean −52, n=65), have been the thinnest overs.
-**Caveats:** 23 weak-QB seasons is small; ~20 team-seasons have no tiered
+especially on contenders (mean −43, n=62), have been the thinnest overs.
+**Caveats:** 25 weak-QB seasons is small; ~21 team-seasons have no tiered
 starter in the source and are excluded; a few "primary starters" are the
-actual not the projected QB.
+actual not the projected QB. The join uses `team_start` (first-game team,
+from `receiving_stats`), not `recent_team`, so the ~3 mid-season trades in
+the sample (Adams / Cooper / Johnson '24) get their preseason team's
+context.
 
 Team **win total** is U-shaped for yards — the **7–8 win** band is the trap
-(29% over, mean −84); tank teams (volume) and contenders both fare better.
+(29% over, mean −84); tank teams (volume) and contenders both fare better
+(OLS win_total ≈ +47 yds/win, p ≈ 0.03, but that's a linear read of a
+non-linear shape — trust the bucket view).
 For **receptions**, context barely matters (R² ≈ 0.03) except that
 **contender WRs clear 68%** — high-volume passing offenses throw a lot of
 catchable balls even when the yardage doesn't follow.

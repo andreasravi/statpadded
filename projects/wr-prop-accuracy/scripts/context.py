@@ -44,7 +44,11 @@ def load():
     rows = []
     for r in csv.DictReader(open(GRADES)):
         y = int(r["year"])
-        key = (y, r["team"])
+        # the prop line was set preseason, so use the team the receiver
+        # STARTED the season with, not recent_team (matters for the ~3
+        # graded seasons with a mid-season trade -- Adams/Cooper/Johnson '24)
+        team = r.get("team_start") or r["team"]
+        key = (y, team)
         if key not in wt:
             continue
         for k in ("yards_diff", "rec_diff", "yards_line", "rec_line"):

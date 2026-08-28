@@ -1,26 +1,26 @@
 {
- "n_qb_tier": 138,
+ "n_qb_tier": 137,
  "n_win_total": 158,
  "yards_by_qb_tier": [
   {
    "bucket": "1 (elite)",
-   "n": 28,
+   "n": 27,
    "avg_line": 949.0,
-   "over_pct_all": 39,
-   "mean_diff_all": -43.0,
+   "over_pct_all": 41,
+   "mean_diff_all": -30.0,
    "n_healthy": 18,
    "over_pct_healthy": 50,
    "median_diff_healthy": 10.0
   },
   {
    "bucket": "2",
-   "n": 47,
-   "avg_line": 962.0,
+   "n": 45,
+   "avg_line": 965.0,
    "over_pct_all": 38,
-   "mean_diff_all": -63.0,
-   "n_healthy": 29,
-   "over_pct_healthy": 59,
-   "median_diff_healthy": 62.5
+   "mean_diff_all": -57.0,
+   "n_healthy": 28,
+   "over_pct_healthy": 57,
+   "median_diff_healthy": 56.0
   },
   {
    "bucket": "3",
@@ -34,20 +34,20 @@
   },
   {
    "bucket": "4-5 (weak)",
-   "n": 23,
+   "n": 25,
    "avg_line": 894.0,
-   "over_pct_all": 65,
-   "mean_diff_all": 85.0,
-   "n_healthy": 18,
-   "over_pct_healthy": 83,
-   "median_diff_healthy": 215.5
+   "over_pct_all": 64,
+   "mean_diff_all": 64.0,
+   "n_healthy": 19,
+   "over_pct_healthy": 84,
+   "median_diff_healthy": 207.5
   },
   {
    "bucket": "untiered",
-   "n": 20,
-   "avg_line": 906.0,
-   "over_pct_all": 45,
-   "mean_diff_all": -51.0,
+   "n": 21,
+   "avg_line": 908.0,
+   "over_pct_all": 43,
+   "mean_diff_all": -68.0,
    "n_healthy": 16,
    "over_pct_healthy": 56,
    "median_diff_healthy": 37.0
@@ -56,13 +56,13 @@
  "yards_by_win_total": [
   {
    "bucket": "<7 (bad)",
-   "n": 25,
-   "avg_line": 922.0,
+   "n": 27,
+   "avg_line": 921.0,
    "over_pct_all": 56,
-   "mean_diff_all": -29.0,
-   "n_healthy": 18,
-   "over_pct_healthy": 78,
-   "median_diff_healthy": 215.5
+   "mean_diff_all": -40.0,
+   "n_healthy": 19,
+   "over_pct_healthy": 79,
+   "median_diff_healthy": 207.5
   },
   {
    "bucket": "7-8 (below .500)",
@@ -76,23 +76,23 @@
   },
   {
    "bucket": "8.5-9 (around .500)",
-   "n": 28,
-   "avg_line": 919.0,
-   "over_pct_all": 50,
-   "mean_diff_all": 37.0,
+   "n": 29,
+   "avg_line": 920.0,
+   "over_pct_all": 48,
+   "mean_diff_all": 22.0,
    "n_healthy": 19,
    "over_pct_healthy": 74,
    "median_diff_healthy": 213.5
   },
   {
    "bucket": "9.5-10 (good)",
-   "n": 50,
-   "avg_line": 962.0,
+   "n": 47,
+   "avg_line": 965.0,
    "over_pct_all": 40,
-   "mean_diff_all": -23.0,
-   "n_healthy": 37,
-   "over_pct_healthy": 49,
-   "median_diff_healthy": -8.5
+   "mean_diff_all": -8.0,
+   "n_healthy": 36,
+   "over_pct_healthy": 47,
+   "median_diff_healthy": -9.5
   },
   {
    "bucket": "10.5+ (contender)",
@@ -108,23 +108,23 @@
  "rec_by_qb_tier": [
   {
    "bucket": "1 (elite)",
-   "n": 20,
+   "n": 19,
    "avg_line": 72.0,
-   "over_pct_all": 55,
-   "mean_diff_all": -1.0,
+   "over_pct_all": 58,
+   "mean_diff_all": 0.0,
    "n_healthy": 14,
    "over_pct_healthy": 64,
    "median_diff_healthy": 7.0
   },
   {
    "bucket": "2",
-   "n": 37,
+   "n": 35,
    "avg_line": 74.0,
-   "over_pct_all": 41,
-   "mean_diff_all": -5.0,
-   "n_healthy": 24,
-   "over_pct_healthy": 62,
-   "median_diff_healthy": 2.5
+   "over_pct_all": 40,
+   "mean_diff_all": -4.0,
+   "n_healthy": 23,
+   "over_pct_healthy": 61,
+   "median_diff_healthy": 3.5
   },
   {
    "bucket": "3",
@@ -138,20 +138,20 @@
   },
   {
    "bucket": "4-5 (weak)",
-   "n": 17,
-   "avg_line": 71.0,
+   "n": 19,
+   "avg_line": 72.0,
    "over_pct_all": 53,
-   "mean_diff_all": -0.0,
-   "n_healthy": 14,
-   "over_pct_healthy": 64,
-   "median_diff_healthy": 5.0
+   "mean_diff_all": -2.0,
+   "n_healthy": 15,
+   "over_pct_healthy": 67,
+   "median_diff_healthy": 2.5
   },
   {
    "bucket": "untiered",
-   "n": 18,
+   "n": 19,
    "avg_line": 71.0,
-   "over_pct_all": 44,
-   "mean_diff_all": -3.0,
+   "over_pct_all": 42,
+   "mean_diff_all": -4.0,
    "n_healthy": 14,
    "over_pct_healthy": 57,
    "median_diff_healthy": 6.0
@@ -160,13 +160,13 @@
  "rec_by_win_total": [
   {
    "bucket": "<7 (bad)",
-   "n": 18,
+   "n": 20,
    "avg_line": 75.0,
-   "over_pct_all": 56,
-   "mean_diff_all": -6.0,
-   "n_healthy": 13,
-   "over_pct_healthy": 77,
-   "median_diff_healthy": 9.5
+   "over_pct_all": 55,
+   "mean_diff_all": -7.0,
+   "n_healthy": 14,
+   "over_pct_healthy": 79,
+   "median_diff_healthy": 6.5
   },
   {
    "bucket": "7-8 (below .500)",
@@ -180,22 +180,22 @@
   },
   {
    "bucket": "8.5-9 (around .500)",
-   "n": 22,
+   "n": 23,
    "avg_line": 73.0,
-   "over_pct_all": 32,
-   "mean_diff_all": -4.0,
+   "over_pct_all": 30,
+   "mean_diff_all": -5.0,
    "n_healthy": 15,
    "over_pct_healthy": 47,
    "median_diff_healthy": -0.5
   },
   {
    "bucket": "9.5-10 (good)",
-   "n": 39,
+   "n": 36,
    "avg_line": 74.0,
    "over_pct_all": 36,
-   "mean_diff_all": -5.0,
-   "n_healthy": 28,
-   "over_pct_healthy": 46,
+   "mean_diff_all": -4.0,
+   "n_healthy": 27,
+   "over_pct_healthy": 44,
    "median_diff_healthy": -3.5
   },
   {

@@ -30,7 +30,7 @@ STATS_CSV = os.path.join(REPO_ROOT, "nfl", "sources", "receiving_stats", "data",
 OUT_PATH = os.path.join(PROJECT, "data", "wr_prop_grades.csv")
 
 FIELDNAMES = [
-    "year", "player", "matched_name", "team", "games",
+    "year", "player", "matched_name", "team", "team_start", "traded", "games",
     "yards_line", "yards_actual", "yards_diff", "yards_result",
     "rec_line", "rec_actual", "rec_diff", "rec_result",
     "td_line", "td_actual", "td_diff", "td_result",
@@ -95,7 +95,8 @@ def main():
         row = dict.fromkeys(FIELDNAMES, "")
         row.update(
             year=year, player=p["player"], matched_name=m["player"],
-            team=m["team"], games=m["games"],
+            team=m["team"], team_start=m.get("team_start", m["team"]),
+            traded=m.get("traded", ""), games=m["games"],
             yards_actual=ay, rec_actual=ar, td_actual=at,
         )
         row["yards_line"], row["yards_diff"], row["yards_result"] = grade(p["yards_line"], ay)
