@@ -1,0 +1,159 @@
+year,player,matched_name,team,games,yards_line,yards_actual,yards_diff,yards_result,rec_line,rec_actual,rec_diff,rec_result,td_line,td_actual,td_diff,td_result
+2022,Cooper Kupp,Cooper Kupp,LAR,9,1300.5,812,-488.5,under,,75,,,,6,,
+2022,Justin Jefferson,Justin Jefferson,MIN,17,1350.5,1809,458.5,over,,128,,,,8,,
+2022,Ja'Marr Chase,Ja'Marr Chase,CIN,12,1210.5,1046,-164.5,under,,87,,,,9,,
+2022,Stefon Diggs,Stefon Diggs,BUF,16,1225.5,1429,203.5,over,,108,,,,11,,
+2022,Davante Adams,Davante Adams,LV,17,1200.5,1516,315.5,over,,100,,,,14,,
+2022,CeeDee Lamb,CeeDee Lamb,DAL,17,1200.5,1359,158.5,over,,107,,,,9,,
+2022,Deebo Samuel,Deebo Samuel Sr.,SF,13,925.5,632,-293.5,under,,56,,,,2,,
+2022,Mike Evans,Mike Evans,TB,15,1025.5,1124,98.5,over,,77,,,,6,,
+2022,Tyreek Hill,Tyreek Hill,MIA,17,1025.5,1710,684.5,over,,119,,,,7,,
+2022,Tee Higgins,Tee Higgins,CIN,14,1000.5,1029,28.5,over,,74,,,,7,,
+2022,Keenan Allen,Keenan Allen,LAC,10,1025.5,752,-273.5,under,,66,,,,4,,
+2022,Michael Pittman,Michael Pittman,IND,16,1025.5,925,-100.5,under,,99,,,,4,,
+2022,AJ Brown,A.J. Brown,PHI,17,1000.5,1496,495.5,over,,88,,,,11,,
+2022,DJ Moore,DJ Moore,CAR,17,1100.5,888,-212.5,under,,63,,,,7,,
+2022,Mike Williams,Mike Williams,LAC,13,950.5,895,-55.5,under,,63,,,,4,,
+2022,Jaylen Waddle,Jaylen Waddle,MIA,17,925.5,1356,430.5,over,,75,,,,8,,
+2022,Terry McLaurin,Terry McLaurin,WAS,17,1000.5,1191,190.5,over,,77,,,,5,,
+2022,Courtland Sutton,Courtland Sutton,DEN,15,925.5,829,-96.5,under,,64,,,,2,,
+2022,Diontae Johnson,Diontae Johnson,PIT,17,950.5,882,-68.5,under,,86,,,,0,,
+2022,DK Metcalf,DK Metcalf,SEA,17,900.5,1048,147.5,over,,90,,,,6,,
+2022,Marquise Brown,Marquise Brown,ARI,12,875.5,709,-166.5,under,,67,,,,3,,
+2022,Allen Robinson,Allen Robinson,LAR,10,850.5,339,-511.5,under,,33,,,,3,,
+2022,Brandin Cooks,Brandin Cooks,HOU,13,950.5,699,-251.5,under,,57,,,,3,,
+2022,Gabriel Davis,Gabe Davis,BUF,15,850.5,836,-14.5,under,,48,,,,7,,
+2022,Jerry Jeudy,Jerry Jeudy,DEN,15,950.5,972,21.5,over,,67,,,,6,,
+2022,Amon-Ra St. Brown,Amon-Ra St. Brown,DET,16,850.5,1161,310.5,over,,106,,,,6,,
+2022,Darnell Mooney,Darnell Mooney,CHI,11,950.5,493,-457.5,under,,40,,,,2,,
+2022,Rashod Bateman,Rashod Bateman,BAL,6,825.5,285,-540.5,under,,15,,,,2,,
+2022,Adam Thielen,Adam Thielen,MIN,17,750.5,716,-34.5,under,,70,,,,6,,
+2022,Hunter Renfrow,Hunter Renfrow,LV,10,805.5,330,-475.5,under,,36,,,,2,,
+2022,DeVonta Smith,DeVonta Smith,PHI,17,825.5,1196,370.5,over,,95,,,,7,,
+2022,Christian Kirk,Christian Kirk,JAX,17,800.5,1108,307.5,over,,84,,,,8,,
+2022,Tyler Lockett,Tyler Lockett,SEA,16,825.5,1033,207.5,over,,84,,,,9,,
+2022,Robert Woods,Robert Woods,TEN,17,750.5,527,-223.5,under,,53,,,,2,,
+2022,Julio Jones,Julio Jones,TB,10,575.5,299,-276.5,under,,24,,,,2,,
+2023,Justin Jefferson,Justin Jefferson,MIN,10,1400.5,1074,-326.5,under,105.5,68,-37.5,under,8.5,5,-3.5,under
+2023,Cooper Kupp,Cooper Kupp,LAR,12,1250.5,737,-513.5,under,107.5,59,-48.5,under,9.5,5,-4.5,under
+2023,Ja'Marr Chase,Ja'Marr Chase,CIN,16,1275.5,1216,-59.5,under,95.5,100,4.5,over,10.5,7,-3.5,under
+2023,Davante Adams,Davante Adams,LV,17,1300.5,1144,-156.5,under,99.5,103,3.5,over,8.5,8,-0.5,under
+2023,Tyreek Hill,Tyreek Hill,MIA,16,1300.5,1799,498.5,over,102.5,119,16.5,over,7.5,13,5.5,over
+2023,Stefon Diggs,Stefon Diggs,BUF,17,1125.5,1183,57.5,over,99.5,107,7.5,over,8.5,8,-0.5,under
+2023,Garrett Wilson,Garrett Wilson,NYJ,17,1150.5,1042,-108.5,under,86.5,95,8.5,over,8.5,3,-5.5,under
+2023,CeeDee Lamb,CeeDee Lamb,DAL,17,1100.5,1749,648.5,over,95.5,135,39.5,over,7.5,12,4.5,over
+2023,Jaylen Waddle,Jaylen Waddle,MIA,14,1075.5,1014,-61.5,under,85.5,72,-13.5,under,7.5,4,-3.5,under
+2023,Amon Ra St. Brown,Amon-Ra St. Brown,DET,16,999.5,1515,515.5,over,95.5,119,23.5,over,5.5,10,4.5,over
+2023,A.J. Brown,A.J. Brown,PHI,17,1050.5,1456,405.5,over,75.5,106,30.5,over,7.5,7,-0.5,under
+2023,DeVonta Smith,DeVonta Smith,PHI,16,975.5,1066,90.5,over,80.5,81,0.5,over,6.5,7,0.5,over
+2023,Chris Olave,Chris Olave,NO,16,1050.5,1123,72.5,over,75.5,87,11.5,over,5.5,5,-0.5,under
+2023,DK Metcalf,DK Metcalf,SEA,16,900.5,1114,213.5,over,75.5,66,-9.5,under,7.5,8,0.5,over
+2023,Tee Higgins,Tee Higgins,CIN,12,1000.5,656,-344.5,under,70.5,42,-28.5,under,6.5,5,-1.5,under
+2023,Amari Cooper,Amari Cooper,CLE,15,950.5,1250,299.5,over,72.5,72,-0.5,under,6.5,5,-1.5,under
+2023,Keenan Allen,Keenan Allen,LAC,13,875.5,1243,367.5,over,85.5,108,22.5,over,5.5,7,1.5,over
+2023,Calvin Ridley,Calvin Ridley,JAX,17,900.5,1016,115.5,over,70.5,76,5.5,over,6.5,8,1.5,over
+2023,Tyler Lockett,Tyler Lockett,SEA,17,875.5,894,18.5,over,72.5,79,6.5,over,6.5,5,-1.5,under
+2023,Mike Evans,Mike Evans,TB,17,925.5,1255,329.5,over,65.5,79,13.5,over,6.5,13,6.5,over
+2023,Chris Godwin,Chris Godwin Jr.,TB,17,800.5,1024,223.5,over,80.5,83,2.5,over,4.5,2,-2.5,under
+2023,Christian Kirk,Christian Kirk,JAX,12,825.5,787,-38.5,under,70.5,57,-13.5,under,5.5,3,-2.5,under
+2023,Michael Pittman,Michael Pittman,IND,16,800.5,1152,351.5,over,74.5,109,34.5,over,4.5,4,-0.5,under
+2023,Drake London,Drake London,ATL,16,825.5,905,79.5,over,70.5,69,-1.5,under,4.5,2,-2.5,under
+2023,Marquise Brown,Marquise Brown,ARI,13,800.5,574,-226.5,under,70.5,51,-19.5,under,4.5,4,-0.5,under
+2023,Christian Watson,Christian Watson,GB,9,825.5,422,-403.5,under,62.5,28,-34.5,under,4.5,5,0.5,over
+2023,Mike Williams,Mike Williams,LAC,3,800.5,249,-551.5,under,57.5,19,-38.5,under,5.5,1,-4.5,under
+2023,DJ Moore,DJ Moore,CHI,17,800.5,1364,563.5,over,62.5,96,33.5,over,4.5,8,3.5,over
+2023,Gabe Davis,Gabe Davis,BUF,16,775.5,746,-29.5,under,50.5,45,-5.5,under,6.5,7,0.5,over
+2023,Brandon Aiyuk,Brandon Aiyuk,SF,16,775.5,1342,566.5,over,59.5,75,15.5,over,4.5,7,2.5,over
+2023,Deebo Samuel,Deebo Samuel Sr.,SF,15,725.5,892,166.5,over,59.5,60,0.5,over,4.5,7,2.5,over
+2023,George Pickens,George Pickens,PIT,17,750.5,1140,389.5,over,55.5,63,7.5,over,4.5,5,0.5,over
+2023,Jahan Dotson,Jahan Dotson,WAS,17,750.5,518,-232.5,under,52.5,49,-3.5,under,4.5,4,-0.5,under
+2023,Tyler Boyd,Tyler Boyd,CIN,17,675.5,667,-8.5,under,57.5,67,9.5,over,4.5,2,-2.5,under
+2023,Allen Lazard,Allen Lazard,NYJ,14,650.5,311,-339.5,under,52.5,23,-29.5,under,4.5,1,-3.5,under
+2023,Adam Thielen,Adam Thielen,CAR,17,550.5,1014,463.5,over,55.5,103,47.5,over,4.5,4,-0.5,under
+2023,Michael Gallup,Michael Gallup,DAL,16,600.5,418,-182.5,under,49.5,34,-15.5,under,4.5,2,-2.5,under
+2023,Odell Beckham Jr,Odell Beckham Jr.,BAL,14,575.5,565,-10.5,under,40.5,35,-5.5,under,4.5,3,-1.5,under
+2023,Marquez Valdes-Scantling,Marquez Valdes-Scantling,KC,16,625.5,315,-310.5,under,40.5,21,-19.5,under,3.5,1,-2.5,under
+2024,Tyreek Hill,Tyreek Hill,MIA,17,1375.5,959,-416.5,under,97.5,81,-16.5,under,9.5,6,-3.5,under
+2024,CeeDee Lamb,CeeDee Lamb,DAL,15,1300.5,1194,-106.5,under,104.5,101,-3.5,under,9,6,-3.0,under
+2024,Ja'Marr Chase,Ja'Marr Chase,CIN,17,1250.5,1708,457.5,over,98.5,127,28.5,over,8.5,17,8.5,over
+2024,Justin Jefferson,Justin Jefferson,MIN,17,1275.5,1533,257.5,over,89.5,103,13.5,over,7.5,10,2.5,over
+2024,Amon-Ra St. Brown,Amon-Ra St. Brown,DET,17,1250.5,1263,12.5,over,105.5,115,9.5,over,8.5,12,3.5,over
+2024,A.J. Brown,A.J. Brown,PHI,13,1275.5,1079,-196.5,under,87.5,67,-20.5,under,8,7,-1.0,under
+2024,Garrett Wilson,Garrett Wilson,NYJ,17,1125.5,1104,-21.5,under,90.5,101,10.5,over,7.5,7,-0.5,under
+2024,Puka Nacua,Puka Nacua,LAR,11,1150.5,990,-160.5,under,85.5,79,-6.5,under,6.5,3,-3.5,under
+2024,Marvin Harrison,Marvin Harrison Jr.,ARI,17,1025.5,885,-140.5,under,82.5,62,-20.5,under,6,8,2.0,over
+2024,Davante Adams,Davante Adams,NYJ,14,1000.5,1063,62.5,over,84.5,85,0.5,over,7,8,1.0,over
+2024,Drake London,Drake London,ATL,17,1000.5,1271,270.5,over,81.5,100,18.5,over,6.5,9,2.5,over
+2024,Chris Olave,Chris Olave,NO,8,1075.5,400,-675.5,under,84.5,32,-52.5,under,6,1,-5.0,under
+2024,Nico Collins,Nico Collins,HOU,12,1050.5,1006,-44.5,under,72.5,68,-4.5,under,6,7,1.0,over
+2024,Deebo Samuel,Deebo Samuel Sr.,SF,15,800.5,670,-130.5,under,62.5,51,-11.5,under,5.5,3,-2.5,under
+2024,Mike Evans,Mike Evans,TB,14,1050.5,1004,-46.5,under,68.5,74,5.5,over,8.5,11,2.5,over
+2024,Jaylen Waddle,Jaylen Waddle,MIA,15,1000.5,744,-256.5,under,75.5,58,-17.5,under,5,2,-3.0,under
+2024,Cooper Kupp,Cooper Kupp,LAR,12,950.5,710,-240.5,under,76.5,67,-9.5,under,6.5,6,-0.5,under
+2024,Michael Pittman Jr,Michael Pittman,IND,16,950.5,808,-142.5,under,87.5,69,-18.5,under,5.5,3,-2.5,under
+2024,DK Metcalf,DK Metcalf,SEA,15,1000.5,992,-8.5,under,70.5,66,-4.5,under,7,5,-2.0,under
+2024,DJ Moore,DJ Moore,CHI,17,950.5,966,15.5,over,68.5,98,29.5,over,6.5,6,-0.5,under
+2024,Stefon Diggs,Stefon Diggs,HOU,8,900.5,496,-404.5,under,75.5,47,-28.5,under,6,3,-3.0,under
+2024,DeVonta Smith,DeVonta Smith,PHI,13,1025.5,833,-192.5,under,77.5,68,-9.5,under,6.5,8,1.5,over
+2024,Amari Cooper,Amari Cooper,BUF,13,950.5,547,-403.5,under,65.5,44,-21.5,under,5.5,4,-1.5,under
+2024,Zay Flowers,Zay Flowers,BAL,17,925.5,1059,133.5,over,72.5,74,1.5,over,5.5,4,-1.5,under
+2024,George Pickens,George Pickens,PIT,14,925.5,900,-25.5,under,65.5,59,-6.5,under,4.5,3,-1.5,under
+2024,Tee Higgins,Tee Higgins,CIN,12,875.5,911,35.5,over,65.5,73,7.5,over,5.5,10,4.5,over
+2024,Christian Kirk,Christian Kirk,JAX,8,875.5,379,-496.5,under,73.5,27,-46.5,under,4.5,1,-3.5,under
+2024,Terry McLaurin,Terry McLaurin,WAS,17,900.5,1096,195.5,over,72.5,82,9.5,over,4.5,13,8.5,over
+2024,Keenan Allen,Keenan Allen,CHI,15,825.5,744,-81.5,under,71.5,70,-1.5,under,4.5,7,2.5,over
+2024,Calvin Ridley,Calvin Ridley,TEN,17,875.5,1017,141.5,over,67.5,64,-3.5,under,4.5,4,-0.5,under
+2024,Chris Godwin,Chris Godwin Jr.,TB,7,875.5,576,-299.5,under,77.5,50,-27.5,under,4.5,5,0.5,over
+2024,Jayden Reed,Jayden Reed,GB,17,750.5,857,106.5,over,62.5,55,-7.5,under,4.5,6,1.5,over
+2024,Diontae Johnson,Diontae Johnson,HOU,11,800.5,375,-425.5,under,67.5,33,-34.5,under,4.5,3,-1.5,under
+2024,Christian Watson,Christian Watson,GB,14,750.5,620,-130.5,under,48.5,29,-19.5,under,6,2,-4.0,under
+2024,Xavier Worthy,Xavier Worthy,KC,16,750.5,638,-112.5,under,52.5,59,6.5,over,4.5,6,1.5,over
+2024,Ladd McConkey,Ladd McConkey,LAC,16,725.5,1149,423.5,over,57.5,82,24.5,over,4.5,7,2.5,over
+2024,Rome Odunze,Rome Odunze,CHI,17,675.5,734,58.5,over,54.5,54,-0.5,under,4.5,3,-1.5,under
+2024,Jaxon Smith-Njigba,Jaxon Smith-Njigba,SEA,17,775.5,1130,354.5,over,64.5,100,35.5,over,4.5,6,1.5,over
+2024,Keon Coleman,Keon Coleman,BUF,13,700.5,556,-144.5,under,53.5,29,-24.5,under,4.5,4,-0.5,under
+2024,Courtland Sutton,Courtland Sutton,DEN,16,800.5,1081,280.5,over,60.5,81,20.5,over,5.5,8,2.5,over
+2024,Romeo Doubs,Romeo Doubs,GB,13,575.5,601,25.5,over,52.5,46,-6.5,under,4.5,4,-0.5,under
+2024,Tyler Lockett,Tyler Lockett,SEA,17,750.5,600,-150.5,under,65.5,49,-16.5,under,4.5,2,-2.5,under
+2024,Khalil Shakir,Khalil Shakir,BUF,15,775.5,821,45.5,over,62.5,76,13.5,over,3,4,1.0,over
+2024,Jakobi Meyers,Jakobi Meyers,LV,15,650.5,1027,376.5,over,64.5,87,22.5,over,4.5,4,-0.5,under
+2024,Jerry Jeudy,Jerry Jeudy,CLE,17,700.5,1229,528.5,over,55.5,90,34.5,over,3.5,4,0.5,over
+2024,Rashid Shaheed,Rashid Shaheed,NO,6,675.5,349,-326.5,under,45.5,20,-25.5,under,3.5,3,-0.5,under
+2024,Brandin Cooks,Brandin Cooks,DAL,10,625.5,259,-366.5,under,51.5,26,-25.5,under,4.5,3,-1.5,under
+2025,Ja'Marr Chase,Ja'Marr Chase,CIN,16,1325.5,1412,86.5,over,102.5,125,22.5,over,10.5,8,-2.5,under
+2025,Justin Jefferson,Justin Jefferson,MIN,17,1250.5,1048,-202.5,under,92.5,84,-8.5,under,9.5,2,-7.5,under
+2025,CeeDee Lamb,CeeDee Lamb,DAL,13,1200.5,1077,-123.5,under,98.5,75,-23.5,under,8,3,-5.0,under
+2025,Amon-Ra St. Brown,Amon-Ra St. Brown,DET,17,1100.5,1401,300.5,over,96.5,117,20.5,over,8.5,11,2.5,over
+2025,Malik Nabers,Malik Nabers,NYG,4,1150.5,271,-879.5,under,95.5,18,-77.5,under,7.5,2,-5.5,under
+2025,Puka Nacua,Puka Nacua,LAR,16,1200.5,1715,514.5,over,87.5,129,41.5,over,6,10,4.0,over
+2025,Nico Collins,Nico Collins,HOU,15,1125.5,1117,-8.5,under,78.5,71,-7.5,under,6.5,6,-0.5,under
+2025,Brian Thomas Jr,Brian Thomas Jr.,JAX,14,1150.5,707,-443.5,under,78.5,48,-30.5,under,7.5,2,-5.5,under
+2025,Drake London,Drake London,ATL,12,1125.5,919,-206.5,under,85.5,68,-17.5,under,7.5,7,-0.5,under
+2025,AJ Brown,A.J. Brown,PHI,15,1100.5,1003,-97.5,under,74.5,78,3.5,over,7.5,7,-0.5,under
+2025,Ladd McConkey,Ladd McConkey,LAC,16,1025.5,789,-236.5,under,78.5,66,-12.5,under,6.5,6,-0.5,under
+2025,Tee Higgins,Tee Higgins,CIN,15,975.5,846,-129.5,under,76.5,59,-17.5,under,7.5,11,3.5,over
+2025,Tyreek Hill,Tyreek Hill,MIA,4,975.5,265,-710.5,under,72.5,21,-51.5,under,7.5,1,-6.5,under
+2025,Jaxon Smith-Njigba,Jaxon Smith-Njigba,SEA,17,975.5,1793,817.5,over,88.5,119,30.5,over,6.5,10,3.5,over
+2025,Garrett Wilson,Garrett Wilson,NYJ,7,925.5,395,-530.5,under,78.5,36,-42.5,under,4.5,4,-0.5,under
+2025,Davante Adams,Davante Adams,LAR,14,950.5,789,-161.5,under,75.5,60,-15.5,under,8.5,14,5.5,over
+2025,Marvin Harrison,Marvin Harrison Jr.,ARI,12,975.5,608,-367.5,under,69.5,41,-28.5,under,6.5,4,-2.5,under
+2025,Mike Evans,Mike Evans,TB,8,950.5,368,-582.5,under,70.5,30,-40.5,under,7.5,3,-4.5,under
+2025,DK Metcalf,DK Metcalf,PIT,15,950.5,850,-100.5,under,68.5,59,-9.5,under,6.5,6,-0.5,under
+2025,DJ Moore,DJ Moore,CHI,17,975.5,682,-293.5,under,80.5,50,-30.5,under,6.5,6,-0.5,under
+2025,Xavier Worthy,Xavier Worthy,KC,14,900.5,532,-368.5,under,73.5,42,-31.5,under,9,1,-8.0,under
+2025,Courtland Sutton,Courtland Sutton,DEN,17,875.5,1017,141.5,over,72.5,74,1.5,over,6.5,7,0.5,over
+2025,DeVonta Smith,DeVonta Smith,PHI,17,875.5,1008,132.5,over,67.5,77,9.5,over,6.5,4,-2.5,under
+2025,Tetairoa McMillan,Tetairoa McMillan,CAR,17,825.5,1014,188.5,over,66.5,70,3.5,over,4.5,7,2.5,over
+2025,Zay Flowers,Zay Flowers,BAL,17,900.5,1211,310.5,over,68.5,86,17.5,over,4.5,5,0.5,over
+2025,George Pickens,George Pickens,DAL,17,900.5,1429,528.5,over,61.5,93,31.5,over,5.5,9,3.5,over
+2025,Jameson Williams,Jameson Williams,DET,17,900.5,1117,216.5,over,58.5,65,6.5,over,6,7,1.0,over
+2025,Calvin Ridley,Calvin Ridley,TEN,7,925.5,303,-622.5,under,64.5,17,-47.5,under,5.5,0,-5.5,under
+2025,Jaylen Waddle,Jaylen Waddle,MIA,16,925.5,910,-15.5,under,69.5,64,-5.5,under,4.5,6,1.5,over
+2025,Travis Hunter,Travis Hunter,JAX,7,750.5,298,-452.5,under,65.5,28,-37.5,under,4.5,1,-3.5,under
+2025,Jerry Jeudy,Jerry Jeudy,CLE,17,900.5,602,-298.5,under,69.5,50,-19.5,under,3.5,2,-1.5,under
+2025,Rome Odunze,Rome Odunze,CHI,12,875.5,661,-214.5,under,64.5,44,-20.5,under,5.5,6,0.5,over
+2025,Chris Olave,Chris Olave,NO,16,825.5,1163,337.5,over,70.5,100,29.5,over,3.5,9,5.5,over
+2025,Stefon Diggs,Stefon Diggs,NE,17,750.5,1013,262.5,over,65.5,85,19.5,over,4.5,4,-0.5,under
+2025,Matthew Golden,Matthew Golden,GB,14,700.5,361,-339.5,under,52.5,29,-23.5,under,4.5,0,-4.5,under
+2025,Michael Pittman Jr,Michael Pittman,IND,17,750.5,784,33.5,over,65.5,80,14.5,over,3.5,7,3.5,over
+2025,Jayden Higgins,Jayden Higgins,HOU,17,650.5,525,-125.5,under,44.5,41,-3.5,under,3.5,6,2.5,over

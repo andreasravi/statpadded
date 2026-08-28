@@ -1,0 +1,818 @@
+<title>WR Prop Settle Sheet</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Public+Sans:ital,wght@0,400;0,600;0,800;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#eef1f3;
+    --panel:#ffffff;
+    --panel-2:#f5f7f8;
+    --ink:#161d24;
+    --ink-soft:#4a5966;
+    --line:#d6dde2;
+    --line-strong:#b7c2c9;
+    --over:#1f8f4d;
+    --over-bg:#e3f4e9;
+    --under:#c1361d;
+    --under-bg:#fae6e1;
+    --gold:#b7801f;
+    --gold-bg:#f6ecd8;
+    --shadow:0 1px 2px rgba(20,30,40,.06),0 8px 30px rgba(20,30,40,.06);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#0e1319;
+      --panel:#161d26;
+      --panel-2:#1b232d;
+      --ink:#e8edf1;
+      --ink-soft:#9aa8b4;
+      --line:#28323d;
+      --line-strong:#3a4855;
+      --over:#3fc673;
+      --over-bg:#122c1e;
+      --under:#f0603f;
+      --under-bg:#341811;
+      --gold:#e6ac4f;
+      --gold-bg:#2c2312;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 40px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0e1319;
+    --panel:#161d26;
+    --panel-2:#1b232d;
+    --ink:#e8edf1;
+    --ink-soft:#9aa8b4;
+    --line:#28323d;
+    --line-strong:#3a4855;
+    --over:#3fc673;
+    --over-bg:#122c1e;
+    --under:#f0603f;
+    --under-bg:#341811;
+    --gold:#e6ac4f;
+    --gold-bg:#2c2312;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 40px rgba(0,0,0,.35);
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    line-height:1.55;
+    font-feature-settings:"tnum";
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:clamp(20px,4vw,52px) clamp(14px,3.5vw,40px) 80px}
+
+  /* ---- masthead ---- */
+  .eyebrow{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--gold);font-weight:800;margin:0 0 14px;
+  }
+  h1{
+    font-family:"Anton",Impact,"Arial Narrow",sans-serif;
+    font-weight:400;letter-spacing:.01em;line-height:.98;
+    text-transform:uppercase;text-wrap:balance;
+    font-size:clamp(38px,8.5vw,82px);
+    margin:0 0 18px;
+  }
+  h1 .dim{color:var(--ink-soft)}
+  .standfirst{
+    max-width:60ch;font-size:clamp(15px,1.9vw,18px);color:var(--ink-soft);
+    margin:0 0 6px;
+  }
+  .standfirst strong{color:var(--ink);font-weight:600}
+  .meta{
+    margin-top:22px;padding-top:18px;border-top:1px solid var(--line);
+    display:flex;flex-wrap:wrap;gap:8px 26px;font-size:12.5px;color:var(--ink-soft);
+  }
+  .meta b{color:var(--ink);font-weight:600}
+
+  /* ---- KPI row ---- */
+  .kpis{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:34px 0 12px;
+  }
+  @media(max-width:680px){.kpis{grid-template-columns:1fr}}
+  .kpi{
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    padding:18px 18px 16px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+  }
+  .kpi h3{
+    margin:0 0 10px;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--ink-soft);font-weight:800;
+  }
+  .kpi .big{
+    font-family:"Anton",Impact,sans-serif;font-size:52px;line-height:1;
+  }
+  .kpi .bar{height:8px;border-radius:99px;background:var(--under-bg);margin-top:12px;overflow:hidden;border:1px solid var(--line)}
+  .kpi .bar i{display:block;height:100%;background:var(--over);border-right:2px solid var(--panel)}
+  .kpi .foot{margin-top:9px;font-size:12px;color:var(--ink-soft);font-family:"IBM Plex Mono",monospace;white-space:nowrap}
+  .kpi .foot b{color:var(--over);font-weight:600}
+  .kpi .foot u{color:var(--under);text-decoration:none}
+
+  /* ---- callout ---- */
+  .split{
+    background:var(--gold-bg);border:1px solid var(--line);border-left:3px solid var(--gold);
+    border-radius:10px;padding:16px 18px;margin:20px 0 8px;font-size:14.5px;
+  }
+  .split b{color:var(--ink)}
+  .split .n{font-family:"IBM Plex Mono",monospace;font-weight:600}
+
+  /* ---- histogram ---- */
+  .histo{
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    box-shadow:var(--shadow);padding:20px clamp(14px,2.5vw,22px) 16px;margin-top:34px;
+  }
+  .histo .hh{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:4px}
+  .histo h3{
+    font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;
+    letter-spacing:.02em;font-size:clamp(19px,3vw,26px);margin:0;
+  }
+  .histo .sub{font-size:13px;color:var(--ink-soft);margin:2px 0 0;max-width:64ch}
+  .seg{display:inline-flex;border:1px solid var(--line-strong);border-radius:8px;overflow:hidden}
+  .seg button{
+    font:inherit;font-size:12px;font-weight:700;letter-spacing:.02em;
+    padding:6px 12px;background:var(--panel-2);color:var(--ink-soft);
+    border:0;border-left:1px solid var(--line);cursor:pointer;
+  }
+  .seg button:first-child{border-left:0}
+  .seg button[aria-pressed="true"]{background:var(--gold);color:#1a1205}
+  .histo .plot{position:relative}
+  .histo svg{display:block;width:100%;height:auto;overflow:visible}
+  .histo .bar{transition:opacity .12s}
+  .histo .plot:hover .bar{opacity:.42}
+  .histo .bar:hover{opacity:1}
+  .histo .axlab{fill:var(--ink-soft);font-family:"IBM Plex Mono",monospace;font-size:11px}
+  .histo .axline{stroke:var(--line);stroke-width:1}
+  .histo .zline{stroke:var(--ink-soft);stroke-width:1.5}
+  .histo .dirlab{fill:var(--ink-soft);font-family:"Public Sans",sans-serif;font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase}
+  .histo .cnt{fill:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600}
+  .htip{
+    position:absolute;pointer-events:none;z-index:5;opacity:0;transform:translateY(3px);
+    transition:opacity .1s,transform .1s;background:var(--ink);color:var(--panel);
+    border-radius:7px;padding:7px 10px;font-size:12px;line-height:1.35;white-space:nowrap;
+    font-family:"IBM Plex Mono",monospace;box-shadow:0 6px 24px rgba(0,0,0,.28);
+  }
+  .htip.on{opacity:1;transform:none}
+  .htip b{font-weight:600}
+  .htip .oc{color:var(--over)} .htip .uc{color:var(--under)}
+  .histo .foot2{
+    margin-top:12px;padding-top:12px;border-top:1px solid var(--line);
+    display:flex;gap:8px 22px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-soft);
+    font-family:"IBM Plex Mono",monospace;
+  }
+  .histo .foot2 b{color:var(--ink);font-weight:600}
+  .histo .foot2 .oc{color:var(--over)} .histo .foot2 .uc{color:var(--under)}
+
+  /* ---- section ---- */
+  section{margin-top:46px}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+  .sec-head h2{
+    font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;
+    letter-spacing:.02em;font-size:clamp(24px,4vw,34px);margin:0;
+  }
+  .sec-head .tally{font-size:13px;color:var(--ink-soft);font-family:"IBM Plex Mono",monospace}
+  .sec-head .tally b{color:var(--ink)}
+  .pillrow{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
+  .chip{
+    font-size:11.5px;padding:4px 9px;border-radius:99px;border:1px solid var(--line);
+    background:var(--panel-2);color:var(--ink-soft);font-weight:600;letter-spacing:.02em;
+  }
+  .chip .o{color:var(--over)}
+  .chip .u{color:var(--under)}
+
+  /* ---- table ---- */
+  .tablecard{background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+  .scroll{overflow-x:auto}
+  table{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
+  thead th{
+    position:sticky;top:0;background:var(--panel-2);z-index:1;
+    text-align:right;padding:11px 12px;font-size:11px;letter-spacing:.05em;
+    text-transform:uppercase;color:var(--ink-soft);font-weight:800;
+    border-bottom:1px solid var(--line-strong);cursor:pointer;white-space:nowrap;
+    user-select:none;
+  }
+  thead th:first-child,thead th.l{text-align:left}
+  thead th:hover{color:var(--ink)}
+  thead th[aria-sort="ascending"]::after{content:" ▲";font-size:9px;color:var(--gold)}
+  thead th[aria-sort="descending"]::after{content:" ▼";font-size:9px;color:var(--gold)}
+  tbody td{
+    text-align:right;padding:9px 12px;border-bottom:1px solid var(--line);
+    font-family:"IBM Plex Mono",monospace;white-space:nowrap;
+  }
+  tbody tr:last-child td{border-bottom:0}
+  td.player{
+    text-align:left;font-family:"Public Sans",sans-serif;font-weight:600;
+    border-left:3px solid transparent;
+  }
+  tr.over td.player{border-left-color:var(--over)}
+  tr.under td.player{border-left-color:var(--under)}
+  td.tm{text-align:left;color:var(--ink-soft);font-size:12px}
+  .tag{
+    font-family:"Public Sans",sans-serif;font-size:10px;font-weight:800;
+    letter-spacing:.04em;text-transform:uppercase;color:var(--under);
+    background:var(--under-bg);border-radius:4px;padding:1px 5px;margin-left:7px;
+    vertical-align:1px;
+  }
+  .delta{font-weight:600}
+  .delta.pos{color:var(--over)}
+  .delta.neg{color:var(--under)}
+  .line-cell{color:var(--ink-soft)}
+  tbody tr:hover td{background:var(--panel-2)}
+  .grp{
+    border-right:1px solid var(--line);
+  }
+
+  /* ---- notes ---- */
+  .notes{
+    margin-top:46px;border-top:1px solid var(--line);padding-top:20px;
+    font-size:13px;color:var(--ink-soft);max-width:74ch;
+  }
+  .notes h4{margin:0 0 8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);font-weight:800}
+  .notes p{margin:0 0 10px}
+  .notes code{font-family:"IBM Plex Mono",monospace;font-size:12px;background:var(--panel-2);padding:1px 5px;border-radius:4px;border:1px solid var(--line)}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;margin:14px 0 4px;font-size:12.5px}
+  .legend span{display:flex;align-items:center;gap:7px}
+  .sw{width:14px;height:14px;border-radius:4px;border:1px solid var(--line-strong)}
+  .sw.o{background:var(--over)}
+  .sw.u{background:var(--under)}
+
+  /* ---- tier analysis ---- */
+  .tiers{
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    box-shadow:var(--shadow);padding:20px clamp(14px,2.5vw,22px) 8px;margin-top:34px;
+  }
+  .tiers h3{
+    font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;
+    letter-spacing:.02em;font-size:clamp(19px,3vw,26px);margin:0 0 4px;
+  }
+  .tiers .sub{font-size:13px;color:var(--ink-soft);margin:0 0 16px;max-width:66ch}
+  .tiers .scroll{overflow-x:auto}
+  table.tier{border-collapse:collapse;width:100%;min-width:640px;font-size:13px}
+  table.tier th{
+    text-align:right;padding:8px 10px;font-size:10.5px;letter-spacing:.05em;
+    text-transform:uppercase;color:var(--ink-soft);font-weight:800;
+    border-bottom:1px solid var(--line-strong);white-space:nowrap;
+  }
+  table.tier th:first-child{text-align:left}
+  table.tier td{
+    padding:10px;border-bottom:1px solid var(--line);
+    font-family:"IBM Plex Mono",monospace;text-align:right;white-space:nowrap;
+  }
+  table.tier tr:last-child td{border-bottom:0}
+  table.tier td.tl{
+    text-align:left;font-family:"Public Sans",sans-serif;font-weight:700;
+  }
+  table.tier td.tl small{display:block;font-weight:400;color:var(--ink-soft);font-size:11px}
+  .ratebar{
+    display:flex;align-items:center;gap:8px;justify-content:flex-end;
+  }
+  .ratebar .track{
+    width:88px;height:9px;border-radius:99px;background:var(--panel-2);
+    border:1px solid var(--line);overflow:hidden;flex:none;
+  }
+  .ratebar .track i{display:block;height:100%}
+  .ratebar .track i.hi{background:var(--over)}
+  .ratebar .track i.lo{background:var(--under)}
+  td .md{font-weight:600}
+  td .md.pos{color:var(--over)} td .md.neg{color:var(--under)}
+  .tiers .kick{
+    margin:14px 0 12px;padding:14px 16px;border-radius:10px;
+    background:var(--under-bg);border:1px solid var(--line);border-left:3px solid var(--under);
+    font-size:13.5px;color:var(--ink);
+  }
+  .tiers .kick b{font-weight:700}
+  .tiers .kick .mono{font-family:"IBM Plex Mono",monospace;font-weight:600}
+  .tiers .kick.neutral{background:var(--gold-bg);border-left-color:var(--gold)}
+
+  /* ---- 2026 watch list ---- */
+  #watch26 .sub{margin-bottom:8px}
+  .wgrp{border-top:1px solid var(--line);padding:15px 0 5px}
+  .wgrp:first-child{border-top:0}
+  .wgrp h4{
+    margin:0 0 3px;font-size:13.5px;font-weight:800;color:var(--ink);
+    display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;
+  }
+  .wgrp h4 .hist{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;
+    color:var(--ink-soft);letter-spacing:0;
+  }
+  .wgrp .lede{margin:0 0 10px;font-size:12.5px;color:var(--ink-soft);max-width:70ch}
+  .wgrp .lede b{color:var(--ink);font-weight:600}
+  .wlist{display:flex;flex-direction:column;gap:6px}
+  .wrow{
+    display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:baseline;
+    padding:7px 10px;border-radius:8px;background:var(--panel-2);border:1px solid var(--line);
+  }
+  .wrow .nm{font-weight:700;font-size:13px}
+  .wrow .nm .tm{color:var(--ink-soft);font-weight:400;font-size:11px;margin-left:6px}
+  .wrow .fig{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);
+    text-align:right;white-space:nowrap;
+  }
+  .wrow .fig b{color:var(--ink);font-weight:600}
+  .wrow .fig .hi{color:var(--over)} .wrow .fig .lo{color:var(--under)}
+  .wtag{
+    display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;
+    padding:1px 6px;border-radius:4px;margin-left:7px;vertical-align:1px;
+    background:var(--under-bg);color:var(--under);
+  }
+  .wtag.warn{background:var(--gold-bg);color:var(--gold)}
+  @media(max-width:560px){
+    .wrow{grid-template-columns:1fr;gap:3px}
+    .wrow .fig{text-align:left;white-space:normal}
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .kpi,.tablecard,.split{animation:rise .5s cubic-bezier(.2,.7,.2,1) both}
+    .kpi:nth-child(2){animation-delay:.05s}
+    .kpi:nth-child(3){animation-delay:.1s}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">Vegas said &nbsp;·&nbsp; the box score answered</p>
+  <h1>The WR prop<br>settle sheet <span class="dim">'22–'25</span></h1>
+  <p class="standfirst">
+    Every preseason Fantasy Alarm published a grid of implied wide-receiver prop totals —
+    receiving yards (plus receptions and TDs from 2023 on) — pulled from Vegas. This grades all
+    <strong>158 receiver-seasons</strong> against what actually landed in the regular-season
+    box score, and by how much.
+  </p>
+  <div class="meta">
+    <span>Source lines: <b>Fantasy Alarm</b> WR prop grids (Aug '22 – Aug '25)</span>
+    <span>Results: <b>nflverse</b> regular season</span>
+    <span>2026 grid: <b>not gradable yet</b></span>
+  </div>
+
+  <div class="kpis" id="kpis"></div>
+  <div class="split" id="split"></div>
+
+  <div class="histo">
+    <div class="hh">
+      <div>
+        <h3>How far off was the line?</h3>
+        <p class="sub" id="histoSub"></p>
+      </div>
+      <div class="seg" id="metricSeg" role="group" aria-label="Stat to chart">
+        <button data-m="yds" aria-pressed="true">Yards</button>
+        <button data-m="rec" aria-pressed="false">Receptions</button>
+        <button data-m="td" aria-pressed="false">TDs</button>
+      </div>
+    </div>
+    <div class="plot" id="histoPlot"></div>
+    <div class="foot2" id="histoFoot"></div>
+  </div>
+
+  <div class="tiers">
+    <div class="hh">
+      <div>
+        <h3>Does the size of the line predict the miss?</h3>
+        <p class="sub" id="tierSub"></p>
+      </div>
+      <div class="seg" id="tierSeg" role="group" aria-label="Stat">
+        <button data-m="yds" aria-pressed="true">Yards</button>
+        <button data-m="rec" aria-pressed="false">Receptions</button>
+        <button data-m="td" aria-pressed="false">TDs</button>
+      </div>
+    </div>
+    <div class="scroll">
+      <table class="tier">
+        <thead><tr>
+          <th id="tierColHead">Preseason line</th><th>n</th>
+          <th>Over % — all</th><th>Over % — healthy</th>
+          <th>Median Δ (healthy)</th>
+        </tr></thead>
+        <tbody id="tierBody"></tbody>
+      </table>
+    </div>
+    <div class="kick" id="tierKick"></div>
+  </div>
+
+  <div class="tiers" id="watch26">
+    <h3>2026 — what stands out</h3>
+    <p class="sub">The patterns above, run against this year's Fantasy Alarm grid (Aug 2026). Nothing here is
+      graded — the season hasn't started. Prior-year figures are actual regular-season totals.</p>
+    <div id="watchBody"></div>
+  </div>
+
+  <div id="seasons"></div>
+
+  <div class="notes">
+    <h4>Reading it</h4>
+    <div class="legend">
+      <span><i class="sw o"></i> cleared the receiving-yards line (OVER)</span>
+      <span><i class="sw u"></i> fell short (UNDER)</span>
+      <span><i class="tag" style="margin:0">INJ</i> played fewer than 14 games</span>
+    </div>
+    <p>From 2023 on, each row is graded three ways independently: <code>yds</code>, <code>rec</code>, and
+      <code>TD</code>. The 2022 article published a receiving-yards line only, so its <code>rec</code> and
+      <code>TD</code> cells show the actual total with no line to grade against. The colored edge on the name
+      always reflects the <b>yards</b> result. The Δ columns are actual minus line — positive means the
+      receiver beat the number.</p>
+    <p>Tap any column header to re-sort. Default sort is by yards Δ, biggest overperformance first.</p>
+    <h4>Caveats</h4>
+    <p>Prop lines are transcribed from the articles' published grids (juice/vig not shown, so a
+      push at the exact half-point never happens — every line ends in .5). "INJ" seasons mostly missed
+      the number on availability, not on per-game form — worth separating before drawing talent conclusions.
+      Actuals are regular season only; playoff production is excluded, matching how the lines were framed.</p>
+  </div>
+</div>
+
+<script>
+const DATA = [{"season":2022,"player":"Cooper Kupp","matched":"Cooper Kupp","team":"LA","g":9,"prop_yds":1300.5,"act_yds":812,"yds_diff":-488.5,"prop_rec":null,"act_rec":75,"rec_diff":null,"prop_td":null,"act_td":6,"td_diff":null},{"season":2022,"player":"Justin Jefferson","matched":"Justin Jefferson","team":"MIN","g":17,"prop_yds":1350.5,"act_yds":1809,"yds_diff":458.5,"prop_rec":null,"act_rec":128,"rec_diff":null,"prop_td":null,"act_td":8,"td_diff":null},{"season":2022,"player":"Ja'Marr Chase","matched":"Ja'Marr Chase","team":"CIN","g":12,"prop_yds":1210.5,"act_yds":1046,"yds_diff":-164.5,"prop_rec":null,"act_rec":87,"rec_diff":null,"prop_td":null,"act_td":9,"td_diff":null},{"season":2022,"player":"Stefon Diggs","matched":"Stefon Diggs","team":"BUF","g":16,"prop_yds":1225.5,"act_yds":1429,"yds_diff":203.5,"prop_rec":null,"act_rec":108,"rec_diff":null,"prop_td":null,"act_td":11,"td_diff":null},{"season":2022,"player":"Davante Adams","matched":"Davante Adams","team":"LV","g":17,"prop_yds":1200.5,"act_yds":1516,"yds_diff":315.5,"prop_rec":null,"act_rec":100,"rec_diff":null,"prop_td":null,"act_td":14,"td_diff":null},{"season":2022,"player":"CeeDee Lamb","matched":"CeeDee Lamb","team":"DAL","g":17,"prop_yds":1200.5,"act_yds":1359,"yds_diff":158.5,"prop_rec":null,"act_rec":107,"rec_diff":null,"prop_td":null,"act_td":9,"td_diff":null},{"season":2022,"player":"Deebo Samuel","matched":"Deebo Samuel Sr.","team":"SF","g":13,"prop_yds":925.5,"act_yds":632,"yds_diff":-293.5,"prop_rec":null,"act_rec":56,"rec_diff":null,"prop_td":null,"act_td":2,"td_diff":null},{"season":2022,"player":"Mike Evans","matched":"Mike Evans","team":"TB","g":15,"prop_yds":1025.5,"act_yds":1124,"yds_diff":98.5,"prop_rec":null,"act_rec":77,"rec_diff":null,"prop_td":null,"act_td":6,"td_diff":null},{"season":2022,"player":"Tyreek Hill","matched":"Tyreek Hill","team":"MIA","g":17,"prop_yds":1025.5,"act_yds":1710,"yds_diff":684.5,"prop_rec":null,"act_rec":119,"rec_diff":null,"prop_td":null,"act_td":7,"td_diff":null},{"season":2022,"player":"Tee Higgins","matched":"Tee Higgins","team":"CIN","g":14,"prop_yds":1000.5,"act_yds":1029,"yds_diff":28.5,"prop_rec":null,"act_rec":74,"rec_diff":null,"prop_td":null,"act_td":7,"td_diff":null},{"season":2022,"player":"Keenan Allen","matched":"Keenan Allen","team":"LAC","g":10,"prop_yds":1025.5,"act_yds":752,"yds_diff":-273.5,"prop_rec":null,"act_rec":66,"rec_diff":null,"prop_td":null,"act_td":4,"td_diff":null},{"season":2022,"player":"Michael Pittman","matched":"Michael Pittman","team":"IND","g":16,"prop_yds":1025.5,"act_yds":925,"yds_diff":-100.5,"prop_rec":null,"act_rec":99,"rec_diff":null,"prop_td":null,"act_td":4,"td_diff":null},{"season":2022,"player":"AJ Brown","matched":"A.J. Brown","team":"PHI","g":17,"prop_yds":1000.5,"act_yds":1496,"yds_diff":495.5,"prop_rec":null,"act_rec":88,"rec_diff":null,"prop_td":null,"act_td":11,"td_diff":null},{"season":2022,"player":"DJ Moore","matched":"DJ Moore","team":"CAR","g":17,"prop_yds":1100.5,"act_yds":888,"yds_diff":-212.5,"prop_rec":null,"act_rec":63,"rec_diff":null,"prop_td":null,"act_td":7,"td_diff":null},{"season":2022,"player":"Mike Williams","matched":"Mike Williams","team":"LAC","g":13,"prop_yds":950.5,"act_yds":895,"yds_diff":-55.5,"prop_rec":null,"act_rec":63,"rec_diff":null,"prop_td":null,"act_td":4,"td_diff":null},{"season":2022,"player":"Jaylen Waddle","matched":"Jaylen Waddle","team":"MIA","g":17,"prop_yds":925.5,"act_yds":1356,"yds_diff":430.5,"prop_rec":null,"act_rec":75,"rec_diff":null,"prop_td":null,"act_td":8,"td_diff":null},{"season":2022,"player":"Terry McLaurin","matched":"Terry McLaurin","team":"WAS","g":17,"prop_yds":1000.5,"act_yds":1191,"yds_diff":190.5,"prop_rec":null,"act_rec":77,"rec_diff":null,"prop_td":null,"act_td":5,"td_diff":null},{"season":2022,"player":"Courtland Sutton","matched":"Courtland Sutton","team":"DEN","g":15,"prop_yds":925.5,"act_yds":829,"yds_diff":-96.5,"prop_rec":null,"act_rec":64,"rec_diff":null,"prop_td":null,"act_td":2,"td_diff":null},{"season":2022,"player":"Diontae Johnson","matched":"Diontae Johnson","team":"PIT","g":17,"prop_yds":950.5,"act_yds":882,"yds_diff":-68.5,"prop_rec":null,"act_rec":86,"rec_diff":null,"prop_td":null,"act_td":0,"td_diff":null},{"season":2022,"player":"DK Metcalf","matched":"DK Metcalf","team":"SEA","g":17,"prop_yds":900.5,"act_yds":1048,"yds_diff":147.5,"prop_rec":null,"act_rec":90,"rec_diff":null,"prop_td":null,"act_td":6,"td_diff":null},{"season":2022,"player":"Marquise Brown","matched":"Marquise Brown","team":"ARI","g":12,"prop_yds":875.5,"act_yds":709,"yds_diff":-166.5,"prop_rec":null,"act_rec":67,"rec_diff":null,"prop_td":null,"act_td":3,"td_diff":null},{"season":2022,"player":"Allen Robinson","matched":"Allen Robinson","team":"LA","g":10,"prop_yds":850.5,"act_yds":339,"yds_diff":-511.5,"prop_rec":null,"act_rec":33,"rec_diff":null,"prop_td":null,"act_td":3,"td_diff":null},{"season":2022,"player":"Brandin Cooks","matched":"Brandin Cooks","team":"HOU","g":13,"prop_yds":950.5,"act_yds":699,"yds_diff":-251.5,"prop_rec":null,"act_rec":57,"rec_diff":null,"prop_td":null,"act_td":3,"td_diff":null},{"season":2022,"player":"Gabriel Davis","matched":"Gabe Davis","team":"BUF","g":15,"prop_yds":850.5,"act_yds":836,"yds_diff":-14.5,"prop_rec":null,"act_rec":48,"rec_diff":null,"prop_td":null,"act_td":7,"td_diff":null},{"season":2022,"player":"Jerry Jeudy","matched":"Jerry Jeudy","team":"DEN","g":15,"prop_yds":950.5,"act_yds":972,"yds_diff":21.5,"prop_rec":null,"act_rec":67,"rec_diff":null,"prop_td":null,"act_td":6,"td_diff":null},{"season":2022,"player":"Amon-Ra St. Brown","matched":"Amon-Ra St. Brown","team":"DET","g":16,"prop_yds":850.5,"act_yds":1161,"yds_diff":310.5,"prop_rec":null,"act_rec":106,"rec_diff":null,"prop_td":null,"act_td":6,"td_diff":null},{"season":2022,"player":"Darnell Mooney","matched":"Darnell Mooney","team":"CHI","g":11,"prop_yds":950.5,"act_yds":493,"yds_diff":-457.5,"prop_rec":null,"act_rec":40,"rec_diff":null,"prop_td":null,"act_td":2,"td_diff":null},{"season":2022,"player":"Rashod Bateman","matched":"Rashod Bateman","team":"BAL","g":6,"prop_yds":825.5,"act_yds":285,"yds_diff":-540.5,"prop_rec":null,"act_rec":15,"rec_diff":null,"prop_td":null,"act_td":2,"td_diff":null},{"season":2022,"player":"Adam Thielen","matched":"Adam Thielen","team":"MIN","g":17,"prop_yds":750.5,"act_yds":716,"yds_diff":-34.5,"prop_rec":null,"act_rec":70,"rec_diff":null,"prop_td":null,"act_td":6,"td_diff":null},{"season":2022,"player":"Hunter Renfrow","matched":"Hunter Renfrow","team":"LV","g":10,"prop_yds":805.5,"act_yds":330,"yds_diff":-475.5,"prop_rec":null,"act_rec":36,"rec_diff":null,"prop_td":null,"act_td":2,"td_diff":null},{"season":2022,"player":"DeVonta Smith","matched":"DeVonta Smith","team":"PHI","g":17,"prop_yds":825.5,"act_yds":1196,"yds_diff":370.5,"prop_rec":null,"act_rec":95,"rec_diff":null,"prop_td":null,"act_td":7,"td_diff":null},{"season":2022,"player":"Christian Kirk","matched":"Christian Kirk","team":"JAX","g":17,"prop_yds":800.5,"act_yds":1108,"yds_diff":307.5,"prop_rec":null,"act_rec":84,"rec_diff":null,"prop_td":null,"act_td":8,"td_diff":null},{"season":2022,"player":"Tyler Lockett","matched":"Tyler Lockett","team":"SEA","g":16,"prop_yds":825.5,"act_yds":1033,"yds_diff":207.5,"prop_rec":null,"act_rec":84,"rec_diff":null,"prop_td":null,"act_td":9,"td_diff":null},{"season":2022,"player":"Robert Woods","matched":"Robert Woods","team":"TEN","g":17,"prop_yds":750.5,"act_yds":527,"yds_diff":-223.5,"prop_rec":null,"act_rec":53,"rec_diff":null,"prop_td":null,"act_td":2,"td_diff":null},{"season":2022,"player":"Julio Jones","matched":"Julio Jones","team":"TB","g":10,"prop_yds":575.5,"act_yds":299,"yds_diff":-276.5,"prop_rec":null,"act_rec":24,"rec_diff":null,"prop_td":null,"act_td":2,"td_diff":null},{"season":2023,"player":"Justin Jefferson","matched":"Justin Jefferson","team":"MIN","g":10,"prop_yds":1400.5,"act_yds":1074,"yds_diff":-326.5,"prop_rec":105.5,"act_rec":68,"rec_diff":-37.5,"prop_td":8.5,"act_td":5,"td_diff":-3.5},{"season":2023,"player":"Cooper Kupp","matched":"Cooper Kupp","team":"LA","g":12,"prop_yds":1250.5,"act_yds":737,"yds_diff":-513.5,"prop_rec":107.5,"act_rec":59,"rec_diff":-48.5,"prop_td":9.5,"act_td":5,"td_diff":-4.5},{"season":2023,"player":"Ja'Marr Chase","matched":"Ja'Marr Chase","team":"CIN","g":16,"prop_yds":1275.5,"act_yds":1216,"yds_diff":-59.5,"prop_rec":95.5,"act_rec":100,"rec_diff":4.5,"prop_td":10.5,"act_td":7,"td_diff":-3.5},{"season":2023,"player":"Davante Adams","matched":"Davante Adams","team":"LV","g":17,"prop_yds":1300.5,"act_yds":1144,"yds_diff":-156.5,"prop_rec":99.5,"act_rec":103,"rec_diff":3.5,"prop_td":8.5,"act_td":8,"td_diff":-0.5},{"season":2023,"player":"Tyreek Hill","matched":"Tyreek Hill","team":"MIA","g":16,"prop_yds":1300.5,"act_yds":1799,"yds_diff":498.5,"prop_rec":102.5,"act_rec":119,"rec_diff":16.5,"prop_td":7.5,"act_td":13,"td_diff":5.5},{"season":2023,"player":"Stefon Diggs","matched":"Stefon Diggs","team":"BUF","g":17,"prop_yds":1125.5,"act_yds":1183,"yds_diff":57.5,"prop_rec":99.5,"act_rec":107,"rec_diff":7.5,"prop_td":8.5,"act_td":8,"td_diff":-0.5},{"season":2023,"player":"Garrett Wilson","matched":"Garrett Wilson","team":"NYJ","g":17,"prop_yds":1150.5,"act_yds":1042,"yds_diff":-108.5,"prop_rec":86.5,"act_rec":95,"rec_diff":8.5,"prop_td":8.5,"act_td":3,"td_diff":-5.5},{"season":2023,"player":"CeeDee Lamb","matched":"CeeDee Lamb","team":"DAL","g":17,"prop_yds":1100.5,"act_yds":1749,"yds_diff":648.5,"prop_rec":95.5,"act_rec":135,"rec_diff":39.5,"prop_td":7.5,"act_td":12,"td_diff":4.5},{"season":2023,"player":"Jaylen Waddle","matched":"Jaylen Waddle","team":"MIA","g":14,"prop_yds":1075.5,"act_yds":1014,"yds_diff":-61.5,"prop_rec":85.5,"act_rec":72,"rec_diff":-13.5,"prop_td":7.5,"act_td":4,"td_diff":-3.5},{"season":2023,"player":"Amon-Ra St. Brown","matched":"Amon-Ra St. Brown","team":"DET","g":16,"prop_yds":999.5,"act_yds":1515,"yds_diff":515.5,"prop_rec":95.5,"act_rec":119,"rec_diff":23.5,"prop_td":5.5,"act_td":10,"td_diff":4.5},{"season":2023,"player":"A.J. Brown","matched":"A.J. Brown","team":"PHI","g":17,"prop_yds":1050.5,"act_yds":1456,"yds_diff":405.5,"prop_rec":75.5,"act_rec":106,"rec_diff":30.5,"prop_td":7.5,"act_td":7,"td_diff":-0.5},{"season":2023,"player":"DeVonta Smith","matched":"DeVonta Smith","team":"PHI","g":16,"prop_yds":975.5,"act_yds":1066,"yds_diff":90.5,"prop_rec":80.5,"act_rec":81,"rec_diff":0.5,"prop_td":6.5,"act_td":7,"td_diff":0.5},{"season":2023,"player":"Chris Olave","matched":"Chris Olave","team":"NO","g":16,"prop_yds":1050.5,"act_yds":1123,"yds_diff":72.5,"prop_rec":75.5,"act_rec":87,"rec_diff":11.5,"prop_td":5.5,"act_td":5,"td_diff":-0.5},{"season":2023,"player":"DK Metcalf","matched":"DK Metcalf","team":"SEA","g":16,"prop_yds":900.5,"act_yds":1114,"yds_diff":213.5,"prop_rec":75.5,"act_rec":66,"rec_diff":-9.5,"prop_td":7.5,"act_td":8,"td_diff":0.5},{"season":2023,"player":"Tee Higgins","matched":"Tee Higgins","team":"CIN","g":12,"prop_yds":1000.5,"act_yds":656,"yds_diff":-344.5,"prop_rec":70.5,"act_rec":42,"rec_diff":-28.5,"prop_td":6.5,"act_td":5,"td_diff":-1.5},{"season":2023,"player":"Amari Cooper","matched":"Amari Cooper","team":"CLE","g":15,"prop_yds":950.5,"act_yds":1250,"yds_diff":299.5,"prop_rec":72.5,"act_rec":72,"rec_diff":-0.5,"prop_td":6.5,"act_td":5,"td_diff":-1.5},{"season":2023,"player":"Keenan Allen","matched":"Keenan Allen","team":"LAC","g":13,"prop_yds":875.5,"act_yds":1243,"yds_diff":367.5,"prop_rec":85.5,"act_rec":108,"rec_diff":22.5,"prop_td":5.5,"act_td":7,"td_diff":1.5},{"season":2023,"player":"Calvin Ridley","matched":"Calvin Ridley","team":"JAX","g":17,"prop_yds":900.5,"act_yds":1016,"yds_diff":115.5,"prop_rec":70.5,"act_rec":76,"rec_diff":5.5,"prop_td":6.5,"act_td":8,"td_diff":1.5},{"season":2023,"player":"Tyler Lockett","matched":"Tyler Lockett","team":"SEA","g":17,"prop_yds":875.5,"act_yds":894,"yds_diff":18.5,"prop_rec":72.5,"act_rec":79,"rec_diff":6.5,"prop_td":6.5,"act_td":5,"td_diff":-1.5},{"season":2023,"player":"Mike Evans","matched":"Mike Evans","team":"TB","g":17,"prop_yds":925.5,"act_yds":1255,"yds_diff":329.5,"prop_rec":65.5,"act_rec":79,"rec_diff":13.5,"prop_td":6.5,"act_td":13,"td_diff":6.5},{"season":2023,"player":"Chris Godwin","matched":"Chris Godwin Jr.","team":"TB","g":17,"prop_yds":800.5,"act_yds":1024,"yds_diff":223.5,"prop_rec":80.5,"act_rec":83,"rec_diff":2.5,"prop_td":4.5,"act_td":2,"td_diff":-2.5},{"season":2023,"player":"Christian Kirk","matched":"Christian Kirk","team":"JAX","g":12,"prop_yds":825.5,"act_yds":787,"yds_diff":-38.5,"prop_rec":70.5,"act_rec":57,"rec_diff":-13.5,"prop_td":5.5,"act_td":3,"td_diff":-2.5},{"season":2023,"player":"Michael Pittman","matched":"Michael Pittman","team":"IND","g":16,"prop_yds":800.5,"act_yds":1152,"yds_diff":351.5,"prop_rec":74.5,"act_rec":109,"rec_diff":34.5,"prop_td":4.5,"act_td":4,"td_diff":-0.5},{"season":2023,"player":"Drake London","matched":"Drake London","team":"ATL","g":16,"prop_yds":825.5,"act_yds":905,"yds_diff":79.5,"prop_rec":70.5,"act_rec":69,"rec_diff":-1.5,"prop_td":4.5,"act_td":2,"td_diff":-2.5},{"season":2023,"player":"Marquise Brown","matched":"Marquise Brown","team":"ARI","g":13,"prop_yds":800.5,"act_yds":574,"yds_diff":-226.5,"prop_rec":70.5,"act_rec":51,"rec_diff":-19.5,"prop_td":4.5,"act_td":4,"td_diff":-0.5},{"season":2023,"player":"Christian Watson","matched":"Christian Watson","team":"GB","g":9,"prop_yds":825.5,"act_yds":422,"yds_diff":-403.5,"prop_rec":62.5,"act_rec":28,"rec_diff":-34.5,"prop_td":4.5,"act_td":5,"td_diff":0.5},{"season":2023,"player":"Mike Williams","matched":"Mike Williams","team":"LAC","g":3,"prop_yds":800.5,"act_yds":249,"yds_diff":-551.5,"prop_rec":57.5,"act_rec":19,"rec_diff":-38.5,"prop_td":5.5,"act_td":1,"td_diff":-4.5},{"season":2023,"player":"DJ Moore","matched":"DJ Moore","team":"CHI","g":17,"prop_yds":800.5,"act_yds":1364,"yds_diff":563.5,"prop_rec":62.5,"act_rec":96,"rec_diff":33.5,"prop_td":4.5,"act_td":8,"td_diff":3.5},{"season":2023,"player":"Gabe Davis","matched":"Gabe Davis","team":"BUF","g":16,"prop_yds":775.5,"act_yds":746,"yds_diff":-29.5,"prop_rec":50.5,"act_rec":45,"rec_diff":-5.5,"prop_td":6.5,"act_td":7,"td_diff":0.5},{"season":2023,"player":"Brandon Aiyuk","matched":"Brandon Aiyuk","team":"SF","g":16,"prop_yds":775.5,"act_yds":1342,"yds_diff":566.5,"prop_rec":59.5,"act_rec":75,"rec_diff":15.5,"prop_td":4.5,"act_td":7,"td_diff":2.5},{"season":2023,"player":"Deebo Samuel","matched":"Deebo Samuel Sr.","team":"SF","g":15,"prop_yds":725.5,"act_yds":892,"yds_diff":166.5,"prop_rec":59.5,"act_rec":60,"rec_diff":0.5,"prop_td":4.5,"act_td":7,"td_diff":2.5},{"season":2023,"player":"George Pickens","matched":"George Pickens","team":"PIT","g":17,"prop_yds":750.5,"act_yds":1140,"yds_diff":389.5,"prop_rec":55.5,"act_rec":63,"rec_diff":7.5,"prop_td":4.5,"act_td":5,"td_diff":0.5},{"season":2023,"player":"Jahan Dotson","matched":"Jahan Dotson","team":"WAS","g":17,"prop_yds":750.5,"act_yds":518,"yds_diff":-232.5,"prop_rec":52.5,"act_rec":49,"rec_diff":-3.5,"prop_td":4.5,"act_td":4,"td_diff":-0.5},{"season":2023,"player":"Tyler Boyd","matched":"Tyler Boyd","team":"CIN","g":17,"prop_yds":675.5,"act_yds":667,"yds_diff":-8.5,"prop_rec":57.5,"act_rec":67,"rec_diff":9.5,"prop_td":4.5,"act_td":2,"td_diff":-2.5},{"season":2023,"player":"Allen Lazard","matched":"Allen Lazard","team":"NYJ","g":14,"prop_yds":650.5,"act_yds":311,"yds_diff":-339.5,"prop_rec":52.5,"act_rec":23,"rec_diff":-29.5,"prop_td":4.5,"act_td":1,"td_diff":-3.5},{"season":2023,"player":"Adam Thielen","matched":"Adam Thielen","team":"CAR","g":17,"prop_yds":550.5,"act_yds":1014,"yds_diff":463.5,"prop_rec":55.5,"act_rec":103,"rec_diff":47.5,"prop_td":4.5,"act_td":4,"td_diff":-0.5},{"season":2023,"player":"Michael Gallup","matched":"Michael Gallup","team":"DAL","g":16,"prop_yds":600.5,"act_yds":418,"yds_diff":-182.5,"prop_rec":49.5,"act_rec":34,"rec_diff":-15.5,"prop_td":4.5,"act_td":2,"td_diff":-2.5},{"season":2023,"player":"Odell Beckham Jr","matched":"Odell Beckham Jr.","team":"BAL","g":14,"prop_yds":575.5,"act_yds":565,"yds_diff":-10.5,"prop_rec":40.5,"act_rec":35,"rec_diff":-5.5,"prop_td":4.5,"act_td":3,"td_diff":-1.5},{"season":2023,"player":"Marquez Valdes-Scantling","matched":"Marquez Valdes-Scantling","team":"KC","g":16,"prop_yds":625.5,"act_yds":315,"yds_diff":-310.5,"prop_rec":40.5,"act_rec":21,"rec_diff":-19.5,"prop_td":3.5,"act_td":1,"td_diff":-2.5},{"season":2024,"player":"Tyreek Hill","matched":"Tyreek Hill","team":"MIA","g":17,"prop_yds":1375.5,"act_yds":959,"yds_diff":-416.5,"prop_rec":97.5,"act_rec":81,"rec_diff":-16.5,"prop_td":9.5,"act_td":6,"td_diff":-3.5},{"season":2024,"player":"CeeDee Lamb","matched":"CeeDee Lamb","team":"DAL","g":15,"prop_yds":1300.5,"act_yds":1194,"yds_diff":-106.5,"prop_rec":104.5,"act_rec":101,"rec_diff":-3.5,"prop_td":9,"act_td":6,"td_diff":-3},{"season":2024,"player":"Ja'Marr Chase","matched":"Ja'Marr Chase","team":"CIN","g":17,"prop_yds":1250.5,"act_yds":1708,"yds_diff":457.5,"prop_rec":98.5,"act_rec":127,"rec_diff":28.5,"prop_td":8.5,"act_td":17,"td_diff":8.5},{"season":2024,"player":"Justin Jefferson","matched":"Justin Jefferson","team":"MIN","g":17,"prop_yds":1275.5,"act_yds":1533,"yds_diff":257.5,"prop_rec":89.5,"act_rec":103,"rec_diff":13.5,"prop_td":7.5,"act_td":10,"td_diff":2.5},{"season":2024,"player":"Amon-Ra St. Brown","matched":"Amon-Ra St. Brown","team":"DET","g":17,"prop_yds":1250.5,"act_yds":1263,"yds_diff":12.5,"prop_rec":105.5,"act_rec":115,"rec_diff":9.5,"prop_td":8.5,"act_td":12,"td_diff":3.5},{"season":2024,"player":"A.J. Brown","matched":"A.J. Brown","team":"PHI","g":13,"prop_yds":1275.5,"act_yds":1079,"yds_diff":-196.5,"prop_rec":87.5,"act_rec":67,"rec_diff":-20.5,"prop_td":8,"act_td":7,"td_diff":-1},{"season":2024,"player":"Garrett Wilson","matched":"Garrett Wilson","team":"NYJ","g":17,"prop_yds":1125.5,"act_yds":1104,"yds_diff":-21.5,"prop_rec":90.5,"act_rec":101,"rec_diff":10.5,"prop_td":7.5,"act_td":7,"td_diff":-0.5},{"season":2024,"player":"Puka Nacua","matched":"Puka Nacua","team":"LA","g":11,"prop_yds":1150.5,"act_yds":990,"yds_diff":-160.5,"prop_rec":85.5,"act_rec":79,"rec_diff":-6.5,"prop_td":6.5,"act_td":3,"td_diff":-3.5},{"season":2024,"player":"Marvin Harrison","matched":"Marvin Harrison Jr.","team":"ARI","g":17,"prop_yds":1025.5,"act_yds":885,"yds_diff":-140.5,"prop_rec":82.5,"act_rec":62,"rec_diff":-20.5,"prop_td":6,"act_td":8,"td_diff":2},{"season":2024,"player":"Davante Adams","matched":"Davante Adams","team":"NYJ","g":14,"prop_yds":1000.5,"act_yds":1063,"yds_diff":62.5,"prop_rec":84.5,"act_rec":85,"rec_diff":0.5,"prop_td":7,"act_td":8,"td_diff":1},{"season":2024,"player":"Drake London","matched":"Drake London","team":"ATL","g":17,"prop_yds":1000.5,"act_yds":1271,"yds_diff":270.5,"prop_rec":81.5,"act_rec":100,"rec_diff":18.5,"prop_td":6.5,"act_td":9,"td_diff":2.5},{"season":2024,"player":"Chris Olave","matched":"Chris Olave","team":"NO","g":8,"prop_yds":1075.5,"act_yds":400,"yds_diff":-675.5,"prop_rec":84.5,"act_rec":32,"rec_diff":-52.5,"prop_td":6,"act_td":1,"td_diff":-5},{"season":2024,"player":"Nico Collins","matched":"Nico Collins","team":"HOU","g":12,"prop_yds":1050.5,"act_yds":1006,"yds_diff":-44.5,"prop_rec":72.5,"act_rec":68,"rec_diff":-4.5,"prop_td":6,"act_td":7,"td_diff":1},{"season":2024,"player":"Deebo Samuel","matched":"Deebo Samuel Sr.","team":"SF","g":15,"prop_yds":800.5,"act_yds":670,"yds_diff":-130.5,"prop_rec":62.5,"act_rec":51,"rec_diff":-11.5,"prop_td":5.5,"act_td":3,"td_diff":-2.5},{"season":2024,"player":"Mike Evans","matched":"Mike Evans","team":"TB","g":14,"prop_yds":1050.5,"act_yds":1004,"yds_diff":-46.5,"prop_rec":68.5,"act_rec":74,"rec_diff":5.5,"prop_td":8.5,"act_td":11,"td_diff":2.5},{"season":2024,"player":"Jaylen Waddle","matched":"Jaylen Waddle","team":"MIA","g":15,"prop_yds":1000.5,"act_yds":744,"yds_diff":-256.5,"prop_rec":75.5,"act_rec":58,"rec_diff":-17.5,"prop_td":5,"act_td":2,"td_diff":-3},{"season":2024,"player":"Cooper Kupp","matched":"Cooper Kupp","team":"LA","g":12,"prop_yds":950.5,"act_yds":710,"yds_diff":-240.5,"prop_rec":76.5,"act_rec":67,"rec_diff":-9.5,"prop_td":6.5,"act_td":6,"td_diff":-0.5},{"season":2024,"player":"Michael Pittman Jr","matched":"Michael Pittman","team":"IND","g":16,"prop_yds":950.5,"act_yds":808,"yds_diff":-142.5,"prop_rec":87.5,"act_rec":69,"rec_diff":-18.5,"prop_td":5.5,"act_td":3,"td_diff":-2.5},{"season":2024,"player":"DK Metcalf","matched":"DK Metcalf","team":"SEA","g":15,"prop_yds":1000.5,"act_yds":992,"yds_diff":-8.5,"prop_rec":70.5,"act_rec":66,"rec_diff":-4.5,"prop_td":7,"act_td":5,"td_diff":-2},{"season":2024,"player":"DJ Moore","matched":"DJ Moore","team":"CHI","g":17,"prop_yds":950.5,"act_yds":966,"yds_diff":15.5,"prop_rec":68.5,"act_rec":98,"rec_diff":29.5,"prop_td":6.5,"act_td":6,"td_diff":-0.5},{"season":2024,"player":"Stefon Diggs","matched":"Stefon Diggs","team":"HOU","g":8,"prop_yds":900.5,"act_yds":496,"yds_diff":-404.5,"prop_rec":75.5,"act_rec":47,"rec_diff":-28.5,"prop_td":6,"act_td":3,"td_diff":-3},{"season":2024,"player":"DeVonta Smith","matched":"DeVonta Smith","team":"PHI","g":13,"prop_yds":1025.5,"act_yds":833,"yds_diff":-192.5,"prop_rec":77.5,"act_rec":68,"rec_diff":-9.5,"prop_td":6.5,"act_td":8,"td_diff":1.5},{"season":2024,"player":"Amari Cooper","matched":"Amari Cooper","team":"BUF","g":13,"prop_yds":950.5,"act_yds":547,"yds_diff":-403.5,"prop_rec":65.5,"act_rec":44,"rec_diff":-21.5,"prop_td":5.5,"act_td":4,"td_diff":-1.5},{"season":2024,"player":"Zay Flowers","matched":"Zay Flowers","team":"BAL","g":17,"prop_yds":925.5,"act_yds":1059,"yds_diff":133.5,"prop_rec":72.5,"act_rec":74,"rec_diff":1.5,"prop_td":5.5,"act_td":4,"td_diff":-1.5},{"season":2024,"player":"George Pickens","matched":"George Pickens","team":"PIT","g":14,"prop_yds":925.5,"act_yds":900,"yds_diff":-25.5,"prop_rec":65.5,"act_rec":59,"rec_diff":-6.5,"prop_td":4.5,"act_td":3,"td_diff":-1.5},{"season":2024,"player":"Tee Higgins","matched":"Tee Higgins","team":"CIN","g":12,"prop_yds":875.5,"act_yds":911,"yds_diff":35.5,"prop_rec":65.5,"act_rec":73,"rec_diff":7.5,"prop_td":5.5,"act_td":10,"td_diff":4.5},{"season":2024,"player":"Christian Kirk","matched":"Christian Kirk","team":"JAX","g":8,"prop_yds":875.5,"act_yds":379,"yds_diff":-496.5,"prop_rec":73.5,"act_rec":27,"rec_diff":-46.5,"prop_td":4.5,"act_td":1,"td_diff":-3.5},{"season":2024,"player":"Terry McLaurin","matched":"Terry McLaurin","team":"WAS","g":17,"prop_yds":900.5,"act_yds":1096,"yds_diff":195.5,"prop_rec":72.5,"act_rec":82,"rec_diff":9.5,"prop_td":4.5,"act_td":13,"td_diff":8.5},{"season":2024,"player":"Keenan Allen","matched":"Keenan Allen","team":"CHI","g":15,"prop_yds":825.5,"act_yds":744,"yds_diff":-81.5,"prop_rec":71.5,"act_rec":70,"rec_diff":-1.5,"prop_td":4.5,"act_td":7,"td_diff":2.5},{"season":2024,"player":"Calvin Ridley","matched":"Calvin Ridley","team":"TEN","g":17,"prop_yds":875.5,"act_yds":1017,"yds_diff":141.5,"prop_rec":67.5,"act_rec":64,"rec_diff":-3.5,"prop_td":4.5,"act_td":4,"td_diff":-0.5},{"season":2024,"player":"Chris Godwin","matched":"Chris Godwin Jr.","team":"TB","g":7,"prop_yds":875.5,"act_yds":576,"yds_diff":-299.5,"prop_rec":77.5,"act_rec":50,"rec_diff":-27.5,"prop_td":4.5,"act_td":5,"td_diff":0.5},{"season":2024,"player":"Jayden Reed","matched":"Jayden Reed","team":"GB","g":17,"prop_yds":750.5,"act_yds":857,"yds_diff":106.5,"prop_rec":62.5,"act_rec":55,"rec_diff":-7.5,"prop_td":4.5,"act_td":6,"td_diff":1.5},{"season":2024,"player":"Diontae Johnson","matched":"Diontae Johnson","team":"HOU","g":11,"prop_yds":800.5,"act_yds":375,"yds_diff":-425.5,"prop_rec":67.5,"act_rec":33,"rec_diff":-34.5,"prop_td":4.5,"act_td":3,"td_diff":-1.5},{"season":2024,"player":"Christian Watson","matched":"Christian Watson","team":"GB","g":14,"prop_yds":750.5,"act_yds":620,"yds_diff":-130.5,"prop_rec":48.5,"act_rec":29,"rec_diff":-19.5,"prop_td":6,"act_td":2,"td_diff":-4},{"season":2024,"player":"Xavier Worthy","matched":"Xavier Worthy","team":"KC","g":16,"prop_yds":750.5,"act_yds":638,"yds_diff":-112.5,"prop_rec":52.5,"act_rec":59,"rec_diff":6.5,"prop_td":4.5,"act_td":6,"td_diff":1.5},{"season":2024,"player":"Ladd McConkey","matched":"Ladd McConkey","team":"LAC","g":16,"prop_yds":725.5,"act_yds":1149,"yds_diff":423.5,"prop_rec":57.5,"act_rec":82,"rec_diff":24.5,"prop_td":4.5,"act_td":7,"td_diff":2.5},{"season":2024,"player":"Rome Odunze","matched":"Rome Odunze","team":"CHI","g":17,"prop_yds":675.5,"act_yds":734,"yds_diff":58.5,"prop_rec":54.5,"act_rec":54,"rec_diff":-0.5,"prop_td":4.5,"act_td":3,"td_diff":-1.5},{"season":2024,"player":"Jaxon Smith-Njigba","matched":"Jaxon Smith-Njigba","team":"SEA","g":17,"prop_yds":775.5,"act_yds":1130,"yds_diff":354.5,"prop_rec":64.5,"act_rec":100,"rec_diff":35.5,"prop_td":4.5,"act_td":6,"td_diff":1.5},{"season":2024,"player":"Keon Coleman","matched":"Keon Coleman","team":"BUF","g":13,"prop_yds":700.5,"act_yds":556,"yds_diff":-144.5,"prop_rec":53.5,"act_rec":29,"rec_diff":-24.5,"prop_td":4.5,"act_td":4,"td_diff":-0.5},{"season":2024,"player":"Courtland Sutton","matched":"Courtland Sutton","team":"DEN","g":16,"prop_yds":800.5,"act_yds":1081,"yds_diff":280.5,"prop_rec":60.5,"act_rec":81,"rec_diff":20.5,"prop_td":5.5,"act_td":8,"td_diff":2.5},{"season":2024,"player":"Romeo Doubs","matched":"Romeo Doubs","team":"GB","g":13,"prop_yds":575.5,"act_yds":601,"yds_diff":25.5,"prop_rec":52.5,"act_rec":46,"rec_diff":-6.5,"prop_td":4.5,"act_td":4,"td_diff":-0.5},{"season":2024,"player":"Tyler Lockett","matched":"Tyler Lockett","team":"SEA","g":17,"prop_yds":750.5,"act_yds":600,"yds_diff":-150.5,"prop_rec":65.5,"act_rec":49,"rec_diff":-16.5,"prop_td":4.5,"act_td":2,"td_diff":-2.5},{"season":2024,"player":"Khalil Shakir","matched":"Khalil Shakir","team":"BUF","g":15,"prop_yds":775.5,"act_yds":821,"yds_diff":45.5,"prop_rec":62.5,"act_rec":76,"rec_diff":13.5,"prop_td":3,"act_td":4,"td_diff":1},{"season":2024,"player":"Jakobi Meyers","matched":"Jakobi Meyers","team":"LV","g":15,"prop_yds":650.5,"act_yds":1027,"yds_diff":376.5,"prop_rec":64.5,"act_rec":87,"rec_diff":22.5,"prop_td":4.5,"act_td":4,"td_diff":-0.5},{"season":2024,"player":"Jerry Jeudy","matched":"Jerry Jeudy","team":"CLE","g":17,"prop_yds":700.5,"act_yds":1229,"yds_diff":528.5,"prop_rec":55.5,"act_rec":90,"rec_diff":34.5,"prop_td":3.5,"act_td":4,"td_diff":0.5},{"season":2024,"player":"Rashid Shaheed","matched":"Rashid Shaheed","team":"NO","g":6,"prop_yds":675.5,"act_yds":349,"yds_diff":-326.5,"prop_rec":45.5,"act_rec":20,"rec_diff":-25.5,"prop_td":3.5,"act_td":3,"td_diff":-0.5},{"season":2024,"player":"Brandin Cooks","matched":"Brandin Cooks","team":"DAL","g":10,"prop_yds":625.5,"act_yds":259,"yds_diff":-366.5,"prop_rec":51.5,"act_rec":26,"rec_diff":-25.5,"prop_td":4.5,"act_td":3,"td_diff":-1.5},{"season":2025,"player":"Ja'Marr Chase","matched":"Ja'Marr Chase","team":"CIN","g":16,"prop_yds":1325.5,"act_yds":1412,"yds_diff":86.5,"prop_rec":102.5,"act_rec":125,"rec_diff":22.5,"prop_td":10.5,"act_td":8,"td_diff":-2.5},{"season":2025,"player":"Justin Jefferson","matched":"Justin Jefferson","team":"MIN","g":17,"prop_yds":1250.5,"act_yds":1048,"yds_diff":-202.5,"prop_rec":92.5,"act_rec":84,"rec_diff":-8.5,"prop_td":9.5,"act_td":2,"td_diff":-7.5},{"season":2025,"player":"CeeDee Lamb","matched":"CeeDee Lamb","team":"DAL","g":13,"prop_yds":1200.5,"act_yds":1077,"yds_diff":-123.5,"prop_rec":98.5,"act_rec":75,"rec_diff":-23.5,"prop_td":8,"act_td":3,"td_diff":-5},{"season":2025,"player":"Amon-Ra St. Brown","matched":"Amon-Ra St. Brown","team":"DET","g":17,"prop_yds":1100.5,"act_yds":1401,"yds_diff":300.5,"prop_rec":96.5,"act_rec":117,"rec_diff":20.5,"prop_td":8.5,"act_td":11,"td_diff":2.5},{"season":2025,"player":"Malik Nabers","matched":"Malik Nabers","team":"NYG","g":4,"prop_yds":1150.5,"act_yds":271,"yds_diff":-879.5,"prop_rec":95.5,"act_rec":18,"rec_diff":-77.5,"prop_td":7.5,"act_td":2,"td_diff":-5.5},{"season":2025,"player":"Puka Nacua","matched":"Puka Nacua","team":"LA","g":16,"prop_yds":1200.5,"act_yds":1715,"yds_diff":514.5,"prop_rec":87.5,"act_rec":129,"rec_diff":41.5,"prop_td":6,"act_td":10,"td_diff":4},{"season":2025,"player":"Nico Collins","matched":"Nico Collins","team":"HOU","g":15,"prop_yds":1125.5,"act_yds":1117,"yds_diff":-8.5,"prop_rec":78.5,"act_rec":71,"rec_diff":-7.5,"prop_td":6.5,"act_td":6,"td_diff":-0.5},{"season":2025,"player":"Brian Thomas Jr","matched":"Brian Thomas Jr.","team":"JAX","g":14,"prop_yds":1150.5,"act_yds":707,"yds_diff":-443.5,"prop_rec":78.5,"act_rec":48,"rec_diff":-30.5,"prop_td":7.5,"act_td":2,"td_diff":-5.5},{"season":2025,"player":"Drake London","matched":"Drake London","team":"ATL","g":12,"prop_yds":1125.5,"act_yds":919,"yds_diff":-206.5,"prop_rec":85.5,"act_rec":68,"rec_diff":-17.5,"prop_td":7.5,"act_td":7,"td_diff":-0.5},{"season":2025,"player":"A.J. Brown","matched":"A.J. Brown","team":"PHI","g":15,"prop_yds":1100.5,"act_yds":1003,"yds_diff":-97.5,"prop_rec":74.5,"act_rec":78,"rec_diff":3.5,"prop_td":7.5,"act_td":7,"td_diff":-0.5},{"season":2025,"player":"Ladd McConkey","matched":"Ladd McConkey","team":"LAC","g":16,"prop_yds":1025.5,"act_yds":789,"yds_diff":-236.5,"prop_rec":78.5,"act_rec":66,"rec_diff":-12.5,"prop_td":6.5,"act_td":6,"td_diff":-0.5},{"season":2025,"player":"Tee Higgins","matched":"Tee Higgins","team":"CIN","g":15,"prop_yds":975.5,"act_yds":846,"yds_diff":-129.5,"prop_rec":76.5,"act_rec":59,"rec_diff":-17.5,"prop_td":7.5,"act_td":11,"td_diff":3.5},{"season":2025,"player":"Tyreek Hill","matched":"Tyreek Hill","team":"MIA","g":4,"prop_yds":975.5,"act_yds":265,"yds_diff":-710.5,"prop_rec":72.5,"act_rec":21,"rec_diff":-51.5,"prop_td":7.5,"act_td":1,"td_diff":-6.5},{"season":2025,"player":"Jaxon Smith-Njigba","matched":"Jaxon Smith-Njigba","team":"SEA","g":17,"prop_yds":975.5,"act_yds":1793,"yds_diff":817.5,"prop_rec":88.5,"act_rec":119,"rec_diff":30.5,"prop_td":6.5,"act_td":10,"td_diff":3.5},{"season":2025,"player":"Garrett Wilson","matched":"Garrett Wilson","team":"NYJ","g":7,"prop_yds":925.5,"act_yds":395,"yds_diff":-530.5,"prop_rec":78.5,"act_rec":36,"rec_diff":-42.5,"prop_td":4.5,"act_td":4,"td_diff":-0.5},{"season":2025,"player":"Davante Adams","matched":"Davante Adams","team":"LA","g":14,"prop_yds":950.5,"act_yds":789,"yds_diff":-161.5,"prop_rec":75.5,"act_rec":60,"rec_diff":-15.5,"prop_td":8.5,"act_td":14,"td_diff":5.5},{"season":2025,"player":"Marvin Harrison","matched":"Marvin Harrison Jr.","team":"ARI","g":12,"prop_yds":975.5,"act_yds":608,"yds_diff":-367.5,"prop_rec":69.5,"act_rec":41,"rec_diff":-28.5,"prop_td":6.5,"act_td":4,"td_diff":-2.5},{"season":2025,"player":"Mike Evans","matched":"Mike Evans","team":"TB","g":8,"prop_yds":950.5,"act_yds":368,"yds_diff":-582.5,"prop_rec":70.5,"act_rec":30,"rec_diff":-40.5,"prop_td":7.5,"act_td":3,"td_diff":-4.5},{"season":2025,"player":"DK Metcalf","matched":"DK Metcalf","team":"PIT","g":15,"prop_yds":950.5,"act_yds":850,"yds_diff":-100.5,"prop_rec":68.5,"act_rec":59,"rec_diff":-9.5,"prop_td":6.5,"act_td":6,"td_diff":-0.5},{"season":2025,"player":"DJ Moore","matched":"DJ Moore","team":"CHI","g":17,"prop_yds":975.5,"act_yds":682,"yds_diff":-293.5,"prop_rec":80.5,"act_rec":50,"rec_diff":-30.5,"prop_td":6.5,"act_td":6,"td_diff":-0.5},{"season":2025,"player":"Xavier Worthy","matched":"Xavier Worthy","team":"KC","g":14,"prop_yds":900.5,"act_yds":532,"yds_diff":-368.5,"prop_rec":73.5,"act_rec":42,"rec_diff":-31.5,"prop_td":9,"act_td":1,"td_diff":-8},{"season":2025,"player":"Courtland Sutton","matched":"Courtland Sutton","team":"DEN","g":17,"prop_yds":875.5,"act_yds":1017,"yds_diff":141.5,"prop_rec":72.5,"act_rec":74,"rec_diff":1.5,"prop_td":6.5,"act_td":7,"td_diff":0.5},{"season":2025,"player":"DeVonta Smith","matched":"DeVonta Smith","team":"PHI","g":17,"prop_yds":875.5,"act_yds":1008,"yds_diff":132.5,"prop_rec":67.5,"act_rec":77,"rec_diff":9.5,"prop_td":6.5,"act_td":4,"td_diff":-2.5},{"season":2025,"player":"Tetairoa McMillan","matched":"Tetairoa McMillan","team":"CAR","g":17,"prop_yds":825.5,"act_yds":1014,"yds_diff":188.5,"prop_rec":66.5,"act_rec":70,"rec_diff":3.5,"prop_td":4.5,"act_td":7,"td_diff":2.5},{"season":2025,"player":"Zay Flowers","matched":"Zay Flowers","team":"BAL","g":17,"prop_yds":900.5,"act_yds":1211,"yds_diff":310.5,"prop_rec":68.5,"act_rec":86,"rec_diff":17.5,"prop_td":4.5,"act_td":5,"td_diff":0.5},{"season":2025,"player":"George Pickens","matched":"George Pickens","team":"DAL","g":17,"prop_yds":900.5,"act_yds":1429,"yds_diff":528.5,"prop_rec":61.5,"act_rec":93,"rec_diff":31.5,"prop_td":5.5,"act_td":9,"td_diff":3.5},{"season":2025,"player":"Jameson Williams","matched":"Jameson Williams","team":"DET","g":17,"prop_yds":900.5,"act_yds":1117,"yds_diff":216.5,"prop_rec":58.5,"act_rec":65,"rec_diff":6.5,"prop_td":6,"act_td":7,"td_diff":1},{"season":2025,"player":"Calvin Ridley","matched":"Calvin Ridley","team":"TEN","g":7,"prop_yds":925.5,"act_yds":303,"yds_diff":-622.5,"prop_rec":64.5,"act_rec":17,"rec_diff":-47.5,"prop_td":5.5,"act_td":0,"td_diff":-5.5},{"season":2025,"player":"Jaylen Waddle","matched":"Jaylen Waddle","team":"MIA","g":16,"prop_yds":925.5,"act_yds":910,"yds_diff":-15.5,"prop_rec":69.5,"act_rec":64,"rec_diff":-5.5,"prop_td":4.5,"act_td":6,"td_diff":1.5},{"season":2025,"player":"Travis Hunter","matched":"Travis Hunter","team":"JAX","g":7,"prop_yds":750.5,"act_yds":298,"yds_diff":-452.5,"prop_rec":65.5,"act_rec":28,"rec_diff":-37.5,"prop_td":4.5,"act_td":1,"td_diff":-3.5},{"season":2025,"player":"Jerry Jeudy","matched":"Jerry Jeudy","team":"CLE","g":17,"prop_yds":900.5,"act_yds":602,"yds_diff":-298.5,"prop_rec":69.5,"act_rec":50,"rec_diff":-19.5,"prop_td":3.5,"act_td":2,"td_diff":-1.5},{"season":2025,"player":"Rome Odunze","matched":"Rome Odunze","team":"CHI","g":12,"prop_yds":875.5,"act_yds":661,"yds_diff":-214.5,"prop_rec":64.5,"act_rec":44,"rec_diff":-20.5,"prop_td":5.5,"act_td":6,"td_diff":0.5},{"season":2025,"player":"Chris Olave","matched":"Chris Olave","team":"NO","g":16,"prop_yds":825.5,"act_yds":1163,"yds_diff":337.5,"prop_rec":70.5,"act_rec":100,"rec_diff":29.5,"prop_td":3.5,"act_td":9,"td_diff":5.5},{"season":2025,"player":"Stefon Diggs","matched":"Stefon Diggs","team":"NE","g":17,"prop_yds":750.5,"act_yds":1013,"yds_diff":262.5,"prop_rec":65.5,"act_rec":85,"rec_diff":19.5,"prop_td":4.5,"act_td":4,"td_diff":-0.5},{"season":2025,"player":"Matthew Golden","matched":"Matthew Golden","team":"GB","g":14,"prop_yds":700.5,"act_yds":361,"yds_diff":-339.5,"prop_rec":52.5,"act_rec":29,"rec_diff":-23.5,"prop_td":4.5,"act_td":0,"td_diff":-4.5},{"season":2025,"player":"Michael Pittman Jr","matched":"Michael Pittman","team":"IND","g":17,"prop_yds":750.5,"act_yds":784,"yds_diff":33.5,"prop_rec":65.5,"act_rec":80,"rec_diff":14.5,"prop_td":3.5,"act_td":7,"td_diff":3.5},{"season":2025,"player":"Jayden Higgins","matched":"Jayden Higgins","team":"HOU","g":17,"prop_yds":650.5,"act_yds":525,"yds_diff":-125.5,"prop_rec":44.5,"act_rec":41,"rec_diff":-3.5,"prop_td":3.5,"act_td":6,"td_diff":2.5}];
+const SEASONS=[2022,2023,2024,2025];
+const cleared=(d)=>d>0;
+
+/* ---------- KPI row ---------- */
+function pct(n,d){return Math.round(n/d*100);}
+const catKeys=[["yds","Receiving yards","yds_diff"],["rec","Receptions","rec_diff"],["td","Touchdowns","td_diff"]];
+const kpiWrap=document.getElementById('kpis');
+catKeys.forEach(([k,label,df])=>{
+  const graded=DATA.filter(r=>r[df]!=null);
+  const over=graded.filter(r=>cleared(r[df])).length;
+  const p=pct(over,graded.length);
+  const el=document.createElement('div');
+  el.className='kpi';
+  el.innerHTML=`<h3>${label} &nbsp;·&nbsp; O/U cleared</h3>
+    <div class="big">${p}%</div>
+    <div class="bar"><i style="width:${p}%"></i></div>
+    <div class="foot"><b>${over} over</b> &nbsp;/&nbsp; <u>${graded.length-over} under</u>${graded.length<DATA.length?` &nbsp;·&nbsp; ${graded.length} graded`:''}</div>`;
+  kpiWrap.appendChild(el);
+});
+
+/* ---------- healthy vs injured split ---------- */
+const full=DATA.filter(r=>r.g>=14), inj=DATA.filter(r=>r.g<14);
+const fOver=full.filter(r=>cleared(r.yds_diff)).length;
+const iUnder=inj.filter(r=>!cleared(r.yds_diff)).length;
+document.getElementById('split').innerHTML=
+  `<b>The availability tax.</b> Of the <span class="n">${inj.length}</span> receiver-seasons that ended under 14 games,
+   <span class="n">${iUnder}</span> missed the yards line — almost automatic. Among the
+   <span class="n">${full.length}</span> who stayed on the field, the book was much closer to fair:
+   <span class="n">${fOver}</span> over, <span class="n">${full.length-fOver}</span> under
+   (<span class="n">${pct(fOver,full.length)}%</span> over).`;
+
+/* ---------- histogram: distribution of (actual − line) ---------- */
+const METRICS={
+  yds:{key:'yds_diff',noun:'receiving yards',unit:'yds',step:100,lo:-900,hi:900},
+  rec:{key:'rec_diff',noun:'receptions',unit:'rec',step:10,lo:-80,hi:50},
+  td:{key:'td_diff',noun:'touchdowns',unit:'TD',step:2,lo:-8,hi:10},
+};
+const plot=document.getElementById('histoPlot');
+const sub=document.getElementById('histoSub');
+const foot=document.getElementById('histoFoot');
+const tip=document.createElement('div'); tip.className='htip'; plot.appendChild(tip);
+const svgNS='http://www.w3.org/2000/svg';
+const median=a=>{const s=[...a].sort((x,y)=>x-y),n=s.length;return n%2?s[(n-1)/2]:(s[n/2-1]+s[n/2])/2;};
+const sgn=v=>(v>0?'+':'')+ (Number.isInteger(v)?v:v.toFixed(1));
+
+function drawHisto(m){
+  const cfg=METRICS[m];
+  const graded=DATA.filter(r=>r[cfg.key]!=null);
+  const vals=graded.map(r=>r[cfg.key]);
+  const edges=[]; for(let e=cfg.lo;e<cfg.hi+1e-9;e+=cfg.step) edges.push(Math.round(e));
+  const bins=edges.slice(0,-1).map((e0,i)=>({e0,e1:edges[i+1],rows:[]}));
+  graded.forEach(r=>{
+    const v=r[cfg.key];
+    let i=Math.floor((v-cfg.lo)/cfg.step);
+    if(i<0)i=0; if(i>=bins.length)i=bins.length-1;
+    bins[i].rows.push(r);
+  });
+  const maxC=Math.max(...bins.map(b=>b.rows.length));
+  const yTop=Math.ceil(maxC/2)*2||2;
+
+  const W=920,H=340,mL=34,mR=14,mT=26,mB=54;
+  const iw=W-mL-mR, ih=H-mT-mB;
+  const x=v=>mL+ (v-cfg.lo)/(cfg.hi-cfg.lo)*iw;
+  const y=c=>mT+ ih-(c/yTop)*ih;
+  const gap=2;
+
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Histogram of actual minus prop line for ${cfg.noun}, ${vals.length} receiver-seasons">`;
+  // y gridlines + labels
+  for(let c=0;c<=yTop;c+=Math.max(2,Math.round(yTop/5/1)*1)){
+    s+=`<line class="axline" x1="${mL}" x2="${W-mR}" y1="${y(c).toFixed(1)}" y2="${y(c).toFixed(1)}"/>`;
+    s+=`<text class="axlab" x="${mL-8}" y="${(y(c)+3.5).toFixed(1)}" text-anchor="end">${c}</text>`;
+  }
+  // bars
+  bins.forEach(b=>{
+    const c=b.rows.length; if(c===0) return;
+    const x0=x(b.e0), x1=x(b.e1);
+    const bw=Math.max(1,x1-x0-gap);
+    const yy=y(c), hh=mT+ih-yy;
+    const over=b.e0>=0;
+    const col=over?'var(--over)':'var(--under)';
+    const lab=`${sgn(b.e0)} to ${sgn(b.e1)} ${cfg.unit}`;
+    s+=`<rect class="bar" x="${(x0+gap/2).toFixed(1)}" y="${yy.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(0,hh).toFixed(1)}" rx="3" fill="${col}" `
+      +`data-c="${c}" data-lab="${lab}" data-side="${over?'over':'under'}" data-mid="${((x0+x1)/2).toFixed(1)}"/>`;
+    s+=`<text class="cnt" x="${((x0+x1)/2).toFixed(1)}" y="${(yy-5).toFixed(1)}" text-anchor="middle">${c}</text>`;
+  });
+  // zero line
+  s+=`<line class="zline" x1="${x(0).toFixed(1)}" x2="${x(0).toFixed(1)}" y1="${mT-6}" y2="${mT+ih}"/>`;
+  // x ticks at every other edge
+  edges.forEach((e,i)=>{
+    if(i%2) return;
+    s+=`<text class="axlab" x="${x(e).toFixed(1)}" y="${mT+ih+16}" text-anchor="middle">${e>0?'+':''}${e}</text>`;
+  });
+  s+=`<text class="axlab" x="${mL}" y="${H-6}" text-anchor="start">actual − prop line (${cfg.unit})</text>`;
+  s+=`<text class="dirlab" x="${(x(0)-10).toFixed(1)}" y="${mT-12}" text-anchor="end">◄ fell short</text>`;
+  s+=`<text class="dirlab" x="${(x(0)+10).toFixed(1)}" y="${mT-12}" text-anchor="start">beat the line ►</text>`;
+  s+=`</svg>`;
+  plot.querySelectorAll('svg').forEach(n=>n.remove());
+  plot.insertAdjacentHTML('afterbegin',s);
+
+  // interaction
+  const svg=plot.querySelector('svg');
+  svg.querySelectorAll('.bar').forEach(rect=>{
+    rect.addEventListener('mousemove',ev=>{
+      const c=rect.dataset.c, side=rect.dataset.side;
+      tip.innerHTML=`<b>${c}</b> receiver-season${c==1?'':'s'}<br>`
+        +`<span class="${side=='over'?'oc':'uc'}">${rect.dataset.lab}</span>`;
+      const pr=plot.getBoundingClientRect();
+      tip.style.left=(ev.clientX-pr.left)+'px';
+      tip.style.top=(ev.clientY-pr.top-14)+'px';
+      tip.classList.add('on');
+    });
+    rect.addEventListener('mouseleave',()=>tip.classList.remove('on'));
+  });
+
+  // caption + footer
+  const under=vals.filter(v=>v<0).length, over=vals.length-under;
+  const mean=vals.reduce((a,b)=>a+b,0)/vals.length;
+  sub.textContent=`Each bar counts receiver-seasons whose final ${cfg.noun} total landed that far from the preseason prop line. `
+    +`${vals.length} seasons`+(m==='yds'?', 2022–25.':' with a published '+cfg.noun+' line, 2023–25.');
+  foot.innerHTML=`<span><b>${under}</b> <span class="uc">under</span> &nbsp;·&nbsp; <b>${over}</b> <span class="oc">over</span></span>`
+    +`<span>median <b>${sgn(+median(vals).toFixed(1))}</b> ${cfg.unit}</span>`
+    +`<span>mean <b>${sgn(+mean.toFixed(1))}</b> ${cfg.unit}</span>`
+    +`<span>worst miss <b>${sgn(Math.min(...vals))}</b> &nbsp;·&nbsp; best beat <b>${sgn(Math.max(...vals))}</b></span>`;
+}
+const seg=document.getElementById('metricSeg');
+seg.addEventListener('click',e=>{
+  const btn=e.target.closest('button'); if(!btn) return;
+  seg.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed', b===btn));
+  drawHisto(btn.dataset.m);
+});
+drawHisto('yds');
+
+/* ---------- tier analysis: hit rate vs size of the line ---------- */
+const tmed=a=>{if(!a.length)return NaN;const s=[...a].sort((x,y)=>x-y),n=s.length;return n%2?s[(n-1)/2]:(s[n/2-1]+s[n/2])/2;};
+const MT={
+  yds:{key:'yds_diff',prop:'prop_yds',unit:'yds',head:'Preseason yards line',
+       edges:[700,850,1000,1200],labels:['under 700','700 – 850','850 – 1,000','1,000 – 1,200','1,200+'],
+       elite:1000,eliteLab:'1,000+ yard'},
+  rec:{key:'rec_diff',prop:'prop_rec',unit:'rec',head:'Preseason reception line',
+       edges:[55,65,75,85],labels:['55 or fewer','56 – 65','66 – 75','76 – 85','86+'],
+       elite:85,eliteLab:'86+ reception'},
+  td:{key:'td_diff',prop:'prop_td',unit:'TD',head:'Preseason TD line',
+      edges:[4.5,5.5,6.5,7.5],labels:['4.5 or fewer','5 – 5.5','6 – 6.5','7 – 7.5','8+'],
+      elite:7.5,eliteLab:'8+ TD'},
+};
+const bkt=(v,edges)=>{for(let i=0;i<edges.length;i++) if(v<=edges[i]) return i; return edges.length;};
+const R1=(v)=>Math.round(v*10)/10;
+
+function drawTiers(m){
+  const cfg=MT[m];
+  const pop=DATA.filter(r=>r[cfg.key]!=null);
+  document.getElementById('tierColHead').textContent=cfg.head;
+  document.getElementById('tierSub').innerHTML=
+    `Receiver-seasons bucketed by their preseason <b>${cfg.unit==='yds'?'receiving-yards':cfg.unit==='rec'?'reception':'touchdown'} line</b>. `
+    +`"Over %" is how often it was cleared; "healthy" drops anyone under 14 games. ${pop.length} seasons`
+    +(m==='yds'?', 2022–25.':', 2023–25.');
+  const rows=cfg.labels.map((lab,i)=>{
+    const all=pop.filter(r=>bkt(r[cfg.prop],cfg.edges)===i);
+    const hp=all.filter(r=>r.g>=14);
+    const oA=all.filter(r=>r[cfg.key]>0).length, oH=hp.filter(r=>r[cfg.key]>0).length;
+    return {lab,n:all.length,oA,pA:Math.round(oA/all.length*100),
+            nH:hp.length,oH,pH:hp.length?Math.round(oH/hp.length*100):0,
+            mdH:tmed(hp.map(r=>r[cfg.key]))};
+  });
+  document.getElementById('tierBody').innerHTML=rows.map(r=>{
+    const cls=r.pH>=50?'hi':'lo', mdCls=r.mdH>0?'pos':'neg';
+    return `<tr>
+      <td class="tl">${r.lab}<small>${cfg.unit} line</small></td>
+      <td>${r.n}</td>
+      <td>${isNaN(r.pA)?'–':r.pA+'%'}<span style="color:var(--ink-soft)"> · ${r.oA}/${r.n}</span></td>
+      <td><div class="ratebar"><span>${r.nH?r.pH+'%':'–'}</span><span class="track"><i class="${cls}" style="width:${r.pH}%"></i></span></div><span style="color:var(--ink-soft);font-size:11px">${r.oH}/${r.nH} healthy</span></td>
+      <td><span class="md ${mdCls}">${r.nH?(r.mdH>0?'+':'')+R1(r.mdH)+' '+cfg.unit:'–'}</span></td>
+    </tr>`;
+  }).join('');
+
+  // elite-tier readout
+  const E=pop.filter(r=>r[cfg.prop]>=cfg.elite);
+  const eO=E.filter(r=>r[cfg.key]>0).length;
+  const eH=E.filter(r=>r.g>=14), eHO=eH.filter(r=>r[cfg.key]>0).length;
+  const eInj=E.filter(r=>r.g<14), eInjO=eInj.filter(r=>r[cfg.key]>0).length;
+  const lo=pop.filter(r=>r[cfg.prop]<cfg.elite&&r.g>=14), loO=lo.filter(r=>r[cfg.key]>0).length;
+  const P=(o,n)=>Math.round(o/n*100);
+  const frac=(o,n)=>`<span class="mono">${o}/${n}</span>`;
+  const kick=document.getElementById('tierKick');
+  if(m==='yds'){
+    const yrs=[2022,2023,2024,2025].map(y=>{const s=E.filter(r=>r.season===y);return{y,a:Math.round(s.reduce((x,r)=>x+r[cfg.key],0)/s.length)};});
+    kick.className='kick';
+    kick.innerHTML=`<b>Partly — but it's injuries and a recent trend, not a standing edge.</b> Of the
+      <span class="mono">${E.length}</span> seasons priced at a 1,000+ yard line,
+      ${frac(eO,E.length)} cleared it (<span class="mono">${P(eO,E.length)}%</span>). The drag is availability:
+      <span class="mono">${eInj.length}</span> missed 14+ games and <span class="mono">${eInjO||'none'}</span> beat the number.
+      Among the <span class="mono">${eH.length}</span> who stayed healthy it's ${frac(eHO,eH.length)}
+      (<span class="mono">${P(eHO,eH.length)}%</span>, median <span class="mono">+${Math.round(tmed(eH.map(r=>r[cfg.key])))}</span>).
+      Pricing has drifted year to year — the 1,000+ tier landed
+      ${yrs.map(t=>`<span class="mono">${t.a>0?'+':''}${t.a}</span> in&nbsp;'${String(t.y).slice(2)}`).join(', ')} vs the line.
+      The steady soft spot is the tier just below: healthy WRs with a sub-1,000 line cleared it
+      ${frac(loO,lo.length)} (<span class="mono">${P(loO,lo.length)}%</span>), median
+      <span class="mono">+${Math.round(tmed(lo.map(r=>r[cfg.key])))}</span>.`;
+  } else if(m==='rec'){
+    const b1=rows[1], b3=rows[3];
+    kick.className='kick neutral';
+    kick.innerHTML=`<b>Barely — line size and reception misses are all but uncorrelated (r ≈ 0).</b>
+      The elite <span class="mono">86+</span> tier is actually a fair <i>over</i> when healthy —
+      ${frac(rows[4].oH,rows[4].nH)} (<span class="mono">${rows[4].pH}%</span>) — and so is the low-volume
+      <span class="mono">56–65</span> tier, the possession guys: ${frac(b1.oH,b1.nH)}
+      (<span class="mono">${b1.pH}%</span>, median <span class="mono">+${R1(b1.mdH)}</span>). The trap is the
+      <span class="mono">76–85</span> band — target-hog WR2 pricing — which cleared just ${frac(b3.oH,b3.nH)}
+      healthy (<span class="mono">${b3.pH}%</span>), median <span class="mono">${R1(b3.mdH)}</span>.
+      Injured elites are still dead money: <span class="mono">${eInj.length}</span> receivers with an 86+ line missed
+      14+ games, <span class="mono">${eInjO||'none'}</span> hit.`;
+  } else {
+    kick.className='kick';
+    kick.innerHTML=`<b>Yes — this is the clearest signal of the three.</b> Bigger TD line, likelier miss
+      (r ≈ −0.2). Lines of <span class="mono">8+</span> cleared just ${frac(eO,E.length)}
+      (<span class="mono">${P(eO,E.length)}%</span>) — and only ${frac(eHO,eH.length)}
+      (<span class="mono">${P(eHO,eH.length)}%</span>) among the healthy, median <span class="mono">${R1(tmed(eH.map(r=>r[cfg.key])))}</span>.
+      Everything under 7.5 is closer to a coin flip (healthy ${frac(loO,lo.length)}, <span class="mono">${P(loO,lo.length)}%</span>).
+      Receiving TDs are lumpy and defense-dependent; clearing an 8-TD line takes a top-of-league scoring
+      season, and the book keeps hanging ~<span class="mono">${Math.round(E.length/4)}</span> of those a year.`;
+  }
+}
+const tSeg=document.getElementById('tierSeg');
+tSeg.addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  tSeg.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  drawTiers(b.dataset.m);
+});
+drawTiers('yds');
+
+/* ---------- 2026 watch list ---------- */
+// p=player, yl/rl/tl = 2026 lines, adp, then 2025 actuals (g,y,r,t) and 2025 article yards line (y25l or null)
+const W26=/*W26*/[
+ {p:"Ja'Marr Chase",tm:'CIN',yl:1324.5,rl:108.5,tl:10.5,adp:3.6,g:16,y:1412,r:125,t:8,y25l:1325.5},
+ {p:"Puka Nacua",tm:'LAR',yl:1350.5,rl:106.5,tl:8.5,adp:4.4,g:16,y:1715,r:129,t:10,y25l:1200.5},
+ {p:"Amon-Ra St. Brown",tm:'DET',yl:1249.5,rl:103.5,tl:9.5,adp:8.3,g:17,y:1401,r:117,t:11,y25l:1100.5},
+ {p:"Jaxon Smith-Njigba",tm:'SEA',yl:1324.5,rl:101.5,tl:8.5,adp:6.4,g:17,y:1793,r:119,t:10,y25l:975.5},
+ {p:"CeeDee Lamb",tm:'DAL',yl:1175.5,rl:91.5,tl:7.5,adp:12.7,g:13,y:1077,r:75,t:3,y25l:1200.5},
+ {p:"Justin Jefferson",tm:'MIN',yl:1149.5,rl:92.5,tl:7.5,adp:13.0,g:17,y:1048,r:84,t:2,y25l:1250.5},
+ {p:"Rashee Rice",tm:'KC',yl:1049.5,rl:99.5,tl:7.5,adp:28.6,g:8,y:571,r:53,t:5,y25l:null},
+ {p:"Drake London",tm:'ATL',yl:1099.5,rl:89.5,tl:7.5,adp:22.2,g:12,y:919,r:68,t:7,y25l:1125.5},
+ {p:"A.J. Brown",tm:'PHI',yl:1124.5,rl:78.5,tl:7.5,adp:20.8,g:15,y:1003,r:78,t:7,y25l:1100.5},
+ {p:"Chris Olave",tm:'NO',yl:1024.5,rl:82.5,tl:5.5,adp:31.7,g:16,y:1163,r:100,t:9,y25l:825.5},
+ {p:"DeVonta Smith",tm:'PHI',yl:1049.5,rl:79.5,tl:5.5,adp:36.6,g:17,y:1008,r:77,t:4,y25l:875.5},
+ {p:"Nico Collins",tm:'HOU',yl:1074.5,rl:70.5,tl:6.5,adp:27.0,g:15,y:1117,r:71,t:6,y25l:1125.5},
+ {p:"George Pickens",tm:'DAL',yl:999.5,rl:75.5,tl:6.5,adp:27.5,g:17,y:1429,r:93,t:9,y25l:900.5},
+ {p:"Garrett Wilson",tm:'NYJ',yl:999.5,rl:84.5,tl:4.5,adp:41.9,g:7,y:395,r:36,t:4,y25l:925.5},
+ {p:"Zay Flowers",tm:'BAL',yl:999.5,rl:74.5,tl:5.5,adp:39.6,g:17,y:1211,r:86,t:5,y25l:900.5},
+ {p:"Tetairoa McMillan",tm:'CAR',yl:949.5,rl:72.5,tl:6.5,adp:42.4,g:17,y:1014,r:70,t:7,y25l:825.5},
+ {p:"Tee Higgins",tm:'CIN',yl:875.5,rl:64.5,tl:8.5,adp:46.2,g:15,y:846,r:59,t:11,y25l:975.5},
+ {p:"Emeka Egbuka",tm:'TB',yl:924.5,rl:70.5,tl:6.5,adp:38.7,g:17,y:938,r:63,t:6,y25l:null},
+ {p:"Terry McLaurin",tm:'WAS',yl:924.5,rl:71.5,tl:5.5,adp:55.3,g:10,y:582,r:38,t:3,y25l:null},
+ {p:"Davante Adams",tm:'LAR',yl:774.5,rl:60.5,tl:9.5,adp:57.8,g:14,y:789,r:60,t:14,y25l:950.5},
+ {p:"Ladd McConkey",tm:'LAC',yl:899.5,rl:71.5,tl:5.5,adp:45.2,g:16,y:789,r:66,t:6,y25l:1025.5},
+ {p:"Jaylen Waddle",tm:'MIA',yl:920.5,rl:68.5,tl:5.5,adp:51.0,g:16,y:910,r:64,t:6,y25l:925.5},
+ {p:"Jameson Williams",tm:'DET',yl:899.5,rl:56.5,tl:5.5,adp:60.8,g:17,y:1117,r:65,t:7,y25l:900.5},
+ {p:"Marvin Harrison Jr.",tm:'ARI',yl:824.5,rl:57.5,tl:5.5,adp:79.2,g:12,y:608,r:41,t:4,y25l:975.5},
+];
+function buildWatch2026(){
+  const wl=(r,mode)=>r.map(x=>{
+    const line = mode==='td' ? `<b>${x.tl}</b> TD line`
+               : mode==='rec' ? `<b>${x.rl}</b> rec line`
+               : `<b>${x.yl}</b> yd line`;
+    const g25 = `'25: ${x.g<14?`<span class="lo">${x.g} G</span> `:''}${x.y} yd · ${x.r} rec · ${x.t} TD`;
+    return `<div class="wrow"><span class="nm">${x.p}<span class="tm">${x.tm}</span>${x.tags||''}</span>`
+      +`<span class="fig">${line} &nbsp;·&nbsp; ${g25}</span></div>`;
+  }).join('');
+  const club=W26.filter(x=>x.yl>=1000).map(x=>({...x,
+     tags:(x.yl>=1000&&x.yl<1200)?'<span class="wtag">dead zone</span>':(x.yl>=1200?'<span class="wtag warn">true-alpha band</span>':'')}));
+  const regNames=['Jaxon Smith-Njigba','George Pickens','Puka Nacua','Amon-Ra St. Brown','Chris Olave','Zay Flowers','Jameson Williams'];
+  const regress=regNames.map(n=>W26.find(x=>x.p===n))
+     .map(x=>({...x,tags:x.y-x.yl>=100?'<span class="wtag">line cut '+Math.round(x.y-x.yl)+'</span>':(x.yl-x.y>=0?'<span class="wtag warn">line ≥ last yr</span>':'')}));
+  const td8=W26.filter(x=>x.tl>=8).sort((a,b)=>b.tl-a.tl).map(x=>({...x}));
+  const hurt=W26.filter(x=>x.g<14 && x.yl>=820).map(x=>({...x,tags:`<span class="wtag">${x.g} G in '25</span>`}));
+  const soft=W26.filter(x=>x.yl>=850&&x.yl<1000&&x.g>=14 && !['George Pickens','Zay Flowers'].includes(x.p)).map(x=>({...x}));
+
+  const grp=(title,hist,lede,rows,mode)=>`<div class="wgrp"><h4>${title} <span class="hist">${hist}</span></h4>`
+    +`<p class="lede">${lede}</p><div class="wlist">${wl(rows,mode)}</div></div>`;
+
+  document.getElementById('watchBody').innerHTML=
+    grp("The 1,000+ yard club — 12 this year",
+        "history: 41% over · 55% when healthy · −118 avg in '25",
+        "Same headcount as a typical year. Eight of the twelve sit in the <b>1,000–1,200 &ldquo;dead zone&rdquo;</b> "
+       +"(48% healthy, median −8); only Chase, Nacua, ARSB and JSN are in the 1,200+ band that has actually held up.",
+        club)
+   +grp("Priced near a career year — regression watch",
+        "history: after a +300-yd beat, only 7 of 19 clear the raised line next year",
+        "The book already cut JSN and Pickens hard, but their lines still sit at or above where post-blowup "
+       +"seasons usually land. Nacua's 1,350 is the highest line on the board, off a 1,715-yard year.",
+        regress)
+   +grp("TD line of 8 or more",
+        "history: 8+ TD lines go 28% over · 36% when healthy",
+        "The most reliable fade in the data. <b>Chase at 10.5</b> has only ever been cleared once in this "
+       +"sample — his own 17-TD 2024. Adams at 9.5 turns 33 this season; Higgins shares targets with Chase.",
+        td8,'td')
+   +grp("Big line, coming off an injury-shortened 2025",
+        "history: a 900+ line the year after missing 14+ games → 4/10 over; re-injury rate ~39% vs 29% league-wide",
+        "Not a production cliff — bounce-backs happen (A.J. Brown '22 +495, Jefferson '24 +257, Nacua '25 +514). "
+       +"The real flag is availability: this group misses 14+ games again about a third more often than a random "
+       +"WR, and the line is priced for a full season either way. Rice (8 G in '25) and Garrett Wilson (7 G) "
+       +"carry the widest gap between the new line and last year's total.",
+        hurt)
+   +grp("Fits the soft-tier over profile",
+        "history: healthy WR, sub-1,000 line → 61% over, median +98",
+        "Healthy receivers priced in the 850–1,000 band are the group the market has most consistently "
+       +"under-shot. McMillan (949.5, a Year-2 breakout) is the cleanest McConkey/JSN-shaped comp.",
+        soft);
+}
+buildWatch2026();
+
+/* ---------- season tables ---------- */
+const cols=[
+  {k:'player',t:'Receiver',cls:'l',type:'str'},
+  {k:'team',t:'Tm',cls:'l',type:'str'},
+  {k:'g',t:'G',type:'num'},
+  {k:'prop_yds',t:'Yds line',type:'num',grp:1,line:1},
+  {k:'act_yds',t:'Yds',type:'num'},
+  {k:'yds_diff',t:'Δ',type:'num',delta:1,grp:1},
+  {k:'prop_rec',t:'Rec line',type:'num',line:1},
+  {k:'act_rec',t:'Rec',type:'num'},
+  {k:'rec_diff',t:'Δ',type:'num',delta:1,grp:1},
+  {k:'prop_td',t:'TD line',type:'num',line:1},
+  {k:'act_td',t:'TD',type:'num'},
+  {k:'td_diff',t:'Δ',type:'num',delta:1},
+];
+const fmt=(v)=> v==null?'—':(Number.isInteger(v)?v:v.toFixed(1));
+const sd=(v)=> v==null?'—':(v>0?'+':'')+fmt(v);
+
+const seasonsWrap=document.getElementById('seasons');
+SEASONS.forEach(yr=>{
+  const rows=DATA.filter(r=>r.season===yr);
+  const oy=rows.filter(r=>cleared(r.yds_diff)).length;
+  const recG=rows.filter(r=>r.rec_diff!=null), tdG=rows.filter(r=>r.td_diff!=null);
+  const orr=recG.filter(r=>cleared(r.rec_diff)).length;
+  const ot=tdG.filter(r=>cleared(r.td_diff)).length;
+  const sec=document.createElement('section');
+  sec.innerHTML=`
+    <div class="sec-head">
+      <h2>${yr} <span style="font-size:.55em;color:var(--ink-soft)">season</span></h2>
+      <div class="tally"><b>${rows.length}</b> receivers graded</div>
+    </div>
+    <div class="pillrow">
+      <span class="chip">Yards — <span class="o">${oy} over</span> / <span class="u">${rows.length-oy} under</span></span>
+      ${recG.length?`<span class="chip">Receptions — <span class="o">${orr} over</span> / <span class="u">${recG.length-orr} under</span></span>`:`<span class="chip">Receptions &amp; TDs — <span style="color:var(--ink-soft)">line not published in '22</span></span>`}
+      ${tdG.length?`<span class="chip">TDs — <span class="o">${ot} over</span> / <span class="u">${tdG.length-ot} under</span></span>`:''}
+    </div>
+    <div class="tablecard"><div class="scroll"><table>
+      <thead><tr>${cols.map((c,i)=>`<th data-i="${i}" class="${c.cls||''}${c.grp?' grp':''}">${c.t}</th>`).join('')}</tr></thead>
+      <tbody></tbody>
+    </table></div></div>`;
+  const tbody=sec.querySelector('tbody');
+  let sortKey='yds_diff',sortDir=-1;
+  function render(){
+    const sorted=[...rows].sort((a,b)=>{
+      const c=cols.find(c=>c.k===sortKey);
+      let x=a[sortKey],y=b[sortKey];
+      if(c.type==='str'){return sortDir*String(x).localeCompare(String(y));}
+      return sortDir*(x-y);
+    });
+    tbody.innerHTML=sorted.map(r=>{
+      const res=cleared(r.yds_diff)?'over':'under';
+      return `<tr class="${res}">`+cols.map(c=>{
+        let v=r[c.k];
+        if(c.k==='player'){
+          const tag=r.g<14?'<span class="tag">INJ</span>':'';
+          return `<td class="player">${v}${tag}</td>`;
+        }
+        if(c.k==='team')return `<td class="tm">${v}</td>`;
+        if(c.delta){
+          const cl=v==null?'':(v>0?'pos':'neg');
+          return `<td class="delta ${cl}${c.grp?' grp':''}">${sd(v)}</td>`;
+        }
+        const extra=(c.line?' line-cell':'')+(c.grp?' grp':'');
+        return `<td class="${extra}">${fmt(v)}</td>`;
+      }).join('')+'</tr>';
+    }).join('');
+    sec.querySelectorAll('thead th').forEach(th=>{
+      const c=cols[+th.dataset.i];
+      th.setAttribute('aria-sort', c.k===sortKey?(sortDir===1?'ascending':'descending'):'none');
+    });
+  }
+  sec.querySelectorAll('thead th').forEach(th=>{
+    th.addEventListener('click',()=>{
+      const c=cols[+th.dataset.i];
+      if(sortKey===c.k){sortDir*=-1;}
+      else{sortKey=c.k;sortDir=(c.type==='str')?1:-1;}
+      render();
+    });
+  });
+  render();
+  seasonsWrap.appendChild(sec);
+});
+</script>
