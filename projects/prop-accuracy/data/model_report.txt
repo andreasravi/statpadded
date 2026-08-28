@@ -1,0 +1,59 @@
+=== WIDE RECEIVERS — receiving yards  (n=146, 2022-2025, base over rate 45%) ===
+leave-one-season-out (fit on 3 seasons, predict the 4th):
+    Brier   raw model 0.271   fair-line(.5) 0.250   base(0.45) 0.247
+    LogLoss raw model 0.739   fair-line 0.693
+    AUC 0.421   directional acc 47%
+    optimal blend  w=0.00  ->  P = 0.00*model + 1.00*0.5   (Brier 0.250)
+    VERDICT: the signals add essentially nothing beyond a fair line.
+  calibration of the blended prediction:
+    pred 0.45-0.55: n=146  predicted 50%  actual 45%
+  P(over | healthy) logit coefficients (standardised, full-sample):
+    qb_tier      +0.23
+    rerate       +0.03
+    deadzone     -0.22
+    prior_injury -0.25
+    (intercept +0.45)   p_inj(over|<14g) = 0.07
+
+=== RUNNING BACKS — rushing yards  (n=126, 2022-2025, base over rate 45%) ===
+leave-one-season-out (fit on 3 seasons, predict the 4th):
+    Brier   raw model 0.248   fair-line(.5) 0.250   base(0.45) 0.248
+    LogLoss raw model 0.696   fair-line 0.693
+    AUC 0.567   directional acc 53%
+    optimal blend  w=0.53  ->  P = 0.53*model + 0.47*0.5   (Brier 0.243)
+    VERDICT: the signals add real out-of-sample skill.
+  calibration of the blended prediction:
+    pred 0.00-0.35: n= 14  predicted 32%  actual 29%
+    pred 0.35-0.45: n= 28  predicted 41%  actual 36%
+    pred 0.45-0.55: n= 72  predicted 50%  actual 51%
+    pred 0.55-0.65: n= 12  predicted 58%  actual 50%
+  P(over | healthy) logit coefficients (standardised, full-sample):
+    rerate       +0.49
+    deadzone     -0.41
+    rb31         -0.69
+    line         -0.05
+    (intercept +0.62)   p_inj(over|<14g) = 0.03
+
+=== 2026 RUNNING BACKS  (blend w=0.53;  edge = P_model(over) - P_market;  |edge| >= 0.06) ===
+  -- vs a LIVE FanDuel posted line (real, if soft, market edge) --
+  UNDER Jaylen Warren          PIT  line    626  P(over) 0.28/0.08raw  edge -0.22  ¼-Kelly 10.0%  ['25 958y]
+  UNDER J.K. Dobbins           DEN  line    700  P(over) 0.31/0.14raw  edge -0.19  ¼-Kelly 8.5%  ['25 772y]
+  UNDER James Cook             BUF  line   1176  P(over) 0.34/0.19raw  edge -0.16  ¼-Kelly 6.9%  ['25 1621y]
+  UNDER Bijan Robinson         ATL  line   1150  P(over) 0.36/0.23raw  edge -0.14  ¼-Kelly 5.7%  ['25 1478y]
+  UNDER Saquon Barkley         PHI  line   1050  P(over) 0.41/0.32raw  edge -0.09  ¼-Kelly 3.2%  ['25 1140y]
+  -- vs the First Down Studio projection only (no posted book line; treat as directional) --
+  UNDER Woody Marks            HOU  line    351  P(over) 0.28/0.08raw  edge -0.22  ¼-Kelly 9.9%  ['25 703y]
+  UNDER Tyrone Tracy           NYG  line    528  P(over) 0.29/0.10raw  edge -0.21  ¼-Kelly 9.4%  ['25 740y]
+  UNDER Jacory Croskey-Merritt WAS  line    587  P(over) 0.29/0.11raw  edge -0.20  ¼-Kelly 9.2%  ['25 805y]
+  UNDER Jordan Mason           MIN  line    649  P(over) 0.30/0.13raw  edge -0.20  ¼-Kelly 8.7%  ['25 758y]
+  UNDER Blake Corum            LAR  line    666  P(over) 0.31/0.14raw  edge -0.19  ¼-Kelly 8.3%  ['25 746y]
+  UNDER Rachaad White          WAS  line    468  P(over) 0.31/0.14raw  edge -0.19  ¼-Kelly 8.4%  ['25 572y]
+  UNDER Rhamondre Stevenson    NE   line    618  P(over) 0.31/0.14raw  edge -0.19  ¼-Kelly 8.2%  ['25 603y]
+  UNDER Jonathon Brooks        CAR  line    575  P(over) 0.32/0.15raw  edge -0.18  ¼-Kelly 8.1%  ['25 n/a]
+  UNDER Tyler Allgeier         ARI  line    460  P(over) 0.32/0.15raw  edge -0.18  ¼-Kelly 8.0%  ['25 514y]
+  UNDER M. Washington Jr.      LV   line    458  P(over) 0.32/0.15raw  edge -0.18  ¼-Kelly 8.0%  ['25 n/a]
+  UNDER Aaron Jones            MIN  line    483  P(over) 0.32/0.15raw  edge -0.18  ¼-Kelly 7.9%  ['25 548y]
+  UNDER Kenneth Gainwell       TB   line    418  P(over) 0.32/0.15raw  edge -0.18  ¼-Kelly 7.9%  ['25 n/a]
+    ... +6 more
+
+=== 2026 WIDE RECEIVERS ===
+  The wide signals show no out-of-sample skill (blend w=0.00), so the model makes NO recommendation here -- every line is a fair 50/50.

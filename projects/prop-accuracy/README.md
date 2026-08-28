@@ -61,13 +61,47 @@ Williams** DET 900).
 WR1s on contenders in the dead zone (**CeeDee Lamb** DAL 1,200,
 **DeVonta Smith** PHI 1,050, **A.J. Brown** NE 1,100).
 
-The strongest single signals, in order: **RB — availability** (a healthy
-back is a ~64% over; every meaningful under is an injury), then the
-**RB31+ committee** cliff and the **bounce-back** lean. **WR — the QB
-tier** (weak QB → 64% over, +88 yds per tier-step) and the **re-rate
-direction** (fade a line set ≥150 over last year; back one cut ≥150
-below). Full triggered-signal detail per player in `data/picks_2026.json`
-and the report's "Our 2026 call" section.
+`picks_2026.py` sums hand-weighted signal points — quick to read, but it
+double-counts correlated signals and has no notion of confidence. For a
+principled version, see the model below.
+
+## Combining it into one model — and what survives cross-validation (`model.py`)
+
+The observations all reduce to: **availability** dominates, and *given a
+full season* the miss has some structure. So model it in two stages, per
+position, then blend toward a fair line by however much the model actually
+earns out of sample:
+
+```
+P(healthy)          logit ~ prior_injury + prior_games                (all rows)
+P(over | healthy)   logit ~ structural features (QB tier, re-rate,     (healthy rows)
+                            dead zone, draft slot, …), L2-regularised
+P(over)  =  P(over|healthy)·P(healthy)  +  p_inj·(1 − P(healthy))
+P_final  =  w·P(over)  +  (1 − w)·P_market      # w chosen by leave-one-season-out
+edge     =  P_final − P_market                  # size with fractional Kelly
+```
+
+Evaluation is **leave-one-season-out** — fit on three seasons, predict the
+fourth, never peek. The result is the honest part:
+
+| | LOSO AUC | LOSO Brier vs fair line (0.250) | blend weight `w` | verdict |
+|---|---|---|---|---|
+| **Wide receivers** | **0.42** | 0.271 (worse) | **0.00** | the QB-tier / re-rate / dead-zone signals are **in-sample overfitting** — they do not generalise across seasons. The market's ~50/50 receiving-yards lines are fair; the model makes **no WR recommendation**. |
+| **Running backs** | 0.57 | 0.243 (better) | **0.53** | real, modest skill. Well calibrated (pred 32%→act 29%, 41%→36%, 50%→51%). Driven by the **RB31+ committee** flag (coef −0.69), the **re-rate direction** (+0.49), and the **1,000–1,200 dead zone** (−0.41). |
+
+So the coherent 2026 call is **RB-only**. Blended P(over) and edge vs the
+posted line (`data/model_2026.json`, `data/model_report.txt`):
+
+- **vs a live FanDuel line** (real, if soft/low-limit, edge): UNDER
+  Jaylen Warren (626, P .28), J.K. Dobbins (700, .31), James Cook
+  (1,176, .34), Bijan Robinson (1,150, .36), Saquon Barkley (1,050, .41).
+- **vs the FDS projection only** (no book line — directional): UNDER the
+  deep committee tier — Woody Marks, Tyrone Tracy, Croskey-Merritt,
+  Jordan Mason, Blake Corum, Rachaad White, Rhamondre Stevenson, Aaron
+  Jones, RJ Harvey, … (P .28–.35).
+
+The additive `picks_2026.py` WR list is still a fine "here's what the
+patterns say" view — just don't mistake it for an edge.
 
 ## Method
 
@@ -90,8 +124,9 @@ python3 projects/prop-accuracy/scripts/watch_rb.py      # -> data/rb_watch_2026.
 # 2026 picks (uses live FanDuel lines + the strongest historical signals):
 python3 nfl/sources/firstdown_studio_2026/pipeline.py   # post-trade 2026 teams + starters
 python3 nfl/sources/fanduel_season_props/pipeline.py    # live FD O/U lines + odds
-python3 projects/prop-accuracy/scripts/picks_2026.py    # -> data/picks_2026.json  (high on / low on)
-#   (picks_2026 / watch_rb / context_wr share scripts/_ctx26.py for 2026 team + QB context)
+python3 projects/prop-accuracy/scripts/picks_2026.py    # -> data/picks_2026.json  (additive signal score)
+venv/bin/python projects/prop-accuracy/scripts/model.py # -> data/model_2026.json + model_report.txt (two-stage logit, LOSO-validated)
+#   (picks_2026 / watch_rb / context_wr / model share scripts/_ctx26.py for 2026 team + QB context)
 
 # then, for the visual report:
 python3 projects/prop-accuracy/scripts/bundle.py        # -> data/report_bundle.json (embedded in settle-sheet.html)
