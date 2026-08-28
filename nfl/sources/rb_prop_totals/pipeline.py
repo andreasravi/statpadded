@@ -27,6 +27,7 @@ Output: data/rb_prop_totals.csv --
 """
 import csv
 import html as _html
+import json
 import os
 import re
 
@@ -165,8 +166,42 @@ def parse_sportsbetting_ag():
     return out
 
 
+# --------------------------------------------------------------------------
+# First Down Studio -- 2026 season. Vegas-prop-driven *projection*, not a
+# single posted O/U. Captured from the client-rendered table at
+# firstdown.studio/season-rankings/rb, committed as JSON under data/raw/.
+# Only rush_yds is ingested: FDS's rushing-yards number tracks posted
+# DraftKings season O/U within ~25 yds, but its rushing-TD number is a raw
+# expected-TD projection that runs well above where books set the TD line
+# (books shade TD unders), so it is NOT comparable to the historical
+# rush_td rows and is left out.
+# --------------------------------------------------------------------------
+FDS_FILE = "firstdown_studio_2026.json"
+
+
+def parse_firstdown_studio():
+    path = os.path.join(RAW_DIR, FDS_FILE)
+    if not os.path.exists(path):
+        return []
+    blob = json.load(open(path, encoding="utf-8"))
+    snap = blob.get("_url", "")
+    out = []
+    for r in blob["rows"]:
+        val = r.get("rush_yds")
+        if val in (None, ""):
+            continue
+        team = _TEAM_FIX.get(r["team"], r["team"])
+        out.append({
+            "year": 2026, "player": r["player"], "team": team, "stat": "rush_yds",
+            "line": f"{val:g}", "line_low": f"{val:g}", "line_high": f"{val:g}",
+            "odds_low": "", "odds_high": "", "book": "",
+            "proj": f"{val:g}", "source": "firstdown.studio", "snapshot": snap,
+        })
+    return out
+
+
 def main():
-    rows = parse_fantasypoints() + parse_sportsbetting_ag()
+    rows = parse_fantasypoints() + parse_sportsbetting_ag() + parse_firstdown_studio()
     rows.sort(key=lambda r: (r["year"], r["stat"], -float(r["line"] or 0)))
 
     os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
