@@ -1,0 +1,9 @@
+division,sum_implied_line,sum_expected_wins,hist_mean,hist_std,z_score
+AFC East,30.18,30.89,33.23,2.71,-1.13
+AFC North,34.9,34.8,34.5,2.22,0.18
+AFC South,33.78,33.64,31.0,1.28,2.17
+AFC West,36.0,36.3,34.95,2.39,0.44
+NFC East,34.68,34.81,32.95,1.6,1.08
+NFC North,38.94,38.58,33.82,2.0,2.56
+NFC South,29.88,30.7,32.36,2.03,-1.22
+NFC West,36.34,36.01,33.95,2.53,0.94

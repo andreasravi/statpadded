@@ -1,0 +1,346 @@
+{
+  "fetched_at": "2026-08-19T03:05:28.903233+00:00",
+  "years": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "divisions": {
+    "AFC East": {
+      "teams": [
+        {
+          "team": "BUF",
+          "implied_line": 10.76,
+          "expected_wins": 10.68
+        },
+        {
+          "team": "MIA",
+          "implied_line": 3.84,
+          "expected_wins": 4.43
+        },
+        {
+          "team": "NE",
+          "implied_line": 9.96,
+          "expected_wins": 9.94
+        },
+        {
+          "team": "NYJ",
+          "implied_line": 5.62,
+          "expected_wins": 5.84
+        }
+      ],
+      "sum_implied_line": 30.18,
+      "sum_expected_wins": 30.89,
+      "hist_series": [
+        35.5,
+        33.5,
+        29.5,
+        29.0,
+        30.5,
+        30.5,
+        36.0,
+        35.0,
+        37.0,
+        34.0,
+        35.0
+      ],
+      "hist_mean": 33.23,
+      "hist_std": 2.71
+    },
+    "AFC North": {
+      "teams": [
+        {
+          "team": "BAL",
+          "implied_line": 10.72,
+          "expected_wins": 10.49
+        },
+        {
+          "team": "CIN",
+          "implied_line": 10.23,
+          "expected_wins": 10.1
+        },
+        {
+          "team": "CLE",
+          "implied_line": 5.59,
+          "expected_wins": 5.59
+        },
+        {
+          "team": "PIT",
+          "implied_line": 8.36,
+          "expected_wins": 8.62
+        }
+      ],
+      "sum_implied_line": 34.9,
+      "sum_expected_wins": 34.8,
+      "hist_series": [
+        32.5,
+        33.0,
+        32.0,
+        32.0,
+        33.0,
+        35.0,
+        36.0,
+        35.5,
+        39.0,
+        37.5,
+        34.0
+      ],
+      "hist_mean": 34.5,
+      "hist_std": 2.22
+    },
+    "AFC South": {
+      "teams": [
+        {
+          "team": "HOU",
+          "implied_line": 10.35,
+          "expected_wins": 10.11
+        },
+        {
+          "team": "IND",
+          "implied_line": 7.95,
+          "expected_wins": 7.9
+        },
+        {
+          "team": "JAX",
+          "implied_line": 9.23,
+          "expected_wins": 9.19
+        },
+        {
+          "team": "TEN",
+          "implied_line": 6.25,
+          "expected_wins": 6.44
+        }
+      ],
+      "sum_implied_line": 33.78,
+      "sum_expected_wins": 33.64,
+      "hist_series": [
+        30.0,
+        31.0,
+        32.0,
+        33.0,
+        32.0,
+        30.0,
+        29.0,
+        30.0,
+        30.0,
+        33.0,
+        31.0
+      ],
+      "hist_mean": 31.0,
+      "hist_std": 1.28
+    },
+    "AFC West": {
+      "teams": [
+        {
+          "team": "DEN",
+          "implied_line": 9.92,
+          "expected_wins": 10.04
+        },
+        {
+          "team": "KC",
+          "implied_line": 9.95,
+          "expected_wins": 9.86
+        },
+        {
+          "team": "LV",
+          "implied_line": 6.11,
+          "expected_wins": 6.45
+        },
+        {
+          "team": "LAC",
+          "implied_line": 10.02,
+          "expected_wins": 9.95
+        }
+      ],
+      "sum_implied_line": 36.0,
+      "sum_expected_wins": 36.3,
+      "hist_series": [
+        32.0,
+        34.5,
+        34.0,
+        32.5,
+        33.5,
+        34.5,
+        38.5,
+        39.5,
+        36.0,
+        32.5,
+        37.0
+      ],
+      "hist_mean": 34.95,
+      "hist_std": 2.39
+    },
+    "NFC East": {
+      "teams": [
+        {
+          "team": "DAL",
+          "implied_line": 9.78,
+          "expected_wins": 9.64
+        },
+        {
+          "team": "NYG",
+          "implied_line": 7.46,
+          "expected_wins": 7.72
+        },
+        {
+          "team": "PHI",
+          "implied_line": 10.2,
+          "expected_wins": 10.12
+        },
+        {
+          "team": "WAS",
+          "implied_line": 7.24,
+          "expected_wins": 7.33
+        }
+      ],
+      "sum_implied_line": 34.68,
+      "sum_expected_wins": 34.81,
+      "hist_series": [
+        33.5,
+        31.0,
+        34.5,
+        33.0,
+        31.0,
+        31.0,
+        31.0,
+        34.5,
+        35.5,
+        33.5,
+        34.0
+      ],
+      "hist_mean": 32.95,
+      "hist_std": 1.6
+    },
+    "NFC North": {
+      "teams": [
+        {
+          "team": "CHI",
+          "implied_line": 9.39,
+          "expected_wins": 9.5
+        },
+        {
+          "team": "DET",
+          "implied_line": 10.81,
+          "expected_wins": 10.6
+        },
+        {
+          "team": "GB",
+          "implied_line": 9.97,
+          "expected_wins": 9.71
+        },
+        {
+          "team": "MIN",
+          "implied_line": 8.77,
+          "expected_wins": 8.77
+        }
+      ],
+      "sum_implied_line": 38.94,
+      "sum_expected_wins": 38.58,
+      "hist_series": [
+        34.0,
+        33.5,
+        32.0,
+        35.0,
+        33.5,
+        32.5,
+        31.5,
+        32.5,
+        33.0,
+        35.5,
+        39.0
+      ],
+      "hist_mean": 33.82,
+      "hist_std": 2.0
+    },
+    "NFC South": {
+      "teams": [
+        {
+          "team": "ATL",
+          "implied_line": 6.88,
+          "expected_wins": 7.27
+        },
+        {
+          "team": "CAR",
+          "implied_line": 7.15,
+          "expected_wins": 7.37
+        },
+        {
+          "team": "NO",
+          "implied_line": 7.82,
+          "expected_wins": 7.92
+        },
+        {
+          "team": "TB",
+          "implied_line": 8.03,
+          "expected_wins": 8.14
+        }
+      ],
+      "sum_implied_line": 29.88,
+      "sum_expected_wins": 30.7,
+      "hist_series": [
+        31.5,
+        31.5,
+        35.0,
+        34.0,
+        33.5,
+        33.0,
+        36.0,
+        31.0,
+        31.5,
+        30.0,
+        29.0
+      ],
+      "hist_mean": 32.36,
+      "hist_std": 2.03
+    },
+    "NFC West": {
+      "teams": [
+        {
+          "team": "ARI",
+          "implied_line": 3.95,
+          "expected_wins": 4.3
+        },
+        {
+          "team": "LAR",
+          "implied_line": 11.74,
+          "expected_wins": 11.46
+        },
+        {
+          "team": "SF",
+          "implied_line": 9.91,
+          "expected_wins": 9.86
+        },
+        {
+          "team": "SEA",
+          "implied_line": 10.74,
+          "expected_wins": 10.39
+        }
+      ],
+      "sum_implied_line": 36.34,
+      "sum_expected_wins": 36.01,
+      "hist_series": [
+        33.5,
+        33.5,
+        30.0,
+        32.0,
+        32.5,
+        36.0,
+        39.0,
+        34.5,
+        31.0,
+        34.5,
+        37.0
+      ],
+      "hist_mean": 33.95,
+      "hist_std": 2.53
+    }
+  }
+}
