@@ -1,0 +1,22 @@
+{
+  "source_article": "https://www.footballoutsiders.com/stat-analysis/2020/2019-adjusted-games-lost-part-i",
+  "source_note": "2019 AGL article (Vincent Verhei, Apr 2020), own-year table. Cross-checked stable (unchanged) against the 2020 article's 2019 comparison column.",
+  "teams": [
+    {"team": "MIN", "agl": 25.6, "rank": 1}, {"team": "TB", "agl": 39.5, "rank": 2},
+    {"team": "TEN", "agl": 43.6, "rank": 3}, {"team": "DAL", "agl": 51.8, "rank": 4},
+    {"team": "ATL", "agl": 53.2, "rank": 5}, {"team": "SEA", "agl": 56.5, "rank": 6},
+    {"team": "CLE", "agl": 56.8, "rank": 7}, {"team": "NO", "agl": 58.3, "rank": 8},
+    {"team": "PIT", "agl": 60.5, "rank": 9}, {"team": "LAR", "agl": 60.6, "rank": 10},
+    {"team": "BUF", "agl": 64.6, "rank": 11}, {"team": "IND", "agl": 65.3, "rank": 12},
+    {"team": "CHI", "agl": 65.4, "rank": 13}, {"team": "GB", "agl": 65.6, "rank": 14},
+    {"team": "CAR", "agl": 66.2, "rank": 15}, {"team": "BAL", "agl": 68.7, "rank": 16},
+    {"team": "NYG", "agl": 72.6, "rank": 17}, {"team": "KC", "agl": 75.8, "rank": 18},
+    {"team": "HOU", "agl": 78.2, "rank": 19}, {"team": "CIN", "agl": 83.2, "rank": 20},
+    {"team": "PHI", "agl": 84.4, "rank": 21}, {"team": "ARI", "agl": 85.0, "rank": 22},
+    {"team": "NE", "agl": 85.0, "rank": 23}, {"team": "DET", "agl": 87.8, "rank": 24},
+    {"team": "DEN", "agl": 89.2, "rank": 25}, {"team": "OAK", "agl": 93.4, "rank": 26},
+    {"team": "SF", "agl": 95.8, "rank": 27}, {"team": "MIA", "agl": 100.0, "rank": 28},
+    {"team": "JAX", "agl": 100.2, "rank": 29}, {"team": "LAC", "agl": 103.0, "rank": 30},
+    {"team": "WAS", "agl": 131.0, "rank": 31}, {"team": "NYJ", "agl": 160.1, "rank": 32}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "source_article": "https://www.footballoutsiders.com/stat-analysis/2020/2019-adjusted-games-lost-part-i",
+  "source_note": "2018 column of the 2019 AGL article (Vincent Verhei, Apr 2020) -- restated vintage, superseding the original 2018 article's numbers (which had a since-corrected Tampa Bay total).",
+  "teams": [
+    {"team": "MIN", "agl": 70.2, "rank": 12}, {"team": "TB", "agl": 105.6, "rank": 30},
+    {"team": "TEN", "agl": 64.7, "rank": 11}, {"team": "DAL", "agl": 75.2, "rank": 17},
+    {"team": "ATL", "agl": 75.9, "rank": 18}, {"team": "SEA", "agl": 62.7, "rank": 10},
+    {"team": "CLE", "agl": 47.9, "rank": 6}, {"team": "NO", "agl": 50.0, "rank": 7},
+    {"team": "PIT", "agl": 38.5, "rank": 5}, {"team": "LAR", "agl": 37.9, "rank": 4},
+    {"team": "BUF", "agl": 31.0, "rank": 2}, {"team": "IND", "agl": 108.6, "rank": 31},
+    {"team": "CHI", "agl": 34.5, "rank": 3}, {"team": "GB", "agl": 89.7, "rank": 22},
+    {"team": "CAR", "agl": 102.6, "rank": 29}, {"team": "BAL", "agl": 28.5, "rank": 1},
+    {"team": "NYG", "agl": 51.2, "rank": 8}, {"team": "KC", "agl": 60.1, "rank": 9},
+    {"team": "HOU", "agl": 85.3, "rank": 21}, {"team": "CIN", "agl": 97.9, "rank": 27},
+    {"team": "PHI", "agl": 117.0, "rank": 32}, {"team": "ARI", "agl": 92.3, "rank": 23},
+    {"team": "NE", "agl": 75.2, "rank": 16}, {"team": "DET", "agl": 74.7, "rank": 15},
+    {"team": "DEN", "agl": 73.6, "rank": 14}, {"team": "OAK", "agl": 77.3, "rank": 19},
+    {"team": "SF", "agl": 97.2, "rank": 26}, {"team": "MIA", "agl": 93.1, "rank": 24},
+    {"team": "JAX", "agl": 102.5, "rank": 28}, {"team": "LAC", "agl": 83.0, "rank": 20},
+    {"team": "WAS", "agl": 95.6, "rank": 25}, {"team": "NYJ", "agl": 70.4, "rank": 13}
+  ]
+}

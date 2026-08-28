@@ -1,0 +1,22 @@
+{
+  "source_article": "https://ftnfantasy.com/nfl/adjusted-games-lost-2025-no-team-suffered-like-the-cardinals",
+  "source_note": "Adjusted Games Lost 2025: No Team Suffered Like the Cardinals (Aaron Schatz, Mar 2026), own-year table with offense/defense split.",
+  "teams": [
+    {"team": "ARI", "agl": 179.8, "rank": 32, "off_agl": 101.7, "def_agl": 78.1}, {"team": "DET", "agl": 130.3, "rank": 31, "off_agl": 37.6, "def_agl": 92.7},
+    {"team": "WAS", "agl": 124.4, "rank": 30, "off_agl": 71.0, "def_agl": 53.4}, {"team": "MIA", "agl": 117.3, "rank": 29, "off_agl": 71.4, "def_agl": 45.9},
+    {"team": "SF", "agl": 115.0, "rank": 28, "off_agl": 60.2, "def_agl": 54.8}, {"team": "LAC", "agl": 106.2, "rank": 27, "off_agl": 56.3, "def_agl": 49.9},
+    {"team": "CLE", "agl": 104.4, "rank": 26, "off_agl": 56.2, "def_agl": 48.2}, {"team": "HOU", "agl": 101.3, "rank": 25, "off_agl": 65.9, "def_agl": 35.4},
+    {"team": "TB", "agl": 96.1, "rank": 24, "off_agl": 70.6, "def_agl": 25.5}, {"team": "NYG", "agl": 95.0, "rank": 23, "off_agl": 43.8, "def_agl": 51.3},
+    {"team": "NYJ", "agl": 93.1, "rank": 22, "off_agl": 49.2, "def_agl": 43.9}, {"team": "CAR", "agl": 92.4, "rank": 21, "off_agl": 59.1, "def_agl": 33.3},
+    {"team": "ATL", "agl": 86.4, "rank": 20, "off_agl": 33.4, "def_agl": 53.1}, {"team": "NO", "agl": 83.2, "rank": 19, "off_agl": 54.4, "def_agl": 28.9},
+    {"team": "BAL", "agl": 78.7, "rank": 18, "off_agl": 15.6, "def_agl": 63.1}, {"team": "CHI", "agl": 74.9, "rank": 17, "off_agl": 21.7, "def_agl": 53.2},
+    {"team": "CIN", "agl": 74.4, "rank": 16, "off_agl": 48.0, "def_agl": 26.4}, {"team": "GB", "agl": 72.9, "rank": 15, "off_agl": 48.3, "def_agl": 24.6},
+    {"team": "DAL", "agl": 72.5, "rank": 14, "off_agl": 23.4, "def_agl": 49.1}, {"team": "BUF", "agl": 72.4, "rank": 13, "off_agl": 11.0, "def_agl": 61.4},
+    {"team": "IND", "agl": 65.9, "rank": 12, "off_agl": 20.4, "def_agl": 45.5}, {"team": "TEN", "agl": 62.8, "rank": 11, "off_agl": 24.0, "def_agl": 38.8},
+    {"team": "LAR", "agl": 62.2, "rank": 10, "off_agl": 36.1, "def_agl": 26.1}, {"team": "MIN", "agl": 61.4, "rank": 9, "off_agl": 38.6, "def_agl": 22.8},
+    {"team": "DEN", "agl": 60.6, "rank": 8, "off_agl": 40.3, "def_agl": 20.3}, {"team": "JAX", "agl": 54.7, "rank": 7, "off_agl": 29.7, "def_agl": 24.9},
+    {"team": "PIT", "agl": 53.3, "rank": 6, "off_agl": 13.2, "def_agl": 40.1}, {"team": "LV", "agl": 51.3, "rank": 5, "off_agl": 35.6, "def_agl": 15.6},
+    {"team": "KC", "agl": 49.4, "rank": 4, "off_agl": 38.3, "def_agl": 11.2}, {"team": "SEA", "agl": 46.9, "rank": 3, "off_agl": 15.5, "def_agl": 31.4},
+    {"team": "PHI", "agl": 44.0, "rank": 2, "off_agl": 16.1, "def_agl": 27.9}, {"team": "NE", "agl": 43.5, "rank": 1, "off_agl": 19.4, "def_agl": 24.0}
+  ]
+}

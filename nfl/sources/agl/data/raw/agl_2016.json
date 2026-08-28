@@ -1,0 +1,22 @@
+{
+  "source_article": "https://www.footballoutsiders.com/stat-analysis/2017/2016-adjusted-games-lost",
+  "source_note": "2016 AGL article (Scott Kacsmar, Apr 2017), own-year table -- pre-2019 methodology revision. NOTE: the 2016 Bears total (155.1) was later restated to 171.5-171.6 under the post-2019 methodology (see 2022/2024/2025 articles' historical leaderboards) -- this file keeps the original as-published vintage since no full restated 32-team table for 2016 was published publicly.",
+  "teams": [
+    {"team": "LARM", "agl": 29.0, "rank": 1}, {"team": "TEN", "agl": 32.0, "rank": 2},
+    {"team": "CIN", "agl": 35.1, "rank": 3}, {"team": "PHI", "agl": 38.4, "rank": 4},
+    {"team": "SEA", "agl": 41.1, "rank": 5}, {"team": "ATL", "agl": 52.2, "rank": 6},
+    {"team": "NYG", "agl": 52.4, "rank": 7}, {"team": "NE", "agl": 54.5, "rank": 8},
+    {"team": "CAR", "agl": 56.5, "rank": 9}, {"team": "DEN", "agl": 60.2, "rank": 10},
+    {"team": "BAL", "agl": 60.3, "rank": 11}, {"team": "PIT", "agl": 61.8, "rank": 12},
+    {"team": "OAK", "agl": 65.0, "rank": 13}, {"team": "DET", "agl": 69.5, "rank": 14},
+    {"team": "GB", "agl": 70.5, "rank": 15}, {"team": "DAL", "agl": 70.6, "rank": 16},
+    {"team": "JAC", "agl": 72.5, "rank": 17}, {"team": "TB", "agl": 77.5, "rank": 18},
+    {"team": "ARI", "agl": 77.8, "rank": 19}, {"team": "IND", "agl": 78.4, "rank": 20},
+    {"team": "NO", "agl": 81.3, "rank": 21}, {"team": "HOU", "agl": 91.7, "rank": 22},
+    {"team": "CLE", "agl": 96.4, "rank": 23}, {"team": "SF", "agl": 97.5, "rank": 24},
+    {"team": "BUF", "agl": 97.8, "rank": 25}, {"team": "MIA", "agl": 99.1, "rank": 26},
+    {"team": "KC", "agl": 99.3, "rank": 27}, {"team": "WAS", "agl": 101.5, "rank": 28},
+    {"team": "NYJ", "agl": 110.5, "rank": 29}, {"team": "MIN", "agl": 120.6, "rank": 30},
+    {"team": "SD", "agl": 127.8, "rank": 31}, {"team": "CHI", "agl": 155.1, "rank": 32}
+  ]
+}

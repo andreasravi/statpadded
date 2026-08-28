@@ -1,0 +1,22 @@
+{
+  "source_article": "https://www.footballoutsiders.com/stat-analysis/2021/2020-adjusted-games-lost-part-i",
+  "source_note": "2020 AGL article (Scott Spratt, Mar 2021), own-year table. 'With COVID' total (the canonical published ranking) -- a separate 'without COVID' cut is also reported in the source article's opt-out discussion but not carried here, to match how every other season's total is reported.",
+  "teams": [
+    {"team": "TB", "agl": 30.6, "rank": 1}, {"team": "LAR", "agl": 45.6, "rank": 2},
+    {"team": "ATL", "agl": 48.0, "rank": 3}, {"team": "NO", "agl": 49.2, "rank": 4},
+    {"team": "PIT", "agl": 55.2, "rank": 5}, {"team": "TEN", "agl": 57.5, "rank": 6},
+    {"team": "HOU", "agl": 58.2, "rank": 7}, {"team": "BAL", "agl": 59.6, "rank": 8},
+    {"team": "BUF", "agl": 63.1, "rank": 9}, {"team": "JAX", "agl": 63.4, "rank": 10},
+    {"team": "KC", "agl": 65.2, "rank": 11}, {"team": "MIA", "agl": 65.7, "rank": 12},
+    {"team": "IND", "agl": 72.9, "rank": 13}, {"team": "CAR", "agl": 73.1, "rank": 14},
+    {"team": "GB", "agl": 73.1, "rank": 15}, {"team": "MIN", "agl": 83.5, "rank": 16},
+    {"team": "DET", "agl": 83.7, "rank": 17}, {"team": "LV", "agl": 86.9, "rank": 18},
+    {"team": "CHI", "agl": 87.1, "rank": 19}, {"team": "SEA", "agl": 88.3, "rank": 20},
+    {"team": "CIN", "agl": 88.8, "rank": 21}, {"team": "CLE", "agl": 89.7, "rank": 22},
+    {"team": "ARI", "agl": 95.7, "rank": 23}, {"team": "WAS", "agl": 97.0, "rank": 24},
+    {"team": "NYG", "agl": 104.4, "rank": 25}, {"team": "DEN", "agl": 108.4, "rank": 26},
+    {"team": "LAC", "agl": 109.1, "rank": 27}, {"team": "DAL", "agl": 118.5, "rank": 28},
+    {"team": "NYJ", "agl": 123.9, "rank": 29}, {"team": "PHI", "agl": 128.1, "rank": 30},
+    {"team": "NE", "agl": 134.8, "rank": 31}, {"team": "SF", "agl": 166.6, "rank": 32}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "source_article": "https://ftnfantasy.com/nfl/2024-agl-49ers-get-smacked-down-by-injuries",
+  "source_note": "2024 AGL: 49ers Get Smacked Down by Injuries (Aaron Schatz, Mar 2025), own-year table with offense/defense split. Cross-checked stable against the 2025 article's 2024 comparison column.",
+  "teams": [
+    {"team": "SF", "agl": 141.2, "rank": 32, "off_agl": 65.0, "def_agl": 76.2}, {"team": "LV", "agl": 118.8, "rank": 31, "off_agl": 39.7, "def_agl": 79.1},
+    {"team": "CAR", "agl": 115.0, "rank": 30, "off_agl": 45.4, "def_agl": 69.6}, {"team": "NO", "agl": 114.6, "rank": 29, "off_agl": 87.3, "def_agl": 27.4},
+    {"team": "MIA", "agl": 111.0, "rank": 28, "off_agl": 52.5, "def_agl": 58.5}, {"team": "CLE", "agl": 106.6, "rank": 27, "off_agl": 56.5, "def_agl": 50.0},
+    {"team": "ARI", "agl": 104.7, "rank": 26, "off_agl": 31.8, "def_agl": 72.9}, {"team": "DET", "agl": 96.6, "rank": 25, "off_agl": 10.1, "def_agl": 86.5},
+    {"team": "NE", "agl": 93.2, "rank": 24, "off_agl": 52.4, "def_agl": 40.8}, {"team": "LAR", "agl": 90.8, "rank": 23, "off_agl": 50.7, "def_agl": 40.1},
+    {"team": "IND", "agl": 89.8, "rank": 22, "off_agl": 35.1, "def_agl": 54.7}, {"team": "HOU", "agl": 88.9, "rank": 21, "off_agl": 45.7, "def_agl": 43.3},
+    {"team": "NYJ", "agl": 84.9, "rank": 20, "off_agl": 25.9, "def_agl": 59.0}, {"team": "DAL", "agl": 84.7, "rank": 19, "off_agl": 31.8, "def_agl": 52.9},
+    {"team": "PIT", "agl": 76.9, "rank": 18, "off_agl": 44.4, "def_agl": 32.4}, {"team": "TB", "agl": 75.8, "rank": 17, "off_agl": 32.4, "def_agl": 43.3},
+    {"team": "SEA", "agl": 72.4, "rank": 16, "off_agl": 39.8, "def_agl": 32.7}, {"team": "CIN", "agl": 71.6, "rank": 15, "off_agl": 34.5, "def_agl": 37.2},
+    {"team": "KC", "agl": 70.4, "rank": 14, "off_agl": 42.2, "def_agl": 28.2}, {"team": "NYG", "agl": 70.3, "rank": 13, "off_agl": 28.8, "def_agl": 41.5},
+    {"team": "TEN", "agl": 69.8, "rank": 12, "off_agl": 20.0, "def_agl": 49.8}, {"team": "LAC", "agl": 64.2, "rank": 11, "off_agl": 22.3, "def_agl": 41.9},
+    {"team": "MIN", "agl": 63.3, "rank": 10, "off_agl": 46.8, "def_agl": 16.5}, {"team": "JAX", "agl": 57.3, "rank": 9, "off_agl": 39.3, "def_agl": 17.9},
+    {"team": "BUF", "agl": 56.1, "rank": 8, "off_agl": 12.3, "def_agl": 43.8}, {"team": "GB", "agl": 46.1, "rank": 7, "off_agl": 19.7, "def_agl": 26.4},
+    {"team": "DEN", "agl": 45.9, "rank": 6, "off_agl": 19.1, "def_agl": 26.8}, {"team": "WAS", "agl": 45.5, "rank": 5, "off_agl": 22.1, "def_agl": 23.5},
+    {"team": "ATL", "agl": 44.2, "rank": 4, "off_agl": 28.4, "def_agl": 15.8}, {"team": "CHI", "agl": 40.3, "rank": 3, "off_agl": 13.0, "def_agl": 27.3},
+    {"team": "PHI", "agl": 33.7, "rank": 2, "off_agl": 22.5, "def_agl": 11.2}, {"team": "BAL", "agl": 16.3, "rank": 1, "off_agl": 7.7, "def_agl": 8.6}
+  ]
+}

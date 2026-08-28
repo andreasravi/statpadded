@@ -1,0 +1,22 @@
+{
+  "source_article": "https://www.footballoutsiders.com/stat-analysis/2017/2016-adjusted-games-lost",
+  "source_note": "2015 column of the 2016 AGL article (Scott Kacsmar, Apr 2017) -- pre-2019 methodology revision, no O/D split captured for this vintage.",
+  "teams": [
+    {"team": "LARM", "agl": 80.3, "rank": 24}, {"team": "TEN", "agl": 65.2, "rank": 18},
+    {"team": "CIN", "agl": 28.2, "rank": 1}, {"team": "PHI", "agl": 52.0, "rank": 6},
+    {"team": "SEA", "agl": 40.1, "rank": 3}, {"team": "ATL", "agl": 28.8, "rank": 2},
+    {"team": "NYG", "agl": 138.7, "rank": 32}, {"team": "NE", "agl": 93.3, "rank": 29},
+    {"team": "CAR", "agl": 50.9, "rank": 4}, {"team": "DEN", "agl": 56.7, "rank": 10},
+    {"team": "BAL", "agl": 96.1, "rank": 30}, {"team": "PIT", "agl": 67.1, "rank": 19},
+    {"team": "OAK", "agl": 57.6, "rank": 11}, {"team": "DET", "agl": 76.7, "rank": 23},
+    {"team": "GB", "agl": 56.2, "rank": 9}, {"team": "DAL", "agl": 51.7, "rank": 5},
+    {"team": "JAC", "agl": 68.9, "rank": 20}, {"team": "TB", "agl": 75.0, "rank": 22},
+    {"team": "ARI", "agl": 62.5, "rank": 14}, {"team": "IND", "agl": 65.1, "rank": 17},
+    {"team": "NO", "agl": 56.1, "rank": 8}, {"team": "HOU", "agl": 64.8, "rank": 16},
+    {"team": "CLE", "agl": 70.7, "rank": 21}, {"team": "SF", "agl": 83.9, "rank": 27},
+    {"team": "BUF", "agl": 80.5, "rank": 25}, {"team": "MIA", "agl": 63.4, "rank": 15},
+    {"team": "KC", "agl": 54.9, "rank": 7}, {"team": "WAS", "agl": 119.1, "rank": 31},
+    {"team": "NYJ", "agl": 61.8, "rank": 13}, {"team": "MIN", "agl": 59.0, "rank": 12},
+    {"team": "SD", "agl": 81.5, "rank": 26}, {"team": "CHI", "agl": 92.8, "rank": 28}
+  ]
+}

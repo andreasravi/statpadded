@@ -1,0 +1,22 @@
+{
+  "source_article": "https://www.footballoutsiders.com/stat-analysis/2023/agl-2022-injuries-help-lead-broncos-trainwreck",
+  "source_note": "2021 column of the AGL 2022 article (Aaron Schatz, Mar 2023), explicitly WITHOUT COVID absences -- the canonical restatement matching the 2025 article's all-time leaderboard (BAL 180.2). Supersedes the original 2021 article's with-COVID total of 191.2 for Baltimore.",
+  "teams": [
+    {"team": "PIT", "agl": 82.8, "rank": 20}, {"team": "JAX", "agl": 73.2, "rank": 15},
+    {"team": "PHI", "agl": 67.0, "rank": 12}, {"team": "KC", "agl": 35.6, "rank": 2},
+    {"team": "MIN", "agl": 83.8, "rank": 21}, {"team": "GB", "agl": 75.1, "rank": 17},
+    {"team": "IND", "agl": 89.5, "rank": 23}, {"team": "SEA", "agl": 52.2, "rank": 6},
+    {"team": "CAR", "agl": 76.7, "rank": 18}, {"team": "CIN", "agl": 60.2, "rank": 8},
+    {"team": "NE", "agl": 71.6, "rank": 14}, {"team": "ATL", "agl": 45.1, "rank": 3},
+    {"team": "BUF", "agl": 34.8, "rank": 1}, {"team": "HOU", "agl": 61.3, "rank": 9},
+    {"team": "LAC", "agl": 60.2, "rank": 7}, {"team": "CHI", "agl": 71.6, "rank": 13},
+    {"team": "CLE", "agl": 66.9, "rank": 11}, {"team": "DAL", "agl": 62.7, "rank": 10},
+    {"team": "NYJ", "agl": 147.5, "rank": 31}, {"team": "LV", "agl": 99.6, "rank": 25},
+    {"team": "WAS", "agl": 101.4, "rank": 26}, {"team": "MIA", "agl": 48.9, "rank": 4},
+    {"team": "NO", "agl": 99.0, "rank": 24}, {"team": "SF", "agl": 119.5, "rank": 29},
+    {"team": "BAL", "agl": 180.2, "rank": 32}, {"team": "NYG", "agl": 102.2, "rank": 27},
+    {"team": "DET", "agl": 120.4, "rank": 30}, {"team": "TB", "agl": 78.3, "rank": 19},
+    {"team": "ARI", "agl": 87.3, "rank": 22}, {"team": "TEN", "agl": 73.4, "rank": 16},
+    {"team": "LAR", "agl": 51.3, "rank": 5}, {"team": "DEN", "agl": 108.1, "rank": 28}
+  ]
+}

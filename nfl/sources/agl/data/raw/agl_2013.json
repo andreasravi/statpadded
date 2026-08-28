@@ -1,0 +1,22 @@
+{
+  "source_article": "https://www.footballoutsiders.com/stat-analysis/2015/2014-adjusted-games-lost",
+  "source_note": "2013 column of the 2014 AGL article (Scott Kacsmar, Mar 2015) -- pre-2016 methodology, no offense/defense split captured for this vintage.",
+  "teams": [
+    {"team": "DEN", "agl": 83.6, "rank": 25}, {"team": "NYJ", "agl": 43.0, "rank": 6},
+    {"team": "GB", "agl": 103.0, "rank": 31}, {"team": "PIT", "agl": 82.9, "rank": 24},
+    {"team": "PHI", "agl": 32.2, "rank": 1}, {"team": "CAR", "agl": 70.8, "rank": 19},
+    {"team": "BAL", "agl": 47.4, "rank": 9}, {"team": "MIN", "agl": 53.9, "rank": 11},
+    {"team": "NO", "agl": 71.3, "rank": 20}, {"team": "BUF", "agl": 44.3, "rank": 8},
+    {"team": "HOU", "agl": 63.7, "rank": 17}, {"team": "NE", "agl": 97.6, "rank": 29},
+    {"team": "STL", "agl": 47.4, "rank": 10}, {"team": "CLE", "agl": 41.1, "rank": 3},
+    {"team": "DET", "agl": 62.6, "rank": 15}, {"team": "CIN", "agl": 41.7, "rank": 5},
+    {"team": "ARI", "agl": 62.8, "rank": 16}, {"team": "SEA", "agl": 60.1, "rank": 13},
+    {"team": "DAL", "agl": 66.6, "rank": 18}, {"team": "JAC", "agl": 74.1, "rank": 21},
+    {"team": "MIA", "agl": 59.9, "rank": 12}, {"team": "TEN", "agl": 43.9, "rank": 7},
+    {"team": "TB", "agl": 85.3, "rank": 26}, {"team": "WAS", "agl": 41.4, "rank": 4},
+    {"team": "ATL", "agl": 90.0, "rank": 27}, {"team": "KC", "agl": 40.0, "rank": 2},
+    {"team": "CHI", "agl": 62.4, "rank": 14}, {"team": "SF", "agl": 81.5, "rank": 23},
+    {"team": "OAK", "agl": 76.9, "rank": 22}, {"team": "IND", "agl": 100.7, "rank": 30},
+    {"team": "SD", "agl": 91.0, "rank": 28}, {"team": "NYG", "agl": 141.3, "rank": 32}
+  ]
+}
