@@ -22,6 +22,46 @@ Two positions, same method, same directory:
   and a "where the two positions invert" synthesis. Data bundled by
   `scripts/bundle.py` into `data/report_bundle.json` and embedded.
 
+## The 2026 call (`picks_2026.py`)
+
+Score every 2026 line on the handful of relationships that actually held
+up in the grades, and read off who to be high / low on. Line is
+**FanDuel's live posted O/U** ([`fanduel_season_props`](../../nfl/sources/fanduel_season_props/))
+where it exists, else the First Down Studio projection (RB) or the Fantasy
+Alarm grid (WR); the gap between the two is flagged (`Δ`) — a big gap
+means our earlier scrape was off. Mechanical read, not advice.
+
+**Running backs — HIGH (lean over):** the bounce-back workhorses the
+market re-rated up — **Bucky Irving** (804), **Cam Skattebo** (781),
+**Chris Rodriguez** (728), **Omarion Hampton** (926), **Bhayshul Tuten**
+(734). All missed time in 2025 *and* got a line set well over last year —
+historically 64–85% overs.
+**Running backs — LOW (lean under):** the RB31+ committee tier with a
+catchable-looking number — Jaylen Warren, Croskey-Merritt, Rhamondre
+Stevenson, Rachaad White, Blake Corum, Jordan Mason (1-for-11 history),
+plus the 1,000–1,200 dead-zone backs (**Bijan** 1,150, **James Cook**
+1,176, **Saquon** 1,050).
+
+**Wide receivers — HIGH (lean over):** weak/unproven-QB receivers —
+**Michael Wilson** & **Marvin Harrison** (Kyler Murray, tier 4),
+**Jordan Addison** (McCarthy), **Jaylen Waddle** (Tua), **Jerry Jeudy**
+(Watson) — plus receivers whose line got cut hard off a full 2025 (Zay
+Flowers 976, Jameson Williams 900).
+**Wide receivers — LOW (lean under):** receivers coming off an injury
+2025 whose line the market bounced right back up — **Rashee Rice**
+(1,050, off 8 g), **Mike Evans**, **Terry McLaurin**, **Malik Nabers**,
+**Calvin Ridley**, **Chris Godwin**, **Christian Watson** (all ~36% over
+historically) — plus elite-QB WR1s on contenders in the dead zone
+(**CeeDee Lamb** 1,200, **DeVonta Smith** 1,050, **A.J. Brown** 1,100).
+
+The strongest single signals, in order: **RB — availability** (a healthy
+back is a ~64% over; every meaningful under is an injury), then the
+**RB31+ committee** cliff and the **bounce-back** lean. **WR — the QB
+tier** (weak QB → 64% over, +88 yds per tier-step) and the **re-rate
+direction** (fade a line set ≥150 over last year; back one cut ≥150
+below). Full triggered-signal detail per player in `data/picks_2026.json`
+and the report's "Our 2026 call" section.
+
 ## Method
 
 ```
@@ -39,6 +79,10 @@ python3 projects/prop-accuracy/scripts/explore_rb.py    # -> rb_miss_distributio
 python3 projects/prop-accuracy/scripts/context_rb.py    # -> data/rb_context_* CSVs + rb_context_summary.json
 python3 projects/prop-accuracy/scripts/coverage_rb.py   # -> data/rb_adp_coverage_gaps.csv
 python3 projects/prop-accuracy/scripts/watch_rb.py      # -> data/rb_watch_2026.json  (2026 patterns)
+
+# 2026 picks (uses live FanDuel lines + the strongest historical signals):
+python3 nfl/sources/fanduel_season_props/pipeline.py    # live FD O/U lines + odds
+python3 projects/prop-accuracy/scripts/picks_2026.py    # -> data/picks_2026.json  (high on / low on)
 
 # then, for the visual report:
 python3 projects/prop-accuracy/scripts/bundle.py        # -> data/report_bundle.json (embedded in settle-sheet.html)

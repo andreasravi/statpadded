@@ -105,6 +105,20 @@ bundle = {
     },
 }
 
+picks_path = os.path.join(DATA, "picks_2026.json")
+if os.path.exists(picks_path):
+    p = jload("picks_2026.json")
+    # trim to what the report shows: player, team, line, gap, score, signal labels
+    def slim(r):
+        return {"p": r["player"], "tm": r["team"], "line": r["line"],
+                "gap": r.get("line_gap"), "score": r["score"],
+                "prior_g": (r["prior"] or {}).get("g"), "prior_y": (r["prior"] or {}).get("yds"),
+                "sig": [[s[0], s[1]] for s in r["signals"]]}
+    bundle["wr"]["picks"] = {"high": [slim(r) for r in p["wr"]["high"]],
+                             "low": [slim(r) for r in p["wr"]["low"]]}
+    bundle["rb"]["picks"] = {"high": [slim(r) for r in p["rb"]["high"]],
+                             "low": [slim(r) for r in p["rb"]["low"]]}
+
 with open(os.path.join(DATA, "report_bundle.json"), "w") as f:
     json.dump(bundle, f, separators=(",", ":"))
 
