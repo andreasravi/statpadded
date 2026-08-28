@@ -41,6 +41,54 @@ venv/                          shared Python virtualenv (gitignored)
 - [`projects/win-total-model`](projects/win-total-model/) — a 6-feature
   model (coaching, schedule, streak, point differential) predicting win
   totals, backtested as a betting strategy and applied to 2026
+- [`projects/pyth-win-signal`](projects/pyth-win-signal/) — re-targets
+  Pythagorean (point-differential-based) wins instead of actual wins to
+  separate luck from signal: does the market line predict true team quality
+  better than the noisy record, and is anything left in the residuals?
+- [`projects/momentum-signals`](projects/momentum-signals/) — borrows three
+  finance momentum/reversal constructions (time-series, fundamental,
+  cross-sectional winners-minus-losers) and tests each as a real,
+  odds-priced betting signal on win-total `beat_margin`.
+- [`projects/schedule-swing-signal`](projects/schedule-swing-signal/) — how
+  much does a team's win total actually move the season after its strength
+  of schedule swings hard, once you control for ordinary mean reversion —
+  sized against the 2026 Patriots (easiest 2025 schedule in the NFL, into
+  the single largest projected schedule swing in the 2015–2025 sample).
+- [`projects/kicker-punter-model`](projects/kicker-punter-model/) — a basic
+  kicker/punter fantasy projection model for 2026: kicker scoring is
+  regressed on team offense to get an opportunity-adjusted ability residual
+  per kicker; punters are explored openly first (it turns out punt *volume*
+  tracks a *bad* offense while per-punt skill is team-independent) before
+  the same residual approach is applied.
+- [`projects/pyth-win-model`](projects/pyth-win-model/) — predicts
+  Pythagorean wins from QB tier, coaching tenure, schedule delta,
+  turnover-luck and injury-severity mean reversion, plus an explicit test
+  of whether team quality interacts with momentum/coaching/QB tier rather
+  than just adding to them (OLS, OLS+interactions, Ridge/Lasso, Random
+  Forest) — the interactions get weak in-sample support but hurt the
+  out-of-sample backtest, so the plain model wins.
+- [`projects/preseason-adp-moves`](projects/preseason-adp-moves/) — two
+  angles on preseason fantasy-ADP moves and injuries. Part 1: do the
+  biggest preseason ADP moves cluster around injury/suspension/trade news?
+  (a same-page `Diff` column looked like the right tool but turned out to
+  be noise — a known ACL/MCL tear barely moves it — so this instead diffs
+  two independent ADP reads, format-corrected; mostly a null result, with
+  one clean exception; team-level ADP volatility doesn't predict a team's
+  actual injury toll either). Part 2, working backward from actual
+  end-of-season fantasy finish: which players busted hardest relative to
+  their August draft slot, and how many of those were genuinely hurt in
+  the preseason rather than during the season? (about half of the
+  biggest candidates, verified against news coverage — Christian
+  McCaffrey's 2024 is the clean, large example).
+- [`projects/wr-prop-accuracy`](projects/wr-prop-accuracy/) — grades every
+  preseason WR receiving-yards / receptions / TD prop line (Fantasy Alarm,
+  2022–2026) against actual regular-season production. The lines run
+  slightly rich and are getting richer (yards O/U cleared 46% → 35% by
+  season); there's no year-over-year carryover in a receiver's result vs
+  his line (r ≈ 0); the only repeatable structure is by line size — fade
+  8+ TD lines and the 1,000–1,200 yard "dead zone", lean overs on healthy
+  sub-1,000-yard receivers. Includes a self-contained visual write-up and a
+  2026 watch list.
 
 ## NFL data sources
 
@@ -53,5 +101,5 @@ MyFootballToolbox.com).
 ```bash
 python3 -m venv venv
 source venv/bin/activate
-pip install pandas beautifulsoup4 scipy matplotlib lxml
+pip install pandas beautifulsoup4 scipy matplotlib lxml scikit-learn statsmodels
 ```
