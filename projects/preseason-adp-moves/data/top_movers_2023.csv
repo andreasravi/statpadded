@@ -1,0 +1,26 @@
+player,team,pos,before_adp,before_rank,after_adp,after_rank,move,censored_dropout
+Jonathan Taylor,IND,RB,19.0,6,,36.0,30.0,True
+Courtland Sutton,DEN,WR,98.0,49,98.0,36.0,-13.0,False
+Christian Watson,GB,WR,40.0,21,95.8,34.0,13.0,False
+Michael Pittman,IND,WR,68.0,35,68.8,23.0,-12.0,False
+Jamaal Williams,NO,RB,128.0,43,97.2,34.0,-9.0,False
+Javonte Williams,DEN,RB,83.0,27,53.8,18.0,-9.0,False
+Mike Evans,TB,WR,67.0,34,74.0,25.0,-9.0,False
+Chris Godwin,TB,WR,58.0,30,60.0,21.0,-9.0,False
+Jerry Jeudy,DEN,WR,39.0,20,85.2,29.0,9.0,False
+Drake London,ATL,WR,42.0,22,86.1,30.0,8.0,False
+Breece Hall,NYJ,RB,34.0,11,56.3,19.0,8.0,False
+Brandin Cooks,DAL,WR,85.0,42,96.0,35.0,-7.0,False
+D'Andre Swift,PHI,RB,78.0,24,53.5,17.0,-7.0,False
+Dameon Pierce,HOU,RB,70.0,22,53.2,16.0,-6.0,False
+Marquise Brown,ARI,WR,59.0,31,,37.0,6.0,True
+DeVonta Smith,PHI,WR,22.0,13,53.4,19.0,6.0,False
+DJ Moore,CHI,WR,47.0,26,60.0,20.0,-6.0,False
+Jaxon Smith-Njigba,SEA,WR,61.0,32,,37.0,5.0,True
+David Montgomery,DET,RB,76.0,23,76.9,28.0,5.0,False
+Diontae Johnson,PIT,WR,56.0,29,73.2,24.0,-5.0,False
+Dalvin Cook,,RB,93.0,31,74.2,26.0,-5.0,False
+Tyler Lockett,SEA,WR,63.0,33,84.9,28.0,-5.0,False
+Christian Kirk,JAX,WR,50.0,27,87.2,31.0,4.0,False
+Joe Mixon,CIN,RB,43.0,15,36.6,11.0,-4.0,False
+Travis Etienne,JAX,RB,41.0,14,35.1,10.0,-4.0,False

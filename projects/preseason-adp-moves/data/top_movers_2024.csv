@@ -1,0 +1,26 @@
+player,team,pos,before_adp,before_rank,after_adp,after_rank,move,censored_dropout
+Deebo Samuel,SF,WR,19.0,13,,36.0,23.0,True
+Nick Chubb,CLE,RB,126.8,39,60.1,17.0,-22.0,False
+Josh Jacobs,GB,RB,52.2,12,90.0,29.0,17.0,False
+David Montgomery,DET,RB,73.6,17,,32.0,15.0,True
+Tank Dell,HOU,WR,35.3,25,,36.0,11.0,True
+Cooper Kupp,LAR,WR,27.6,21,34.3,10.0,-11.0,False
+Gus Edwards,LAC,RB,118.7,36,88.1,27.0,-9.0,False
+Amari Cooper,CLE,WR,40.6,28,54.3,20.0,-8.0,False
+Devin Singletary,NYG,RB,108.7,32,83.7,25.0,-7.0,False
+Christian Watson,GB,WR,69.3,41,92.4,34.0,-7.0,False
+Tee Higgins,CIN,WR,42.7,29,,36.0,7.0,True
+Mike Evans,TB,WR,24.3,17,37.0,11.0,-6.0,False
+D'Andre Swift,CHI,RB,92.5,26,66.9,20.0,-6.0,False
+Jonathon Brooks,CAR,RB,89.8,25,94.6,31.0,6.0,False
+Jaylen Warren,PIT,RB,88.3,24,93.7,30.0,6.0,False
+Rashee Rice,KC,WR,59.7,37,80.0,31.0,-6.0,False
+Calvin Ridley,TEN,WR,59.4,36,79.4,30.0,-6.0,False
+Xavier Worthy,KC,WR,64.1,38,90.3,33.0,-5.0,False
+Marvin Harrison,ARI,WR,13.5,9,43.5,14.0,5.0,False
+Chris Olave,NO,WR,17.6,12,48.8,17.0,5.0,False
+Brandon Aiyuk,SF,WR,21.3,16,39.0,12.0,-4.0,False
+James Conner,ARI,RB,84.4,22,60.9,18.0,-4.0,False
+DeVonta Smith,PHI,WR,25.5,18,59.1,22.0,4.0,False
+Stefon Diggs,HOU,WR,32.6,23,53.4,19.0,-4.0,False
+De'Von Achane,MIA,RB,23.1,7,36.6,11.0,4.0,False
