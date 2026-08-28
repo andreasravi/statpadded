@@ -20,8 +20,16 @@ whether it clears, and does one year's result carry into the next?
 
 ```
 python3 projects/wr-prop-accuracy/scripts/grade.py     # -> data/wr_prop_grades.csv
-python3 projects/wr-prop-accuracy/scripts/analyze.py    # -> the 6 view CSVs
+python3 projects/wr-prop-accuracy/scripts/analyze.py    # -> hit-rate / year-over-year view CSVs
+python3 projects/wr-prop-accuracy/scripts/context.py    # -> QB-tier / win-total view CSVs + context_summary.json
 ```
+
+`context.py` additionally joins each graded prop to two **preseason** team
+inputs -- the QB's tier ([`nfl/sources/qb_starters`](../../nfl/sources/qb_starters/))
+and the team's Vegas win-total line
+([`nfl/sources/win_totals`](../../nfl/sources/win_totals/)) -- neither of
+which is a within-season outcome, so year-X prop result vs year-X preseason
+context is not lookahead.
 
 `grade.py` matches each published prop row to a nflverse player-season on a
 normalized name key (strip punctuation / Jr-Sr-III, then first-initial +
@@ -56,7 +64,34 @@ of that tier misses 14+ games and *none* of those beat the over. It's not a
 standing edge though — the tier ran +100 yds vs the line in '22, −118 in
 '25.
 
-### 3. Year over year: no carryover
+### 3. Team context: the QB tier is the real lever, and the market overreacts to it
+
+Joining each yards line to the team's **preseason** QB tier (n=138):
+
+| QB tier | n | over % (all) | mean Δ vs line |
+|---|---|---|---|
+| 1 (elite) | 28 | 39% | −43 |
+| 2 | 47 | 38% | −63 |
+| 3 | 40 | 40% | −13 |
+| **4–5 (weak)** | 23 | **65%** | **+85** |
+
+`diff ~ yards_line + qb_tier + win_total` OLS: **qb_tier ≈ +93 yds per step
+down the tiers, p ≈ 0.01**; `yards_line` itself is insignificant once tier
+and win total are in. The book shades a WR's line down hard for a weak-QB
+label, and the label is noisy enough (Purdy/Baker/Darnold were all
+tier-4-ish and fine) that the shade has been too aggressive. Elite-QB WRs,
+especially on contenders (mean −52, n=65), have been the thinnest overs.
+**Caveats:** 23 weak-QB seasons is small; ~20 team-seasons have no tiered
+starter in the source and are excluded; a few "primary starters" are the
+actual not the projected QB.
+
+Team **win total** is U-shaped for yards — the **7–8 win** band is the trap
+(29% over, mean −84); tank teams (volume) and contenders both fare better.
+For **receptions**, context barely matters (R² ≈ 0.03) except that
+**contender WRs clear 68%** — high-volume passing offenses throw a lot of
+catchable balls even when the yardage doesn't follow.
+
+### 4. Year over year: no carryover
 
 `corr(this year's Δ vs line, next year's Δ vs line) = +0.02` across 81
 same-player pairs. How a receiver did against his number tells you nothing
@@ -71,7 +106,9 @@ number and you get priced exactly at your level, with only downside.
 ## Bottom line
 
 The market is efficient enough that beating these lines is hard and getting
-harder, there's no player-level momentum to ride, and the only repeatable
-angles are structural: fade 8+ TD lines, fade the 1,000–1,200 yard band,
-and lean overs on healthy mid-tier (sub-1,000) receivers and on players
-bouncing back from a moderate down year.
+harder, there's no player-level momentum to ride, and the repeatable angles
+are structural: fade 8+ TD lines and the 1,000–1,200 yard band; lean overs
+on healthy sub-1,000-yard receivers, on players bouncing back from a
+moderate down year, and — the strongest single signal, though small-sample
+— on receivers whose line got shaded down for a weak or unproven QB.
+Elite-QB WR1s on contenders are where the overs run thinnest.

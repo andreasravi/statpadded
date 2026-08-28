@@ -289,6 +289,12 @@
 
   /* ---- 2026 watch list ---- */
   #watch26 .sub{margin-bottom:8px}
+  .ctxgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:4px}
+  .ctxgrid>div{min-width:0}
+  @media(max-width:720px){.ctxgrid{grid-template-columns:1fr}}
+  .ctxh{margin:0 0 8px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);font-weight:800}
+  #context table.tier{min-width:0}
+  #context table.tier th,#context table.tier td{padding:7px 8px}
   .wgrp{border-top:1px solid var(--line);padding:15px 0 5px}
   .wgrp:first-child{border-top:0}
   .wgrp h4{
@@ -303,14 +309,13 @@
   .wgrp .lede b{color:var(--ink);font-weight:600}
   .wlist{display:flex;flex-direction:column;gap:6px}
   .wrow{
-    display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:baseline;
     padding:7px 10px;border-radius:8px;background:var(--panel-2);border:1px solid var(--line);
   }
-  .wrow .nm{font-weight:700;font-size:13px}
+  .wrow .nm{font-weight:700;font-size:13px;display:block}
   .wrow .nm .tm{color:var(--ink-soft);font-weight:400;font-size:11px;margin-left:6px}
   .wrow .fig{
-    font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);
-    text-align:right;white-space:nowrap;
+    display:block;margin-top:2px;
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-soft);line-height:1.4;
   }
   .wrow .fig b{color:var(--ink);font-weight:600}
   .wrow .fig .hi{color:var(--over)} .wrow .fig .lo{color:var(--under)}
@@ -320,10 +325,6 @@
     background:var(--under-bg);color:var(--under);
   }
   .wtag.warn{background:var(--gold-bg);color:var(--gold)}
-  @media(max-width:560px){
-    .wrow{grid-template-columns:1fr;gap:3px}
-    .wrow .fig{text-align:left;white-space:normal}
-  }
 
   @media (prefers-reduced-motion:no-preference){
     .kpi,.tablecard,.split{animation:rise .5s cubic-bezier(.2,.7,.2,1) both}
@@ -392,10 +393,40 @@
     <div class="kick" id="tierKick"></div>
   </div>
 
+  <div class="tiers" id="context">
+    <div class="hh">
+      <div>
+        <h3>Does team context explain the miss?</h3>
+        <p class="sub" id="ctxSub"></p>
+      </div>
+      <div class="seg" id="ctxSeg" role="group" aria-label="Stat">
+        <button data-m="yards" aria-pressed="true">Yards</button>
+        <button data-m="rec" aria-pressed="false">Receptions</button>
+      </div>
+    </div>
+    <div class="ctxgrid">
+      <div>
+        <h4 class="ctxh">By the QB's preseason tier</h4>
+        <div class="scroll"><table class="tier"><thead><tr>
+          <th>QB tier</th><th>n</th><th>avg line</th><th>over % all</th><th>mean Δ</th><th>over % hlt</th>
+        </tr></thead><tbody id="ctxTierBody"></tbody></table></div>
+      </div>
+      <div>
+        <h4 class="ctxh">By the team's preseason win total</h4>
+        <div class="scroll"><table class="tier"><thead><tr>
+          <th>Win total</th><th>n</th><th>avg line</th><th>over % all</th><th>mean Δ</th><th>over % hlt</th>
+        </tr></thead><tbody id="ctxWtBody"></tbody></table></div>
+      </div>
+    </div>
+    <div class="kick" id="ctxKick"></div>
+  </div>
+
   <div class="tiers" id="watch26">
     <h3>2026 — what stands out</h3>
     <p class="sub">The patterns above, run against this year's Fantasy Alarm grid (Aug 2026). Nothing here is
-      graded — the season hasn't started. Prior-year figures are actual regular-season totals.</p>
+      graded — the season hasn't started. Prior-year figures are actual regular-season totals; QB tier is from
+      The Athletic's 2026 survey and win total is the current Kalshi line. 2026 team/QB assignments follow the
+      source data and weren't independently re-checked.</p>
     <div id="watchBody"></div>
   </div>
 
@@ -653,6 +684,430 @@ tSeg.addEventListener('click',e=>{
 });
 drawTiers('yds');
 
+/* ---------- team context: QB tier & win total ---------- */
+const CTX = {
+ "n_qb_tier": 138,
+ "n_win_total": 158,
+ "yards_by_qb_tier": [
+  {
+   "bucket": "1 (elite)",
+   "n": 28,
+   "avg_line": 949.0,
+   "over_pct_all": 39,
+   "mean_diff_all": -43.0,
+   "n_healthy": 18,
+   "over_pct_healthy": 50,
+   "median_diff_healthy": 10.0
+  },
+  {
+   "bucket": "2",
+   "n": 47,
+   "avg_line": 962.0,
+   "over_pct_all": 38,
+   "mean_diff_all": -63.0,
+   "n_healthy": 29,
+   "over_pct_healthy": 59,
+   "median_diff_healthy": 62.5
+  },
+  {
+   "bucket": "3",
+   "n": 40,
+   "avg_line": 940.0,
+   "over_pct_all": 40,
+   "mean_diff_all": -13.0,
+   "n_healthy": 31,
+   "over_pct_healthy": 52,
+   "median_diff_healthy": 18.5
+  },
+  {
+   "bucket": "4-5 (weak)",
+   "n": 23,
+   "avg_line": 894.0,
+   "over_pct_all": 65,
+   "mean_diff_all": 85.0,
+   "n_healthy": 18,
+   "over_pct_healthy": 83,
+   "median_diff_healthy": 215.5
+  },
+  {
+   "bucket": "untiered",
+   "n": 20,
+   "avg_line": 906.0,
+   "over_pct_all": 45,
+   "mean_diff_all": -51.0,
+   "n_healthy": 16,
+   "over_pct_healthy": 56,
+   "median_diff_healthy": 37.0
+  }
+ ],
+ "yards_by_win_total": [
+  {
+   "bucket": "<7 (bad)",
+   "n": 25,
+   "avg_line": 922.0,
+   "over_pct_all": 56,
+   "mean_diff_all": -29.0,
+   "n_healthy": 18,
+   "over_pct_healthy": 78,
+   "median_diff_healthy": 215.5
+  },
+  {
+   "bucket": "7-8 (below .500)",
+   "n": 21,
+   "avg_line": 902.0,
+   "over_pct_all": 29,
+   "mean_diff_all": -84.0,
+   "n_healthy": 14,
+   "over_pct_healthy": 43,
+   "median_diff_healthy": -12.0
+  },
+  {
+   "bucket": "8.5-9 (around .500)",
+   "n": 28,
+   "avg_line": 919.0,
+   "over_pct_all": 50,
+   "mean_diff_all": 37.0,
+   "n_healthy": 19,
+   "over_pct_healthy": 74,
+   "median_diff_healthy": 213.5
+  },
+  {
+   "bucket": "9.5-10 (good)",
+   "n": 50,
+   "avg_line": 962.0,
+   "over_pct_all": 40,
+   "mean_diff_all": -23.0,
+   "n_healthy": 37,
+   "over_pct_healthy": 49,
+   "median_diff_healthy": -8.5
+  },
+  {
+   "bucket": "10.5+ (contender)",
+   "n": 34,
+   "avg_line": 949.0,
+   "over_pct_all": 44,
+   "mean_diff_all": -34.0,
+   "n_healthy": 24,
+   "over_pct_healthy": 58,
+   "median_diff_healthy": 74.0
+  }
+ ],
+ "rec_by_qb_tier": [
+  {
+   "bucket": "1 (elite)",
+   "n": 20,
+   "avg_line": 72.0,
+   "over_pct_all": 55,
+   "mean_diff_all": -1.0,
+   "n_healthy": 14,
+   "over_pct_healthy": 64,
+   "median_diff_healthy": 7.0
+  },
+  {
+   "bucket": "2",
+   "n": 37,
+   "avg_line": 74.0,
+   "over_pct_all": 41,
+   "mean_diff_all": -5.0,
+   "n_healthy": 24,
+   "over_pct_healthy": 62,
+   "median_diff_healthy": 2.5
+  },
+  {
+   "bucket": "3",
+   "n": 31,
+   "avg_line": 74.0,
+   "over_pct_all": 35,
+   "mean_diff_all": -9.0,
+   "n_healthy": 23,
+   "over_pct_healthy": 48,
+   "median_diff_healthy": -4.5
+  },
+  {
+   "bucket": "4-5 (weak)",
+   "n": 17,
+   "avg_line": 71.0,
+   "over_pct_all": 53,
+   "mean_diff_all": -0.0,
+   "n_healthy": 14,
+   "over_pct_healthy": 64,
+   "median_diff_healthy": 5.0
+  },
+  {
+   "bucket": "untiered",
+   "n": 18,
+   "avg_line": 71.0,
+   "over_pct_all": 44,
+   "mean_diff_all": -3.0,
+   "n_healthy": 14,
+   "over_pct_healthy": 57,
+   "median_diff_healthy": 6.0
+  }
+ ],
+ "rec_by_win_total": [
+  {
+   "bucket": "<7 (bad)",
+   "n": 18,
+   "avg_line": 75.0,
+   "over_pct_all": 56,
+   "mean_diff_all": -6.0,
+   "n_healthy": 13,
+   "over_pct_healthy": 77,
+   "median_diff_healthy": 9.5
+  },
+  {
+   "bucket": "7-8 (below .500)",
+   "n": 19,
+   "avg_line": 69.0,
+   "over_pct_all": 32,
+   "mean_diff_all": -9.0,
+   "n_healthy": 12,
+   "over_pct_healthy": 50,
+   "median_diff_healthy": 0.5
+  },
+  {
+   "bucket": "8.5-9 (around .500)",
+   "n": 22,
+   "avg_line": 73.0,
+   "over_pct_all": 32,
+   "mean_diff_all": -4.0,
+   "n_healthy": 15,
+   "over_pct_healthy": 47,
+   "median_diff_healthy": -0.5
+  },
+  {
+   "bucket": "9.5-10 (good)",
+   "n": 39,
+   "avg_line": 74.0,
+   "over_pct_all": 36,
+   "mean_diff_all": -5.0,
+   "n_healthy": 28,
+   "over_pct_healthy": 46,
+   "median_diff_healthy": -3.5
+  },
+  {
+   "bucket": "10.5+ (contender)",
+   "n": 25,
+   "avg_line": 72.0,
+   "over_pct_all": 68,
+   "mean_diff_all": 1.0,
+   "n_healthy": 21,
+   "over_pct_healthy": 76,
+   "median_diff_healthy": 6.5
+  }
+ ],
+ "qb26": {
+  "PIT": [
+   "3",
+   "Aaron Rodgers"
+  ],
+  "TB": [
+   "2",
+   "Baker Mayfield"
+  ],
+  "DEN": [
+   "3",
+   "Bo Nix"
+  ],
+  "SF": [
+   "2",
+   "Brock Purdy"
+  ],
+  "CAR": [
+   "3",
+   "Bryce Young"
+  ],
+  "HOU": [
+   "3",
+   "C.J. Stroud"
+  ],
+  "CHI": [
+   "2",
+   "Caleb Williams"
+  ],
+  "TEN": [
+   "3",
+   "Cam Ward"
+  ],
+  "DAL": [
+   "2",
+   "Dak Prescott"
+  ],
+  "IND": [
+   "3",
+   "Daniel Jones"
+  ],
+  "CLE": [
+   "4",
+   "Deshaun Watson"
+  ],
+  "NE": [
+   "2",
+   "Drake Maye"
+  ],
+  "NYJ": [
+   "4",
+   "Geno Smith"
+  ],
+  "MIN": [
+   "4",
+   "J.J. McCarthy"
+  ],
+  "ARI": [
+   "4",
+   "Jacoby Brissett"
+  ],
+  "PHI": [
+   "2",
+   "Jalen Hurts"
+  ],
+  "DET": [
+   "2",
+   "Jared Goff"
+  ],
+  "NYG": [
+   "3",
+   "Jaxson Dart"
+  ],
+  "WAS": [
+   "2",
+   "Jayden Daniels"
+  ],
+  "CIN": [
+   "1",
+   "Joe Burrow"
+  ],
+  "GB": [
+   "2",
+   "Jordan Love"
+  ],
+  "BUF": [
+   "1",
+   "Josh Allen"
+  ],
+  "LAC": [
+   "2",
+   "Justin Herbert"
+  ],
+  "LV": [
+   "3",
+   "Kirk Cousins"
+  ],
+  "BAL": [
+   "2",
+   "Lamar Jackson"
+  ],
+  "MIA": [
+   "4",
+   "Malik Willis"
+  ],
+  "LAR": [
+   "1",
+   "Matthew Stafford"
+  ],
+  "ATL": [
+   "4",
+   "Michael Penix Jr."
+  ],
+  "KC": [
+   "1",
+   "Patrick Mahomes"
+  ],
+  "SEA": [
+   "2",
+   "Sam Darnold"
+  ],
+  "JAX": [
+   "2",
+   "Trevor Lawrence"
+  ],
+  "NO": [
+   "3",
+   "Tyler Shough"
+  ]
+ },
+ "wt26": {
+  "ARI": 4.0,
+  "ATL": 6.9,
+  "BAL": 10.7,
+  "BUF": 10.8,
+  "CAR": 7.2,
+  "CHI": 9.4,
+  "CIN": 10.2,
+  "CLE": 5.6,
+  "DAL": 9.8,
+  "DEN": 9.9,
+  "DET": 10.8,
+  "GB": 10.0,
+  "HOU": 10.3,
+  "IND": 8.0,
+  "JAX": 9.2,
+  "KC": 9.9,
+  "LAC": 10.0,
+  "LAR": 11.7,
+  "LV": 6.1,
+  "MIA": 3.8,
+  "MIN": 8.8,
+  "NE": 10.0,
+  "NO": 7.8,
+  "NYG": 7.5,
+  "NYJ": 5.6,
+  "PHI": 10.2,
+  "PIT": 8.4,
+  "SEA": 10.7,
+  "SF": 9.9,
+  "TB": 8.0,
+  "TEN": 6.2,
+  "WAS": 7.2
+ }
+};
+function drawCtx(m){
+  const label = m==='yards' ? 'receiving-yards' : 'reception';
+  document.getElementById('ctxSub').innerHTML=
+    `Every ${label} line joined to two <b>preseason</b> inputs for that receiver's team — the QB's tier in `
+    +`The Athletic's summer survey, and the team's Vegas win-total line. Both are set before Week 1, so this `
+    +`isn't lookahead. ${CTX.n_qb_tier} of ${CTX.n_win_total} WR-seasons have a tiered QB (2022–25).`;
+  const md=v=>`<span class="md ${v>0?'pos':'neg'}">${v>0?'+':''}${Math.round(v)}</span>`;
+  const rowsHtml=(arr)=>arr.map(b=>`<tr>
+      <td class="tl">${b.bucket}</td><td>${b.n}</td><td>${b.avg_line}</td>
+      <td>${b.over_pct_all}%</td><td>${md(b.mean_diff_all)}</td>
+      <td>${b.n_healthy?b.over_pct_healthy+'%':'–'}</td></tr>`).join('');
+  document.getElementById('ctxTierBody').innerHTML=rowsHtml(CTX[m+'_by_qb_tier']);
+  document.getElementById('ctxWtBody').innerHTML=rowsHtml(CTX[m+'_by_win_total']);
+  const k=document.getElementById('ctxKick');
+  if(m==='yards'){
+    const weak=CTX.yards_by_qb_tier.find(b=>b.bucket.startsWith('4'));
+    const t7=CTX.yards_by_win_total.find(b=>b.bucket.startsWith('7'));
+    k.className='kick';
+    k.innerHTML=`<b>The QB tier is the biggest lever — and the market overreacts to it.</b> WRs with a
+      <span class="mono">tier-4/5</span> QB cleared their yards line <span class="mono">${weak.over_pct_all}%</span>
+      of the time (mean <span class="mono">+${Math.round(weak.mean_diff_all)}</span>), while tier-1 and tier-2 WRs
+      came in <i>under</i> on average. In a regression the QB tier is worth <span class="mono">≈ +93 yds</span>
+      per step down the tiers (p&nbsp;≈&nbsp;0.01); the line's own size adds nothing once you control for it.
+      Read it as: the book shades a WR's number down hard for a weak-QB label, and that label is noisy enough
+      (Purdy, Baker, Darnold were all tier-4-ish and fine) that the shade has been too big.
+      Win total is U-shaped — the <span class="mono">7–8 win</span> band is the trap
+      (<span class="mono">${t7.over_pct_all}%</span> over, mean <span class="mono">${Math.round(t7.mean_diff_all)}</span>);
+      tank teams (volume, negative game script) and contenders both do better against the line.
+      Small samples throughout (tier-4/5 is ${weak.n} seasons) — this is a lean, not a lock.`;
+  } else {
+    const cont=CTX.rec_by_win_total.find(b=>b.bucket.startsWith('10'));
+    k.className='kick neutral';
+    k.innerHTML=`<b>Receptions barely respond to context.</b> QB tier and win total are both insignificant in a
+      regression (R²&nbsp;≈&nbsp;0.03). The one thing that shows up: <span class="mono">contender</span> WRs
+      (win total <span class="mono">10.5+</span>) cleared their reception line <span class="mono">${cont.over_pct_all}%</span>
+      of the time — high-volume passing offenses throw a lot of catchable, PPR-friendly targets even when the
+      yardage doesn't follow. The <span class="mono">7–8 win</span> band is a trap here too.`;
+  }
+}
+const cSeg=document.getElementById('ctxSeg');
+cSeg.addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  cSeg.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  drawCtx(b.dataset.m);
+});
+drawCtx('yards');
+
 /* ---------- 2026 watch list ---------- */
 // p=player, yl/rl/tl = 2026 lines, adp, then 2025 actuals (g,y,r,t) and 2025 article yards line (y25l or null)
 const W26=/*W26*/[
@@ -682,13 +1137,19 @@ const W26=/*W26*/[
  {p:"Marvin Harrison Jr.",tm:'ARI',yl:824.5,rl:57.5,tl:5.5,adp:79.2,g:12,y:608,r:41,t:4,y25l:975.5},
 ];
 function buildWatch2026(){
+  const cx=(x)=>{
+    const q=(CTX.qb26||{})[x.tm]; const w=(CTX.wt26||{})[x.tm];
+    return {tier:q?+q[0]:null, qb:q?q[1]:null, wt:w!=null?w:null};
+  };
   const wl=(r,mode)=>r.map(x=>{
     const line = mode==='td' ? `<b>${x.tl}</b> TD line`
                : mode==='rec' ? `<b>${x.rl}</b> rec line`
                : `<b>${x.yl}</b> yd line`;
+    const c=cx(x);
+    const ctxStr = (c.tier!=null?`QB T${c.tier}`:'QB —') + (c.wt!=null?` · ${c.wt} wins`:'');
     const g25 = `'25: ${x.g<14?`<span class="lo">${x.g} G</span> `:''}${x.y} yd · ${x.r} rec · ${x.t} TD`;
     return `<div class="wrow"><span class="nm">${x.p}<span class="tm">${x.tm}</span>${x.tags||''}</span>`
-      +`<span class="fig">${line} &nbsp;·&nbsp; ${g25}</span></div>`;
+      +`<span class="fig">${line} &nbsp;·&nbsp; ${ctxStr} &nbsp;·&nbsp; ${g25}</span></div>`;
   }).join('');
   const club=W26.filter(x=>x.yl>=1000).map(x=>({...x,
      tags:(x.yl>=1000&&x.yl<1200)?'<span class="wtag">dead zone</span>':(x.yl>=1200?'<span class="wtag warn">true-alpha band</span>':'')}));
@@ -698,6 +1159,12 @@ function buildWatch2026(){
   const td8=W26.filter(x=>x.tl>=8).sort((a,b)=>b.tl-a.tl).map(x=>({...x}));
   const hurt=W26.filter(x=>x.g<14 && x.yl>=820).map(x=>({...x,tags:`<span class="wtag">${x.g} G in '25</span>`}));
   const soft=W26.filter(x=>x.yl>=850&&x.yl<1000&&x.g>=14 && !['George Pickens','Zay Flowers'].includes(x.p)).map(x=>({...x}));
+  const weakqb=W26.filter(x=>{const t=cx(x).tier; return t!=null&&t>=4;})
+     .sort((a,b)=>b.yl-a.yl)
+     .map(x=>({...x,tags:`<span class="wtag">QB tier ${cx(x).tier}</span>`}));
+  const eliteCont=W26.filter(x=>{const c=cx(x); return c.tier!=null&&c.tier<=2&&c.wt!=null&&c.wt>=9.5&&x.yl>=1000;})
+     .sort((a,b)=>b.yl-a.yl)
+     .map(x=>({...x,tags:`<span class="wtag warn">T${cx(x).tier} QB · ${cx(x).wt}w</span>`}));
 
   const grp=(title,hist,lede,rows,mode)=>`<div class="wgrp"><h4>${title} <span class="hist">${hist}</span></h4>`
     +`<p class="lede">${lede}</p><div class="wlist">${wl(rows,mode)}</div></div>`;
@@ -729,7 +1196,20 @@ function buildWatch2026(){
         "history: healthy WR, sub-1,000 line → 61% over, median +98",
         "Healthy receivers priced in the 850–1,000 band are the group the market has most consistently "
        +"under-shot. McMillan (949.5, a Year-2 breakout) is the cleanest McConkey/JSN-shaped comp.",
-        soft);
+        soft)
+   +grp("Weak or unproven QB — line may be over-discounted",
+        "history: tier-4/5-QB WRs → 65% over, mean +85 vs the line (n=23, small)",
+        "The market shades these lines down for the QB label. When the QB plays up to or past that label, the "
+       +"WR sails over. Highest-conviction misprice risk of the new lenses — but the smallest sample, and it "
+       +"needs the QB (or the receiver's target volume) to hold up.",
+        weakqb)
+   +grp("Elite QB, contender, 1,000+ line — historically a small under",
+        "history: tier-1/2 QB + 9.5+ win team → mean −52 vs the line (n=65)",
+        "The biggest, cleanest cell in the context grid, shown here for the 1,000+ lines where the miss costs "
+       +"the most. The line already bakes in the elite QB; then the offense plays with leads, leans on the "
+       +"run, and spreads the ball, and the WR1 lands just short. Not a hard fade — just where the overs have "
+       +"been thinnest.",
+        eliteCont);
 }
 buildWatch2026();
 
