@@ -53,3 +53,88 @@ TEAM_NAME_TO_ABBR = {
 # All 32 canonical abbreviations, for sanity checks.
 ALL_TEAMS = sorted(set(TEAM_NAME_TO_ABBR.values()))
 assert len(ALL_TEAMS) == 32
+
+# Pro-Football-Reference's own short codes (used in its per-season stat
+# tables' `team_name_abbr` column) differ from our canonical abbreviation
+# for a handful of teams. Multi-team stint rows ("2TM", "3TM") aren't a
+# real team and are handled by the caller, not mapped here.
+PFR_ABBR_TO_ABBR = {
+    "GNB": "GB",
+    "KAN": "KC",
+    "LVR": "LV",
+    "NWE": "NE",
+    "NOR": "NO",
+    "SFO": "SF",
+    "TAM": "TB",
+}
+
+
+def normalize_pfr_abbr(code: str) -> str:
+    """Map a PFR-style team code (e.g. 'GNB', 'KAN') to our canonical
+    abbreviation. Most codes already match and pass through unchanged."""
+    return PFR_ABBR_TO_ABBR.get(code, code)
+
+
+# nflverse (play-by-play) uses 'LA' for the Rams where every other source
+# here uses 'LAR'; everything else already matches our canonical codes.
+NFLVERSE_ABBR_TO_ABBR = {
+    "LA": "LAR",
+}
+
+
+def normalize_nflverse_abbr(code: str) -> str:
+    """Map an nflverse-style team code (e.g. 'LA') to our canonical
+    abbreviation. Most codes already match and pass through unchanged."""
+    return NFLVERSE_ABBR_TO_ABBR.get(code, code)
+
+
+# Underdog's 2024 rankings table labels teams by nickname only (no city,
+# no abbreviation) — e.g. "49ers" instead of "SF" or "San Francisco 49ers".
+# "Free Agent" isn't a team; callers should treat it as None.
+NICKNAME_TO_ABBR = {
+    "49ers": "SF",
+    "Bears": "CHI",
+    "Bengals": "CIN",
+    "Bills": "BUF",
+    "Broncos": "DEN",
+    "Browns": "CLE",
+    "Bucs": "TB",
+    "Cardinals": "ARI",
+    "Chargers": "LAC",
+    "Chiefs": "KC",
+    "Colts": "IND",
+    "Commanders": "WAS",
+    "Cowboys": "DAL",
+    "Dolphins": "MIA",
+    "Eagles": "PHI",
+    "Falcons": "ATL",
+    "Giants": "NYG",
+    "Jaguars": "JAX",
+    "Jets": "NYJ",
+    "Lions": "DET",
+    "Packers": "GB",
+    "Panthers": "CAR",
+    "Patriots": "NE",
+    "Raiders": "LV",
+    "Rams": "LAR",
+    "Ravens": "BAL",
+    "Saints": "NO",
+    "Seahawks": "SEA",
+    "Steelers": "PIT",
+    "Texans": "HOU",
+    "Titans": "TEN",
+    "Vikings": "MIN",
+}
+
+
+def normalize_underdog_team(team: str):
+    """Map an Underdog Network rankings-table team value to our canonical
+    abbreviation. Underdog has used three different conventions across
+    years: bare canonical abbreviations (2023, 2025 — except 'LA' for the
+    Rams), and nickname-only (2024). 'FA'/'Free Agent' means no team;
+    returns None for those."""
+    team = (team or "").strip()
+    if team in ("FA", "Free Agent", ""):
+        return None
+    team = NFLVERSE_ABBR_TO_ABBR.get(team, team)
+    return NICKNAME_TO_ABBR.get(team, team)
