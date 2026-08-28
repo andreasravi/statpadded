@@ -13,7 +13,7 @@ ADP sources (independent of the grid):
                                          only ~33 WRs make the top 100, so
                                          "top 25 WR" reaches ~overall pick 90)
 
-Run: python3 projects/wr-prop-accuracy/scripts/coverage.py
+Run: python3 projects/prop-accuracy/scripts/coverage_wr.py
 """
 import csv
 import os

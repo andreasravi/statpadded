@@ -80,15 +80,22 @@ venv/                          shared Python virtualenv (gitignored)
   the preseason rather than during the season? (about half of the
   biggest candidates, verified against news coverage — Christian
   McCaffrey's 2024 is the clean, large example).
-- [`projects/wr-prop-accuracy`](projects/wr-prop-accuracy/) — grades every
-  preseason WR receiving-yards / receptions / TD prop line (Fantasy Alarm,
-  2022–2026) against actual regular-season production. The lines run
-  slightly rich and are getting richer (yards O/U cleared 46% → 35% by
-  season); there's no year-over-year carryover in a receiver's result vs
-  his line (r ≈ 0); the only repeatable structure is by line size — fade
-  8+ TD lines and the 1,000–1,200 yard "dead zone", lean overs on healthy
-  sub-1,000-yard receivers. Includes a self-contained visual write-up and a
-  2026 watch list.
+- [`projects/prop-accuracy`](projects/prop-accuracy/) — grades preseason
+  player prop lines against actual regular-season production, WR and RB,
+  same method in one directory.
+  - **WR** (receiving yards / receptions / TDs, Fantasy Alarm 2022–26):
+    lines run slightly rich and getting richer (yards O/U cleared 46% →
+    35% by season); no year-over-year carryover (r ≈ 0); the repeatable
+    structure is by line size — fade 8+ TD lines and the 1,000–1,200 yard
+    "dead zone", lean overs on healthy sub-1,000-yard receivers. The
+    strongest single signal: overs on WRs whose line got shaded down for a
+    weak/unproven QB. Self-contained visual write-up + 2026 watch list.
+  - **RB** (rushing yards / TDs, Fantasy Points 2023–25 + SportsBetting.ag
+    2022; 134 graded RB-seasons): the rushing-yards *under* is almost
+    entirely an injury bet — a back who plays ≥14 games clears the over
+    **64%**, one who doesn't clears it **3%** (1 of 38). The 1,000–1,200
+    dead zone reappears. Unlike WR, team context (QB tier, win total)
+    explains almost nothing (OLS R² ≈ 0.01) once you account for health.
 
 ## NFL data sources
 

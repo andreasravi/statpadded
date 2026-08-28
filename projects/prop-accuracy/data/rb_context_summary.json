@@ -1,0 +1,13 @@
+{
+  "n_graded_rush": 126,
+  "n_with_win_total": 125,
+  "n_with_qb_tier": 104,
+  "ols_n": 104,
+  "ols_r2": 0.011,
+  "ols_coef": {
+    "intercept": -441.7,
+    "yards_line": 0.0,
+    "win_total": 30.6,
+    "qb_tier": 50.1
+  }
+}

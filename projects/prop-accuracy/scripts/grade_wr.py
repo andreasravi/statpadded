@@ -3,7 +3,7 @@ Join preseason WR prop lines (nfl/sources/wr_prop_totals) to actual
 regular-season receiving production (nfl/sources/receiving_stats) and grade
 each line over/under.
 
-Output: projects/wr-prop-accuracy/data/wr_prop_grades.csv
+Output: projects/prop-accuracy/data/wr_prop_grades.csv
   year, player, matched_name, team, games,
   yards_line, yards_actual, yards_diff, yards_result,
   rec_line, rec_actual, rec_diff, rec_result,
@@ -14,7 +14,7 @@ line (2022 is receiving-yards only). `games` < 14 flags a season that
 wasn't a full sample -- most big misses in this data are availability, not
 per-game form, so filter on it before drawing talent conclusions.
 
-Run: python3 projects/wr-prop-accuracy/scripts/grade.py
+Run: python3 projects/prop-accuracy/scripts/grade_wr.py
 """
 import csv
 import os

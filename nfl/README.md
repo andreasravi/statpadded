@@ -30,7 +30,9 @@ instead of re-scraped per project.
 | [`underdog_adp`](sources/underdog_adp/) | Preseason (early/mid-August) fantasy ADP per player, plus each year's own `Diff`/`Notes` columns where present | Underdog Network | 2023–2025 |
 | [`fantasy_finish`](sources/fantasy_finish/) | Actual end-of-season fantasy finish per player (total + per-game where published) | Underdog Network | 2023–2025 |
 | [`wr_prop_totals`](sources/wr_prop_totals/) | Preseason WR prop lines (receiving yards / receptions / TDs) + projected PPR + ADP, from Fantasy Alarm's annual prop-value grid | Fantasy Alarm | 2022–2026 (2022 yards-only) |
+| [`rb_prop_totals`](sources/rb_prop_totals/) | Preseason season-long RB prop over/unders (rushing yards / rushing TDs / rush+rec yards), long format, one row per player-stat-source | Fantasy Points (2023–25, range across books), SportsBetting.ag via gambling911 (2022) | 2022–2025 (yards all years; TDs 2022 + 2024–25) |
 | [`receiving_stats`](sources/receiving_stats/) | Regular-season receiving totals per player-season (targets, rec, yards, TDs, air yards, target share) + games played | `nflverse-data` season stats | 2021–2025 |
+| [`rushing_stats`](sources/rushing_stats/) | Regular-season rushing totals per player-season (carries, yards, TDs, first downs) + receptions/rec yards/rec TDs + precomputed rush+rec + games played | `nflverse-data` season stats | 2021–2025 |
 
 Run any auto-fetching source directly:
 
@@ -44,7 +46,9 @@ python3 nfl/sources/punters/pipeline.py [year ...]
 python3 nfl/sources/underdog_adp/pipeline.py
 python3 nfl/sources/fantasy_finish/pipeline.py
 python3 nfl/sources/wr_prop_totals/pipeline.py [year ...]
+python3 nfl/sources/rb_prop_totals/pipeline.py        # re-parses committed raw HTML; no fetch
 python3 nfl/sources/receiving_stats/pipeline.py [year ...]
+python3 nfl/sources/rushing_stats/pipeline.py [year ...]
 ```
 
 Each is idempotent — it skips any year already cached in its `data/raw/`.
@@ -52,11 +56,11 @@ Each is idempotent — it skips any year already cached in its `data/raw/`.
 HTML has to be fetched with a browser tool rather than auto-fetched (see
 its README) — but re-running `python3 nfl/sources/game_results/pipeline.py`
 is still safe/idempotent for the parsing step once cached. `kickers`,
-`punters`, and `receiving_stats` source from `nflverse-data` instead of PFR
-specifically to avoid that wall, so they auto-fetch like
-`win_totals`/`adp`/`coaches` (`kickers`/`punters` roll up play-by-play via
-`common/pbp.py`; `receiving_stats` reads the already-aggregated season
-release directly).
+`punters`, `receiving_stats`, and `rushing_stats` source from
+`nflverse-data` instead of PFR specifically to avoid that wall, so they
+auto-fetch like `win_totals`/`adp`/`coaches` (`kickers`/`punters` roll up
+play-by-play via `common/pbp.py`; `receiving_stats`/`rushing_stats` read
+the already-aggregated season release directly).
 
 ## `common/`
 

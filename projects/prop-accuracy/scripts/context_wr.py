@@ -5,7 +5,7 @@ prop lines? Both inputs are set in the summer, before a down is played, so
 joining year-X prop results to year-X preseason context is not lookahead.
 
 Inputs (all preseason / external):
-  projects/wr-prop-accuracy/data/wr_prop_grades.csv   graded prop results
+  projects/prop-accuracy/data/wr_prop_grades.csv   graded prop results
   nfl/sources/win_totals/data/win_totals.csv          preseason win-total line
   nfl/sources/qb_starters/data/qb_starter_tiers.csv   primary starter + Sando tier
 
@@ -16,7 +16,7 @@ projected and actual QB1 are the same.
 
 Writes data/context_by_qb_tier.csv, data/context_by_win_total.csv,
 data/context_grid.csv and prints a summary + an OLS.
-Run: python3 projects/wr-prop-accuracy/scripts/context.py
+Run: python3 projects/prop-accuracy/scripts/context_wr.py
 """
 import csv
 import os
