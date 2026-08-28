@@ -1,0 +1,200 @@
+{
+  "season": 2019,
+  "source": "athletic_2019_page",
+  "source_url": "https://www.nytimes.com/athletic/1082093/2019/07/22/2019-nfl-quarterback-tiers-rankings/",
+  "note": "First QB Tiers survey at The Athletic (55 voters). This page is prose-only (no structured stat blocks like 2026), so tier assignment per QB was inferred by matching each surname against the text following each votes-count marker; verified against the vote-count-descending order and cross-checked ambiguous cases manually. Ranks are position in the published order.",
+  "rows": [
+    [
+      "Aaron Rodgers",
+      "Packers",
+      1,
+      1
+    ],
+    [
+      "Tom Brady",
+      "Patriots",
+      1,
+      2
+    ],
+    [
+      "Drew Brees",
+      "Saints",
+      1,
+      3
+    ],
+    [
+      "Patrick Mahomes",
+      "Chiefs",
+      1,
+      4
+    ],
+    [
+      "Andrew Luck",
+      "Colts",
+      1,
+      5
+    ],
+    [
+      "Philip Rivers",
+      "Chargers",
+      1,
+      6
+    ],
+    [
+      "Ben Roethlisberger",
+      "Steelers",
+      1,
+      7
+    ],
+    [
+      "Russell Wilson",
+      "Seahawks",
+      1,
+      8
+    ],
+    [
+      "Matt Ryan",
+      "Falcons",
+      2,
+      9
+    ],
+    [
+      "Carson Wentz",
+      "Eagles",
+      2,
+      10
+    ],
+    [
+      "Matthew Stafford",
+      "Lions",
+      2,
+      11
+    ],
+    [
+      "Deshaun Watson",
+      "Texans",
+      2,
+      12
+    ],
+    [
+      "Jared Goff",
+      "Rams",
+      2,
+      13
+    ],
+    [
+      "Baker Mayfield",
+      "Browns",
+      2,
+      14
+    ],
+    [
+      "Cam Newton",
+      "Panthers",
+      3,
+      15
+    ],
+    [
+      "Kirk Cousins",
+      "Vikings",
+      3,
+      16
+    ],
+    [
+      "Dak Prescott",
+      "Cowboys",
+      3,
+      17
+    ],
+    [
+      "Nick Foles",
+      "Jaguars",
+      3,
+      18
+    ],
+    [
+      "Jimmy Garoppolo",
+      "49ers",
+      3,
+      19
+    ],
+    [
+      "Derek Carr",
+      "Raiders",
+      3,
+      20
+    ],
+    [
+      "Joe Flacco",
+      "Broncos",
+      3,
+      21
+    ],
+    [
+      "Andy Dalton",
+      "Bengals",
+      3,
+      22
+    ],
+    [
+      "Jameis Winston",
+      "Buccaneers",
+      3,
+      23
+    ],
+    [
+      "Eli Manning",
+      "Giants",
+      3,
+      24
+    ],
+    [
+      "Mitchell Trubisky",
+      "Bears",
+      3,
+      25
+    ],
+    [
+      "Marcus Mariota",
+      "Titans",
+      3,
+      26
+    ],
+    [
+      "Sam Darnold",
+      "Jets",
+      3,
+      27
+    ],
+    [
+      "Lamar Jackson",
+      "Ravens",
+      4,
+      28
+    ],
+    [
+      "Josh Allen",
+      "Bills",
+      4,
+      29
+    ],
+    [
+      "Ryan Fitzpatrick",
+      "Dolphins",
+      4,
+      30
+    ],
+    [
+      "Case Keenum",
+      "Broncos",
+      4,
+      31
+    ],
+    [
+      "Josh Rosen",
+      "Dolphins",
+      4,
+      32
+    ]
+  ]
+}

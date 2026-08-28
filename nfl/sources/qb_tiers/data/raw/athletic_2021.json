@@ -1,0 +1,212 @@
+{
+  "season": 2021,
+  "source": "athletic_2021_page",
+  "source_url": "https://www.nytimes.com/athletic/2727336/2021/07/28/2021-nfl-quarterback-tiers-50-coaches-and-evaluators-rank-the-leagues-starters/",
+  "note": "This page includes explicit numbered name headers per QB (e.g. '31. Drew Lock', 'T-7. Lamar Jackson' for ties), so extraction used those directly rather than name-matching heuristics -- high confidence, all 34 QBs positively identified.",
+  "rows": [
+    [
+      "Aaron Rodgers",
+      "Packers",
+      1,
+      1
+    ],
+    [
+      "Patrick Mahomes",
+      "Chiefs",
+      1,
+      2
+    ],
+    [
+      "Tom Brady",
+      "Buccaneers",
+      1,
+      3
+    ],
+    [
+      "Russell Wilson",
+      "Seahawks",
+      1,
+      4
+    ],
+    [
+      "Deshaun Watson",
+      "Texans",
+      1,
+      5
+    ],
+    [
+      "Josh Allen",
+      "Bills",
+      2,
+      6
+    ],
+    [
+      "Lamar Jackson",
+      "Ravens",
+      2,
+      7
+    ],
+    [
+      "Matthew Stafford",
+      "Rams",
+      2,
+      8
+    ],
+    [
+      "Dak Prescott",
+      "Cowboys",
+      2,
+      9
+    ],
+    [
+      "Justin Herbert",
+      "Chargers",
+      2,
+      10
+    ],
+    [
+      "Matt Ryan",
+      "Falcons",
+      2,
+      11
+    ],
+    [
+      "Kyler Murray",
+      "Cardinals",
+      2,
+      12
+    ],
+    [
+      "Ryan Tannehill",
+      "Titans",
+      2,
+      13
+    ],
+    [
+      "Joe Burrow",
+      "Bengals",
+      2,
+      14
+    ],
+    [
+      "Derek Carr",
+      "Raiders",
+      3,
+      15
+    ],
+    [
+      "Ben Roethlisberger",
+      "Steelers",
+      3,
+      16
+    ],
+    [
+      "Baker Mayfield",
+      "Browns",
+      3,
+      17
+    ],
+    [
+      "Kirk Cousins",
+      "Vikings",
+      3,
+      18
+    ],
+    [
+      "Jared Goff",
+      "Lions",
+      3,
+      19
+    ],
+    [
+      "Carson Wentz",
+      "Colts",
+      3,
+      20
+    ],
+    [
+      "Jimmy Garoppolo",
+      "49ers",
+      3,
+      21
+    ],
+    [
+      "Daniel Jones",
+      "Giants",
+      3,
+      22
+    ],
+    [
+      "Ryan Fitzpatrick",
+      "Washington",
+      3,
+      23
+    ],
+    [
+      "Sam Darnold",
+      "Panthers",
+      4,
+      24
+    ],
+    [
+      "Jameis Winston",
+      "Saints",
+      4,
+      25
+    ],
+    [
+      "Teddy Bridgewater",
+      "Broncos",
+      4,
+      26
+    ],
+    [
+      "Cam Newton",
+      "Patriots",
+      4,
+      27
+    ],
+    [
+      "Andy Dalton",
+      "Bears",
+      4,
+      28
+    ],
+    [
+      "Tua Tagovailoa",
+      "Dolphins",
+      4,
+      29
+    ],
+    [
+      "Jalen Hurts",
+      "Eagles",
+      4,
+      30
+    ],
+    [
+      "Drew Lock",
+      "Broncos",
+      4,
+      31
+    ],
+    [
+      "Tyrod Taylor",
+      "Texans",
+      4,
+      32
+    ],
+    [
+      "Taysom Hill",
+      "Saints",
+      4,
+      33
+    ],
+    [
+      "Joe Flacco",
+      "Eagles",
+      4,
+      34
+    ]
+  ]
+}

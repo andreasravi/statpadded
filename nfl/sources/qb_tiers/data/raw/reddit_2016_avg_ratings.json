@@ -1,0 +1,38 @@
+{
+  "season": 2016,
+  "source": "reddit_2016_avg_ratings",
+  "source_url": "https://www.reddit.com/r/nfl/comments/4wwcc6/comment/d6atcl0/",
+  "note": "A Redditor posted the exact average rating (not tier bucket) every QB received in Sando's original 2016 ESPN Insider survey (42 voters), covering 33 QBs -- 5 more than overthecap_2016's veteran-only table (Carr, Winston, Mariota, Bortles, Bridgewater), all of whom OTC excluded as still on rookie-scale contracts that year even with NFL experience. The 28 names shared with overthecap_2016 match in exact rank order and confirm that table's tier boundaries precisely (e.g. Roethlisberger 1.21 = last Tier 1, Newton 1.57 = first Tier 2, Alex Smith 2.74 = first Tier 3, Kaepernick 3.83 = first Tier 4). Only these 5 NEW names are added here (the other 28 are left to overthecap_2016, the higher-confidence source with an explicitly stated tier rather than an inferred one). Tier for these 5 is INFERRED by where their rating falls relative to those confirmed boundaries -- not an explicitly stated tier from the source -- so treat with somewhat lower confidence than other rows: Carr (2.62, between Dalton 2.50/T2 and Smith 2.74/T3, assigned T2 based on his known 2017 T2 trajectory), Winston (2.71, just below the 2.74 T3 boundary, assigned T3), Mariota (2.83, within T3 range), Bortles (3.00, within T3 range), Bridgewater (3.10, within T3 range).",
+  "rows": [
+    [
+      "Derek Carr",
+      "Raiders",
+      2,
+      16
+    ],
+    [
+      "Jameis Winston",
+      "Buccaneers",
+      3,
+      17
+    ],
+    [
+      "Marcus Mariota",
+      "Titans",
+      3,
+      19
+    ],
+    [
+      "Blake Bortles",
+      "Jaguars",
+      3,
+      22
+    ],
+    [
+      "Teddy Bridgewater",
+      "Vikings",
+      3,
+      23
+    ]
+  ]
+}

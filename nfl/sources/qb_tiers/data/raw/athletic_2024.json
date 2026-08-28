@@ -1,0 +1,188 @@
+{
+  "season": 2024,
+  "source": "athletic_2024_page",
+  "source_url": "https://www.nytimes.com/athletic/5715508/2024/08/26/nfl-qb-rankings-2024-patrick-mahomes/",
+  "note": "Structured page (rank/name/team/tier/voting-avg per QB module), parsed directly via regex -- no name-matching heuristic needed, high confidence.",
+  "rows": [
+    [
+      "Patrick Mahomes",
+      "Chiefs",
+      1,
+      1
+    ],
+    [
+      "Joe Burrow",
+      "Bengals",
+      1,
+      2
+    ],
+    [
+      "Josh Allen",
+      "Bills",
+      1,
+      3
+    ],
+    [
+      "Lamar Jackson",
+      "Ravens",
+      2,
+      4
+    ],
+    [
+      "Matthew Stafford",
+      "Rams",
+      2,
+      5
+    ],
+    [
+      "Justin Herbert",
+      "Chargers",
+      2,
+      5
+    ],
+    [
+      "Aaron Rodgers",
+      "Jets",
+      2,
+      7
+    ],
+    [
+      "C.J. Stroud",
+      "Texans",
+      2,
+      8
+    ],
+    [
+      "Dak Prescott",
+      "Cowboys",
+      2,
+      9
+    ],
+    [
+      "Jared Goff",
+      "Lions",
+      2,
+      10
+    ],
+    [
+      "Jalen Hurts",
+      "Eagles",
+      2,
+      11
+    ],
+    [
+      "Brock Purdy",
+      "49ers",
+      2,
+      12
+    ],
+    [
+      "Kirk Cousins",
+      "Falcons",
+      2,
+      13
+    ],
+    [
+      "Jordan Love",
+      "Packers",
+      2,
+      14
+    ],
+    [
+      "Tua Tagovailoa",
+      "Dolphins",
+      3,
+      15
+    ],
+    [
+      "Trevor Lawrence",
+      "Jaguars",
+      3,
+      16
+    ],
+    [
+      "Kyler Murray",
+      "Cardinals",
+      3,
+      17
+    ],
+    [
+      "Deshaun Watson",
+      "Browns",
+      3,
+      18
+    ],
+    [
+      "Baker Mayfield",
+      "Buccaneers",
+      3,
+      19
+    ],
+    [
+      "Derek Carr",
+      "Saints",
+      3,
+      20
+    ],
+    [
+      "Geno Smith",
+      "Seahawks",
+      3,
+      20
+    ],
+    [
+      "Russell Wilson",
+      "Steelers",
+      3,
+      22
+    ],
+    [
+      "Daniel Jones",
+      "Giants",
+      4,
+      23
+    ],
+    [
+      "Justin Fields",
+      "Steelers",
+      4,
+      24
+    ],
+    [
+      "Gardner Minshew",
+      "Raiders",
+      4,
+      25
+    ],
+    [
+      "Anthony Richardson",
+      "Colts",
+      4,
+      26
+    ],
+    [
+      "Will Levis",
+      "Titans",
+      4,
+      26
+    ],
+    [
+      "Bryce Young",
+      "Panthers",
+      4,
+      28
+    ],
+    [
+      "Sam Darnold",
+      "Vikings",
+      4,
+      29
+    ],
+    [
+      "Jacoby Brissett",
+      "Patriots",
+      4,
+      30
+    ]
+  ]
+}

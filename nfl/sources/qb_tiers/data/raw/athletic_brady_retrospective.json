@@ -1,0 +1,16 @@
+{
+  "source": "athletic_brady_retrospective",
+  "source_url": "https://www.nytimes.com/athletic/4744865/2023/08/03/tom-brady-nfl-quarterback-tiers/",
+  "note": "A dedicated retrospective piece ('Where would Tom Brady rank in 2023 Quarterback Tiers?') published a literal 'YEAR / TIER / AVG / RANK' table covering Brady's full 2014-2022 real-vote history, plus a hypothetical 2023 placement (he was kept on the ballot in case he unretired, but excluded from the official published 2023 results since he stayed retired -- that 2023 row is intentionally NOT included here, to avoid mixing a hypothetical placement with official survey results in the same column). This closes the only previous gap in Brady's coverage (2018) and cross-validates exactly against every other year already in this dataset (2014/2015/2016/2017/2019/2020/2021/2022 all matched on first check, including exact rank).",
+  "rows": [
+    [2014, "Tom Brady", "Patriots", 1, 1],
+    [2015, "Tom Brady", "Patriots", 1, 1],
+    [2016, "Tom Brady", "Patriots", 1, 1],
+    [2017, "Tom Brady", "Patriots", 1, 1],
+    [2018, "Tom Brady", "Patriots", 1, 1],
+    [2019, "Tom Brady", "Patriots", 1, 2],
+    [2020, "Tom Brady", "Buccaneers", 2, 6],
+    [2021, "Tom Brady", "Buccaneers", 1, 3],
+    [2022, "Tom Brady", "Buccaneers", 1, 3]
+  ]
+}

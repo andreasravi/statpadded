@@ -1,0 +1,212 @@
+{
+  "season": 2025,
+  "source": "athletic_2025_page",
+  "source_url": "https://www.nytimes.com/athletic/6514160/2025/08/11/nfl-qb-rankings-tiers-2025-jackson-daniels/",
+  "note": "Structured page (rank/name/team/tier/vote-avg per QB module, scatter-plot format), parsed directly via regex -- no name-matching heuristic needed, high confidence.",
+  "rows": [
+    [
+      "Patrick Mahomes",
+      "Chiefs",
+      1,
+      1
+    ],
+    [
+      "Joe Burrow",
+      "Bengals",
+      1,
+      1
+    ],
+    [
+      "Josh Allen",
+      "Bills",
+      1,
+      3
+    ],
+    [
+      "Lamar Jackson",
+      "Ravens",
+      1,
+      4
+    ],
+    [
+      "Matthew Stafford",
+      "Rams",
+      1,
+      5
+    ],
+    [
+      "Jayden Daniels",
+      "Commanders",
+      2,
+      6
+    ],
+    [
+      "Justin Herbert",
+      "Chargers",
+      2,
+      7
+    ],
+    [
+      "Jared Goff",
+      "Lions",
+      2,
+      8
+    ],
+    [
+      "C.J. Stroud",
+      "Texans",
+      2,
+      9
+    ],
+    [
+      "Jalen Hurts",
+      "Eagles",
+      2,
+      9
+    ],
+    [
+      "Baker Mayfield",
+      "Buccaneers",
+      2,
+      11
+    ],
+    [
+      "Dak Prescott",
+      "Cowboys",
+      2,
+      12
+    ],
+    [
+      "Jordan Love",
+      "Packers",
+      2,
+      13
+    ],
+    [
+      "Brock Purdy",
+      "49ers",
+      2,
+      14
+    ],
+    [
+      "Kyler Murray",
+      "Cardinals",
+      3,
+      15
+    ],
+    [
+      "Aaron Rodgers",
+      "Steelers",
+      3,
+      16
+    ],
+    [
+      "Tua Tagovailoa",
+      "Dolphins",
+      3,
+      17
+    ],
+    [
+      "Trevor Lawrence",
+      "Jaguars",
+      3,
+      18
+    ],
+    [
+      "Geno Smith",
+      "Raiders",
+      3,
+      19
+    ],
+    [
+      "Bo Nix",
+      "Broncos",
+      3,
+      20
+    ],
+    [
+      "Sam Darnold",
+      "Seahawks",
+      3,
+      20
+    ],
+    [
+      "Drake Maye",
+      "Patriots",
+      3,
+      22
+    ],
+    [
+      "Caleb Williams",
+      "Bears",
+      3,
+      23
+    ],
+    [
+      "Bryce Young",
+      "Panthers",
+      3,
+      24
+    ],
+    [
+      "Kirk Cousins",
+      "Falcons",
+      3,
+      25
+    ],
+    [
+      "Russell Wilson",
+      "Giants",
+      4,
+      26
+    ],
+    [
+      "Justin Fields",
+      "Jets",
+      4,
+      27
+    ],
+    [
+      "Michael Penix Jr.",
+      "Falcons",
+      4,
+      28
+    ],
+    [
+      "J.J. McCarthy",
+      "Vikings",
+      4,
+      29
+    ],
+    [
+      "Daniel Jones",
+      "Colts",
+      4,
+      30
+    ],
+    [
+      "Joe Flacco",
+      "Browns",
+      4,
+      31
+    ],
+    [
+      "Anthony Richardson",
+      "Colts",
+      4,
+      32
+    ],
+    [
+      "Spencer Rattler",
+      "Saints",
+      4,
+      33
+    ],
+    [
+      "Kenny Pickett",
+      "Browns",
+      5,
+      34
+    ]
+  ]
+}

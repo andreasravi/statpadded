@@ -1,0 +1,545 @@
+[
+  {
+    "rank_2026": 1,
+    "tie": false,
+    "name": "Patrick Mahomes",
+    "team": "Chiefs",
+    "tier_2026": "Tier 1",
+    "voting_average_2026": "1.02",
+    "history": {
+      "2026": "Tier 1",
+      "2025": "Tier 1",
+      "2024": "Tier 1",
+      "2023": "Tier 1",
+      "2022": "Tier 1",
+      "2021": "Tier 1",
+      "2020": "Tier 1",
+      "2019": "Tier 1",
+      "2018": "Tier 4"
+    }
+  },
+  {
+    "rank_2026": 2,
+    "tie": true,
+    "name": "Josh Allen",
+    "team": "Bills",
+    "tier_2026": "Tier 1",
+    "voting_average_2026": "1.04",
+    "history": {
+      "2026": "Tier 1",
+      "2025": "Tier 1",
+      "2024": "Tier 1",
+      "2023": "Tier 1",
+      "2022": "Tier 1",
+      "2021": "Tier 2",
+      "2020": "Tier 3",
+      "2019": "Tier 4"
+    }
+  },
+  {
+    "rank_2026": 2,
+    "tie": true,
+    "name": "Matthew Stafford",
+    "team": "Rams",
+    "tier_2026": "Tier 1",
+    "voting_average_2026": "1.04",
+    "history": {
+      "2026": "Tier 1",
+      "2025": "Tier 1",
+      "2024": "Tier 2",
+      "2023": "Tier 2",
+      "2022": "Tier 2",
+      "2021": "Tier 2",
+      "2020": "Tier 2",
+      "2019": "Tier 2",
+      "2018": "Tier 2",
+      "2017": "Tier 2",
+      "2016": "Tier 2",
+      "2015": "Tier 2",
+      "2014": "Tier 2"
+    }
+  },
+  {
+    "rank_2026": 4,
+    "tie": false,
+    "name": "Joe Burrow",
+    "team": "Bengals",
+    "tier_2026": "Tier 1",
+    "voting_average_2026": "1.08",
+    "history": {
+      "2026": "Tier 1",
+      "2025": "Tier 1",
+      "2024": "Tier 1",
+      "2023": "Tier 1",
+      "2022": "Tier 1",
+      "2021": "Tier 2"
+    }
+  },
+  {
+    "rank_2026": 5,
+    "tie": false,
+    "name": "Lamar Jackson",
+    "team": "Ravens",
+    "tier_2026": "Tier 2",
+    "voting_average_2026": "1.56",
+    "history": {
+      "2026": "Tier 2",
+      "2025": "Tier 1",
+      "2024": "Tier 2",
+      "2023": "Tier 2",
+      "2022": "Tier 2",
+      "2021": "Tier 2",
+      "2020": "Tier 2",
+      "2019": "Tier 4"
+    }
+  },
+  {
+    "rank_2026": 6,
+    "tie": false,
+    "name": "Justin Herbert",
+    "team": "Chargers",
+    "tier_2026": "Tier 2",
+    "voting_average_2026": "1.68",
+    "history": {
+      "2026": "Tier 2",
+      "2025": "Tier 2",
+      "2024": "Tier 2",
+      "2023": "Tier 1",
+      "2022": "Tier 1",
+      "2021": "Tier 2"
+    }
+  },
+  {
+    "rank_2026": 7,
+    "tie": false,
+    "name": "Dak Prescott",
+    "team": "Cowboys",
+    "tier_2026": "Tier 2",
+    "voting_average_2026": "1.80",
+    "history": {
+      "2026": "Tier 2",
+      "2025": "Tier 2",
+      "2024": "Tier 2",
+      "2023": "Tier 2",
+      "2022": "Tier 2",
+      "2021": "Tier 2",
+      "2020": "Tier 2",
+      "2019": "Tier 3",
+      "2018": "Tier 3",
+      "2017": "Tier 3"
+    }
+  },
+  {
+    "rank_2026": 8,
+    "tie": true,
+    "name": "Drake Maye",
+    "team": "Patriots",
+    "tier_2026": "Tier 2",
+    "voting_average_2026": "2.06",
+    "history": {
+      "2026": "Tier 2",
+      "2025": "Tier 3"
+    }
+  },
+  {
+    "rank_2026": 8,
+    "tie": true,
+    "name": "Jared Goff",
+    "team": "Lions",
+    "tier_2026": "Tier 2",
+    "voting_average_2026": "2.06",
+    "history": {
+      "2026": "Tier 2",
+      "2025": "Tier 2",
+      "2024": "Tier 2",
+      "2023": "Tier 3",
+      "2022": "Tier 3",
+      "2021": "Tier 3",
+      "2020": "Tier 3",
+      "2019": "Tier 2",
+      "2018": "Tier 3",
+      "2017": "Tier 4"
+    }
+  },
+  {
+    "rank_2026": 10,
+    "tie": false,
+    "name": "Jordan Love",
+    "team": "Packers",
+    "tier_2026": "Tier 2",
+    "voting_average_2026": "2.18",
+    "history": {
+      "2026": "Tier 2",
+      "2025": "Tier 2",
+      "2024": "Tier 2",
+      "2023": "Tier 4"
+    }
+  },
+  {
+    "rank_2026": 11,
+    "tie": true,
+    "name": "Brock Purdy",
+    "team": "49ers",
+    "tier_2026": "Tier 2",
+    "voting_average_2026": "2.28",
+    "history": {
+      "2026": "Tier 2",
+      "2025": "Tier 2",
+      "2024": "Tier 2",
+      "2023": "Tier 4"
+    }
+  },
+  {
+    "rank_2026": 11,
+    "tie": true,
+    "name": "Caleb Williams",
+    "team": "Bears",
+    "tier_2026": "Tier 2",
+    "voting_average_2026": "2.28",
+    "history": {
+      "2026": "Tier 2",
+      "2025": "Tier 3"
+    }
+  },
+  {
+    "rank_2026": 13,
+    "tie": false,
+    "name": "Jayden Daniels",
+    "team": "Commanders",
+    "tier_2026": "Tier 2",
+    "voting_average_2026": "2.32",
+    "history": {
+      "2026": "Tier 2",
+      "2025": "Tier 2"
+    }
+  },
+  {
+    "rank_2026": 14,
+    "tie": true,
+    "name": "Baker Mayfield",
+    "team": "Buccaneers",
+    "tier_2026": "Tier 2",
+    "voting_average_2026": "2.36",
+    "history": {
+      "2026": "Tier 2",
+      "2025": "Tier 2",
+      "2024": "Tier 3",
+      "2023": "Tier 4",
+      "2022": "Tier 3",
+      "2021": "Tier 3",
+      "2020": "Tier 3",
+      "2019": "Tier 2"
+    }
+  },
+  {
+    "rank_2026": 14,
+    "tie": true,
+    "name": "Sam Darnold",
+    "team": "Seahawks",
+    "tier_2026": "Tier 2",
+    "voting_average_2026": "2.36",
+    "history": {
+      "2026": "Tier 2",
+      "2025": "Tier 3",
+      "2024": "Tier 4",
+      "2023": "Not in survey",
+      "2022": "Tier 4",
+      "2021": "Tier 4",
+      "2020": "Tier 3",
+      "2019": "Tier 3"
+    }
+  },
+  {
+    "rank_2026": 16,
+    "tie": false,
+    "name": "Trevor Lawrence",
+    "team": "Jaguars",
+    "tier_2026": "Tier 2",
+    "voting_average_2026": "2.44",
+    "history": {
+      "2026": "Tier 2",
+      "2025": "Tier 3",
+      "2024": "Tier 3",
+      "2023": "Tier 2",
+      "2022": "Tier 3"
+    }
+  },
+  {
+    "rank_2026": 17,
+    "tie": false,
+    "name": "Jalen Hurts",
+    "team": "Eagles",
+    "tier_2026": "Tier 2",
+    "voting_average_2026": "2.50",
+    "history": {
+      "2026": "Tier 2",
+      "2025": "Tier 2",
+      "2024": "Tier 2",
+      "2023": "Tier 2",
+      "2022": "Tier 3",
+      "2021": "Tier 4"
+    }
+  },
+  {
+    "rank_2026": 18,
+    "tie": false,
+    "name": "Bo Nix",
+    "team": "Broncos",
+    "tier_2026": "Tier 3",
+    "voting_average_2026": "2.54",
+    "history": {
+      "2026": "Tier 3",
+      "2025": "Tier 3"
+    }
+  },
+  {
+    "rank_2026": 19,
+    "tie": false,
+    "name": "Aaron Rodgers",
+    "team": "Steelers",
+    "tier_2026": "Tier 3",
+    "voting_average_2026": "2.66",
+    "history": {
+      "2026": "Tier 3",
+      "2025": "Tier 3",
+      "2024": "Tier 2",
+      "2023": "Tier 1",
+      "2022": "Tier 1",
+      "2021": "Tier 1",
+      "2020": "Tier 1",
+      "2019": "Tier 1",
+      "2018": "Tier 1",
+      "2017": "Tier 1",
+      "2016": "Tier 1",
+      "2015": "Tier 1",
+      "2014": "Tier 1"
+    }
+  },
+  {
+    "rank_2026": 20,
+    "tie": false,
+    "name": "C.J. Stroud",
+    "team": "Texans",
+    "tier_2026": "Tier 3",
+    "voting_average_2026": "2.74",
+    "history": {
+      "2026": "Tier 3",
+      "2025": "Tier 2",
+      "2024": "Tier 2"
+    }
+  },
+  {
+    "rank_2026": 21,
+    "tie": false,
+    "name": "Daniel Jones",
+    "team": "Colts",
+    "tier_2026": "Tier 3",
+    "voting_average_2026": "2.92",
+    "history": {
+      "2026": "Tier 3",
+      "2025": "Tier 4",
+      "2024": "Tier 4",
+      "2023": "Tier 3",
+      "2022": "Tier 4",
+      "2021": "Tier 3",
+      "2020": "Tier 3"
+    }
+  },
+  {
+    "rank_2026": 22,
+    "tie": false,
+    "name": "Bryce Young",
+    "team": "Panthers",
+    "tier_2026": "Tier 3",
+    "voting_average_2026": "3.08",
+    "history": {
+      "2026": "Tier 3",
+      "2025": "Tier 3",
+      "2024": "Tier 4"
+    }
+  },
+  {
+    "rank_2026": 23,
+    "tie": false,
+    "name": "Kyler Murray",
+    "team": "Vikings",
+    "tier_2026": "Tier 3",
+    "voting_average_2026": "3.10",
+    "history": {
+      "2026": "Tier 3",
+      "2025": "Tier 3",
+      "2024": "Tier 3",
+      "2023": "Tier 3",
+      "2022": "Tier 2",
+      "2021": "Tier 2",
+      "2020": "Tier 3"
+    }
+  },
+  {
+    "rank_2026": 24,
+    "tie": false,
+    "name": "Jaxson Dart",
+    "team": "Giants",
+    "tier_2026": "Tier 3",
+    "voting_average_2026": "3.24",
+    "history": {}
+  },
+  {
+    "rank_2026": 25,
+    "tie": false,
+    "name": "Cam Ward",
+    "team": "Titans",
+    "tier_2026": "Tier 3",
+    "voting_average_2026": "3.34",
+    "history": {}
+  },
+  {
+    "rank_2026": 26,
+    "tie": true,
+    "name": "Tyler Shough",
+    "team": "Saints",
+    "tier_2026": "Tier 3",
+    "voting_average_2026": "3.42",
+    "history": {}
+  },
+  {
+    "rank_2026": 26,
+    "tie": true,
+    "name": "Tua Tagovailoa",
+    "team": "Falcons",
+    "tier_2026": "Tier 3",
+    "voting_average_2026": "3.42",
+    "history": {
+      "2026": "Tier 3",
+      "2025": "Tier 3",
+      "2024": "Tier 3",
+      "2023": "Tier 3",
+      "2022": "Tier 4",
+      "2021": "Tier 4"
+    }
+  },
+  {
+    "rank_2026": 28,
+    "tie": false,
+    "name": "Kirk Cousins",
+    "team": "Raiders",
+    "tier_2026": "Tier 3",
+    "voting_average_2026": "3.44",
+    "history": {
+      "2026": "Tier 3",
+      "2025": "Tier 3",
+      "2024": "Tier 2",
+      "2023": "Tier 2",
+      "2022": "Tier 3",
+      "2021": "Tier 3",
+      "2020": "Tier 3",
+      "2019": "Tier 3",
+      "2018": "Tier 3",
+      "2017": "Tier 2",
+      "2016": "Tier 3"
+    }
+  },
+  {
+    "rank_2026": 29,
+    "tie": false,
+    "name": "Malik Willis",
+    "team": "Dolphins",
+    "tier_2026": "Tier 4",
+    "voting_average_2026": "3.66",
+    "history": {}
+  },
+  {
+    "rank_2026": 30,
+    "tie": false,
+    "name": "Geno Smith",
+    "team": "Jets",
+    "tier_2026": "Tier 4",
+    "voting_average_2026": "3.70",
+    "history": {
+      "2026": "Tier 4",
+      "2025": "Tier 3",
+      "2024": "Tier 3",
+      "2023": "Tier 3",
+      "2022": "Tier 5",
+      "2021": "Not in survey",
+      "2020": "Not in survey",
+      "2019": "Not in survey",
+      "2018": "Not in survey",
+      "2017": "Not in survey",
+      "2016": "Tier 4",
+      "2015": "Tier 4",
+      "2014": "Tier 4"
+    }
+  },
+  {
+    "rank_2026": 31,
+    "tie": false,
+    "name": "Deshaun Watson",
+    "team": "Browns",
+    "tier_2026": "Tier 4",
+    "voting_average_2026": "3.76",
+    "history": {
+      "2026": "Tier 4",
+      "2025": "Not in survey",
+      "2024": "Tier 3",
+      "2023": "Tier 2",
+      "2022": "Tier 2",
+      "2021": "Tier 1",
+      "2020": "Tier 1",
+      "2019": "Tier 2",
+      "2018": "Tier 2"
+    }
+  },
+  {
+    "rank_2026": 32,
+    "tie": false,
+    "name": "Michael Penix Jr.",
+    "team": "Falcons",
+    "tier_2026": "Tier 4",
+    "voting_average_2026": "3.88",
+    "history": {
+      "2026": "Tier 4",
+      "2025": "Tier 4"
+    }
+  },
+  {
+    "rank_2026": 33,
+    "tie": false,
+    "name": "Jacoby Brissett",
+    "team": "Cardinals",
+    "tier_2026": "Tier 4",
+    "voting_average_2026": "3.92",
+    "history": {
+      "2026": "Tier 4",
+      "2025": "Not in survey",
+      "2024": "Tier 4",
+      "2023": "Not in survey",
+      "2022": "Not in survey",
+      "2021": "Not in survey",
+      "2020": "Not in survey",
+      "2019": "Not in survey",
+      "2018": "Tier 4"
+    }
+  },
+  {
+    "rank_2026": 34,
+    "tie": false,
+    "name": "J.J. McCarthy",
+    "team": "Vikings",
+    "tier_2026": "Tier 4",
+    "voting_average_2026": "4.18",
+    "history": {
+      "2026": "Tier 4",
+      "2025": "Tier 4"
+    }
+  },
+  {
+    "rank_2026": 35,
+    "tie": false,
+    "name": "Shedeur Sanders",
+    "team": "Browns",
+    "tier_2026": "Tier 4",
+    "voting_average_2026": "4.22",
+    "history": {}
+  }
+]

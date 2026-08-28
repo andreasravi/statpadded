@@ -1,0 +1,27 @@
+{
+  "season": 2014, "source": "overthecap_2014",
+  "source_url": "https://overthecap.com/looking-sandoespn-qb-rankings-salary-perspective",
+  "note": "Over The Cap's transcription of Sando's original 2014 ESPN Insider tiers (paywalled at source); table verified directly, not LLM-summarized.",
+  "rows": [
+    ["Aaron Rodgers","Packers",1,1],
+    ["Peyton Manning","Broncos",1,1],
+    ["Drew Brees","Saints",1,1],
+    ["Tom Brady","Patriots",1,1],
+    ["Matt Ryan","Falcons",2,7],
+    ["Tony Romo","Cowboys",2,7],
+    ["Eli Manning","Giants",2,7],
+    ["Philip Rivers","Chargers",2,5],
+    ["Ben Roethlisberger","Steelers",2,6],
+    ["Matthew Stafford","Lions",2,11],
+    ["Colin Kaepernick","49ers",2,12],
+    ["Joe Flacco","Ravens",2,10],
+    ["Alex Smith","Chiefs",3,14],
+    ["Carson Palmer","Cardinals",3,15],
+    ["Jay Cutler","Bears",3,13],
+    ["Matt Schaub","Raiders",4,17],
+    ["Matt Cassel","Vikings",4,19],
+    ["Josh McCown","Buccaneers",4,16],
+    ["Chad Henne","Jaguars",4,18],
+    ["Ryan Fitzpatrick","Texans",4,20]
+  ]
+}
