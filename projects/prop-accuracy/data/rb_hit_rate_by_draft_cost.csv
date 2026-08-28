@@ -1,0 +1,5 @@
+bucket,n,avg_line,over_pct_all,healthy_n,over_pct_healthy,median_diff_healthy
+RB1-8,24,1029,54,21,62,197.5
+RB9-18,28,902,54,21,71,152.0
+RB19-30,25,771,52,15,80,236.5
+RB31+,11,662,9,7,14,-288.5

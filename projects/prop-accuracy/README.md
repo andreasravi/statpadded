@@ -31,6 +31,7 @@ python3 projects/prop-accuracy/scripts/coverage_wr.py   # -> adp_coverage_gaps.c
 # running backs
 python3 projects/prop-accuracy/scripts/grade_rb.py      # -> data/rb_prop_grades.csv
 python3 projects/prop-accuracy/scripts/analyze_rb.py    # -> data/rb_hit_rate_* / rb_year_over_year_* CSVs
+python3 projects/prop-accuracy/scripts/explore_rb.py    # -> rb_miss_distribution / rb_beat_magnitude_by_line / rb_line_vs_prior_year / rb_hit_rate_by_draft_cost CSVs
 python3 projects/prop-accuracy/scripts/context_rb.py    # -> data/rb_context_* CSVs + rb_context_summary.json
 python3 projects/prop-accuracy/scripts/coverage_rb.py   # -> data/rb_adp_coverage_gaps.csv
 ```
@@ -252,6 +253,12 @@ exists that year).
 missed the whole season (2025 Joe Mixon) is graded as a 0 — a real max
 under, not a gap.
 
+`explore_rb.py` is the deeper exploratory pass (RB counterpart of
+`explore_wr.py`): the distribution of the miss, the beat/short-fall
+magnitude inside each line tier, the line vs the back's *previous* season
+(prior rushing totals from `rushing_stats`, back to 2021), and — using the
+ADP the grades carry — the hit rate by draft slot.
+
 ## What the data says
 
 ### 1. RB rushing-yards unders are almost entirely an injury bet
@@ -291,7 +298,75 @@ cleared only 43% even healthy (median −27); below 1000, a healthy back is
 a 65–71% over. Rushing **TDs**: the 5–6.5 band is the fade (27% over, 38%
 healthy); 9–10.5 has over-hit (69%) on a small n=16.
 
-### 3. Team context matters much less than for WR
+**When they beat, how much by?** (`explore_rb.py`, section B — median
+over-shoot vs median short-fall inside each rushing-yards tier)
+
+| Line | under % (healthy) | beat by, median | miss by, median | ratio |
+|---|---|---|---|---|
+| < 600 | 42% | +104 | −277 | 0.37 |
+| 600–800 | 35% | +227 | −340 | 0.67 |
+| 800–1000 | 29% | +252 | −350 | 0.72 |
+| 1000–1200 | 57% | +339 | −131 | **2.59** |
+
+Below 1000 the shape is **bimodal and asymmetric** — a healthy back is a
+65–70% over, but when a back in these tiers misses (almost always injury)
+he misses ~1.4× as big as the overs pay. The **1000–1200** band flips it:
+you're *more* likely under (57% healthy) but the downside is capped
+(−131) while the overs are huge (+339) — a workhorse who's already
+established doesn't crater unless he's hurt, and if he's hurt he was
+priced too high anyway.
+
+### 3. The shape of the miss: even less "about right" than for WR
+
+Across 126 rush-only lines the result lands **within ±50 of the number
+just 8%** of the time (WR: 14%), median −41, SD 387 (wider than WR's 318).
+Skew ≈ 0, but **36% blow the under by 200+ yards** and 29% blow the over
+by 200+. Every one of the 12 worst under misses is a ≤ 8-game injury
+season; every one of the 12 biggest overs is a 14–17-game workhorse year
+(Barkley's 2,005, Henry's 1,921). The rushing-yards prop is a coin flip on
+a number that will usually be wrong by 250+ yards, and the tail you land
+in is almost entirely about health.
+
+### 4. The line vs last year — and here RB is the *opposite* of WR
+
+`corr(line, prior-season rushing yards) = +0.76` — same hard anchor to
+last year, shaded down a mean 79 yards. But the re-rate direction points
+the other way from receivers (`explore_rb.py`, section C):
+
+| Line vs last year's rushing yards | n | over % | over % (healthy) |
+|---|---|---|---|
+| set **≥ 150 above** (bullish) | 14 | **57%** | **100%** |
+| within ±150 | 59 | 49% | 62% |
+| cut **≥ 150 below** (bearish) | 41 | 41% | 59% |
+
+For a back, when the book prices in a step up it has still been *too low*
+(14 seasons, all 8 of the healthy ones cleared). And the biggest reversal is
+**prior-year injury**: a back coming off a < 14-game season went **64%
+over (85% healthy, median +108)** — the exact inverse of the receiver
+number (36% over). RB injuries are mostly acute and the workload comes
+back intact, so the post-injury discount has been far too steep. Back
+the bounce-back back; fade the bounce-back receiver.
+
+### 5. Draft cost: the mid-round back is the sweet spot, and RB31+ is a trap
+
+Using the Underdog ADP the grades carry (2023–25 rows, `explore_rb.py`
+section E):
+
+| Draft slot | n | avg line | over % | over % (healthy) |
+|---|---|---|---|---|
+| RB1–8 | 24 | 1,029 | 54% | 62% |
+| RB9–18 | 28 | 902 | 54% | 71% |
+| RB19–30 | 25 | 771 | 52% | **80%** |
+| **RB31+** | 11 | 662 | **9%** | **14%** |
+
+Among *draftable* backs the healthy over rate climbs as the price drops —
+the RB19–30 range (mid-round, real role, modest line) has been the best
+healthy over on the board. But the cliff at RB31+ is total: a back going
+that late who still has a posted line is a committee/handcuff type, and
+those have cleared 1 in 11. The line's own size stops mattering; the
+draft slot is the tell.
+
+### 6. Team context matters much less than for WR
 
 Joining each rush-only line to the RB's `team_start` preseason context
 (n=104 with both inputs):
@@ -309,7 +384,7 @@ Joining each rush-only line to the RB's `team_start` preseason context
   term on the WR side. For RBs, context is mostly noise; health is the
   variable.
 
-### 4. Year over year: the book over-corrects
+### 7. Year over year: the book over-corrects
 
 `corr(year-A Δ vs line, year-B Δ vs line) = −0.21` (n=58 pairs) — mildly
 *negative*: a back who smashed his number tends to miss it the next year
@@ -334,10 +409,22 @@ in the repo before 2023.
 
 The one repeatable edge is **health-conditioned**: a healthy RB beats his
 rushing-yards number ~64% of the time, and every meaningful under is an
-injury. Fade the 1000–1200 dead zone, lean over on healthy sub-1000-yard
-backs and on bouncebacks from a moderate down year. Unlike WR, team
-context (QB, win total) tells you almost nothing once you've accounted for
-whether the back plays.
+injury.
+
+- **Lean over:** healthy sub-1,000-yard backs (esp. the RB19–30 mid-round
+  range — 80% healthy), backs coming off an injury year (85% healthy —
+  the market over-discounts them), backs getting a bullish re-rate, and
+  bouncebacks from a moderate down year.
+- **Fade:** the 1,000–1,200 dead zone, any back going RB31+ who still has
+  a posted line (1-for-11), and — for TDs — the 5–8.5 band.
+- Unlike WR, team context (QB, win total) tells you almost nothing once
+  you've accounted for whether the back plays, and the year-over-year
+  signal is mildly *negative* (the line chases the last result).
+
+The sharpest RB-vs-WR contrast: a receiver coming back from injury or
+getting a breakout re-rate is a *fade*; the same back is a *buy*. RB
+injuries don't linger in the box score the way soft-tissue / usage
+questions do for receivers.
 
 ## Known gaps
 
@@ -346,4 +433,9 @@ whether the back plays.
   BetMGM / DraftKings put SportsBetting.ag within ~25–50 yds for most
   backs but ~100 low on the very top tier (Jonathan Taylor 1350.5 vs
   1450.5 elsewhere). No team/ADP for 2022 rows.
-- **2026** — lines are live now (BettingPros / Covers / DK); not yet pulled.
+- **2026** — no comprehensive board pulled yet. The full grids
+  (FantasyPoints, FantasyTeamAdvice, BettingPros) are paywalled or
+  JS-gated; free articles (Sharp Football, FantasyPros/BettingPros) only
+  cite a handful of lines each. So there is no RB equivalent of the WR
+  "2026 — what stands out" section until a source is added to
+  `rb_prop_totals`.
