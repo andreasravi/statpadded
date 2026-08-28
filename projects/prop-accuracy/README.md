@@ -15,8 +15,12 @@ Two positions, same method, same directory:
 | Stats graded | receiving yards / receptions / TDs | rushing yards (or rush+rec) / rushing TDs |
 | Scripts | `*_wr.py` | `*_rb.py` |
 
-- **WR visual write-up:** [`settle-sheet.html`](settle-sheet.html), also a
-  Claude artifact: https://claude.ai/code/artifact/9511311e-ed4b-4feb-a98d-2188db080ff6
+- **Visual report (both positions):** [`settle-sheet.html`](settle-sheet.html)
+  — "The Preseason Prop Report", a Claude artifact:
+  https://claude.ai/code/artifact/9511311e-ed4b-4feb-a98d-2188db080ff6 .
+  WR / RB toggle; every section below plus the 2026 watch for each position
+  and a "where the two positions invert" synthesis. Data bundled by
+  `scripts/bundle.py` into `data/report_bundle.json` and embedded.
 
 ## Method
 
@@ -34,6 +38,10 @@ python3 projects/prop-accuracy/scripts/analyze_rb.py    # -> data/rb_hit_rate_* 
 python3 projects/prop-accuracy/scripts/explore_rb.py    # -> rb_miss_distribution / rb_beat_magnitude_by_line / rb_line_vs_prior_year / rb_hit_rate_by_draft_cost CSVs
 python3 projects/prop-accuracy/scripts/context_rb.py    # -> data/rb_context_* CSVs + rb_context_summary.json
 python3 projects/prop-accuracy/scripts/coverage_rb.py   # -> data/rb_adp_coverage_gaps.csv
+python3 projects/prop-accuracy/scripts/watch_rb.py      # -> data/rb_watch_2026.json  (2026 patterns)
+
+# then, for the visual report:
+python3 projects/prop-accuracy/scripts/bundle.py        # -> data/report_bundle.json (embedded in settle-sheet.html)
 ```
 
 WR view CSVs are unprefixed (historical); RB ones are `rb_`-prefixed.
@@ -426,6 +434,38 @@ getting a breakout re-rate is a *fade*; the same back is a *buy*. RB
 injuries don't linger in the box score the way soft-tissue / usage
 questions do for receivers.
 
+## 2026 — what stands out (RB)
+
+`watch_rb.py` runs the patterns above against First Down Studio's 2026
+rushing-yards board (49 backs; a Vegas-prop-driven projection, ~within
+25 yds of posted DraftKings season O/U), joined to the 2026 QB tier, the
+Kalshi win total, and 2025 actuals. Nothing graded — the season hasn't
+started. The seven groups (full rows in `data/rb_watch_2026.json` and the
+report artifact):
+
+- **Bounce-back backs** (missed time in 2025) — *history 64% over, 85%
+  healthy*: Omarion Hampton (929, 9 G in '25), Bucky Irving (804, 10 G),
+  Cam Skattebo (781, 8 G), Chris Rodriguez (728, 12 G), J.K. Dobbins
+  (681, 10 G). The strongest RB lean.
+- **Bullish re-rate** (line set ≥150 above 2025) — *history 57% over,
+  8-for-8 healthy*: Bhayshul Tuten (+427), Hampton (+384), Skattebo
+  (+371), Rodriguez (+228), Irving (+216), Chuba Hubbard (+189).
+- **The 1,000+ club** — Taylor (1,234), Henry (1,229), Cook (1,209) are
+  all 1,200+ *and* all had their line cut ~350–400 off a monster 2025 (a
+  bearish re-rate, the weaker side for backs); Gibbs (1,199), Bijan
+  (1,154), Barkley (1,079), Jeanty (1,048) sit in the dead zone.
+- **800–1,000 bimodal band** — great healthy, brutal hurt: Achane,
+  Kyren Williams, Kenneth Walker, Javonte Williams, CMC, Jacobs, Judkins,
+  Chase Brown, Etienne, Montgomery.
+- **Elite-QB backfields** (mild *over*, opposite of WR): Cook, Kyren
+  Williams, Kenneth Walker, Chase Brown, Blake Corum.
+- **Committee trap** (RB31+ / deep, *history 1-for-11*): Hubbard, Dobbins,
+  Corum, Mason, Stevenson, Warren, Croskey-Merritt, Tracy, Harvey, and
+  the rest of the RB31+ tier.
+- **New team / new role** — Kenneth Walker (KC), Javonte Williams (DAL),
+  David Montgomery (HOU), Travis Etienne (NO), Jeanty, Hampton, Love
+  (rookies), Rico Dowdle (PIT).
+
 ## Known gaps
 
 - **2023 rushing TDs** — no comprehensive grid from any source.
@@ -433,9 +473,7 @@ questions do for receivers.
   BetMGM / DraftKings put SportsBetting.ag within ~25–50 yds for most
   backs but ~100 low on the very top tier (Jonathan Taylor 1350.5 vs
   1450.5 elsewhere). No team/ADP for 2022 rows.
-- **2026** — no comprehensive board pulled yet. The full grids
-  (FantasyPoints, FantasyTeamAdvice, BettingPros) are paywalled or
-  JS-gated; free articles (Sharp Football, FantasyPros/BettingPros) only
-  cite a handful of lines each. So there is no RB equivalent of the WR
-  "2026 — what stands out" section until a source is added to
-  `rb_prop_totals`.
+- **2026** — the number is First Down Studio's projection, not a posted
+  O/U (comprehensive books are paywalled / JS-gated). It tracks DK within
+  ~25 yds on rushing yards; its rushing-TD projection isn't comparable to
+  book lines and isn't ingested.

@@ -90,7 +90,13 @@ bundle = {
     "rb": {
         "grades": grades_rb(),
         "explore": jload("rb_explore_summary.json"),
-        "ctx": jload("rb_context_summary.json"),
+        "ctx": {
+            **jload("rb_context_summary.json"),
+            "yards_by_qb_tier": [{k: num(v) for k, v in r.items()}
+                                 for r in rd("rb_context_by_qb_tier.csv")],
+            "yards_by_win_total": [{k: num(v) for k, v in r.items()}
+                                   for r in rd("rb_context_by_win_total.csv")],
+        },
         "tiers": tiers("rb_"),
         "yoy": yoy("rb_year_over_year_reversion.csv"),
         "draft_cost": [{k: num(v) for k, v in r.items()} for r in rd("rb_hit_rate_by_draft_cost.csv")],
