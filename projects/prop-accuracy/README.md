@@ -23,70 +23,81 @@ Two positions, same method, same directory:
   positions invert" synthesis. Data bundled by `scripts/bundle.py` into
   `data/report_bundle.json` and embedded.
 
-## Every observation at a glance (over rates, 2022–25)
+## Every observation at a glance (`cheatsheet.py`)
 
-Baseline: WR **44%** yards / 44% rec / 40% TD clear; RB **45%** rush yds /
-41% TD. "Healthy" = finished ≥ 14 games.
+Over rate by situation, 2022–25, with the sample size and a z-score
+testing the rate against a coin flip
+(`z = (over% − 50%) / √(0.25/n)`; `*` p<.10, `**` p<.05, `***` p<.01).
+Baselines: WR **44%** yards / 44% rec / 40% TD; RB **45%** rush yds / 41%
+TD. Rows marked *(hlt)* drop anyone under 14 games.
 
-**Wide receivers — what has gone over / under**
+**Wide receivers**
 
-| Situation | over % | healthy | lean |
-|---|--:|--:|---|
-| Finished < 14 games | 7% | — | **UNDER** (near-auto) |
-| Finished ≥ 14 games (yards) | — | 59% | over |
-| 700–850 yards line | 51% | 67% | **OVER** |
-| 850–1,000 yards line | 44% | 64% | over if healthy |
-| **1,000–1,200 yards ("dead zone")** | 36% | 48% | **UNDER** |
-| 1,200+ yards line | 48% | 67% | over if healthy |
-| **≤ 55 reception line** | 7% | 9% | **UNDER** (cleanest fade) |
-| **56–65 reception line** | 70% | 88% | **OVER** (cleanest over) |
-| 76–85 reception line | 29% | 40% | UNDER |
-| 86+ reception line | 57% | 75% | over |
-| **8+ TD line** | 28% | 36% | **UNDER** |
-| ≤ 7.5 TD line | ~41% | ~48% | coin flip |
-| Weak / unproven QB (tier 4–5) | 64% | 84% | **OVER** |
-| Elite / good QB (tier 1–2) | 39% | 54% | lean under |
-| Team win total 7–8 | 29% | 43% | **UNDER** |
-| Tank team (< 7 wins) | 56% | 79% | over |
-| Line set ≥ 150 **over** last year | 37% | 46% | **UNDER** |
-| Line **cut** ≥ 150 below last year | 51% | 69% | **OVER** |
-| Coming off an injury year (< 14 g) | 36% | 47% | **UNDER** |
-| Beat by 300+ last year | 31% | 38% | UNDER (regression) |
-| Missed by 150–300 last year | 60% | 62% | OVER (bounce-back) |
-| Hit dead-on (± 50) last year | 25% | 38% | UNDER |
+| Situation | over % | n | z |
+|---|--:|--:|--:|
+| Finished < 14 games | 7% | 46 | **−5.9 \*\*\*** |
+| Finished ≥ 14 games | 59% | 112 | +1.9 \* |
+| 700–850 yards line *(hlt)* | 67% | 30 | +1.8 \* |
+| 850–1,000 yards line *(hlt)* | 64% | 33 | +1.6 |
+| 1,000–1,200 "dead zone" *(hlt)* | 48% | 25 | −0.2 |
+| 1,200+ yards line *(hlt)* | 67% | 15 | +1.3 |
+| **≤ 55 reception line** | 7% | 15 | **−3.4 \*\*\*** |
+| 56–65 reception line | 70% | 20 | +1.8 \* |
+| **76–85 reception line** | 29% | 21 | **−2.0 \*\*** |
+| 86+ reception line | 57% | 28 | +0.8 |
+| 8+ TD line | 28% | 18 | −1.9 \* |
+| ≤ 7.5 TD line | 42% | 105 | −1.7 \* |
+| Weak / unproven QB (tier 4–5) | 64% | 25 | +1.4 |
+| **Weak / unproven QB, *(hlt)*** | 84% | 19 | **+3.0 \*\*\*** |
+| Elite / good QB (tier 1–2) | 39% | 72 | −1.9 \* |
+| **Team win total 7–8** | 29% | 21 | **−2.0 \*\*** |
+| Tank team (< 7 wins) | 56% | 27 | +0.6 |
+| Line set ≥ 150 over last year | 37% | 19 | −1.1 |
+| **Line cut ≥ 150 below last year *(hlt)*** | 69% | 36 | **+2.3 \*\*** |
+| Coming off an injury year (< 14 g) | 36% | 28 | −1.5 |
+| Beat by 300+ last year | 38% | 21 | −1.1 |
+| Missed by 150–300 last year | 60% | 10 | +0.6 |
+| Hit dead-on (± 50) last year | 25% | 12 | −1.7 \* |
 
-**Running backs — what has gone over / under**
+**Running backs**
 
-| Situation | over % | healthy | lean |
-|---|--:|--:|---|
-| **Finished < 14 games** | 3% | — | **UNDER** (auto) |
-| **Finished ≥ 14 games** | — | 64% | **OVER** |
-| < 600 rush-yards line | 41% | 58% | over if healthy |
-| 600–800 rush-yards line | 47% | 65% | over if healthy |
-| 800–1,000 rush-yards line | 49% | 71% | **OVER** if healthy |
-| **1,000–1,200 rush yards ("dead zone")** | 33% | 43% | **UNDER** |
-| 5–8.5 TD line | ~30% | ~46% | **UNDER** |
-| 9–10.5 TD line | 69% | 79% | OVER |
-| RB1–18 by ADP | 54% | 62–71% | over if healthy |
-| **RB19–30 by ADP** | 52% | 80% | **OVER** if healthy |
-| **RB31+ by ADP (committee)** | 9% | 14% | **UNDER** |
-| Line set ≥ 150 over last year | 57% | 100% | **OVER** |
-| Line cut ≥ 150 below last year | 41% | 59% | coin |
-| **Coming off an injury year (< 14 g)** | 64% | 85% | **OVER** |
-| Missed badly (≤ −300) last year | 71% | 100% | OVER (bounce-back) |
-| Beat by 300–500 last year | 38% | 62% | lean under |
-| QB tier / win total | — | — | ignore (barely moves it) |
+| Situation | over % | n | z |
+|---|--:|--:|--:|
+| **Finished < 14 games** | 3% | 38 | **−5.8 \*\*\*** |
+| **Finished ≥ 14 games** | 64% | 88 | **+2.6 \*\*\*** |
+| **< 1,000 rush-yards line *(hlt)*** | 67% | 70 | **+2.9 \*\*\*** |
+| 1,000–1,200 "dead zone" *(hlt)* | 43% | 14 | −0.5 |
+| individual < 600 / 600–800 / 800–1,000 buckets | — | 17–51 | all n/s |
+| **5–8.5 TD line** | 30% | 44 | **−2.7 \*\*\*** |
+| 9–10.5 TD line | 69% | 16 | +1.5 |
+| RB1–18 by ADP | 55% | 51 | +0.7 |
+| **RB19–30 by ADP *(hlt)*** | 80% | 15 | **+2.3 \*\*** |
+| **RB31+ by ADP (committee)** | 9% | 11 | **−2.7 \*\*\*** |
+| Line set ≥ 150 over last year | 57% | 14 | +0.5 |
+| Line cut ≥ 150 below last year | 41% | 41 | −1.1 |
+| Off an injury year (< 14 g) | 64% | 28 | +1.5 |
+| **Off an injury year *(hlt)*** | 85% | 20 | **+3.1 \*\*\*** |
+| Beat by 300+ last year | 42% | 19 | −0.7 |
+| Missed / hit dead-on last year | 100% | 3–6 | +1.7 / +2.4 (tiny n) |
+| QB tier / win total (any bucket) | — | — | none clear the bar |
 
 **Interactions**
 
-| Combination | over % | healthy | read |
+| Combination | over % | n | read |
 |---|--:|--:|---|
-| WR · weak QB **and** line cut ≥ 150 | 67% | 75% | barely beats weak-QB alone (64%) — the signals overlap |
-| WR · elite QB **and** line cut ≥ 150 | 47% | **100%** (9/9) | the real buy-low — book gave up, QB still good |
-| WR · healthy **and** sub-1,000 yards line | — | ~61% | cleanest single WR over filter |
-| RB · healthy **and** sub-1,000 yards line | — | 65–71% | cleanest single RB over filter |
-| Both · injured last year **and** line bounced up | — | — | WR fade / RB buy — same setup, opposite bet |
-| Both · workhorse in the 1,000–1,200 band | 48% / 43% hlt | | the dead zone — priced like a lock, lands short |
+| WR · weak QB **and** line cut ≥ 150 | 67% (75% hlt) | 9 | barely beats weak-QB alone (64%) — the signals overlap |
+| WR · elite QB **and** line cut ≥ 150 | 47% · **100% hlt** (9/9) | 19 | the real buy-low — book gave up, QB still good |
+| WR · healthy **and** sub-1,000 yards line | ~61% | ~72 | cleanest WR over filter, but only borderline |
+| RB · healthy **and** sub-1,000 yards line | 67% (z +2.9) | 70 | cleanest RB over filter — clears the bar |
+| Both · injured last year **and** line bounced up | WR fade / RB buy | — | same setup, opposite bet |
+| Both · workhorse in the 1,000–1,200 band | WR 48% / RB 43% hlt | 25 / 14 | reads under both, neither significant on its own |
+
+**What actually clears p<.05:** availability (both); RB healthy + sub-1,000
+line (and its RB19–30 slice); RB off-injury + healthy; RB31+ committee; the
+RB 5–8.5 TD fade; WR weak-QB + healthy; WR line-cut + healthy; the WR ≤55
+and 76–85 reception lines; WR win-total 7–8. **Everything else is
+directional at best** — including the celebrated 1,000–1,200 "dead zone"
+and the 8+ TD fade.
 
 ### The through-lines
 
@@ -97,11 +108,14 @@ Baseline: WR **44%** yards / 44% rec / 40% TD clear; RB **45%** rush yds /
 3. **WR and RB invert on the narrative:** injury bounce-back and breakout
    re-rate are WR fades and RB buys.
 4. **A "dead zone" at 1,000–1,200 yards for both** — the established-
-   workhorse price, and both fall short of it.
-5. **The extremes of the WR reception / TD line are the cleanest fades:**
-   ≤ 55 rec (7% over), 8+ TD (28%); the 56–65 rec line is the cleanest over.
-6. **Results don't carry year to year** — the only repeatable buy is a
-   *moderate* down year.
+   workhorse price, and both read under (~43–48% even healthy). *But the
+   samples are small (n 14–25) and neither clears p<.05 — a lean, not a
+   fact.*
+5. **The WR reception-line extremes are the cleanest real fades:** ≤ 55
+   receptions (7% over, z −3.4), 76–85 receptions (29%, z −2.0). The 8+ TD
+   fade (28%, z −1.9) is only borderline on n 18.
+6. **Results don't carry year to year** — the book fully re-prices; the
+   only repeatable buy is a *moderate* down year (and even that is n/s).
 7. **Honest check** (`model.py`, leave-one-season-out): the RB patterns
    replicate out of sample (AUC 0.57, 53% model weight); the **WR patterns
    do not** (AUC 0.42, 0% weight). Treat the WR observations as *how the
@@ -215,6 +229,8 @@ python3 projects/prop-accuracy/scripts/analyze_wr.py    # -> hit_rate_* / year_o
 python3 projects/prop-accuracy/scripts/explore_wr.py    # -> wr_miss_distribution / wr_beat_magnitude_by_line / wr_line_vs_prior_year CSVs
 python3 projects/prop-accuracy/scripts/context_wr.py    # -> context_* CSVs + context_summary.json
 python3 projects/prop-accuracy/scripts/coverage_wr.py   # -> adp_coverage_gaps.csv
+
+python3 projects/prop-accuracy/scripts/cheatsheet.py    # -> data/cheatsheet.csv  (every situation: over %, n, z vs 50%)
 
 # running backs
 python3 projects/prop-accuracy/scripts/grade_rb.py      # -> data/rb_prop_grades.csv

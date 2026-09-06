@@ -1,0 +1,52 @@
+pos,situation,metric,over_pct,n,z,sig
+WR,finished < 14 games,yards,7,46,-5.9,***
+WR,finished >= 14 games,yards,59,112,1.9,*
+WR,700-850 line,yards,51,39,0.2,
+WR,850-1000 line,yards,44,52,-0.8,
+WR,1000-1200 line (dead zone),yards,36,33,-1.6,
+WR,1200+ line,yards,48,21,-0.2,
+WR,"700-850, healthy",yards,67,30,1.8,*
+WR,"850-1000, healthy",yards,64,33,1.6,
+WR,"1000-1200, healthy",yards,48,25,-0.2,
+WR,"1200+, healthy",yards,67,15,1.3,
+WR,<= 55 rec line,rec,7,15,-3.4,***
+WR,56-65 rec line,rec,70,20,1.8,*
+WR,66-75 rec line,rec,44,39,-0.8,
+WR,76-85 rec line,rec,29,21,-2.0,**
+WR,86+ rec line,rec,57,28,0.8,
+WR,<= 7.5 TD line,td,42,105,-1.7,*
+WR,8+ TD line,td,28,18,-1.9,*
+WR,weak/unproven QB (tier 4-5),yards,64,25,1.4,
+WR,"weak QB, healthy",yards,84,19,3.0,***
+WR,elite/good QB (tier 1-2),yards,39,72,-1.9,*
+WR,team win total 7-8,yards,29,21,-2.0,**
+WR,tank team (< 7 wins),yards,56,27,0.6,
+WR,line set >= 150 over last yr,yards,37,19,-1.1,
+WR,line cut >= 150 below last yr,yards,51,49,0.1,
+WR,"line cut >= 150, healthy",yards,69,36,2.3,**
+WR,off an injury year (< 14 g),yards,36,28,-1.5,
+WR,beat 300+ last yr,yards_yoy,38,21,-1.1,
+WR,missed 150-300 last yr,yards_yoy,60,10,0.6,
+WR,hit dead-on (+-50) last yr,yards_yoy,25,12,-1.7,*
+RB,finished < 14 games,yards,3,38,-5.8,***
+RB,finished >= 14 games,yards,64,88,2.6,***
+RB,< 600 line,yards,41,17,-0.7,
+RB,600-800 line,yards,47,34,-0.3,
+RB,800-1000 line,yards,49,51,-0.1,
+RB,1000-1200 line (dead zone),yards,33,18,-1.4,
+RB,1200+ line,yards,50,6,0.0,
+RB,"< 1000, healthy",yards,67,70,2.9,***
+RB,"1000-1200, healthy",yards,43,14,-0.5,
+RB,5-8.5 TD line,td,30,44,-2.7,***
+RB,9-10.5 TD line,td,69,16,1.5,
+RB,RB1-18 by ADP,yards,55,51,0.7,
+RB,RB19-30 by ADP,yards,52,25,0.2,
+RB,"RB19-30, healthy",yards,80,15,2.3,**
+RB,RB31+ by ADP (committee),yards,9,11,-2.7,***
+RB,line set >= 150 over last yr,yards,57,14,0.5,
+RB,line cut >= 150 below last yr,yards,41,41,-1.1,
+RB,off an injury year (< 14 g),yards,64,28,1.5,
+RB,"off an injury year, healthy",yards,85,20,3.1,***
+RB,beat 300+ last yr,yards_yoy,42,19,-0.7,
+RB,missed 150-300 last yr,yards_yoy,100,3,1.7,*
+RB,hit dead-on (+-50) last yr,yards_yoy,100,6,2.4,**

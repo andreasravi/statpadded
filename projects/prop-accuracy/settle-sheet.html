@@ -208,6 +208,7 @@
   .lean{font-family:"Public Sans",sans-serif;font-weight:800;font-size:10px;letter-spacing:.03em;text-transform:uppercase;padding:1px 6px;border-radius:4px}
   .lean.o{background:var(--over-bg);color:var(--over)}
   .lean.u{background:var(--under-bg);color:var(--under)}
+  .lean.m{background:transparent;color:var(--ink-soft);border:1px dashed var(--line-strong)}
   .lean.n{background:var(--panel-2);color:var(--ink-soft)}
   .cheat .through{margin-top:16px;padding:16px 18px;border-radius:10px;background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow)}
   .cheat .through h3{font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:20px;margin:0 0 8px}
@@ -279,78 +280,80 @@
 
   <section class="cheat">
     <h2>Every observation, in one place</h2>
-    <p class="lead">Simple over rates by situation, 2022–25. "Healthy" = the player finished with ≥ 14 games.
-      Baseline over rates: WR <b>44%</b> yards / 44% receptions / 40% TDs; RB <b>45%</b> rushing yards / 41% TDs —
-      the lines skew a little rich.</p>
+    <p class="lead">Over rate by situation, 2022–25, with the sample size and a z-score testing the rate against a
+      coin flip (<span class="mono">z = (over% − 50%) / √(0.25/n)</span>). Baselines: WR <b>44%</b> yards / 44% rec /
+      40% TD; RB <b>45%</b> rush yds / 41% TD. Rows marked <i>(healthy)</i> drop anyone under 14 games.
+      <b>Colour = it clears the bar:</b> <span class="lean o">solid</span> |z| ≥ 1.96 (p&lt;.05),
+      <span class="lean m">faint</span> 1.64–1.96 (p&lt;.10), <span class="lean n">grey</span> not distinguishable from 50/50.</p>
     <div class="cols">
       <div class="card" style="margin-top:0">
         <h3>Wide receivers</h3>
         <div class="scroll"><table class="sit">
-          <thead><tr><th>Situation</th><th>over %</th><th>healthy</th><th>lean</th></tr></thead>
+          <thead><tr><th>Situation</th><th>over %</th><th>n</th><th>z</th><th>lean</th></tr></thead>
           <tbody>
-            <tr class="grp"><td colspan="4">Availability (yards)</td></tr>
-            <tr><td>Finished &lt; 14 games</td><td>7%</td><td>—</td><td><span class="lean u">under</span></td></tr>
-            <tr><td>Finished ≥ 14 games</td><td>—</td><td>59%</td><td><span class="lean o">over</span></td></tr>
-            <tr class="grp"><td colspan="4">Yards line size</td></tr>
-            <tr><td>700–850 line</td><td>51%</td><td>67%</td><td><span class="lean o">over</span></td></tr>
-            <tr><td>850–1,000 line</td><td>44%</td><td>64%</td><td><span class="lean o">over · hlt</span></td></tr>
-            <tr><td>1,000–1,200 — "dead zone"</td><td>36%</td><td>48%</td><td><span class="lean u">under</span></td></tr>
-            <tr><td>1,200+ line</td><td>48%</td><td>67%</td><td><span class="lean o">over · hlt</span></td></tr>
-            <tr class="grp"><td colspan="4">Reception line</td></tr>
-            <tr><td>≤ 55 rec line</td><td>7%</td><td>9%</td><td><span class="lean u">under ✕✕</span></td></tr>
-            <tr><td>56–65 rec line</td><td>70%</td><td>88%</td><td><span class="lean o">over ✓✓</span></td></tr>
-            <tr><td>66–75 rec line</td><td>44%</td><td>59%</td><td><span class="lean n">lean over hlt</span></td></tr>
-            <tr><td>76–85 rec line</td><td>29%</td><td>40%</td><td><span class="lean u">under</span></td></tr>
-            <tr><td>86+ rec line</td><td>57%</td><td>75%</td><td><span class="lean o">over</span></td></tr>
-            <tr class="grp"><td colspan="4">TD line</td></tr>
-            <tr><td>≤ 7.5 TD line</td><td>~41%</td><td>~48%</td><td><span class="lean n">coin flip</span></td></tr>
-            <tr><td>8+ TD line</td><td>28%</td><td>36%</td><td><span class="lean u">under ✕✕</span></td></tr>
-            <tr class="grp"><td colspan="4">QB &amp; team (yards)</td></tr>
-            <tr><td>Weak / unproven QB (tier 4–5)</td><td>64%</td><td>84%</td><td><span class="lean o">over ✓</span></td></tr>
-            <tr><td>Elite / good QB (tier 1–2)</td><td>39%</td><td>54%</td><td><span class="lean u">lean under</span></td></tr>
-            <tr><td>Team win total 7–8</td><td>29%</td><td>43%</td><td><span class="lean u">under</span></td></tr>
-            <tr><td>Tank team (&lt; 7 wins)</td><td>56%</td><td>79%</td><td><span class="lean o">over</span></td></tr>
-            <tr class="grp"><td colspan="4">Prior year (yards)</td></tr>
-            <tr><td>Line set ≥ 150 <b>over</b> last year</td><td>37%</td><td>46%</td><td><span class="lean u">under</span></td></tr>
-            <tr><td>Line <b>cut</b> ≥ 150 below last year</td><td>51%</td><td>69%</td><td><span class="lean o">over</span></td></tr>
-            <tr><td>Coming off an injury year (&lt; 14 g)</td><td>36%</td><td>47%</td><td><span class="lean u">under</span></td></tr>
-            <tr class="grp"><td colspan="4">Vs last year's result</td></tr>
-            <tr><td>Beat by 300+ last year</td><td>31%</td><td>38%</td><td><span class="lean u">under (regress)</span></td></tr>
-            <tr><td>Missed by 150–300 last year</td><td>60%</td><td>62%</td><td><span class="lean o">over (bounce)</span></td></tr>
-            <tr><td>Hit dead-on (± 50) last year</td><td>25%</td><td>38%</td><td><span class="lean u">under</span></td></tr>
+            <tr class="grp"><td colspan="5">Availability (yards)</td></tr>
+            <tr><td>Finished &lt; 14 games</td><td>7%</td><td>46</td><td>−5.9</td><td><span class="lean u">UNDER</span></td></tr>
+            <tr><td>Finished ≥ 14 games</td><td>59%</td><td>112</td><td>+1.9</td><td><span class="lean m">lean over</span></td></tr>
+            <tr class="grp"><td colspan="5">Yards line size <i>(healthy)</i></td></tr>
+            <tr><td>700–850 line</td><td>67%</td><td>30</td><td>+1.8</td><td><span class="lean m">lean over</span></td></tr>
+            <tr><td>850–1,000 line</td><td>64%</td><td>33</td><td>+1.6</td><td><span class="lean n">n/s</span></td></tr>
+            <tr><td>1,000–1,200 — "dead zone"</td><td>48%</td><td>25</td><td>−0.2</td><td><span class="lean n">n/s</span></td></tr>
+            <tr><td>1,200+ line</td><td>67%</td><td>15</td><td>+1.3</td><td><span class="lean n">n/s</span></td></tr>
+            <tr class="grp"><td colspan="5">Reception line</td></tr>
+            <tr><td>≤ 55 rec line</td><td>7%</td><td>15</td><td>−3.4</td><td><span class="lean u">UNDER</span></td></tr>
+            <tr><td>56–65 rec line</td><td>70%</td><td>20</td><td>+1.8</td><td><span class="lean m">lean over</span></td></tr>
+            <tr><td>66–75 rec line</td><td>44%</td><td>39</td><td>−0.8</td><td><span class="lean n">n/s</span></td></tr>
+            <tr><td>76–85 rec line</td><td>29%</td><td>21</td><td>−2.0</td><td><span class="lean u">under</span></td></tr>
+            <tr><td>86+ rec line</td><td>57%</td><td>28</td><td>+0.8</td><td><span class="lean n">n/s</span></td></tr>
+            <tr class="grp"><td colspan="5">TD line</td></tr>
+            <tr><td>≤ 7.5 TD line</td><td>42%</td><td>105</td><td>−1.7</td><td><span class="lean m">lean under</span></td></tr>
+            <tr><td>8+ TD line</td><td>28%</td><td>18</td><td>−1.9</td><td><span class="lean m">lean under</span></td></tr>
+            <tr class="grp"><td colspan="5">QB &amp; team (yards)</td></tr>
+            <tr><td>Weak / unproven QB (tier 4–5)</td><td>64%</td><td>25</td><td>+1.4</td><td><span class="lean n">n/s</span></td></tr>
+            <tr><td>Weak QB, <i>healthy</i></td><td>84%</td><td>19</td><td>+3.0</td><td><span class="lean o">OVER</span></td></tr>
+            <tr><td>Elite / good QB (tier 1–2)</td><td>39%</td><td>72</td><td>−1.9</td><td><span class="lean m">lean under</span></td></tr>
+            <tr><td>Team win total 7–8</td><td>29%</td><td>21</td><td>−2.0</td><td><span class="lean u">under</span></td></tr>
+            <tr><td>Tank team (&lt; 7 wins)</td><td>56%</td><td>27</td><td>+0.6</td><td><span class="lean n">n/s</span></td></tr>
+            <tr class="grp"><td colspan="5">Prior year (yards)</td></tr>
+            <tr><td>Line set ≥ 150 <b>over</b> last year</td><td>37%</td><td>19</td><td>−1.1</td><td><span class="lean n">n/s</span></td></tr>
+            <tr><td>Line <b>cut</b> ≥ 150 below, <i>healthy</i></td><td>69%</td><td>36</td><td>+2.3</td><td><span class="lean o">over</span></td></tr>
+            <tr><td>Coming off an injury year (&lt; 14 g)</td><td>36%</td><td>28</td><td>−1.5</td><td><span class="lean n">n/s</span></td></tr>
+            <tr class="grp"><td colspan="5">Vs last year's result</td></tr>
+            <tr><td>Beat by 300+ last year</td><td>38%</td><td>21</td><td>−1.1</td><td><span class="lean n">n/s</span></td></tr>
+            <tr><td>Missed by 150–300 last year</td><td>60%</td><td>10</td><td>+0.6</td><td><span class="lean n">n/s</span></td></tr>
+            <tr><td>Hit dead-on (± 50) last year</td><td>25%</td><td>12</td><td>−1.7</td><td><span class="lean m">lean under</span></td></tr>
           </tbody>
         </table></div>
       </div>
       <div class="card" style="margin-top:0">
         <h3>Running backs</h3>
         <div class="scroll"><table class="sit">
-          <thead><tr><th>Situation</th><th>over %</th><th>healthy</th><th>lean</th></tr></thead>
+          <thead><tr><th>Situation</th><th>over %</th><th>n</th><th>z</th><th>lean</th></tr></thead>
           <tbody>
-            <tr class="grp"><td colspan="4">Availability (the master variable)</td></tr>
-            <tr><td>Finished &lt; 14 games</td><td>3%</td><td>—</td><td><span class="lean u">under ✕✕</span></td></tr>
-            <tr><td>Finished ≥ 14 games</td><td>—</td><td>64%</td><td><span class="lean o">over ✓</span></td></tr>
-            <tr class="grp"><td colspan="4">Rushing-yards line size</td></tr>
-            <tr><td>&lt; 600 line</td><td>41%</td><td>58%</td><td><span class="lean o">over · hlt</span></td></tr>
-            <tr><td>600–800 line</td><td>47%</td><td>65%</td><td><span class="lean o">over · hlt</span></td></tr>
-            <tr><td>800–1,000 line</td><td>49%</td><td>71%</td><td><span class="lean o">over ✓ hlt</span></td></tr>
-            <tr><td>1,000–1,200 — "dead zone"</td><td>33%</td><td>43%</td><td><span class="lean u">under</span></td></tr>
-            <tr><td>1,200+ line <span style="color:var(--ink-soft)">(n=6)</span></td><td>50%</td><td>75%</td><td><span class="lean o">over · hlt</span></td></tr>
-            <tr class="grp"><td colspan="4">Rushing-TD line</td></tr>
-            <tr><td>5–8.5 TD line</td><td>~30%</td><td>~46%</td><td><span class="lean u">under</span></td></tr>
-            <tr><td>9–10.5 TD line</td><td>69%</td><td>79%</td><td><span class="lean o">over</span></td></tr>
-            <tr class="grp"><td colspan="4">Draft cost (Underdog ADP)</td></tr>
-            <tr><td>RB1–18 by ADP</td><td>54%</td><td>62–71%</td><td><span class="lean o">over · hlt</span></td></tr>
-            <tr><td>RB19–30 by ADP</td><td>52%</td><td>80%</td><td><span class="lean o">over ✓✓ hlt</span></td></tr>
-            <tr><td>RB31+ by ADP (committee)</td><td>9%</td><td>14%</td><td><span class="lean u">under ✕✕</span></td></tr>
-            <tr class="grp"><td colspan="4">Prior year (yards)</td></tr>
-            <tr><td>Line set ≥ 150 <b>over</b> last year</td><td>57%</td><td>100%</td><td><span class="lean o">over ✓</span></td></tr>
-            <tr><td>Line <b>cut</b> ≥ 150 below last year</td><td>41%</td><td>59%</td><td><span class="lean n">coin</span></td></tr>
-            <tr><td>Coming off an injury year (&lt; 14 g)</td><td>64%</td><td>85%</td><td><span class="lean o">over ✓✓</span></td></tr>
-            <tr class="grp"><td colspan="4">Vs last year's result</td></tr>
-            <tr><td>Missed badly (≤ −300) last year</td><td>71%</td><td>100%</td><td><span class="lean o">over (bounce)</span></td></tr>
-            <tr><td>Beat by 300–500 last year</td><td>38%</td><td>62%</td><td><span class="lean u">lean under</span></td></tr>
-            <tr class="grp"><td colspan="4">Team context</td></tr>
-            <tr><td>QB tier / team win total</td><td colspan="2" style="text-align:left;color:var(--ink-soft)">barely moves it</td><td><span class="lean n">ignore</span></td></tr>
+            <tr class="grp"><td colspan="5">Availability (the master variable)</td></tr>
+            <tr><td>Finished &lt; 14 games</td><td>3%</td><td>38</td><td>−5.8</td><td><span class="lean u">UNDER</span></td></tr>
+            <tr><td>Finished ≥ 14 games</td><td>64%</td><td>88</td><td>+2.6</td><td><span class="lean o">OVER</span></td></tr>
+            <tr class="grp"><td colspan="5">Rush-yards line size</td></tr>
+            <tr><td>&lt; 1,000 line, <i>healthy</i></td><td>67%</td><td>70</td><td>+2.9</td><td><span class="lean o">OVER</span></td></tr>
+            <tr><td>1,000–1,200 "dead zone", <i>healthy</i></td><td>43%</td><td>14</td><td>−0.5</td><td><span class="lean n">n/s</span></td></tr>
+            <tr><td><span style="color:var(--ink-soft)">the individual &lt;600 / 600–800 / 800–1000 buckets</span></td><td colspan="2" style="text-align:left;color:var(--ink-soft)">n 17–51 each</td><td colspan="2" style="text-align:left"><span class="lean n">all n/s on their own</span></td></tr>
+            <tr class="grp"><td colspan="5">Rush-TD line</td></tr>
+            <tr><td>5–8.5 TD line</td><td>30%</td><td>44</td><td>−2.7</td><td><span class="lean u">UNDER</span></td></tr>
+            <tr><td>9–10.5 TD line</td><td>69%</td><td>16</td><td>+1.5</td><td><span class="lean n">n/s</span></td></tr>
+            <tr class="grp"><td colspan="5">Draft cost (Underdog ADP)</td></tr>
+            <tr><td>RB1–18 by ADP</td><td>55%</td><td>51</td><td>+0.7</td><td><span class="lean n">n/s</span></td></tr>
+            <tr><td>RB19–30 by ADP, <i>healthy</i></td><td>80%</td><td>15</td><td>+2.3</td><td><span class="lean o">over</span></td></tr>
+            <tr><td>RB31+ by ADP (committee)</td><td>9%</td><td>11</td><td>−2.7</td><td><span class="lean u">UNDER</span></td></tr>
+            <tr class="grp"><td colspan="5">Prior year (yards)</td></tr>
+            <tr><td>Line set ≥ 150 <b>over</b> last year</td><td>57%</td><td>14</td><td>+0.5</td><td><span class="lean n">n/s</span></td></tr>
+            <tr><td>Line <b>cut</b> ≥ 150 below last year</td><td>41%</td><td>41</td><td>−1.1</td><td><span class="lean n">n/s</span></td></tr>
+            <tr><td>Off an injury year (&lt; 14 g)</td><td>64%</td><td>28</td><td>+1.5</td><td><span class="lean n">n/s</span></td></tr>
+            <tr><td>Off an injury year, <i>healthy</i></td><td>85%</td><td>20</td><td>+3.1</td><td><span class="lean o">OVER</span></td></tr>
+            <tr class="grp"><td colspan="5">Vs last year's result</td></tr>
+            <tr><td>Beat by 300+ last year</td><td>42%</td><td>19</td><td>−0.7</td><td><span class="lean n">n/s</span></td></tr>
+            <tr><td>Missed / hit dead-on last year</td><td>100%</td><td>3–6</td><td>+1.7 / +2.4</td><td><span class="lean m">tiny n</span></td></tr>
+            <tr class="grp"><td colspan="5">Team context</td></tr>
+            <tr><td>QB tier / team win total</td><td colspan="3" style="text-align:left;color:var(--ink-soft)">no bucket beats the bar</td><td><span class="lean n">ignore</span></td></tr>
           </tbody>
         </table></div>
       </div>
@@ -359,29 +362,31 @@
     <div class="card">
       <h3>Interactions (stacking the situations)</h3>
       <div class="scroll"><table class="sit">
-        <thead><tr><th>Combination</th><th>over %</th><th>healthy</th><th>read</th></tr></thead>
+        <thead><tr><th>Combination</th><th>over %</th><th>n</th><th>read</th></tr></thead>
         <tbody>
-          <tr><td><b>WR</b> · weak QB <i>and</i> line cut ≥ 150</td><td>67%</td><td>75%</td><td>barely beats weak-QB alone (64%) — the two overlap, the book already cuts for a weak QB</td></tr>
-          <tr><td><b>WR</b> · elite QB <i>and</i> line cut ≥ 150</td><td>47%</td><td><b>100%</b> (9/9)</td><td>the real buy-low: the book gave up on him, the QB is still good</td></tr>
-          <tr><td><b>WR</b> · healthy <i>and</i> sub-1,000 yards line</td><td>—</td><td>~61%</td><td>the single cleanest WR "over" filter</td></tr>
-          <tr><td><b>RB</b> · healthy <i>and</i> sub-1,000 yards line</td><td>—</td><td>65–71%</td><td>the single cleanest RB "over" filter</td></tr>
-          <tr><td><b>Both</b> · injured last year <i>and</i> line bounced back up</td><td colspan="2" style="text-align:left;color:var(--ink-soft)">WR fade · RB buy</td><td>same setup, opposite bet — the injury lingers for a receiver, the workload returns for a back</td></tr>
-          <tr><td><b>Both</b> · established workhorse in the 1,000–1,200 band</td><td colspan="2" style="text-align:left;color:var(--ink-soft)">WR 48% hlt · RB 43% hlt</td><td>the "dead zone" — priced like a lock, lands just short</td></tr>
+          <tr><td><b>WR</b> · weak QB <i>and</i> line cut ≥ 150</td><td>67% (75% hlt)</td><td>9</td><td>barely beats weak-QB alone (64%) — the two overlap, the book already cuts for a weak QB</td></tr>
+          <tr><td><b>WR</b> · elite QB <i>and</i> line cut ≥ 150</td><td>47% · <b>100% hlt</b> (9/9)</td><td>19</td><td>the real buy-low: the book gave up on him, the QB is still good</td></tr>
+          <tr><td><b>WR</b> · healthy <i>and</i> sub-1,000 yards line</td><td>~61%</td><td>~72</td><td>the cleanest WR "over" filter — but only borderline on its own</td></tr>
+          <tr><td><b>RB</b> · healthy <i>and</i> sub-1,000 yards line</td><td>67% <span class="mono">z +2.9</span></td><td>70</td><td>the cleanest RB "over" filter — clears the bar</td></tr>
+          <tr><td><b>Both</b> · injured last year <i>and</i> line bounced back up</td><td style="color:var(--ink-soft)">WR fade · RB buy</td><td>—</td><td>same setup, opposite bet — the injury lingers for a receiver, the workload returns for a back</td></tr>
+          <tr><td><b>Both</b> · workhorse in the 1,000–1,200 band</td><td style="color:var(--ink-soft)">WR 48% · RB 43% hlt</td><td>25 / 14</td><td>the "dead zone" reads under both — but neither clears significance on its own</td></tr>
         </tbody>
       </table></div>
     </div>
 
     <div class="through">
-      <h3>The seven through-lines</h3>
+      <h3>What actually clears the bar</h3>
+      <p style="margin:0 0 10px;font-size:13px;color:var(--ink-soft)">Of ~40 situations, only these beat a coin flip at p&lt;.05:</p>
       <ol>
-        <li><b>Availability is the master variable</b> — decisive for RB (healthy 64% over, hurt 3%), large for WR (59% vs 7%). Forecasting who plays a full season is most of the edge.</li>
-        <li><b>The book anchors hard to last year</b> (line ≈ last year's box score, r ≈ 0.78), then leans on the preseason narrative — <b>too hard, in both directions.</b></li>
-        <li><b>WR and RB invert on the narrative:</b> a receiver coming off injury or getting a breakout re-rate is a fade; the same back is a buy.</li>
-        <li><b>There is a "dead zone" at 1,000–1,200 yards for both positions</b> — the established-workhorse price point, and both fall short of it (~43–48% even healthy).</li>
-        <li><b>The extremes of the WR reception and TD lines are the cleanest fades:</b> ≤ 55 receptions (7% over), 8+ TDs (28% over). The 56–65 reception line is the cleanest over (88% healthy).</li>
-        <li><b>Year to year, results don't carry</b> — the book fully re-prices. The only repeatable buy is a <i>moderate</i> down year (both positions bounce ~60–70%+).</li>
-        <li><b>The honest check</b> (cross-validated model): the RB patterns replicate out of sample (AUC 0.57, model gets 53% weight); the WR patterns <b>do not</b> (AUC 0.42, model gets 0% weight). Treat the WR observations as <i>how the market thinks</i>, not as edges.</li>
+        <li><b>Availability, both positions</b> — the single most decisive split. RB: hurt 3% <span class="mono">(z −5.8)</span> vs healthy 64% <span class="mono">(z +2.6)</span>. WR: hurt 7% <span class="mono">(z −5.9)</span>.</li>
+        <li><b>RB, healthy + a sub-1,000 rush-yards line → 67% over</b> <span class="mono">(n 70, z +2.9)</span>. The RB19–30-by-ADP slice of that is 80% <span class="mono">(n 15, z +2.3)</span>.</li>
+        <li><b>RB, off an injury year + healthy → 85% over</b> <span class="mono">(n 20, z +3.1)</span>. The inverse of the WR situation.</li>
+        <li><b>RB31+ by ADP (committee backs) → 9% over</b> <span class="mono">(n 11, z −2.7)</span>.</li>
+        <li><b>RB, a 5–8.5 rushing-TD line → 30% over</b> <span class="mono">(n 44, z −2.7)</span>.</li>
+        <li><b>WR, weak/unproven QB + healthy → 84% over</b> <span class="mono">(n 19, z +3.0)</span> — the only WR line-shape signal that survives; and <b>a WR line cut ≥ 150 off a full year → 69%</b> <span class="mono">(n 36, z +2.3)</span>.</li>
+        <li><b>WR, a ≤ 55-reception line → 7% over</b> <span class="mono">(n 15, z −3.4)</span>; <b>76–85-reception line → 29%</b> <span class="mono">(n 21, z −2.0)</span>; <b>team win total 7–8 → 29%</b> <span class="mono">(n 21, z −2.0)</span>.</li>
       </ol>
+      <p style="margin:12px 0 0;font-size:12.5px;color:var(--ink-soft)"><b>Everything else is directional at best.</b> The 1,000–1,200 "dead zone" (WR n 25 z −0.2, RB n 14 z −0.5), the 8+ TD fade (n 18 z −1.9), the individual yards-line buckets, the year-over-year bounce-backs, the QB-tier and win-total gradients for RB — all read the way the analysis said, none clear p&lt;.05 on their own. And per the cross-validated model, the WR structural signals don't replicate out of sample at all (AUC 0.42); the RB ones do (AUC 0.57).</p>
     </div>
 
     <div class="recs">
