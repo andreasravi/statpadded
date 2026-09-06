@@ -18,9 +18,112 @@ Two positions, same method, same directory:
 - **Visual report (both positions):** [`settle-sheet.html`](settle-sheet.html)
   — "The Preseason Prop Report", a Claude artifact:
   https://claude.ai/code/artifact/9511311e-ed4b-4feb-a98d-2188db080ff6 .
-  WR / RB toggle; every section below plus the 2026 watch for each position
-  and a "where the two positions invert" synthesis. Data bundled by
-  `scripts/bundle.py` into `data/report_bundle.json` and embedded.
+  WR / RB toggle; an "every observation in one place" cheat sheet, every
+  section below, the 2026 watch per position, and a "where the two
+  positions invert" synthesis. Data bundled by `scripts/bundle.py` into
+  `data/report_bundle.json` and embedded.
+
+## Every observation at a glance (over rates, 2022–25)
+
+Baseline: WR **44%** yards / 44% rec / 40% TD clear; RB **45%** rush yds /
+41% TD. "Healthy" = finished ≥ 14 games.
+
+**Wide receivers — what has gone over / under**
+
+| Situation | over % | healthy | lean |
+|---|--:|--:|---|
+| Finished < 14 games | 7% | — | **UNDER** (near-auto) |
+| Finished ≥ 14 games (yards) | — | 59% | over |
+| 700–850 yards line | 51% | 67% | **OVER** |
+| 850–1,000 yards line | 44% | 64% | over if healthy |
+| **1,000–1,200 yards ("dead zone")** | 36% | 48% | **UNDER** |
+| 1,200+ yards line | 48% | 67% | over if healthy |
+| **≤ 55 reception line** | 7% | 9% | **UNDER** (cleanest fade) |
+| **56–65 reception line** | 70% | 88% | **OVER** (cleanest over) |
+| 76–85 reception line | 29% | 40% | UNDER |
+| 86+ reception line | 57% | 75% | over |
+| **8+ TD line** | 28% | 36% | **UNDER** |
+| ≤ 7.5 TD line | ~41% | ~48% | coin flip |
+| Weak / unproven QB (tier 4–5) | 64% | 84% | **OVER** |
+| Elite / good QB (tier 1–2) | 39% | 54% | lean under |
+| Team win total 7–8 | 29% | 43% | **UNDER** |
+| Tank team (< 7 wins) | 56% | 79% | over |
+| Line set ≥ 150 **over** last year | 37% | 46% | **UNDER** |
+| Line **cut** ≥ 150 below last year | 51% | 69% | **OVER** |
+| Coming off an injury year (< 14 g) | 36% | 47% | **UNDER** |
+| Beat by 300+ last year | 31% | 38% | UNDER (regression) |
+| Missed by 150–300 last year | 60% | 62% | OVER (bounce-back) |
+| Hit dead-on (± 50) last year | 25% | 38% | UNDER |
+
+**Running backs — what has gone over / under**
+
+| Situation | over % | healthy | lean |
+|---|--:|--:|---|
+| **Finished < 14 games** | 3% | — | **UNDER** (auto) |
+| **Finished ≥ 14 games** | — | 64% | **OVER** |
+| < 600 rush-yards line | 41% | 58% | over if healthy |
+| 600–800 rush-yards line | 47% | 65% | over if healthy |
+| 800–1,000 rush-yards line | 49% | 71% | **OVER** if healthy |
+| **1,000–1,200 rush yards ("dead zone")** | 33% | 43% | **UNDER** |
+| 5–8.5 TD line | ~30% | ~46% | **UNDER** |
+| 9–10.5 TD line | 69% | 79% | OVER |
+| RB1–18 by ADP | 54% | 62–71% | over if healthy |
+| **RB19–30 by ADP** | 52% | 80% | **OVER** if healthy |
+| **RB31+ by ADP (committee)** | 9% | 14% | **UNDER** |
+| Line set ≥ 150 over last year | 57% | 100% | **OVER** |
+| Line cut ≥ 150 below last year | 41% | 59% | coin |
+| **Coming off an injury year (< 14 g)** | 64% | 85% | **OVER** |
+| Missed badly (≤ −300) last year | 71% | 100% | OVER (bounce-back) |
+| Beat by 300–500 last year | 38% | 62% | lean under |
+| QB tier / win total | — | — | ignore (barely moves it) |
+
+**Interactions**
+
+| Combination | over % | healthy | read |
+|---|--:|--:|---|
+| WR · weak QB **and** line cut ≥ 150 | 67% | 75% | barely beats weak-QB alone (64%) — the signals overlap |
+| WR · elite QB **and** line cut ≥ 150 | 47% | **100%** (9/9) | the real buy-low — book gave up, QB still good |
+| WR · healthy **and** sub-1,000 yards line | — | ~61% | cleanest single WR over filter |
+| RB · healthy **and** sub-1,000 yards line | — | 65–71% | cleanest single RB over filter |
+| Both · injured last year **and** line bounced up | — | — | WR fade / RB buy — same setup, opposite bet |
+| Both · workhorse in the 1,000–1,200 band | 48% / 43% hlt | | the dead zone — priced like a lock, lands short |
+
+### The through-lines
+
+1. **Availability is the master variable** — decisive for RB (healthy 64%
+   over, hurt 3%), large for WR (59% vs 7%).
+2. **The book anchors to last year** (line ≈ last year's box score, r ≈
+   0.78), then leans on the preseason narrative — too hard, both ways.
+3. **WR and RB invert on the narrative:** injury bounce-back and breakout
+   re-rate are WR fades and RB buys.
+4. **A "dead zone" at 1,000–1,200 yards for both** — the established-
+   workhorse price, and both fall short of it.
+5. **The extremes of the WR reception / TD line are the cleanest fades:**
+   ≤ 55 rec (7% over), 8+ TD (28%); the 56–65 rec line is the cleanest over.
+6. **Results don't carry year to year** — the only repeatable buy is a
+   *moderate* down year.
+7. **Honest check** (`model.py`, leave-one-season-out): the RB patterns
+   replicate out of sample (AUC 0.57, 53% model weight); the **WR patterns
+   do not** (AUC 0.42, 0% weight). Treat the WR observations as *how the
+   market thinks*, not as edges.
+
+### The 2026 recommendations
+
+- **RB unders — highest confidence** (vs a live FanDuel line): Jaylen
+  Warren (626), J.K. Dobbins (700); James Cook (1,176), Bijan Robinson
+  (1,150), Saquon Barkley (1,050) — dead-zone workhorses off a career 2025.
+- **RB unders — directional** (vs the FDS projection, no book line):
+  the RB31+ committee tier — Woody Marks, Tyrone Tracy, Croskey-Merritt,
+  Jordan Mason, Blake Corum, Rachaad White, Rhamondre Stevenson, Aaron
+  Jones, RJ Harvey.
+- **RB overs — weaker signal:** Chris Rodriguez (728), Bhayshul Tuten
+  (734), Bucky Irving (804), Omarion Hampton (926), David Montgomery (800).
+- **WR — pattern watch only, no validated edge.** Patterns say fade Rice /
+  Evans / McLaurin / Nabers / Ridley / Godwin (injury bounce-backs the
+  line jumped on) and Lamb / DeVonta Smith / A.J. Brown (elite-QB dead
+  zone); patterns say back Wilson / Jeudy / Wan'Dale Robinson (weak QB)
+  and Zay Flowers / Jameson Williams (line cut hard). The model gives
+  these zero weight.
 
 ## The 2026 call (`picks_2026.py`)
 

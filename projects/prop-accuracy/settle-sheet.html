@@ -193,6 +193,39 @@
   .inv .vs b{font-family:"IBM Plex Mono",monospace}
   .inv p{margin:10px 0 0;font-size:12.5px;color:var(--ink-soft)}
 
+  /* cheat sheet */
+  .cheat{margin-top:30px}
+  .cheat>h2{font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(24px,4.5vw,36px);margin:0 0 4px}
+  .cheat>.lead{color:var(--ink-soft);max-width:66ch;margin:0 0 4px;font-size:14px}
+  .cheat .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+  @media(max-width:820px){.cheat .cols{grid-template-columns:1fr}}
+  table.sit{border-collapse:collapse;width:100%;font-size:12.5px}
+  table.sit th{text-align:right;padding:7px 8px;font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);font-weight:800;border-bottom:1px solid var(--line-strong);white-space:nowrap}
+  table.sit th:first-child{text-align:left}
+  table.sit td{padding:6px 8px;border-bottom:1px solid var(--line);font-family:"IBM Plex Mono",monospace;text-align:right;white-space:nowrap}
+  table.sit td:first-child{text-align:left;font-family:"Public Sans",sans-serif;white-space:normal}
+  table.sit tr.grp td{background:var(--panel-2);font-family:"Public Sans",sans-serif;font-weight:800;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);text-align:left;border-bottom:1px solid var(--line-strong)}
+  .lean{font-family:"Public Sans",sans-serif;font-weight:800;font-size:10px;letter-spacing:.03em;text-transform:uppercase;padding:1px 6px;border-radius:4px}
+  .lean.o{background:var(--over-bg);color:var(--over)}
+  .lean.u{background:var(--under-bg);color:var(--under)}
+  .lean.n{background:var(--panel-2);color:var(--ink-soft)}
+  .cheat .through{margin-top:16px;padding:16px 18px;border-radius:10px;background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow)}
+  .cheat .through h3{font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:20px;margin:0 0 8px}
+  .cheat .through ol{margin:0;padding-left:20px;font-size:13.5px}
+  .cheat .through li{margin:6px 0}
+  .cheat .through b{color:var(--ink)}
+  .recs{margin-top:16px}
+  .recs h3{font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:20px;margin:0 0 8px}
+  .recs .rgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:820px){.recs .rgrid{grid-template-columns:1fr}}
+  .recs .rc{border:1px solid var(--line);border-radius:10px;padding:13px 15px;background:var(--panel-2)}
+  .recs .rc.o{border-left:3px solid var(--over)}
+  .recs .rc.u{border-left:3px solid var(--under)}
+  .recs .rc.watch{border-left:3px solid var(--gold)}
+  .recs .rc h4{margin:0 0 6px;font-size:12px;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-soft);font-weight:800}
+  .recs .rc p{margin:0;font-size:13px;color:var(--ink)}
+  .recs .rc .cf{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-soft);display:block;margin-top:5px}
+
   .seasons{margin-top:40px}
   .yrblock{margin-top:24px}
   .yrblock h3{font-family:"Anton",Impact,sans-serif;font-weight:400;font-size:26px;margin:0 0 8px;text-transform:uppercase}
@@ -243,6 +276,142 @@
     <button class="pt" data-pos="rb" aria-pressed="false">Running backs</button>
     <span class="cnt" id="posCnt"></span>
   </div>
+
+  <section class="cheat">
+    <h2>Every observation, in one place</h2>
+    <p class="lead">Simple over rates by situation, 2022–25. "Healthy" = the player finished with ≥ 14 games.
+      Baseline over rates: WR <b>44%</b> yards / 44% receptions / 40% TDs; RB <b>45%</b> rushing yards / 41% TDs —
+      the lines skew a little rich.</p>
+    <div class="cols">
+      <div class="card" style="margin-top:0">
+        <h3>Wide receivers</h3>
+        <div class="scroll"><table class="sit">
+          <thead><tr><th>Situation</th><th>over %</th><th>healthy</th><th>lean</th></tr></thead>
+          <tbody>
+            <tr class="grp"><td colspan="4">Availability (yards)</td></tr>
+            <tr><td>Finished &lt; 14 games</td><td>7%</td><td>—</td><td><span class="lean u">under</span></td></tr>
+            <tr><td>Finished ≥ 14 games</td><td>—</td><td>59%</td><td><span class="lean o">over</span></td></tr>
+            <tr class="grp"><td colspan="4">Yards line size</td></tr>
+            <tr><td>700–850 line</td><td>51%</td><td>67%</td><td><span class="lean o">over</span></td></tr>
+            <tr><td>850–1,000 line</td><td>44%</td><td>64%</td><td><span class="lean o">over · hlt</span></td></tr>
+            <tr><td>1,000–1,200 — "dead zone"</td><td>36%</td><td>48%</td><td><span class="lean u">under</span></td></tr>
+            <tr><td>1,200+ line</td><td>48%</td><td>67%</td><td><span class="lean o">over · hlt</span></td></tr>
+            <tr class="grp"><td colspan="4">Reception line</td></tr>
+            <tr><td>≤ 55 rec line</td><td>7%</td><td>9%</td><td><span class="lean u">under ✕✕</span></td></tr>
+            <tr><td>56–65 rec line</td><td>70%</td><td>88%</td><td><span class="lean o">over ✓✓</span></td></tr>
+            <tr><td>66–75 rec line</td><td>44%</td><td>59%</td><td><span class="lean n">lean over hlt</span></td></tr>
+            <tr><td>76–85 rec line</td><td>29%</td><td>40%</td><td><span class="lean u">under</span></td></tr>
+            <tr><td>86+ rec line</td><td>57%</td><td>75%</td><td><span class="lean o">over</span></td></tr>
+            <tr class="grp"><td colspan="4">TD line</td></tr>
+            <tr><td>≤ 7.5 TD line</td><td>~41%</td><td>~48%</td><td><span class="lean n">coin flip</span></td></tr>
+            <tr><td>8+ TD line</td><td>28%</td><td>36%</td><td><span class="lean u">under ✕✕</span></td></tr>
+            <tr class="grp"><td colspan="4">QB &amp; team (yards)</td></tr>
+            <tr><td>Weak / unproven QB (tier 4–5)</td><td>64%</td><td>84%</td><td><span class="lean o">over ✓</span></td></tr>
+            <tr><td>Elite / good QB (tier 1–2)</td><td>39%</td><td>54%</td><td><span class="lean u">lean under</span></td></tr>
+            <tr><td>Team win total 7–8</td><td>29%</td><td>43%</td><td><span class="lean u">under</span></td></tr>
+            <tr><td>Tank team (&lt; 7 wins)</td><td>56%</td><td>79%</td><td><span class="lean o">over</span></td></tr>
+            <tr class="grp"><td colspan="4">Prior year (yards)</td></tr>
+            <tr><td>Line set ≥ 150 <b>over</b> last year</td><td>37%</td><td>46%</td><td><span class="lean u">under</span></td></tr>
+            <tr><td>Line <b>cut</b> ≥ 150 below last year</td><td>51%</td><td>69%</td><td><span class="lean o">over</span></td></tr>
+            <tr><td>Coming off an injury year (&lt; 14 g)</td><td>36%</td><td>47%</td><td><span class="lean u">under</span></td></tr>
+            <tr class="grp"><td colspan="4">Vs last year's result</td></tr>
+            <tr><td>Beat by 300+ last year</td><td>31%</td><td>38%</td><td><span class="lean u">under (regress)</span></td></tr>
+            <tr><td>Missed by 150–300 last year</td><td>60%</td><td>62%</td><td><span class="lean o">over (bounce)</span></td></tr>
+            <tr><td>Hit dead-on (± 50) last year</td><td>25%</td><td>38%</td><td><span class="lean u">under</span></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="card" style="margin-top:0">
+        <h3>Running backs</h3>
+        <div class="scroll"><table class="sit">
+          <thead><tr><th>Situation</th><th>over %</th><th>healthy</th><th>lean</th></tr></thead>
+          <tbody>
+            <tr class="grp"><td colspan="4">Availability (the master variable)</td></tr>
+            <tr><td>Finished &lt; 14 games</td><td>3%</td><td>—</td><td><span class="lean u">under ✕✕</span></td></tr>
+            <tr><td>Finished ≥ 14 games</td><td>—</td><td>64%</td><td><span class="lean o">over ✓</span></td></tr>
+            <tr class="grp"><td colspan="4">Rushing-yards line size</td></tr>
+            <tr><td>&lt; 600 line</td><td>41%</td><td>58%</td><td><span class="lean o">over · hlt</span></td></tr>
+            <tr><td>600–800 line</td><td>47%</td><td>65%</td><td><span class="lean o">over · hlt</span></td></tr>
+            <tr><td>800–1,000 line</td><td>49%</td><td>71%</td><td><span class="lean o">over ✓ hlt</span></td></tr>
+            <tr><td>1,000–1,200 — "dead zone"</td><td>33%</td><td>43%</td><td><span class="lean u">under</span></td></tr>
+            <tr><td>1,200+ line <span style="color:var(--ink-soft)">(n=6)</span></td><td>50%</td><td>75%</td><td><span class="lean o">over · hlt</span></td></tr>
+            <tr class="grp"><td colspan="4">Rushing-TD line</td></tr>
+            <tr><td>5–8.5 TD line</td><td>~30%</td><td>~46%</td><td><span class="lean u">under</span></td></tr>
+            <tr><td>9–10.5 TD line</td><td>69%</td><td>79%</td><td><span class="lean o">over</span></td></tr>
+            <tr class="grp"><td colspan="4">Draft cost (Underdog ADP)</td></tr>
+            <tr><td>RB1–18 by ADP</td><td>54%</td><td>62–71%</td><td><span class="lean o">over · hlt</span></td></tr>
+            <tr><td>RB19–30 by ADP</td><td>52%</td><td>80%</td><td><span class="lean o">over ✓✓ hlt</span></td></tr>
+            <tr><td>RB31+ by ADP (committee)</td><td>9%</td><td>14%</td><td><span class="lean u">under ✕✕</span></td></tr>
+            <tr class="grp"><td colspan="4">Prior year (yards)</td></tr>
+            <tr><td>Line set ≥ 150 <b>over</b> last year</td><td>57%</td><td>100%</td><td><span class="lean o">over ✓</span></td></tr>
+            <tr><td>Line <b>cut</b> ≥ 150 below last year</td><td>41%</td><td>59%</td><td><span class="lean n">coin</span></td></tr>
+            <tr><td>Coming off an injury year (&lt; 14 g)</td><td>64%</td><td>85%</td><td><span class="lean o">over ✓✓</span></td></tr>
+            <tr class="grp"><td colspan="4">Vs last year's result</td></tr>
+            <tr><td>Missed badly (≤ −300) last year</td><td>71%</td><td>100%</td><td><span class="lean o">over (bounce)</span></td></tr>
+            <tr><td>Beat by 300–500 last year</td><td>38%</td><td>62%</td><td><span class="lean u">lean under</span></td></tr>
+            <tr class="grp"><td colspan="4">Team context</td></tr>
+            <tr><td>QB tier / team win total</td><td colspan="2" style="text-align:left;color:var(--ink-soft)">barely moves it</td><td><span class="lean n">ignore</span></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Interactions (stacking the situations)</h3>
+      <div class="scroll"><table class="sit">
+        <thead><tr><th>Combination</th><th>over %</th><th>healthy</th><th>read</th></tr></thead>
+        <tbody>
+          <tr><td><b>WR</b> · weak QB <i>and</i> line cut ≥ 150</td><td>67%</td><td>75%</td><td>barely beats weak-QB alone (64%) — the two overlap, the book already cuts for a weak QB</td></tr>
+          <tr><td><b>WR</b> · elite QB <i>and</i> line cut ≥ 150</td><td>47%</td><td><b>100%</b> (9/9)</td><td>the real buy-low: the book gave up on him, the QB is still good</td></tr>
+          <tr><td><b>WR</b> · healthy <i>and</i> sub-1,000 yards line</td><td>—</td><td>~61%</td><td>the single cleanest WR "over" filter</td></tr>
+          <tr><td><b>RB</b> · healthy <i>and</i> sub-1,000 yards line</td><td>—</td><td>65–71%</td><td>the single cleanest RB "over" filter</td></tr>
+          <tr><td><b>Both</b> · injured last year <i>and</i> line bounced back up</td><td colspan="2" style="text-align:left;color:var(--ink-soft)">WR fade · RB buy</td><td>same setup, opposite bet — the injury lingers for a receiver, the workload returns for a back</td></tr>
+          <tr><td><b>Both</b> · established workhorse in the 1,000–1,200 band</td><td colspan="2" style="text-align:left;color:var(--ink-soft)">WR 48% hlt · RB 43% hlt</td><td>the "dead zone" — priced like a lock, lands just short</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="through">
+      <h3>The seven through-lines</h3>
+      <ol>
+        <li><b>Availability is the master variable</b> — decisive for RB (healthy 64% over, hurt 3%), large for WR (59% vs 7%). Forecasting who plays a full season is most of the edge.</li>
+        <li><b>The book anchors hard to last year</b> (line ≈ last year's box score, r ≈ 0.78), then leans on the preseason narrative — <b>too hard, in both directions.</b></li>
+        <li><b>WR and RB invert on the narrative:</b> a receiver coming off injury or getting a breakout re-rate is a fade; the same back is a buy.</li>
+        <li><b>There is a "dead zone" at 1,000–1,200 yards for both positions</b> — the established-workhorse price point, and both fall short of it (~43–48% even healthy).</li>
+        <li><b>The extremes of the WR reception and TD lines are the cleanest fades:</b> ≤ 55 receptions (7% over), 8+ TDs (28% over). The 56–65 reception line is the cleanest over (88% healthy).</li>
+        <li><b>Year to year, results don't carry</b> — the book fully re-prices. The only repeatable buy is a <i>moderate</i> down year (both positions bounce ~60–70%+).</li>
+        <li><b>The honest check</b> (cross-validated model): the RB patterns replicate out of sample (AUC 0.57, model gets 53% weight); the WR patterns <b>do not</b> (AUC 0.42, model gets 0% weight). Treat the WR observations as <i>how the market thinks</i>, not as edges.</li>
+      </ol>
+    </div>
+
+    <div class="recs">
+      <h3>The 2026 recommendations</h3>
+      <div class="rgrid">
+        <div class="rc u">
+          <h4>RB unders — highest confidence (vs a live FanDuel line)</h4>
+          <p>Jaylen Warren (626), J.K. Dobbins (700) — deep in the backfield.<br>
+             James Cook (1,176), Bijan Robinson (1,150), Saquon Barkley (1,050) — dead-zone workhorses whose line was cut off a career 2025.</p>
+          <span class="cf">model P(over) ≈ 0.28–0.41 · ¼-Kelly ~3–10%</span>
+        </div>
+        <div class="rc u">
+          <h4>RB unders — directional (vs the FDS projection, no book line yet)</h4>
+          <p>The RB31+ committee tier: Woody Marks, Tyrone Tracy, Jacory Croskey-Merritt, Jordan Mason, Blake Corum, Rachaad White, Rhamondre Stevenson, Aaron Jones, RJ Harvey.</p>
+          <span class="cf">history: RB31+ cleared 1 of 11 · treat as lean, not bet</span>
+        </div>
+        <div class="rc o">
+          <h4>RB overs — weaker signal</h4>
+          <p>Chris Rodriguez (728), Bhayshul Tuten (734), Bucky Irving (804), Omarion Hampton (926), David Montgomery (800) — bounce-back or mid-round backs with a catchable line.</p>
+          <span class="cf">model P(over) ≈ 0.56–0.66 · small edge</span>
+        </div>
+        <div class="rc watch">
+          <h4>WR — pattern watch only (no validated edge)</h4>
+          <p><b>Patterns say fade:</b> Rashee Rice, Mike Evans, Terry McLaurin, Malik Nabers, Calvin Ridley, Chris Godwin (injury bounce-backs the line jumped on); CeeDee Lamb, DeVonta Smith, A.J. Brown (elite-QB, dead zone).<br>
+             <b>Patterns say back:</b> Michael Wilson, Jerry Jeudy, Wan'Dale Robinson (weak QB); Zay Flowers, Jameson Williams (line cut hard).</p>
+          <span class="cf">the model gives these zero weight — the market's WR lines are fair</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div id="board"></div>
 
