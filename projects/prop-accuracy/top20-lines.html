@@ -1,0 +1,214 @@
+<title>Top-20 Prop Lines by Year</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Public+Sans:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#eef1f3; --panel:#ffffff; --panel-2:#f5f7f8;
+    --ink:#161d24; --ink-soft:#4a5966; --ink-mute:#8794a0;
+    --line:#d6dde2; --line-strong:#b7c2c9;
+    --base:#5b6b78;          /* 2024 + 2025 boxes */
+    --now:#b7801f;           /* 2026 box */
+    --now-bg:#f6ecd8;
+    --shadow:0 1px 2px rgba(20,30,40,.06),0 8px 30px rgba(20,30,40,.06);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#0e1319; --panel:#161d26; --panel-2:#1b232d;
+      --ink:#e8edf1; --ink-soft:#9aa8b4; --ink-mute:#6b7887;
+      --line:#28323d; --line-strong:#3a4855;
+      --base:#8b9aa7; --now:#e6ac4f; --now-bg:#2c2312;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 40px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0e1319; --panel:#161d26; --panel-2:#1b232d;
+    --ink:#e8edf1; --ink-soft:#9aa8b4; --ink-mute:#6b7887;
+    --line:#28323d; --line-strong:#3a4855;
+    --base:#8b9aa7; --now:#e6ac4f; --now-bg:#2c2312;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 40px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55;
+    font-feature-settings:"tnum"}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(20px,4vw,44px) clamp(14px,3.5vw,36px) 72px}
+  .eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--now);font-weight:800;margin:0 0 12px}
+  h1{font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em;
+    line-height:1;font-size:clamp(30px,6vw,54px);margin:0 0 14px;text-wrap:balance}
+  .stand{max-width:64ch;font-size:clamp(14px,1.8vw,17px);color:var(--ink-soft);margin:0 0 4px}
+  .stand b{color:var(--ink);font-weight:600}
+  .meta{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-soft)}
+
+  .seg{display:inline-flex;border:1px solid var(--line-strong);border-radius:8px;overflow:hidden;margin:26px 0 6px}
+  .seg button{font:inherit;font-size:12px;font-weight:700;padding:6px 13px;background:var(--panel-2);color:var(--ink-soft);border:0;border-left:1px solid var(--line);cursor:pointer}
+  .seg button:first-child{border-left:0}
+  .seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);
+    padding:18px clamp(12px,2.5vw,20px) 12px;margin-top:14px}
+  .panels{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:720px){.panels{grid-template-columns:1fr}}
+  .panel h3{font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:17px;margin:0 0 2px}
+  .panel .sub{font-size:11.5px;color:var(--ink-soft);margin:0 0 6px}
+  svg{display:block;width:100%;height:auto;overflow:visible}
+  .gridline{stroke:var(--line);stroke-width:1}
+  .axlab{fill:var(--ink-soft);font-family:"IBM Plex Mono",monospace;font-size:10px}
+  .boxfill{opacity:.14}
+  .boxstroke{fill:none;stroke-width:1.5}
+  .medline{stroke-width:2.5;stroke-linecap:round}
+  .whisk{stroke-width:1.5}
+  .pt{stroke:var(--panel);stroke-width:.75}
+  .yr{fill:var(--ink);font-family:"Public Sans";font-weight:800;font-size:11px}
+  .medtxt{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600}
+
+  .legend{display:flex;gap:16px;flex-wrap:wrap;margin:14px 2px 2px;font-size:12px;color:var(--ink-soft)}
+  .legend i{display:inline-block;width:22px;height:11px;border-radius:3px;vertical-align:-1px;margin-right:6px;border:1.5px solid}
+  .lb i{border-color:var(--base);background:color-mix(in srgb,var(--base) 16%,transparent)}
+  .ln i{border-color:var(--now);background:var(--now-bg)}
+
+  .tip{position:fixed;pointer-events:none;z-index:9;opacity:0;transition:opacity .1s;background:var(--ink);color:var(--panel);
+    border-radius:7px;padding:6px 9px;font-size:11.5px;font-family:"IBM Plex Mono",monospace;line-height:1.4;white-space:nowrap;
+    box-shadow:0 6px 24px rgba(0,0,0,.28)}
+  .tip.on{opacity:1}
+
+  table{border-collapse:collapse;width:100%;font-size:12.5px;margin-top:4px}
+  th{text-align:right;padding:7px 9px;font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);
+    font-weight:800;border-bottom:1px solid var(--line-strong)}
+  th:first-child{text-align:left}
+  td{text-align:right;padding:7px 9px;border-bottom:1px solid var(--line);font-family:"IBM Plex Mono",monospace}
+  td:first-child{text-align:left;font-family:"Public Sans"}
+  tr.now td{background:var(--now-bg)}
+  .note{margin-top:16px;font-size:12.5px;color:var(--ink-soft);max-width:70ch}
+  .note code{font-family:"IBM Plex Mono",monospace;background:var(--panel-2);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:11.5px}
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">Prop-accuracy &nbsp;·&nbsp; line drift check</p>
+  <h1>Top-20 prop lines:<br>2026 vs the last two years</h1>
+  <p class="stand">Every August the claim comes up that Vegas has quietly lowered season-long
+    yardage lines to correct the historical over-bias. This is the distribution of the
+    <b>20 highest lines</b> at each position, 2024 → 2025 → 2026. <b>They haven't moved.</b>
+    Median receiving-yards line: 1,050 → 1,063 → 1,050. Median rushing-yards line: 900 → 938 → 935.</p>
+
+  <div class="seg" id="viewSeg" role="group" aria-label="View">
+    <button data-v="chart" aria-pressed="true">Chart</button>
+    <button data-v="table" aria-pressed="false">Table</button>
+  </div>
+
+  <div class="card" id="chartCard">
+    <div class="panels">
+      <div class="panel"><h3>Receiving yards</h3><p class="sub">top 20 by line · Fantasy Alarm grid</p><div id="wrPlot"></div></div>
+      <div class="panel"><h3>Rushing yards</h3><p class="sub">top 20 by line · FantasyPoints '24–'25, First Down Studio '26</p><div id="rbPlot"></div></div>
+    </div>
+    <div class="legend">
+      <span class="lb"><i></i>2024 · 2025 — the last two years</span>
+      <span class="ln"><i></i>2026 — this year</span>
+      <span style="color:var(--ink-mute)">· each dot is one player · box = middle 50% · line = median · whiskers = full range</span>
+    </div>
+  </div>
+
+  <div class="card" id="tableCard" hidden><div style="overflow-x:auto" id="tableWrap"></div></div>
+
+  <p class="note">The 2026 lines shown are the Fantasy Alarm grid (WR) and First Down Studio's
+    Vegas-prop projection (RB), for a like-for-like comparison with the historical sources.
+    <b>FanDuel's live 2026 board is in the same place</b> — top-20 receiving-yards median 1,013,
+    rushing-yards median 950. If anything the 2026 lines sit slightly <i>closer to</i> last year's
+    production than 2022–24 did (a <code>~0</code> discount vs <code>−90 to −124</code>), i.e. the
+    book got a touch <i>less</i> conservative, not more.</p>
+  <div class="meta">Source: <code>nfl/sources/wr_prop_totals</code>, <code>rb_prop_totals</code>,
+    <code>fanduel_season_props</code>. Chart: <code>projects/prop-accuracy/top20-lines.html</code>.</div>
+</div>
+
+<div class="tip" id="tip"></div>
+
+<script>
+const D = {"wr":{"2024":[["Tyreek Hill",1376],["CeeDee Lamb",1300],["Justin Jefferson",1276],["A.J. Brown",1276],["Ja'Marr Chase",1250],["Amon-Ra St. Brown",1250],["Puka Nacua",1150],["Garrett Wilson",1126],["Chris Olave",1076],["Nico Collins",1050],["Mike Evans",1050],["Marvin Harrison",1026],["DeVonta Smith",1026],["Davante Adams",1000],["Drake London",1000],["Jaylen Waddle",1000],["DK Metcalf",1000],["Cooper Kupp",950],["Michael Pittman Jr",950],["DJ Moore",950]],"2025":[["Ja'Marr Chase",1326],["Justin Jefferson",1250],["CeeDee Lamb",1200],["Puka Nacua",1200],["Malik Nabers",1150],["Brian Thomas Jr",1150],["Nico Collins",1126],["Drake London",1126],["Amon-Ra St. Brown",1100],["AJ Brown",1100],["Ladd McConkey",1026],["Tee Higgins",976],["Tyreek Hill",976],["Jaxon Smith-Njigba",976],["Marvin Harrison",976],["DJ Moore",976],["Davante Adams",950],["Mike Evans",950],["DK Metcalf",950],["Garrett Wilson",926]],"2026":[["Puka Nacua",1350],["Ja'Marr Chase",1324],["Jaxon Smith-Njigba",1324],["Amon-Ra St. Brown",1250],["CeeDee Lamb",1176],["Justin Jefferson",1150],["AJ Brown",1124],["Drake London",1100],["Nico Collins",1074],["Rashee Rice",1050],["DeVonta Smith",1050],["Chris Olave",1024],["George Pickens",1000],["Garrett Wilson",1000],["Zay Flowers",1000],["Tetairoa McMillan",950],["Emeka Egbuka",924],["Terry McLaurin",924],["Jaylen Waddle",920],["Ladd McConkey",900]]},"rb":{"2024":[["Christian McCaffrey",1138],["Jonathan Taylor",1038],["Saquon Barkley",1026],["Breece Hall",1026],["Derrick Henry",963],["Kyren Williams",950],["Bijan Robinson",950],["Josh Jacobs",938],["Travis Etienne",913],["Isaiah Pacheco",900],["Kenneth Walker",900],["James Cook",876],["Jahmyr Gibbs",863],["Joe Mixon",850],["Rachaad White",826],["Najee Harris",800],["Jonathon Brooks",800],["Zack Moss",788],["Zamir White",776],["David Montgomery",776]],"2025":[["Saquon Barkley",1463],["Derrick Henry",1313],["Jonathan Taylor",1226],["Bijan Robinson",1176],["Josh Jacobs",1038],["Ashton Jeanty",1038],["Jahmyr Gibbs",1026],["Bucky Irving",1013],["Kyren Williams",988],["Christian McCaffrey",950],["James Cook",926],["Chuba Hubbard",926],["Joe Mixon",916],["Breece Hall",913],["Kenneth Walker",863],["James Conner",850],["Tony Pollard",850],["D'Andre Swift",850],["Chase Brown",838],["Aaron Jones",813]],"2026":[["Jonathan Taylor",1234],["Derrick Henry",1229],["James Cook",1209],["Jahmyr Gibbs",1199],["Bijan Robinson",1154],["Saquon Barkley",1079],["Ashton Jeanty",1048],["De'Von Achane",979],["Kyren Williams",944],["Kenneth Walker",939],["Javonte Williams",931],["Omarion Hampton",929],["C. McCaffrey",924],["Josh Jacobs",918],["Breece Hall",900],["Quinshon Judkins",862],["Chase Brown",844],["Travis Etienne",839],["David Montgomery",814],["Bucky Irving",804]]},"wr_fd_2026":[["Ja'Marr Chase",1326],["Jaxon Smith-Njigba",1326],["Puka Nacua",1326],["Amon-Ra St. Brown",1226],["CeeDee Lamb",1200],["Justin Jefferson",1150],["Nico Collins",1150],["A.J. Brown",1126],["Drake London",1100],["George Pickens",1050],["Garrett Wilson",976],["Zay Flowers",976],["Tetairoa McMillan",950],["Trey McBride",950],["Brock Bowers",926],["Jaylen Waddle",926],["Malik Nabers",926],["Emeka Egbuka",900],["Jameson Williams",900],["Ladd McConkey",900]],"rb_fd_2026":[["Derrick Henry",1226],["Jonathan Taylor",1226],["Jahmyr Gibbs",1200],["James Cook",1176],["Bijan Robinson",1150],["Saquon Barkley",1050],["Ashton Jeanty",976],["De'Von Achane",976],["Javonte Williams",950],["Kenneth Walker",950],["Omarion Hampton",950],["Kyren Williams",926],["Breece Hall",900],["Christian McCaffrey",900],["Travis Etienne",876],["Chase Brown",850],["Quinshon Judkins",850],["D'Andre Swift",800],["David Montgomery",800],["Jeremiyah Love",776]]};
+const tip = document.getElementById('tip');
+function showTip(e,html){ tip.innerHTML=html; tip.style.left=(e.clientX+12)+'px'; tip.style.top=(e.clientY+12)+'px'; tip.classList.add('on'); }
+function hideTip(){ tip.classList.remove('on'); }
+
+function quart(a){
+  const s=[...a].sort((x,y)=>x-y), n=s.length;
+  const qq=p=>{const i=(n-1)*p,lo=Math.floor(i);return s[lo]+(s[Math.min(lo+1,n-1)]-s[lo])*(i-lo);};
+  return {min:s[0],q1:qq(.25),med:qq(.5),q3:qq(.75),max:s[n-1]};
+}
+
+// per-panel y domain rounded to 100s -- best vertical resolution for the year-vs-year question
+const DOM = {};
+['wr','rb'].forEach(p=>{
+  const all=['2024','2025','2026'].flatMap(y=>D[p][y].map(d=>d[1]));
+  DOM[p]=[Math.floor(Math.min(...all)/100)*100-20, Math.ceil(Math.max(...all)/100)*100+20];
+});
+
+function drawPanel(id, pos){
+  const W=430, H=340, mL=44, mR=14, mT=10, mB=30;
+  const iw=W-mL-mR, ih=H-mT-mB;
+  const [YMIN,YMAX]=DOM[pos];
+  const yrs=['2024','2025','2026'];
+  const x = i => mL + iw*(i+0.5)/3;
+  const y = v => mT + ih - (v-YMIN)/(YMAX-YMIN)*ih;
+  const bw = Math.min(60, iw/3*0.5);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Distribution of top-20 ${pos==='wr'?'receiving':'rushing'}-yards lines, 2024 to 2026">`;
+  for(let v=Math.ceil(YMIN/100)*100; v<=YMAX; v+=100){
+    s+=`<line class="gridline" x1="${mL}" x2="${W-mR}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}"/>`;
+    s+=`<text class="axlab" x="${mL-8}" y="${(y(v)+3.5).toFixed(1)}" text-anchor="end">${v}</text>`;
+  }
+  yrs.forEach((yr,i)=>{
+    const vals=D[pos][yr].map(d=>d[1]);
+    const st=quart(vals);
+    const cx=x(i), col=yr==='2026'?'var(--now)':'var(--base)';
+    // whisker
+    s+=`<line class="whisk" x1="${cx}" x2="${cx}" y1="${y(st.max).toFixed(1)}" y2="${y(st.min).toFixed(1)}" stroke="${col}"/>`;
+    s+=`<line class="whisk" x1="${cx-6}" x2="${cx+6}" y1="${y(st.max).toFixed(1)}" y2="${y(st.max).toFixed(1)}" stroke="${col}"/>`;
+    s+=`<line class="whisk" x1="${cx-6}" x2="${cx+6}" y1="${y(st.min).toFixed(1)}" y2="${y(st.min).toFixed(1)}" stroke="${col}"/>`;
+    // box
+    const yb=y(st.q3), hb=y(st.q1)-y(st.q3);
+    s+=`<rect class="boxfill" x="${cx-bw/2}" y="${yb.toFixed(1)}" width="${bw}" height="${hb.toFixed(1)}" rx="3" fill="${col}"/>`;
+    s+=`<rect class="boxstroke" x="${cx-bw/2}" y="${yb.toFixed(1)}" width="${bw}" height="${hb.toFixed(1)}" rx="3" stroke="${col}"/>`;
+    s+=`<line class="medline" x1="${cx-bw/2}" x2="${cx+bw/2}" y1="${y(st.med).toFixed(1)}" y2="${y(st.med).toFixed(1)}" stroke="${col}"/>`;
+    s+=`<text class="medtxt" x="${cx+bw/2+5}" y="${(y(st.med)+3.5).toFixed(1)}" fill="${col}">${Math.round(st.med)}</text>`;
+    // strip -- deterministic bounded jitter, split into two sub-columns
+    const sorted=[...D[pos][yr]].sort((a,b)=>a[1]-b[1]);
+    sorted.forEach((d,k)=>{
+      const half = k%2?1:-1;
+      const jx = cx + half*(3 + (Math.floor(k/2)%4)*4);
+      s+=`<circle class="pt" cx="${jx.toFixed(1)}" cy="${y(d[1]).toFixed(1)}" r="3" fill="${col}" fill-opacity="0.5" data-p="${d[0].replace(/"/g,'')}" data-v="${d[1]}" data-y="${yr}"/>`;
+    });
+    s+=`<text class="yr" x="${cx}" y="${H-10}" text-anchor="middle">${yr}</text>`;
+  });
+  s+=`</svg>`;
+  const host=document.getElementById(id); host.innerHTML=s;
+  host.querySelectorAll('.pt').forEach(c=>{
+    c.addEventListener('mousemove',e=>showTip(e,`<b>${c.dataset.p}</b> — ${c.dataset.y}<br>${c.dataset.v} ${pos==='wr'?'rec':'rush'} yd line`));
+    c.addEventListener('mouseleave',hideTip);
+  });
+}
+
+function drawTable(){
+  const rows=[];
+  ['wr','rb'].forEach(pos=>{
+    ['2024','2025','2026'].forEach(yr=>{
+      const v=D[pos][yr].map(d=>d[1]), st=quart(v), mean=Math.round(v.reduce((a,b)=>a+b,0)/v.length);
+      rows.push(`<tr class="${yr==='2026'?'now':''}">
+        <td>${pos==='wr'?'WR receiving':'RB rushing'} · ${yr}</td>
+        <td>${Math.round(st.min)}</td><td>${Math.round(st.q1)}</td><td><b>${Math.round(st.med)}</b></td>
+        <td>${Math.round(st.q3)}</td><td>${Math.round(st.max)}</td><td>${mean}</td></tr>`);
+    });
+  });
+  document.getElementById('tableWrap').innerHTML=`<table><thead><tr>
+    <th>Top-20 lines</th><th>min</th><th>q1</th><th>median</th><th>q3</th><th>max</th><th>mean</th>
+    </tr></thead><tbody>${rows.join('')}</tbody></table>`;
+}
+
+drawPanel('wrPlot','wr'); drawPanel('rbPlot','rb'); drawTable();
+document.getElementById('viewSeg').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  document.querySelectorAll('#viewSeg button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  const chart=b.dataset.v==='chart';
+  document.getElementById('chartCard').hidden=!chart;
+  document.getElementById('tableCard').hidden=chart;
+});
+</script>

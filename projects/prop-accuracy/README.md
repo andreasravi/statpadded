@@ -22,6 +22,10 @@ Two positions, same method, same directory:
   section below, the 2026 watch per position, and a "where the two
   positions invert" synthesis. Data bundled by `scripts/bundle.py` into
   `data/report_bundle.json` and embedded.
+- **Line-drift chart:** [`top20-lines.html`](top20-lines.html) — box plots
+  of the top-20 prop lines per position, 2024 → 2025 → 2026. Answers "has
+  Vegas lowered the lines to fix the over-bias?" (no — the distributions
+  are unchanged; see `scripts/line_richness.py`).
 
 ## Every observation at a glance (`cheatsheet.py`)
 
