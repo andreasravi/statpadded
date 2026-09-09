@@ -40,6 +40,9 @@ if you want to keep a dated read.
   receiving-yards, ~23 QB). For the deeper bench, cross-reference
   [`rb_prop_totals`](../rb_prop_totals/)'s `firstdown.studio` rows — which
   land within ~10–35 yds of these posted numbers (median |Δ| ≈ 8).
+- FanDuel offers **rushing** TDs and **passing** TDs season-long, but **no
+  season-long receiving-TD market** — so there is no book price to check
+  the historical "8+ WR TD line" observation against.
 - Milestone / alt-line markets ("1,250+ / 1,500+ rushing yards") are **not
   on this feed** — they live in a separate FanDuel special that the
   `customPageId=nfl` page doesn't carry, and DraftKings' API is
